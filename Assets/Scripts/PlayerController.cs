@@ -6,104 +6,44 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static bool PlayerHasControl { get; set; }
+    /*  Notes
+    *   Can replace PlayerHasControl by disabling/enabling the script from others
+    *   Can replace animator play with setting an animator bool to change animator states
+    *   Can probably track the direction through the transform instead of direction/last direction
+    *   Will not need sprites, animator should be able to handle switching sprites
+    */
 
-    public float moveSpeed;
-    public Sprite IdleLeft;
-    public Sprite IdleRight;
-    public Sprite IdleUp;
-    public Sprite IdleDown;
-
-    public Vector2 Direction
-    {
-        get {
-            if (direction == null)
-                direction = Vector2.zero;
-            return direction;
-        }
-        set {
-            if (Direction.magnitude != 0)
-                LastDirection = Direction;
-            direction = value;
-            direction.Normalize();
-        }
-    }
-    public Vector2 LastDirection { get; private set; }
-
-    private Sprite idleSprite;
-    private Vector2 direction;
-    private bool isMoving;
-
-    private SpriteRenderer m_SpriteRenderer;
+    [Header ("Sprite")]
+    [SerializeField] private float moveSpeed;
+    
     private Animator m_Animator;
     private Rigidbody2D m_Rigidbody;
 
-    private void Start() {
-        PlayerHasControl = true;
-        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+    private void Awake() {
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update() {
-        if (PlayerHasControl) {
-            float horizInput = Input.GetAxisRaw("Horizontal"),
-                vertInput = Input.GetAxisRaw("Vertical");
-            if (horizInput > 0)
-                Direction = Vector2.right;
-            else if (horizInput < 0)
-                Direction = Vector2.left;
-            else if (vertInput > 0)
-                Direction = Vector2.up;
-            else if (vertInput < 0)
-                Direction = Vector2.down;
-            else
-                Direction = Vector2.zero;
-        }
+        float horizInput = Input.GetAxisRaw("Horizontal");
+        float vertInput = Input.GetAxisRaw("Vertical");
 
-        isMoving = Direction.x != 0 || Direction.y != 0;
-        bool isMovingHoriz = Mathf.Abs(Direction.x) > Mathf.Abs(Direction.y);
-        // moving right
-        if (isMovingHoriz && Direction.x > 0) {
-            m_Animator.Play("Walk Right");
-        }
-        // moving left
-        else if (isMovingHoriz && Direction.x < 0) {
-            m_Animator.Play("Walk Left");
-        }
-        // moving up
-        else if (!isMovingHoriz && Direction.y > 0) {
-            m_Animator.Play("Walk Up");
-        }
-        // moving down
-        else if (!isMovingHoriz && Direction.y < 0) {
-            m_Animator.Play("Walk Down");
-        }
-        // idle
-        else {
-            if (Mathf.Abs(LastDirection.x) > Mathf.Abs(LastDirection.y)) {
-                if (LastDirection.x > 0)
-                    idleSprite = IdleRight;
-                else if (LastDirection.x < 0)
-                    idleSprite = IdleLeft;
-            }
-            else {
-                if (LastDirection.y > 0)
-                    idleSprite = IdleUp;
-                else if (LastDirection.y < 0)
-                    idleSprite = IdleDown;
-            }
-        }
-    }
+        // Flips/Unflips transform (& sprite) according to direction
+        if (horizInput > 0 || vertInput > 0)
+            transform.localScale = Vector3.one;
+        else if (horizInput < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+        else if (vertInput < 0)
+            transform.localScale = new Vector3(1, -1, 1);
 
-    private void FixedUpdate() {
-        var delta = moveSpeed * Time.fixedDeltaTime * Direction;
-        m_Rigidbody.MovePosition(m_Rigidbody.position + delta);
-    }
+        bool moveX = horizInput != 0;   // Signals moving on X axis, higher priority than Y
 
-    private void LateUpdate() {
-        if (!isMoving)
-            m_SpriteRenderer.sprite = idleSprite;
+        // Can use to manipulate the state of the animator, should set sprites itself
+        m_Animator.SetBool("walking", moveX || vertInput != 0);
+        m_Animator.SetBool("isHorizontal", moveX);  // Will switch horizontal/vertical sprite
+
+        // Velocity will be accurate, and is simple
+        m_Rigidbody.velocity = new Vector2(moveX ? horizInput * moveSpeed : 0, moveX ? 0 : vertInput * moveSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
