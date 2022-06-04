@@ -26,13 +26,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update() {
         float horizInput = Input.GetAxisRaw("Horizontal"), vertInput = Input.GetAxisRaw("Vertical");
-        Console.WriteLine(horizInput.ToString(), vertInput.ToString());
 
         // Flips/Unflips transform (& sprite) according to direction
-        if (horizInput < 0 || vertInput != 0)
-            transform.localScale = Vector3.one;
-        else if (horizInput > 0)
+        if (horizInput > 0)
             transform.localScale = new Vector3(-1, 1, 1);
+        else
+            transform.localScale = Vector3.one;
 
         bool moveX = horizInput != 0; // Signals moving on X axis, X higher priority than Y
 
