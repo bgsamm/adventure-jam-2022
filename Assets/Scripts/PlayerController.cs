@@ -28,18 +28,16 @@ public class PlayerController : MonoBehaviour
         float horizInput = Input.GetAxisRaw("Horizontal"), vertInput = Input.GetAxisRaw("Vertical");
 
         // Flips/Unflips transform (& sprite) according to direction
-        if (horizInput > 0 || vertInput > 0)
+        if (horizInput < 0)
             transform.localScale = Vector3.one;
-        else if (horizInput < 0)
+        else if (horizInput > 0)
             transform.localScale = new Vector3(-1, 1, 1);
-        else if (vertInput < 0)
-            transform.localScale = new Vector3(1, -1, 1);
 
-        bool moveX = horizInput != 0;   // Signals moving on X axis, X higher priority than Y
+        bool moveX = horizInput != 0; // Signals moving on X axis, X higher priority than Y
 
         // Can use to manipulate the state of the animator, should set sprites itself
         m_Animator.SetBool("walking", moveX || vertInput != 0);
-        m_Animator.SetBool("isHorizontal", moveX);  // Will switch horizontal/vertical sprite
+        m_Animator.SetBool("isHorizontal", moveX); // Will switch horizontal/vertical sprite
         m_Animator.SetBool("facingFront", vertInput < 0);
 
         // Velocity will be accurate, and is simple
