@@ -43,13 +43,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
-  spriteMeshType: 1
+  spriteExtrude: 0
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -18682,11 +18682,11 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_572: -900595469
       Stardew Valley - Outdoors Spring_396: -1705056245
       Stardew Valley - Outdoors Spring_736: -2064324060
+      Stardew Valley - Outdoors Spring_413: -209474449
       Stardew Valley - Outdoors Spring_13: 1763165485
       Stardew Valley - Outdoors Spring_16: -326634932
       Stardew Valley - Outdoors Spring_243: 1858145737
       Stardew Valley - Outdoors Spring_22: 655136099
-      Stardew Valley - Outdoors Spring_413: -209474449
       Stardew Valley - Outdoors Spring_697: 100459943
       Stardew Valley - Outdoors Spring_786: -1377414671
       Stardew Valley - Outdoors Spring_788: 934264808
@@ -18736,10 +18736,10 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_604: 309752109
       Stardew Valley - Outdoors Spring_835: -271071444
       Stardew Valley - Outdoors Spring_93: 1560182301
-      Stardew Valley - Outdoors Spring_267: -584944209
       Stardew Valley - Outdoors Spring_874: -161525664
-      Stardew Valley - Outdoors Spring_348: -70930935
+      Stardew Valley - Outdoors Spring_267: -584944209
       Stardew Valley - Outdoors Spring_819: -1777621199
+      Stardew Valley - Outdoors Spring_348: -70930935
       Stardew Valley - Outdoors Spring_426: -1897006741
       Stardew Valley - Outdoors Spring_848: -1958288638
       Stardew Valley - Outdoors Spring_190: -1224135394
@@ -18757,8 +18757,8 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_504: -1830768548
       Stardew Valley - Outdoors Spring_245: -1215953319
       Stardew Valley - Outdoors Spring_148: -1713457598
-      Stardew Valley - Outdoors Spring_715: -1456161929
       Stardew Valley - Outdoors Spring_773: -161891686
+      Stardew Valley - Outdoors Spring_715: -1456161929
       Stardew Valley - Outdoors Spring_274: 939024798
       Stardew Valley - Outdoors Spring_643: -357802689
       Stardew Valley - Outdoors Spring_17: 1264167334
@@ -18768,9 +18768,9 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_581: -1208921584
       Stardew Valley - Outdoors Spring_183: -1473598001
       Stardew Valley - Outdoors Spring_403: 1802606962
-      Stardew Valley - Outdoors Spring_679: -494584309
-      Stardew Valley - Outdoors Spring_215: 366034073
       Stardew Valley - Outdoors Spring_630: 503410406
+      Stardew Valley - Outdoors Spring_215: 366034073
+      Stardew Valley - Outdoors Spring_679: -494584309
       Stardew Valley - Outdoors Spring_382: 606242795
       Stardew Valley - Outdoors Spring_166: 874430100
       Stardew Valley - Outdoors Spring_809: 148117726
@@ -18840,10 +18840,10 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_798: -1505718584
       Stardew Valley - Outdoors Spring_346: -1729379116
       Stardew Valley - Outdoors Spring_88: 1022892543
-      Stardew Valley - Outdoors Spring_645: 1493218934
       Stardew Valley - Outdoors Spring_705: 2063329810
-      Stardew Valley - Outdoors Spring_801: -1564938772
+      Stardew Valley - Outdoors Spring_645: 1493218934
       Stardew Valley - Outdoors Spring_520: 688137668
+      Stardew Valley - Outdoors Spring_801: -1564938772
       Stardew Valley - Outdoors Spring_216: -1404553679
       Stardew Valley - Outdoors Spring_529: -1367673839
       Stardew Valley - Outdoors Spring_742: -1692893942
@@ -18871,11 +18871,11 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_131: 1417317149
       Stardew Valley - Outdoors Spring_309: -215678073
       Stardew Valley - Outdoors Spring_103: 1766209275
-      Stardew Valley - Outdoors Spring_341: 690890401
       Stardew Valley - Outdoors Spring_804: 99098582
       Stardew Valley - Outdoors Spring_430: -1319608398
       Stardew Valley - Outdoors Spring_699: 970397164
       Stardew Valley - Outdoors Spring_726: -725998472
+      Stardew Valley - Outdoors Spring_341: 690890401
       Stardew Valley - Outdoors Spring_501: 1233925407
       Stardew Valley - Outdoors Spring_752: -945593736
       Stardew Valley - Outdoors Spring_869: 435795043
@@ -18886,11 +18886,11 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_803: 208877962
       Stardew Valley - Outdoors Spring_120: 1453031762
       Stardew Valley - Outdoors Spring_275: -1521243369
-      Stardew Valley - Outdoors Spring_26: -980855606
-      Stardew Valley - Outdoors Spring_206: -1049890683
       Stardew Valley - Outdoors Spring_519: -997798652
-      Stardew Valley - Outdoors Spring_299: 755701840
+      Stardew Valley - Outdoors Spring_26: -980855606
       Stardew Valley - Outdoors Spring_533: -678040781
+      Stardew Valley - Outdoors Spring_299: 755701840
+      Stardew Valley - Outdoors Spring_206: -1049890683
       Stardew Valley - Outdoors Spring_827: 136077508
       Stardew Valley - Outdoors Spring_527: -117603478
       Stardew Valley - Outdoors Spring_153: -1288922978
@@ -18910,8 +18910,8 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_211: 2108019059
       Stardew Valley - Outdoors Spring_678: 1320813672
       Stardew Valley - Outdoors Spring_371: 813585850
-      Stardew Valley - Outdoors Spring_538: 828101270
       Stardew Valley - Outdoors Spring_770: -672621555
+      Stardew Valley - Outdoors Spring_538: 828101270
       Stardew Valley - Outdoors Spring_531: -1791700675
       Stardew Valley - Outdoors Spring_857: 1990988671
       Stardew Valley - Outdoors Spring_776: -1487725557
@@ -18954,9 +18954,9 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_402: -222726065
       Stardew Valley - Outdoors Spring_372: 115964676
       Stardew Valley - Outdoors Spring_466: -1718806486
-      Stardew Valley - Outdoors Spring_523: -768725457
-      Stardew Valley - Outdoors Spring_822: -2092745132
       Stardew Valley - Outdoors Spring_850: -1845737420
+      Stardew Valley - Outdoors Spring_822: -2092745132
+      Stardew Valley - Outdoors Spring_523: -768725457
       Stardew Valley - Outdoors Spring_851: -328095980
       Stardew Valley - Outdoors Spring_205: -1846727894
       Stardew Valley - Outdoors Spring_410: 1776686475
@@ -19093,8 +19093,8 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_222: 499273566
       Stardew Valley - Outdoors Spring_229: 1320478122
       Stardew Valley - Outdoors Spring_428: 1418252283
-      Stardew Valley - Outdoors Spring_438: 935577983
       Stardew Valley - Outdoors Spring_793: -1851872165
+      Stardew Valley - Outdoors Spring_438: 935577983
       Stardew Valley - Outdoors Spring_479: 1314554771
       Stardew Valley - Outdoors Spring_590: -27058277
       Stardew Valley - Outdoors Spring_316: -51032152
@@ -19221,7 +19221,6 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_161: 366627233
       Stardew Valley - Outdoors Spring_202: 830318302
       Stardew Valley - Outdoors Spring_27: 94309567
-      Stardew Valley - Outdoors Spring_91: 182306819
       Stardew Valley - Outdoors Spring_485: -41671623
       Stardew Valley - Outdoors Spring_139: -1989640772
       Stardew Valley - Outdoors Spring_300: 234589410
@@ -19229,6 +19228,7 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_673: 1729056654
       Stardew Valley - Outdoors Spring_749: 1685516708
       Stardew Valley - Outdoors Spring_268: 238715496
+      Stardew Valley - Outdoors Spring_91: 182306819
       Stardew Valley - Outdoors Spring_509: 124570974
       Stardew Valley - Outdoors Spring_50: -39486455
       Stardew Valley - Outdoors Spring_553: -303478190
@@ -19265,8 +19265,8 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_213: -1133614488
       Stardew Valley - Outdoors Spring_214: 179803043
       Stardew Valley - Outdoors Spring_601: -2112179531
-      Stardew Valley - Outdoors Spring_279: -480855071
       Stardew Valley - Outdoors Spring_677: 1564757972
+      Stardew Valley - Outdoors Spring_279: -480855071
       Stardew Valley - Outdoors Spring_693: -1286245342
       Stardew Valley - Outdoors Spring_847: -1189489596
       Stardew Valley - Outdoors Spring_241: -1700471876
@@ -19306,9 +19306,9 @@ TextureImporter:
       Stardew Valley - Outdoors Spring_204: 367143061
       Stardew Valley - Outdoors Spring_422: -502611872
       Stardew Valley - Outdoors Spring_285: 238584540
-      Stardew Valley - Outdoors Spring_287: 1128493431
-      Stardew Valley - Outdoors Spring_113: -1336362180
       Stardew Valley - Outdoors Spring_586: -1795761316
+      Stardew Valley - Outdoors Spring_113: -1336362180
+      Stardew Valley - Outdoors Spring_287: 1128493431
       Stardew Valley - Outdoors Spring_126: 1446418530
       Stardew Valley - Outdoors Spring_500: 1408071762
       Stardew Valley - Outdoors Spring_664: 218968534
