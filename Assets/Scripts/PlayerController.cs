@@ -2,41 +2,37 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    /*  Notes
-    *   Can replace PlayerHasControl by disabling/enabling the script from others
-    */
-
     [Header ("Sprite")]
     [SerializeField] private float moveSpeed;
-    
-    private Animator m_Animator;
-    private Rigidbody2D m_Rigidbody;
 
-    private bool moveX;
-    private bool moving;
+    private Animator Animator;
+    private Rigidbody2D Rigidbody2D;
 
     private void Awake() {
-        m_Animator = GetComponent<Animator>();
-        m_Rigidbody = GetComponent<Rigidbody2D>();
+        Animator = GetComponent<Animator>();
+        Rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void Update() {
-        float horizInput = Input.GetAxisRaw("Horizontal"), vertInput = Input.GetAxisRaw("Vertical");
-        moveX = horizInput != 0; // Signals moving on X axis, X higher priority than Y
-        moving = moveX || vertInput != 0;
+        float horizInput = Input.GetAxisRaw("Horizontal"),
+            vertInput = Input.GetAxisRaw("Vertical");
 
-        // Flips/Unflips transform (& sprite) according to direction
-        if (horizInput > 0)
-            transform.localScale = new Vector3(-1, 1, 1);
-        else if(moving)
-            transform.localScale = Vector3.one;
+        bool moving = horizInput != 0 || vertInput != 0;
+        // Maintain values when idle so the player continues to face the direction they were moving
+        if (moving) {
+            Animator.SetFloat("Horizontal", horizInput);
+            Animator.SetFloat("Vertical", vertInput);
 
-        // Can use to manipulate the state of the animator, should set sprites itself
-        m_Animator.SetBool("walking", moving);
-        m_Animator.SetBool("isHorizontal", moveX);
-        m_Animator.SetBool("facingFront", vertInput < 0);
+            // Mirror sprite when moving right
+            if (horizInput > 0)
+                transform.localScale = new Vector3(-1, 1, 1);
+            else
+                transform.localScale = Vector3.one;
+        }
+        Animator.SetBool("Moving", moving);
 
-        m_Rigidbody.velocity = new Vector2(moveX ? horizInput * moveSpeed : 0, moveX ? 0 : vertInput * moveSpeed);
+        bool moveX = horizInput != 0; // Signals moving on X axis, X higher priority than Y
+        Rigidbody2D.velocity = new Vector2(moveX ? horizInput : 0, moveX ? 0 : vertInput) * moveSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
