@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 2214433215806116723}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f5092d322076e3b4aacc8356312ab43b, type: 2}
+  m_Controller: {fileID: 9100000, guid: f7141cc2d9171a44e938277b5ca056d3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -158,4 +158,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  Direction: {x: 0, y: 0}
