@@ -17,22 +17,18 @@ public class PlayerController : MonoBehaviour
         float horizInput = Input.GetAxisRaw("Horizontal"),
             vertInput = Input.GetAxisRaw("Vertical");
 
-        bool moving = horizInput != 0 || vertInput != 0;
+        bool moveX = horizInput != 0; // Signals moving on X axis, X higher priority than Y
+        bool moving = moveX || vertInput != 0;
+        var direction = new Vector2(moveX ? horizInput : 0, moveX ? 0 : vertInput);
+
         // Maintain values when idle so the player continues to face the direction they were moving
         if (moving) {
-            Animator.SetFloat("Horizontal", horizInput);
-            Animator.SetFloat("Vertical", vertInput);
-
-            // Mirror sprite when moving right
-            if (horizInput > 0)
-                transform.localScale = new Vector3(-1, 1, 1);
-            else
-                transform.localScale = Vector3.one;
+            Animator.SetFloat("Horizontal", direction.x);
+            Animator.SetFloat("Vertical", direction.y);
         }
         Animator.SetBool("Moving", moving);
 
-        bool moveX = horizInput != 0; // Signals moving on X axis, X higher priority than Y
-        Rigidbody2D.velocity = new Vector2(moveX ? horizInput : 0, moveX ? 0 : vertInput) * moveSpeed;
+        Rigidbody2D.velocity = moveSpeed * direction;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
