@@ -49,7 +49,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -120,7 +120,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 72
         width: 16
         height: 24
       alignment: 0
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 919a23402deb5f3458a01c1c368a7363
-      internalID: -1950911179
+      spriteID: dc2a52fe01aac694290f54a48b292b9f
+      internalID: -2135328653
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 48
+        y: 72
         width: 16
         height: 24
       alignment: 0
@@ -151,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6c9824cd232f3841bdecc9c711cc9ad
-      internalID: 17827115
+      spriteID: 02ed1ad7ee01db043ad2dcb94300ed2a
+      internalID: -423753243
       vertices: []
       indices: 
       edges: []
@@ -162,6 +162,27 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869ac25237b57ff42a135d0e62eee047
+      internalID: 875710879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harvest Moon - Jack_3
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 48
         width: 16
         height: 24
@@ -172,29 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e40d9281b88e8d34fbc5ba36030da623
-      internalID: -1264081122
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harvest Moon - Jack_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 24
-        width: 16
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3be067ee008d28640a70db17bc66ebb8
-      internalID: -611163324
+      spriteID: 0007b2f73ae387343a9513725f67a048
+      internalID: 2032991457
       vertices: []
       indices: 
       edges: []
@@ -204,6 +204,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
+        y: 48
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ef0eef8c8c89b41aba03a61cb1b6c2
+      internalID: 526708137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harvest Moon - Jack_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9560c49732c0844be7f82db0a9c2c9
+      internalID: 614370099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harvest Moon - Jack_6
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 24
         width: 16
         height: 24
@@ -214,14 +256,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7294eb8cf59dca246aa0d12a29f93f82
-      internalID: 1835859544
+      spriteID: 22e0497d2066b47479b53e8209bb3e7d
+      internalID: -222855021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harvest Moon - Jack_5
+      name: Harvest Moon - Jack_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 24
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f284871217b0354ea9ed4771d7ddeba
+      internalID: 2127596228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harvest Moon - Jack_8
       rect:
         serializedVersion: 2
         x: 32
@@ -235,14 +298,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 731846040fd7ca946aa16cf4de5a4971
-      internalID: -1554627096
+      spriteID: cf0a5cec6849a04409ae15e472389495
+      internalID: 479665677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harvest Moon - Jack_6
+      name: Harvest Moon - Jack_9
       rect:
         serializedVersion: 2
         x: 0
@@ -256,14 +319,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e071530119591cd4b9ffbcd33fdeb406
-      internalID: -1099609965
+      spriteID: c5f33f8bd8394b54f86617ca5e517b56
+      internalID: -1425870881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harvest Moon - Jack_7
+      name: Harvest Moon - Jack_10
       rect:
         serializedVersion: 2
         x: 16
@@ -277,14 +340,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b522d5fdd9ea06c4ba7c8e79db3b8e26
-      internalID: 579887936
+      spriteID: 1c2375b11d47ba74f8d17a1152b31145
+      internalID: -1927095390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harvest Moon - Jack_8
+      name: Harvest Moon - Jack_11
       rect:
         serializedVersion: 2
         x: 32
@@ -298,8 +361,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55b553f0c61520940be9475d164f013b
-      internalID: -792267660
+      spriteID: e197be4ba2087144386358bfd232b516
+      internalID: 642338718
       vertices: []
       indices: 
       edges: []
@@ -315,15 +378,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Harvest Moon - Jack_7: 579887936
-      Harvest Moon - Jack_0: -1950911179
-      Harvest Moon - Jack_8: -792267660
-      Harvest Moon - Jack_2: -1264081122
-      Harvest Moon - Jack_6: -1099609965
-      Harvest Moon - Jack_5: -1554627096
-      Harvest Moon - Jack_4: 1835859544
-      Harvest Moon - Jack_3: -611163324
-      Harvest Moon - Jack_1: 17827115
+      Harvest Moon - Jack_7: 2127596228
+      Harvest Moon - Jack_10: -1927095390
+      Harvest Moon - Jack_0: -2135328653
+      Harvest Moon - Jack_8: 479665677
+      Harvest Moon - Jack_9: -1425870881
+      Harvest Moon - Jack_2: 875710879
+      Harvest Moon - Jack_6: -222855021
+      Harvest Moon - Jack_5: 614370099
+      Harvest Moon - Jack_11: 642338718
+      Harvest Moon - Jack_4: 526708137
+      Harvest Moon - Jack_3: 2032991457
+      Harvest Moon - Jack_1: -423753243
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

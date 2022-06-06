@@ -1,48 +1,42 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    /*  Notes
-    *   Can replace PlayerHasControl by disabling/enabling the script from others
-    *   Can replace animator play with setting an animator bool to change animator states
-    *   Can probably track the direction through the transform instead of direction/last direction
-    *   Will not need sprites, animator should be able to handle switching sprites
-    */
-
     [Header ("Sprite")]
     [SerializeField] private float moveSpeed;
-    
-    private Animator m_Animator;
-    private Rigidbody2D m_Rigidbody;
+    [SerializeField] private GameObject actionHotspot;
+
+    private Animator Animator;
+    private Rigidbody2D Rigidbody2D;
+
+    private Vector3 hotspotOffset;
 
     private void Awake() {
-        m_Animator = GetComponent<Animator>();
-        m_Rigidbody = GetComponent<Rigidbody2D>();
+        Animator = GetComponent<Animator>();
+        Rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start() {
+        hotspotOffset = actionHotspot.transform.localPosition;
     }
 
     private void Update() {
-        float horizInput = Input.GetAxisRaw("Horizontal"), vertInput = Input.GetAxisRaw("Vertical");
-        Console.WriteLine(horizInput.ToString(), vertInput.ToString());
-
-        // Flips/Unflips transform (& sprite) according to direction
-        if (horizInput < 0 || vertInput != 0)
-            transform.localScale = Vector3.one;
-        else if (horizInput > 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+        float horizInput = Input.GetAxisRaw("Horizontal"),
+            vertInput = Input.GetAxisRaw("Vertical");
 
         bool moveX = horizInput != 0; // Signals moving on X axis, X higher priority than Y
+        bool moving = moveX || vertInput != 0;
+        var direction = new Vector2(moveX ? horizInput : 0, moveX ? 0 : vertInput);
 
-        // Can use to manipulate the state of the animator, should set sprites itself
-        m_Animator.SetBool("walking", moveX || vertInput != 0);
-        m_Animator.SetBool("isHorizontal", moveX); // Will switch horizontal/vertical sprite
-        m_Animator.SetBool("facingFront", vertInput < 0);
+        // Maintain values when idle so the player continues to face the direction they were moving
+        if (moving) {
+            Animator.SetFloat("Horizontal", direction.x);
+            Animator.SetFloat("Vertical", direction.y);
+            actionHotspot.transform.transform.localPosition = hotspotOffset + (Vector3)direction;
+        }
+        Animator.SetBool("Moving", moving);
 
-        // Velocity will be accurate, and is simple
-        m_Rigidbody.velocity = new Vector2(moveX ? horizInput * moveSpeed : 0, moveX ? 0 : vertInput * moveSpeed);
+        Rigidbody2D.velocity = moveSpeed * direction;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
