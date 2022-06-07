@@ -37,14 +37,12 @@ public class PlayerController : MonoBehaviour
             //actionHotspot.transform.transform.localPosition = hotspotOffset + (Vector3)direction;
         }
         animator.SetBool("Moving", moving);
-
-        //Rigidbody2D.velocity = moveSpeed * direction;
     }
 
     private void FixedUpdate() {
-        // keep track of the player's "real" underlying position
+        // keep track of the player's "real" underlying position,
         position += moveSpeed * Time.fixedDeltaTime * direction;
-        // but only move the player visually by a whole # of pixels
+        // but only move the player visually by an integer # of pixels
         float i_x = Mathf.FloorToInt(position.x * pixelsPerUnit);
         float i_y = Mathf.FloorToInt(position.y * pixelsPerUnit);
         var p = new Vector2(i_x, i_y) / pixelsPerUnit;

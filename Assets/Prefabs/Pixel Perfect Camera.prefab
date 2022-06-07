@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0}
+  pixelsPerUnit: 16
 --- !u!81 &246596107373003882
 AudioListener:
   m_ObjectHideFlags: 0
