@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public Vector2 offset;
-
     private void LateUpdate() {
         var player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-            transform.position = player.transform.position + new Vector3(offset.x, offset.y, -10);
+        if (player != null) {
+            var playerPos = player.transform.position;
+            transform.position = new Vector3(playerPos.x, playerPos.y, -10);
+        }
     }
 }
