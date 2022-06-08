@@ -36,8 +36,6 @@ public class InkManager : MonoBehaviour {
 	string currentCharacter = ""; //used to check whether the character is changing
 
 	[HideInInspector] public bool dialogueMode = false;
-	//a mode for when the response buttons are on the screen--tells the story not to advance on click or spacebar
-	[HideInInspector] public bool choiceMode = false; 
 
 
 	private void Awake()
@@ -66,7 +64,7 @@ public class InkManager : MonoBehaviour {
 	public void CheckRefresh() 
 		//just a quick check that makes sure the game isn't paused or busy before printing the next screen of text
     {
-		if (!choiceMode && dialogueMode)
+		if (dialogueMode)
 		{
 			RefreshView();
 		}
@@ -124,43 +122,13 @@ public class InkManager : MonoBehaviour {
 				CreateContentView(text);
 			}
 		}
-		//else //the story CAN'T continue--either we're at a choice or we're at the end of a thread
-		// Display all the choices, if there are any
+		//else //the story CAN'T continue--end thread
 		else
 		{
-			if (story.currentChoices.Count > 0)
-			{
-				//choice mode--tells the game not to advance on spacebar
-				choiceMode = true;
-
-				for (int i = 0; i < story.currentChoices.Count; i++)
-				{
-					Choice choice = story.currentChoices[i];
-					Button button = CreateChoiceView(choice.text.Trim());
-					// Tell the button what to do when we press it
-					button.onClick.AddListener(delegate
-					{
-						OnClickChoiceButton(choice);
-					});
-				}
-			}
-			// If we've read all the content and there's no choices, the dialogue is finished
-			if (!story.canContinue && story.currentChoices.Count == 0)
-			{
 				EndDialogue();
-			}
 		}
 		
 	}
-
-		// When we click the choice button, tell the story to choose that choice
-		void OnClickChoiceButton(Choice choice) 
-		{
-			choiceMode = false; //unpauses so that click and spacebar will work again
-			story.ChooseChoiceIndex(choice.index);
-			ClearText(); //clears the text from the previous scene
-			RefreshView();
-		}
 
 		// Displays the text of the knot, plus the appropriate character
 		void CreateContentView(string text)
@@ -173,20 +141,6 @@ public class InkManager : MonoBehaviour {
 	void ClearText() 
 		{
 			sceneText.text = "";
-		}
-
-		// Creates a button showing the choice text
-		Button CreateChoiceView(string text) {
-
-			// Creates the button from a prefab
-			Button choice = Instantiate(buttonPrefab, transform.position, transform.rotation) as Button;
-			choice.transform.SetParent(buttonHolder.transform, false);
-
-			// Gets the text from the button prefab
-			TextMeshProUGUI choiceText = choice.GetComponentInChildren<TextMeshProUGUI>();
-			choiceText.text = text;
-
-			return choice;
 		}
 
 		//displays the name and portrait of the person speaking
@@ -228,7 +182,6 @@ public class InkManager : MonoBehaviour {
     {
 		ClearSpeaker();
 		ClearText();
-		choiceMode = false;
 		dialogueMode = false;
 		dialoguePanel.SetActive(false);
     }
