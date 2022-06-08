@@ -6,6 +6,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject actionHotspot;
 
+    private GameObject currInteractable;
+    private const KeyCode INTERACT_KEY = KeyCode.E;
+
+    // [Header ("SFX")]
+
     private Animator animator;
     private new Rigidbody2D rigidbody2D;
 
@@ -20,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start() {
         //hotspotOffset = actionHotspot.transform.localPosition;
+        // TODO can probably following to awake, if sprite is not initialized by a script
         pixelsPerUnit = GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
     }
 
@@ -38,6 +44,12 @@ public class PlayerController : MonoBehaviour
             //actionHotspot.transform.transform.localPosition = hotspotOffset + (Vector3)direction;
         }
         animator.SetBool("Moving", moving);
+
+        checkInteractable();
+        if(currInteractable != null && Input.GetKeyDown(INTERACT_KEY))
+        {
+            // logic for interacting, maybe new function
+        }
     }
 
     private void FixedUpdate() {
@@ -52,5 +64,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
 
+    }
+
+    private void checkInteractable()
+    {
+        /* Function to check for interactables
+         * Hightlight interactable here?
+         *  Could save last interactable
+         *      If none currently colliding: unhighlight, forget
+         *  Should work because should only interact one thing at time
+         *  Make sure to select new interactables over saved
+        */
+        return;
     }
 }
