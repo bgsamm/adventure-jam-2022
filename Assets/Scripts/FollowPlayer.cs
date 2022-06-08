@@ -7,7 +7,8 @@ public class FollowPlayer : MonoBehaviour
     private void LateUpdate() {
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player != null) {
-            transform.position = player.transform.position;
+            var playerPos = player.transform.position;
+            transform.position = new Vector3(playerPos.x, playerPos.y, -10);
         }
     }
 }

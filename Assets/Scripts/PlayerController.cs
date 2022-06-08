@@ -4,13 +4,13 @@ public class PlayerController : MonoBehaviour
 {
     [Header ("Sprite")]
     [SerializeField] private float moveSpeed;
-    [SerializeField] private int pixelsPerUnit;
     [SerializeField] private GameObject actionHotspot;
 
     private Animator animator;
     private new Rigidbody2D rigidbody2D;
 
-    public Vector2 direction, position;
+    private float pixelsPerUnit;
+    private Vector2 direction, position;
     private Vector3 hotspotOffset;
 
     private void Awake() {
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start() {
         //hotspotOffset = actionHotspot.transform.localPosition;
+        pixelsPerUnit = GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
     }
 
     private void Update() {
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         // keep track of the player's "real" underlying position,
         position += moveSpeed * Time.fixedDeltaTime * direction;
-        // but only move the player visually by an integer # of pixels
+        // but only move the actual player object by an integer # of pixels
         float i_x = Mathf.FloorToInt(position.x * pixelsPerUnit);
         float i_y = Mathf.FloorToInt(position.y * pixelsPerUnit);
         var p = new Vector2(i_x, i_y) / pixelsPerUnit;

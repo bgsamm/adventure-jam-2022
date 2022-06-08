@@ -8,7 +8,8 @@ public class CustomCanvasScaler : CanvasScaler
 
     protected override void Awake() {
         var canvas = GetComponent<Canvas>();
-        pixelPerfectCamera = canvas.worldCamera.GetComponent<PixelPerfectCamera>();
+        if (canvas.worldCamera != null)
+            pixelPerfectCamera = canvas.worldCamera.GetComponent<PixelPerfectCamera>();
     }
 
     protected override void Start() {
@@ -20,7 +21,11 @@ public class CustomCanvasScaler : CanvasScaler
     }
 
     private void UpdateScaleFactor() {
-        if (pixelPerfectCamera != null)
+        // Attempting to get the pixel ratio while the camera
+        // is not running will throw a null reference exception
+        try {
             scaleFactor = pixelPerfectCamera.pixelRatio;
+        }
+        catch { }
     }
 }
