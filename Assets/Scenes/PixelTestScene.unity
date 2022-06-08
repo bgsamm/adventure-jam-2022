@@ -746,6 +746,14 @@ PrefabInstance:
       propertyPath: IdleLeft
       value: 
       objectReference: {fileID: 1835859544, guid: dc6a7d733f7990344ba8bb6c84dc1a58, type: 3}
+    - target: {fileID: 2214433215806116720, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
+      propertyPath: xOffsetRaw
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214433215806116720, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
+      propertyPath: yOffsetRaw
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2214433215806116721, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
       propertyPath: m_Size.y
       value: 1.5
