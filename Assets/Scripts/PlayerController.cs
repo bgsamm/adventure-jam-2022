@@ -21,10 +21,14 @@ public class PlayerController : MonoBehaviour
     private void Update() {
         float horizInput = Input.GetAxisRaw("Horizontal"),
             vertInput = Input.GetAxisRaw("Vertical");
+        bool moving = horizInput != 0 || vertInput != 0;
 
-        animator.SetFloat("Horizontal", horizInput * moveSpeed);
-        animator.SetFloat("Vertical", vertInput * moveSpeed);
-        animator.SetBool("Moving", horizInput != 0 || vertInput != 0);
+        if (moving)
+        {
+            animator.SetFloat("Horizontal", horizInput * moveSpeed);
+            animator.SetFloat("Vertical", vertInput * moveSpeed);
+        }
+        animator.SetBool("Moving", moving);
         rigidbody2D.velocity = new Vector2(horizInput * moveSpeed, vertInput * moveSpeed);
     }
 
