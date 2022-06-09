@@ -9,8 +9,11 @@ public class MainMenuManager : MonoBehaviour
     public GameObject OptionsMenu;
     public GameObject CreditsMenu;
 
+    private LoadingManager loadingManager;
+
     // Start is called before the first frame update
-    private void Start() {
+    private void Awake() {
+        loadingManager = GameObject.FindWithTag("LoadingManager").GetComponent<LoadingManager>();
         ShowMainMenu();
     }
 
@@ -20,7 +23,7 @@ public class MainMenuManager : MonoBehaviour
     }
 
     public void PlayGame() {
-        SceneManager.LoadScene("GardenScene");
+        loadingManager.PlayGame();
     }
 
     private void HideAllSubmenus() {
