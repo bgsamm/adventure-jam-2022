@@ -4,13 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ItemStack : MonoBehaviour
+[Serializable]
+public class ItemStack
 {
-    private void Start() {
-        
+    public Item item;
+    public int count;
+
+    public ItemStack(Item item) {
+        this.item = item;
     }
 
-    private void Update() {
-        
+    public void AddItem() {
+        count++;
+    }
+
+    public void RemoveItem() {
+        if (count == 0)
+            Debug.LogWarning("Attempted to remove item from empty stack");
+        else
+            count--;
     }
 }

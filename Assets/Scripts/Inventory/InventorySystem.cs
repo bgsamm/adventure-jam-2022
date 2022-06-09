@@ -16,4 +16,12 @@ public class InventorySystem : MonoBehaviour
         else
             instance = this;
     }
+
+    public void AddItem(Item item) {
+        int match = stacks.FindIndex(x => x.item == item);
+        if (match == -1)
+            stacks.Add(new ItemStack(item));
+        else
+            stacks[match].AddItem();
+    }
 }
