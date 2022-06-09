@@ -19,9 +19,7 @@ public class InkManager : MonoBehaviour {
 	//you should ALWAYS reference the Ink story through this script
 
 	//UI elements that will display the text and images
-	[SerializeField] private GameObject dialoguePanel;
 	[SerializeField] private TextMeshProUGUI sceneText;
-	[SerializeField] private GameObject buttonHolder;
 	[SerializeField] private Image speakerImage;
 	[SerializeField] private TextMeshProUGUI speakerLabel;
 
@@ -50,7 +48,21 @@ public class InkManager : MonoBehaviour {
 		if (OnCreateStory != null) OnCreateStory(story);
 		//Note: If we reload the story, it wipes the Ink state machine
 		//So be sure not to destroy this when unloading the scene
+
+		//binding the Ink function that will trigger a barter
+		//currently bound to a placeholder
+		story.BindExternalFunction("barter", (int barterNumber) => {
+			BeginBarter(barterNumber);
+		});
 	}
+
+
+    private void Start()
+    {
+		//TEST
+
+		StartDialogue("Test");
+    }
 
 
     void Update() //tracking keypresses
@@ -77,8 +89,6 @@ public class InkManager : MonoBehaviour {
 		{
 			dialogueMode = true;
 
-			dialoguePanel.SetActive(true);
-
 			story.ChoosePathString(knot);
 
 			CheckRefresh(); //start the dialogue scene
@@ -90,12 +100,6 @@ public class InkManager : MonoBehaviour {
 	// Continues over all the lines of text, then displays all the choices. If there are no choices, the dialogue is finished
 	public void RefreshView()
 	{
-		//deletes any existing buttons
-		foreach (Transform child in buttonHolder.transform)
-		{
-			GameObject.Destroy(child.gameObject);
-		}
-
 		// Read all the content until we can't continue any more
 		if (story.canContinue)
 		{
@@ -183,6 +187,11 @@ public class InkManager : MonoBehaviour {
 		ClearSpeaker();
 		ClearText();
 		dialogueMode = false;
-		dialoguePanel.SetActive(false);
+    }
+
+	public void BeginBarter(int barterNumber)
+    {
+		//PLACEHOLDER
+		Debug.Log("Beginning barter number " + barterNumber);
     }
 }
