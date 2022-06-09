@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadingManager : MonoBehaviour
 {
@@ -20,5 +21,8 @@ public class LoadingManager : MonoBehaviour
         }
     }
 
-    // public void for each scene, call sound manager here
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

@@ -30,6 +30,11 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update() {
+        /*
+         * TODO
+         * Call to move time along when exiting shop or sleeping
+         */
+
         float horizInput = Input.GetAxisRaw("Horizontal"),
             vertInput = Input.GetAxisRaw("Vertical");
 
