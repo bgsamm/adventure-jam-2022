@@ -21,8 +21,23 @@ public class LoadingManager : MonoBehaviour
         }
     }
 
-    public void PlayGame()
+    public void MenuScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void GardenScene()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void ShopScene()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void TreeScene()
+    {
+        SceneManager.LoadScene(3);
     }
 }

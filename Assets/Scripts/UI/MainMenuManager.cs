@@ -23,7 +23,7 @@ public class MainMenuManager : MonoBehaviour
     }
 
     public void PlayGame() {
-        loadingManager.PlayGame();
+        loadingManager.MenuScene();
     }
 
     private void HideAllSubmenus() {
