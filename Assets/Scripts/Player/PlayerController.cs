@@ -9,18 +9,20 @@ public class PlayerController : MonoBehaviour
     private GameObject currInteractable;
     private const KeyCode INTERACT_KEY = KeyCode.E;
 
-    // [Header ("SFX")]
-
     private Animator animator;
     private new Rigidbody2D rigidbody2D;
+    private Inventory inventory;
 
     private float pixelsPerUnit;
     private Vector2 direction, position;
     private Vector3 hotspotOffset;
 
+    const string PLOT_TAG = "Plot";
+
     private void Awake() {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        inventory = GetComponent<Inventory>();
     }
 
     private void Start() {
@@ -50,10 +52,16 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetBool("Moving", moving);
 
-        checkInteractable();
         if(currInteractable != null && Input.GetKeyDown(INTERACT_KEY))
         {
-            // logic for interacting, maybe new function
+            if(currInteractable.CompareTag(PLOT_TAG))
+            {
+                InteractPlant();
+            }
+            else
+            {
+                Debug.Log("No possible interactions with " + currInteractable.name);
+            }
         }
     }
 
@@ -67,19 +75,37 @@ public class PlayerController : MonoBehaviour
         rigidbody2D.MovePosition(p);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-
+    private void InteractPlant()
+    {
+        Plot plot = currInteractable.GetComponent<Plot>();
+        if (!plot.occupied)
+        {
+            plot.Plant(inventory.selectedSeed);
+        } else if (plot.readyToHarvest)
+        {
+            plot.Harvest();
+        } else
+        {
+            plot.Water();
+        }
     }
 
-    private void checkInteractable()
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag(PLOT_TAG))
+        {
+            currInteractable = collision.gameObject;
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        /* Function to check for interactables
-         * Hightlight interactable here?
-         *  Could save last interactable
-         *      If none currently colliding: unhighlight, forget
-         *  Should work because should only interact one thing at time
-         *  Make sure to select new interactables over saved
-        */
-        return;
+        if(collision.gameObject == currInteractable)
+        {
+            currInteractable = null;
+        }
     }
 }

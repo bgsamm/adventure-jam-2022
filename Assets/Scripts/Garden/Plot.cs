@@ -2,30 +2,44 @@ using UnityEngine;
 
 public class Plot : MonoBehaviour
 {
-    // Need way to store object with different stages of seed/plant
-    private int daysWatered;
-    public bool readyToHarvest { get; private set; }
-    public bool occupied { get; /* just call if seed/plant exists in this */ }
-    private int daysWateredToEvolve;
+    // Unserialized when done testing
+    public bool readyToHarvest { get { return currPlant != null ? currPlant.mature : false; } }
+    public bool occupied { get { return currPlant != null; } }
+    private Plant currPlant;
 
-    private void Plant(/* take in seed object here */)
+    // TESTING ONLY - REMOVE AFTER TESTING, remove once visual elements exist
+    [SerializeField] private bool isOccupied;
+    [SerializeField] private bool isWatered;
+    [SerializeField] private bool isReadyToHarvest;
+
+    public Plot()
     {
-        daysWatered = 0;
+        currPlant = null;
+        isOccupied = false; // remove after testing
+        isWatered = false; // remove after testing
+        isReadyToHarvest = false; // remove after testing
+    }
+    public void Plant(int seed)
+    {
+        currPlant = new Plant(seed);
+        isOccupied = true; // remove after testing
     }
     public void Water()
     {
-        ++daysWatered;
+        currPlant.Water();
+        isWatered = true; // remove after testing
+    }
+    public void Harvest()
+    {
+        if (readyToHarvest) Debug.Log("Harvesting!");
+        // return plant to player
+        isOccupied = false; // remove after testing
+        currPlant = null;
     }
     public void Grow()
     {
-        if(daysWatered == daysWateredToEvolve)
-        {
-            daysWatered = 0;
-            // evolve to next stage of plant
-        }
-    }
-    private void SetDaysToEvolve(int _daysWateredToEvolve)
-    {   // Should call when planting, or if days between evolutions vary
-        daysWateredToEvolve = _daysWateredToEvolve;
+        if (currPlant == null) return;
+        currPlant.Grow();
+        isReadyToHarvest = currPlant.mature; // remove after testing
     }
 }

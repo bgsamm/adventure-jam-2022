@@ -3,9 +3,7 @@ using UnityEngine;
 public class GardenManager : MonoBehaviour
 {
     public static GardenManager instance { get; private set; }
-
-    [Header ("Plots")]
-    [SerializeField] private GameObject[] plots;
+    private GameObject[] plots; // TODO grab plots from children
 
     private void Awake()
     {

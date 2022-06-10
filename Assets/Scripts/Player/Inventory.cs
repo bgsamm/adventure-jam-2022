@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance { get; private set; }
-
+    public int selectedSeed { get; private set; }
     private int letters;    // Display # letters recieved?
     // Need to add types for seeds, plants, trinkets
 
@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        selectedSeed = 0;
     }
 
     // General function to add item
