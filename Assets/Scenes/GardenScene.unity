@@ -6445,8 +6445,12 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2214433215806116748, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214433215806116748, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2214433215806116748, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
       propertyPath: m_Offset.y
@@ -6461,8 +6465,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2214433215806116750, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214433215806116750, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.08
+      value: -1.08
       objectReference: {fileID: 0}
     - target: {fileID: 2214433215806116750, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6740,23 +6748,6 @@ MonoBehaviour:
   isOccupied: 0
   isWatered: 0
   isReadyToHarvest: 0
---- !u!1 &1241095744 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2214433215806116723, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
-  m_PrefabInstance: {fileID: 999815917}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1241095751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241095744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85c8467e94ebd04aaca6098c55dee8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1287982415
 GameObject:
   m_ObjectHideFlags: 0
