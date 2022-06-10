@@ -23,7 +23,7 @@ public class MainMenuManager : MonoBehaviour
     }
 
     public void PlayGame() {
-        loadingManager.MenuScene();
+        loadingManager.GardenScene();
     }
 
     private void HideAllSubmenus() {
