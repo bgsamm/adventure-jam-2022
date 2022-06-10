@@ -3,7 +3,7 @@ using UnityEngine;
 public class Plot : MonoBehaviour
 {
     // Unserialized when done testing
-    public bool readyToHarvest { get { return currPlant != null ? currPlant.mature : false; } }
+    public bool readyToHarvest { get { return currPlant != null ? currPlant.Mature : false; } }
     public bool occupied { get { return currPlant != null; } }
     private Plant currPlant;
 
@@ -12,34 +12,33 @@ public class Plot : MonoBehaviour
     [SerializeField] private bool isWatered;
     [SerializeField] private bool isReadyToHarvest;
 
-    public Plot()
-    {
+    public Plot() {
         currPlant = null;
         isOccupied = false; // remove after testing
         isWatered = false; // remove after testing
         isReadyToHarvest = false; // remove after testing
     }
-    public void Plant(int seed)
-    {
-        currPlant = new Plant(seed);
+
+    public void Plant(Plant plant) {
+        currPlant = plant;
         isOccupied = true; // remove after testing
     }
-    public void Water()
-    {
+
+    public void Water() {
         currPlant.Water();
         isWatered = true; // remove after testing
     }
-    public void Harvest()
-    {
+
+    public void Harvest() {
         if (readyToHarvest) Debug.Log("Harvesting!");
         // return plant to player
         isOccupied = false; // remove after testing
         currPlant = null;
     }
-    public void Grow()
-    {
+
+    public void Grow() {
         if (currPlant == null) return;
         currPlant.Grow();
-        isReadyToHarvest = currPlant.mature; // remove after testing
+        isReadyToHarvest = currPlant.Mature; // remove after testing
     }
 }

@@ -16,7 +16,7 @@ public class InventorySlot : MonoBehaviour
     public void SetItem(Item item) {
         icon.enabled = item != null;
         if (icon.enabled) {
-            icon.sprite = item.Sprite;
+            icon.sprite = item.InventorySprite;
             icon.SetNativeSize();
         }
     }

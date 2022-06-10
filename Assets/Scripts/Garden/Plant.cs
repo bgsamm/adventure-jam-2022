@@ -1,35 +1,30 @@
 using UnityEngine;
 
-public class Plant
+[CreateAssetMenu(fileName = "New Plant", menuName = "Plant")]
+public class Plant : ScriptableObject
 {
-    private int daysToGrow;
-    private int daysWatered;
-    public bool wateredToday { get; private set; }
-    public bool mature { get; private set; }
-    private int[] daysToGrowMap = { 3, 4, 3, 2, 6, 7 }; // each index for seed
+    [SerializeField] private int daysToGrow;
 
-    private Plant() { } // Can't call plant without a seed
-    public Plant(int seed)
-    {
+    private int daysWatered;
+    public bool WateredToday { get; private set; }
+    public bool Mature { get; private set; }
+    
+    public Plant() {
         daysWatered = 0;
-        wateredToday = false;
-        mature = false;
-        daysToGrow = daysToGrowMap[seed];
+        WateredToday = false;
+        Mature = false;
         Debug.Log("You have planted this plant!");
     }
-    public void Water()
-    {
-        if (!wateredToday)
-        {
-            wateredToday = true;
+
+    public void Water() {
+        if (!WateredToday) {
+            WateredToday = true;
             ++daysWatered;
             Debug.Log("You watered this plant!");
         }
     }
-    public void Grow()
-    {
-        if(daysWatered == daysToGrow)
-        {
+    public void Grow() {
+        if (daysWatered == daysToGrow) {
             daysWatered = 0;
             Debug.Log("This plant has grown!");
         }

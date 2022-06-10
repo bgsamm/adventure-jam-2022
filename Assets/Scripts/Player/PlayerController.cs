@@ -2,31 +2,28 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header ("Sprite")]
+    [Header("Sprite")]
     [SerializeField] private float moveSpeed;
-    [SerializeField] private GameObject actionHotspot;
 
     private GameObject currInteractable;
     private const KeyCode INTERACT_KEY = KeyCode.E;
 
     private Animator animator;
     private new Rigidbody2D rigidbody2D;
-    private Inventory inventory;
 
     private float pixelsPerUnit;
     private Vector2 direction, position;
-    private Vector3 hotspotOffset;
+
+    private Plant selectedSeed; 
 
     const string PLOT_TAG = "Plot";
 
     private void Awake() {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
-        inventory = GetComponent<Inventory>();
     }
 
     private void Start() {
-        //hotspotOffset = actionHotspot.transform.localPosition;
         // TODO can probably following to awake, if sprite is not initialized by a script
         pixelsPerUnit = GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
     }
@@ -48,18 +45,14 @@ public class PlayerController : MonoBehaviour
         if (moving) {
             animator.SetFloat("Horizontal", direction.x);
             animator.SetFloat("Vertical", direction.y);
-            //actionHotspot.transform.transform.localPosition = hotspotOffset + (Vector3)direction;
         }
         animator.SetBool("Moving", moving);
 
-        if(currInteractable != null && Input.GetKeyDown(INTERACT_KEY))
-        {
-            if(currInteractable.CompareTag(PLOT_TAG))
-            {
+        if (currInteractable != null && Input.GetKeyDown(INTERACT_KEY)) {
+            if (currInteractable.CompareTag(PLOT_TAG)) {
                 InteractPlant();
             }
-            else
-            {
+            else {
                 Debug.Log("No possible interactions with " + currInteractable.name);
             }
         }
@@ -75,36 +68,27 @@ public class PlayerController : MonoBehaviour
         rigidbody2D.MovePosition(p);
     }
 
-    private void InteractPlant()
-    {
+    private void InteractPlant() {
         Plot plot = currInteractable.GetComponent<Plot>();
-        if (!plot.occupied)
-        {
-            plot.Plant(inventory.selectedSeed);
-        } else if (plot.readyToHarvest)
-        {
+        if (!plot.occupied) {
+            plot.Plant(selectedSeed);
+        }
+        else if (plot.readyToHarvest) {
             plot.Harvest();
-        } else
-        {
+        }
+        else {
             plot.Water();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag(PLOT_TAG))
-        {
+        if (collision.CompareTag(PLOT_TAG)) {
             currInteractable = collision.gameObject;
-        }
-        else
-        {
-            return;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.gameObject == currInteractable)
-        {
+    private void OnTriggerExit2D(Collider2D collision) {
+        if (collision.gameObject == currInteractable) {
             currInteractable = null;
         }
     }
