@@ -56,15 +56,6 @@ public class InkManager : MonoBehaviour {
 		});
 	}
 
-
-    private void Start()
-    {
-		//TEST
-
-		StartDialogue("Test");
-    }
-
-
     void Update() //tracking keypresses
 	{
 		if (Input.GetKeyDown(KeyCode.Space) && dialogueMode)

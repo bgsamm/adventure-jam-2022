@@ -1017,9 +1017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c64cef263546443a5c9be179d4cbb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenu: {fileID: 64493527}
-  OptionsMenu: {fileID: 710735657}
-  CreditsMenu: {fileID: 255792026}
   sound: {fileID: 353725121}
 --- !u!4 &1522633699
 Transform:
