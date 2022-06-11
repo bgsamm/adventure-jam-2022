@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
         }
     }
     private Interactable _interactable;
-    private const KeyCode INTERACT_KEY = KeyCode.E;
 
     private Animator animator;
     private new Rigidbody2D rigidbody2D;
@@ -44,7 +43,7 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetBool("Moving", moving);
 
-        if (CurrentInteractable != null && Input.GetKeyDown(INTERACT_KEY)) {
+        if (CurrentInteractable != null && Input.GetButtonDown("Interact")) {
             CurrentInteractable.Interact();
         }
     }

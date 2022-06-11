@@ -7,17 +7,21 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    [SerializeField]
-    private Image icon;
+    [SerializeField] private Image iconComponent;
+    [SerializeField] private Image frameComponent;
 
     /// <summary>
     /// If item is null, clears the slot
     /// </summary>
     public void SetItem(Item item) {
-        icon.enabled = item != null;
-        if (icon.enabled) {
-            icon.sprite = item.InventorySprite;
-            icon.SetNativeSize();
+        iconComponent.enabled = item != null;
+        if (iconComponent.enabled) {
+            iconComponent.sprite = item.InventorySprite;
+            iconComponent.SetNativeSize();
         }
+    }
+
+    public void SetSelected(bool isSelected) {
+        frameComponent.enabled = isSelected;
     }
 }
