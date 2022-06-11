@@ -1,9 +1,10 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Plant", menuName = "Plant")]
-public class Plant : ScriptableObject
+public class Plant : Item
 {
     [SerializeField] private int daysToGrow;
+    private SpriteRenderer plot_sprite;
 
     private int daysWatered;
     public bool WateredToday { get; private set; }
@@ -13,7 +14,12 @@ public class Plant : ScriptableObject
         daysWatered = 0;
         WateredToday = false;
         Mature = false;
-        Debug.Log("You have planted this plant!");
+        this.Tradeable = true;
+    }
+    public void Init(string name, Sprite inventorySprite)
+    {
+        this.Name = name;
+        this.InventorySprite = inventorySprite;
     }
 
     public void Water() {

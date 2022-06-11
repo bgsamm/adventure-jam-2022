@@ -8,5 +8,5 @@ public abstract class Item : ScriptableObject
 {
     public string Name;
     public Sprite InventorySprite;
-    public readonly bool Tradeable;
+    public bool Tradeable { get; protected set; }
 }

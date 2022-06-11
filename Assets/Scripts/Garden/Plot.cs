@@ -5,6 +5,7 @@ public class Plot : MonoBehaviour
     // Unserialized when done testing
     public bool readyToHarvest { get { return currPlant != null ? currPlant.Mature : false; } }
     public bool occupied { get { return currPlant != null; } }
+    private Sprite emptyPlotSprite;
     private Plant currPlant;
 
     // TESTING ONLY - REMOVE AFTER TESTING, remove once visual elements exist
@@ -20,7 +21,11 @@ public class Plot : MonoBehaviour
     }
 
     public void Plant(Plant plant) {
+        emptyPlotSprite = GetComponent<SpriteRenderer>().sprite;
         currPlant = plant;
+        GetComponent<SpriteRenderer>().sprite = currPlant.InventorySprite;
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<SpriteRenderer>().sortingOrder = 0;
         isOccupied = true; // remove after testing
     }
 

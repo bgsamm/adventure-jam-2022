@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LoadingManager
   - Plot
+  - GardenManager
   layers:
   - Default
   - TransparentFX
