@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9641c8329abca884c8bf01ed75196d56
+guid: 3f7f90f30d4da83438a6520e17aa824d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chili_0
+      name: moon_orchid_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53887e3b408ccde46bd8ae4732fe0e48
-      internalID: -1526021768
+      spriteID: 44123e43bc3748c42812dcd9423fabbb
+      internalID: 629647705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chili_1
+      name: moon_orchid_1
       rect:
         serializedVersion: 2
         x: 32
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19e67e5814c57334fab23ce1017f03a8
-      internalID: -1972123401
+      spriteID: 1d2ae418e2490cf47b7640a1bbb4fbbb
+      internalID: -2130960997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chili_2
+      name: moon_orchid_2
       rect:
         serializedVersion: 2
         x: 64
@@ -172,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17d83bde3062ef74087ce6e2858ee7dc
-      internalID: 1208051254
+      spriteID: 928c2cfdc35ba2040802c4c1220b982f
+      internalID: -1437759693
       vertices: []
       indices: 
       edges: []
@@ -189,9 +189,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      chili_2: 1208051254
-      chili_0: -1526021768
-      chili_1: -1972123401
+      moon_orchid_0: 629647705
+      moon_orchid_1: -2130960997
+      moon_orchid_2: -1437759693
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
