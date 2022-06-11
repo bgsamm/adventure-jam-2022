@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e973a51584f6f764aae5cf523ff6eb6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 85d91ce820b364643acbad45e910855c, type: 3}
   m_Name: Sugar Cane
   m_EditorClassIdentifier: 
-  Name: Sugar Cane
+  name: Sugar Cane
   InventorySprite: {fileID: -2080774844, guid: 06946afe5b3796248a68c69051105cb8, type: 3}
   Tradeable: 1
-  gameSprites:
-  - {fileID: -607439546, guid: 06946afe5b3796248a68c69051105cb8, type: 3}
-  - {fileID: -1765407777, guid: 06946afe5b3796248a68c69051105cb8, type: 3}
-  - {fileID: -2080774844, guid: 06946afe5b3796248a68c69051105cb8, type: 3}
-  daysToGrow: 1

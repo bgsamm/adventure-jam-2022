@@ -2,52 +2,62 @@ using UnityEngine;
 
 public class Plot : Interactable
 {
-    public bool ReadyToHarvest => currPlant != null && currPlant.Mature;
     public bool Occupied => currPlant != null;
+
+    private int daysWatered;
+    private bool wateredToday;
+    private bool readyToHarvest;
 
     [SerializeField] private GameObject interactableFrame;
     private GardenManager garden;
     private InventorySystem inventory;
 
-    private Sprite emptyPlotSprite;
     private Seed currPlant;
-
-    // TESTING ONLY - REMOVE AFTER TESTING, remove once visual elements exist
-    [SerializeField] private bool isOccupied;
-    [SerializeField] private bool isWatered;
-    [SerializeField] private bool isReadyToHarvest;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start() {
+        inventory = InventorySystem.instance;
+        garden = GardenManager.instance;
         interactableFrame.SetActive(false);
-        garden = GameObject.FindGameObjectWithTag("GameController").GetComponent<GardenManager>();
     }
 
     public void Plant(Seed seed) {
-        emptyPlotSprite = GetComponent<SpriteRenderer>().sprite;
         currPlant = seed;
-        GetComponent<SpriteRenderer>().sprite = currPlant.InventorySprite;
-        GetComponent<SpriteRenderer>().enabled = true;
-        GetComponent<SpriteRenderer>().sortingOrder = 0;
-        isOccupied = true; // remove after testing
+        spriteRenderer.sprite = currPlant.gameSprites[0];
+        spriteRenderer.enabled = true;
+        //spriteRenderer.sortingOrder = 0;
     }
 
     public void Water() {
-        currPlant.Water();
-        isWatered = true; // remove after testing
-    }
-
-    public void Harvest() {
-        if (ReadyToHarvest)
-            Debug.Log("Harvesting!");
-        // return plant to player
-        isOccupied = false; // remove after testing
-        currPlant = null;
+        if (!wateredToday) {
+            //wateredToday = true;
+            ++daysWatered;
+            spriteRenderer.sprite = currPlant.gameSprites[daysWatered];
+            readyToHarvest = daysWatered >= 2;
+            Debug.Log("You watered this plant!");
+        }
     }
 
     public void Grow() {
-        if (currPlant == null) return;
-        currPlant.Grow();
-        isReadyToHarvest = currPlant.Mature; // remove after testing
+        if (currPlant == null)
+            return;
+        if (daysWatered >= currPlant.daysToGrow) {
+            readyToHarvest = true;
+            Debug.Log("This plant has grown!");
+        }
+    }
+
+    public void Harvest() {
+        Debug.Log("Harvesting!");
+        inventory.AddItem(currPlant.yield);
+        daysWatered = 0;
+        readyToHarvest = false;
+        currPlant = null;
+        spriteRenderer.enabled = false;
     }
 
     public override void StartCanInteract() {
@@ -59,19 +69,18 @@ public class Plot : Interactable
     }
 
     public override void Interact() {
-        if (ReadyToHarvest) {
-            Harvest();
+        if (!Occupied && inventory.selectedStack != null) {
+            // should only ever have seeds in your toolbar,
+            // but good to check should that ever change
+            var selectedSeed = inventory.selectedStack.item as Seed;
+            if (selectedSeed != null)
+                Plant(selectedSeed);
         }
-        else {
-            Water();
-        }
-    }
-    public void Interact(Seed seed)
-    {
-        if (!Occupied)
-        {
-            Debug.Log("Planting on " + gameObject.name);
-            Plant(seed);
+        else if (Occupied) {
+            if (readyToHarvest)
+                Harvest();
+            else
+                Water();
         }
     }
 }

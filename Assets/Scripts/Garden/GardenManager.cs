@@ -5,8 +5,6 @@ public class GardenManager : MonoBehaviour
     public static GardenManager instance { get; private set; }
     private GameObject[] plots; // TODO grab plots from children
 
-    public Plant[] Plants;
-
     const string PLOT_TAG = "Plot";
 
     private void Awake() {

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public abstract class Item : ScriptableObject
+[CreateAssetMenu(fileName = "New Item", menuName = "Item")]
+public class Item : ScriptableObject
 {
-    public string Name;
+    public new string name;
     public Sprite InventorySprite;
     public bool Tradeable;
 }

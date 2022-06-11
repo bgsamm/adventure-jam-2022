@@ -9,10 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce83ee5a5279e94d81c1d8e557986e9, type: 3}
+  m_Script: {fileID: 11500000, guid: e973a51584f6f764aae5cf523ff6eb6a, type: 3}
   m_Name: Melati Seed
   m_EditorClassIdentifier: 
-  Name: Melati Seeds
+  name: Melati Seeds
   InventorySprite: {fileID: -1426188895, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}
   Tradeable: 1
-  plant: {fileID: 11400000, guid: 83b354e0d2496a54cb57f0e90b71ba86, type: 2}
+  yield: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
+  gameSprites:
+  - {fileID: -1426188895, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}
+  - {fileID: 1808982685, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}
+  - {fileID: -934051954, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}
+  daysToGrow: 1
