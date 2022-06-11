@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Sprite")]
+    [Header("Movement")]
     [SerializeField] private float moveSpeed;
 
     public Interactable CurrentInteractable
@@ -83,5 +83,13 @@ public class PlayerController : MonoBehaviour
 
     private float CompareDist(GameObject a, GameObject b) {
         return Vector3.Distance(a.transform.position, transform.position) - Vector3.Distance(b.transform.position, transform.position);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {   // For the shop, or other non-trigger collidables
+        if (collision.gameObject.CompareTag("Collidable"))
+        {
+            UpdateInteractable(collision.collider);
+        }
     }
 }

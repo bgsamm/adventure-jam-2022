@@ -1654,7 +1654,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 662616331}
-  - component: {fileID: 662616333}
   - component: {fileID: 662616332}
   - component: {fileID: 662616330}
   - component: {fileID: 662616329}
@@ -1693,13 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e47fede8248ec45839bf701cbdeb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlantItems:
-  - {fileID: 11400000, guid: 4430747f37ac1f8449137d2f6cd93923, type: 2}
-  - {fileID: 11400000, guid: 83b354e0d2496a54cb57f0e90b71ba86, type: 2}
-  - {fileID: 11400000, guid: 526ac26df29ec3f44b913da5755be29d, type: 2}
-  - {fileID: 11400000, guid: 304da20f31f115345b8fb67a76a090eb, type: 2}
-  - {fileID: 11400000, guid: 50114b6f1bac7aa4c9e4cbe8f3c9b198, type: 2}
-  - {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
+  Plants: []
 --- !u!4 &662616331
 Transform:
   m_ObjectHideFlags: 0
@@ -1731,18 +1724,6 @@ MonoBehaviour:
   selectedStack:
     item: {fileID: 0}
     Count: 0
---- !u!114 &662616333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662616328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 045fe358df1f0de429d3ba030eb4358c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &688110037
 GameObject:
   m_ObjectHideFlags: 0
@@ -12988,9 +12969,10 @@ GameObject:
   - component: {fileID: 812103082}
   - component: {fileID: 812103081}
   - component: {fileID: 812103080}
+  - component: {fileID: 812103083}
   m_Layer: 0
   m_Name: Stand
-  m_TagString: Untagged
+  m_TagString: Collidable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13088,6 +13070,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &812103083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812103079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd7d9e8f75980e4bbcc7afc9a52253a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: -2
 --- !u!1 &824399818
 GameObject:
   m_ObjectHideFlags: 0
@@ -13531,6 +13526,10 @@ PrefabInstance:
       propertyPath: IdleLeft
       value: 
       objectReference: {fileID: 1835859544, guid: dc6a7d733f7990344ba8bb6c84dc1a58, type: 3}
+    - target: {fileID: 2214433215806116720, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
+      propertyPath: shopInteractRadius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2214433215806116721, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
       propertyPath: m_FlipX
       value: 0

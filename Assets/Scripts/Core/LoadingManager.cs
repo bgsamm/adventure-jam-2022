@@ -3,10 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class LoadingManager : MonoBehaviour
 {
-    [Header("Sound Manager")]
-    [SerializeField] private SoundManager sound;
-
     public static LoadingManager instance { get; private set; }
+    private Clock clock;
+    private SoundManager sound;
 
     private void Awake()
     {
@@ -19,6 +18,8 @@ public class LoadingManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        clock = GetComponent<Clock>();
+        sound = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
     }
 
     public void MenuScene()

@@ -7,6 +7,8 @@ TagManager:
   - LoadingManager
   - Plot
   - GardenManager
+  - Audio
+  - Collidable
   layers:
   - Default
   - TransparentFX

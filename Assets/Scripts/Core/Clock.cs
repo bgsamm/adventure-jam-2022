@@ -7,6 +7,7 @@ public class Clock : MonoBehaviour
     public static Clock instance { get; private set; }
     public int day { get; private set; }
     public bool isMorning { get; private set; }
+    public bool shopVisited;
     
     public const int ACT_LENGTH = 7;
 
@@ -24,6 +25,7 @@ public class Clock : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        shopVisited = false;
     }
     public void NextDay()
     {   // Should be called after/on shop visit, and sleeping
@@ -32,5 +34,7 @@ public class Clock : MonoBehaviour
             ++day;  // Increments day if night already
         }
         isMorning = !isMorning; // flips to morning/dusk
+
+        shopVisited = false;
     }
 }
