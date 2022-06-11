@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private GardenManager garden;
 
     private float pixelsPerUnit;
-    private Vector2 direction, position;
+    private Vector2 direction;
 
     readonly int SEED_SPRITE_OFFSET = 3;
     readonly string PLOT_TAG = "Plot";
@@ -59,9 +59,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        // keep track of the player's "real" underlying position,
-        position += moveSpeed * Time.fixedDeltaTime * direction;
-        // but only move the actual player object by an integer # of pixels
+        var position = rigidbody2D.position + moveSpeed * Time.fixedDeltaTime * direction;
+        // move the player by an integer # of pixels
         float i_x = Mathf.FloorToInt(position.x * pixelsPerUnit);
         float i_y = Mathf.FloorToInt(position.y * pixelsPerUnit);
         var p = new Vector2(i_x, i_y) / pixelsPerUnit;
