@@ -20,21 +20,21 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 406927195, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
-    - time: 0.11666667
       value: {fileID: -719630218, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
-    - time: 0.23333333
+    - time: 0.11666667
       value: {fileID: -1205707978, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
-    - time: 0.35
+    - time: 0.23333333
       value: {fileID: -420035498, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
-    - time: 0.46666667
+    - time: 0.35
       value: {fileID: -2041890296, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
-    - time: 0.5833333
+    - time: 0.46666667
       value: {fileID: 2137615528, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
-    - time: 0.7
+    - time: 0.5833333
       value: {fileID: 2354173, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
-    - time: 0.81666666
+    - time: 0.7
       value: {fileID: 1852261078, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
+    - time: 0.81666666
+      value: {fileID: 406927195, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
     - time: 0.93333334
       value: {fileID: 406927195, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
     attribute: m_Sprite
@@ -56,7 +56,6 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 406927195, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
     - {fileID: -719630218, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
     - {fileID: -1205707978, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
     - {fileID: -420035498, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
@@ -64,6 +63,7 @@ AnimationClip:
     - {fileID: 2137615528, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
     - {fileID: 2354173, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
     - {fileID: 1852261078, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
+    - {fileID: 406927195, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
     - {fileID: 406927195, guid: 6bf2cc737f0d3f446911db4a00ae764b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
