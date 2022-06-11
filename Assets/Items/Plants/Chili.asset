@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chili
   m_EditorClassIdentifier: 
   Name: Chili
-  InventorySprite: {fileID: 0}
+  InventorySprite: {fileID: 324063756, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
   Tradeable: 1
   gameSprites:
   - {fileID: -1149274202, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}

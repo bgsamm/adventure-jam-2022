@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sugar Cane
   m_EditorClassIdentifier: 
   Name: Sugar Cane
-  InventorySprite: {fileID: 0}
+  InventorySprite: {fileID: -2080774844, guid: 06946afe5b3796248a68c69051105cb8, type: 3}
   Tradeable: 1
   gameSprites:
   - {fileID: -607439546, guid: 06946afe5b3796248a68c69051105cb8, type: 3}

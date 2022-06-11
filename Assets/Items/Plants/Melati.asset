@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melati
   m_EditorClassIdentifier: 
   Name: Melati
-  InventorySprite: {fileID: 0}
+  InventorySprite: {fileID: -934051954, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}
   Tradeable: 1
   gameSprites:
   - {fileID: -1426188895, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}
