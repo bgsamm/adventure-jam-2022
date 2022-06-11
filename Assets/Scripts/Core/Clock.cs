@@ -36,5 +36,6 @@ public class Clock : MonoBehaviour
         isMorning = !isMorning; // flips to morning/dusk
 
         shopVisited = false;
+        Debug.Log("Next day");
     }
 }

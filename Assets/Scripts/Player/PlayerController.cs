@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private new Rigidbody2D rigidbody2D;
 
+    readonly string PLOT_TAG = "Plot";
     private float pixelsPerUnit;
     private Vector2 direction;
 
@@ -45,7 +46,13 @@ public class PlayerController : MonoBehaviour
 
         // Handle interactions
         if (CurrentInteractable != null && Input.GetButtonDown("Interact")) {
-            CurrentInteractable.Interact();
+            if(CurrentInteractable.CompareTag(PLOT_TAG) && !CurrentInteractable.GetComponent<Plot>().Occupied)
+            {   // When planting need to control inventory and pass in a seed
+            }
+            else
+            {
+                CurrentInteractable.Interact();
+            }
         }
     }
 

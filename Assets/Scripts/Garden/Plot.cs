@@ -6,22 +6,25 @@ public class Plot : Interactable
     public bool Occupied => currPlant != null;
 
     [SerializeField] private GameObject interactableFrame;
+    private GardenManager garden;
+    private InventorySystem inventory;
 
     private Sprite emptyPlotSprite;
-    private Plant currPlant;
+    private Seed currPlant;
 
     // TESTING ONLY - REMOVE AFTER TESTING, remove once visual elements exist
     [SerializeField] private bool isOccupied;
     [SerializeField] private bool isWatered;
     [SerializeField] private bool isReadyToHarvest;
 
-    private void Start() {
+    private void Awake() {
         interactableFrame.SetActive(false);
+        garden = GameObject.FindGameObjectWithTag("GameController").GetComponent<GardenManager>();
     }
 
-    public void Plant(Plant plant) {
+    public void Plant(Seed seed) {
         emptyPlotSprite = GetComponent<SpriteRenderer>().sprite;
-        currPlant = plant;
+        currPlant = seed;
         GetComponent<SpriteRenderer>().sprite = currPlant.InventorySprite;
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<SpriteRenderer>().sortingOrder = 0;
@@ -56,15 +59,19 @@ public class Plot : Interactable
     }
 
     public override void Interact() {
-        if (!Occupied) {
-            Debug.Log("Planting on " + gameObject.name);
-            //Plant(garden.PlantItems[inventory.selectedSeed * SEED_SPRITE_OFFSET]);
-        }
-        else if (ReadyToHarvest) {
+        if (ReadyToHarvest) {
             Harvest();
         }
         else {
             Water();
+        }
+    }
+    public void Interact(Seed seed)
+    {
+        if (!Occupied)
+        {
+            Debug.Log("Planting on " + gameObject.name);
+            Plant(seed);
         }
     }
 }
