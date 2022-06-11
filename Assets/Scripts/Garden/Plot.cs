@@ -1,10 +1,12 @@
 using UnityEngine;
 
-public class Plot : MonoBehaviour
+public class Plot : Interactable
 {
-    // Unserialized when done testing
-    public bool readyToHarvest { get { return currPlant != null ? currPlant.Mature : false; } }
-    public bool occupied { get { return currPlant != null; } }
+    public bool ReadyToHarvest => currPlant != null && currPlant.Mature;
+    public bool Occupied => currPlant != null;
+
+    [SerializeField] private GameObject interactableFrame;
+
     private Sprite emptyPlotSprite;
     private Plant currPlant;
 
@@ -13,11 +15,8 @@ public class Plot : MonoBehaviour
     [SerializeField] private bool isWatered;
     [SerializeField] private bool isReadyToHarvest;
 
-    public Plot() {
-        currPlant = null;
-        isOccupied = false; // remove after testing
-        isWatered = false; // remove after testing
-        isReadyToHarvest = false; // remove after testing
+    private void Start() {
+        interactableFrame.SetActive(false);
     }
 
     public void Plant(Plant plant) {
@@ -35,7 +34,8 @@ public class Plot : MonoBehaviour
     }
 
     public void Harvest() {
-        if (readyToHarvest) Debug.Log("Harvesting!");
+        if (ReadyToHarvest)
+            Debug.Log("Harvesting!");
         // return plant to player
         isOccupied = false; // remove after testing
         currPlant = null;
@@ -45,5 +45,26 @@ public class Plot : MonoBehaviour
         if (currPlant == null) return;
         currPlant.Grow();
         isReadyToHarvest = currPlant.Mature; // remove after testing
+    }
+
+    public override void StartCanInteract() {
+        interactableFrame.SetActive(true);
+    }
+
+    public override void StopCanInteract() {
+        interactableFrame.SetActive(false);
+    }
+
+    public override void Interact() {
+        if (!Occupied) {
+            Debug.Log("Planting on " + gameObject.name);
+            //Plant(garden.PlantItems[inventory.selectedSeed * SEED_SPRITE_OFFSET]);
+        }
+        else if (ReadyToHarvest) {
+            Harvest();
+        }
+        else {
+            Water();
+        }
     }
 }

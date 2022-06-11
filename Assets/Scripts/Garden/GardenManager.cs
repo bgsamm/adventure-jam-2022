@@ -40,7 +40,7 @@ public class GardenManager : MonoBehaviour
         foreach(GameObject p in plots)
         {
             Plot currPlot = p.GetComponent<Plot>();
-            if (currPlot.occupied)
+            if (currPlot.Occupied)
             {
                 currPlot.Grow();
             }
