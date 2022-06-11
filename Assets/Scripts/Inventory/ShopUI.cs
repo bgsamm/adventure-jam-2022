@@ -19,9 +19,9 @@ public class ShopUI : MonoBehaviour
         var tradeables = Inventory.stacks.Where(x => x.item.Tradeable).ToArray();
         for (int i = 0; i < InventorySlots.Length; i++) {
             if (i < tradeables.Length)
-                InventorySlots[i].SetItem(tradeables[i].item);
+                InventorySlots[i].SetStack(tradeables[i]);
             else
-                InventorySlots[i].SetItem(null);
+                InventorySlots[i].SetStack(null);
         }
     }
 }
