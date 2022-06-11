@@ -42,8 +42,16 @@ public class LetterManager : MonoBehaviour
             "<br><br>I’ll be home soon.<br>Love, Dad"
         });
 
-        //TEST
-        ShowLetter();
+        allLetters.Add(new List<string> { "Dear son,<br><br>We’re shipping out. "+
+            "I’d held onto the rather selfish hope that I might get an assignment behind the lines, a cook maybe, or even a ditch digger. " +
+            "But no, I'm in the infantry. <br><br>It isn't the danger that I fear. " +
+            "It's the thought of you worrying about me. Please try not to. " +
+            "So far your old man hasn’t faced anything worse than mosquitoes and monsoon heat.",
+            "How are things at home? Old Indah from the farm down the road said she'd look in on you as often as she could. " +
+            "Don't be afraid to accept help, son. In war, good friends are sometimes the only thing you can rely on.<br><Br>" +
+            "Love, Dad"
+        });
+
     }
 
     public void ShowLetter()

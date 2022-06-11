@@ -6747,7 +6747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &824399819
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7713,10 +7713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e47fede8248ec45839bf701cbdeb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant_sprites:
-  - {fileID: -1526021768, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
-  - {fileID: -1972123401, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
-  - {fileID: 1208051254, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
+  plant_sprites: []
 --- !u!4 &1469221719
 Transform:
   m_ObjectHideFlags: 0
