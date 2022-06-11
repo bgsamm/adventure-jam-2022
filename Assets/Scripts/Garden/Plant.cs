@@ -3,24 +3,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Plant", menuName = "Plant")]
 public class Plant : Item
 {
+    [SerializeField] private Sprite[] gameSprites = new Sprite[3];
     [SerializeField] private int daysToGrow = 1;
-    private SpriteRenderer plot_sprite;
 
     private int daysWatered;
     public bool WateredToday { get; private set; }
     public bool Mature { get; private set; }
-
-    public Plant() {
-        daysWatered = 0;
-        WateredToday = false;
-        Mature = false;
-        this.Tradeable = true;
-    }
-
-    public void Init(string name, Sprite inventorySprite) {
-        this.Name = name;
-        this.InventorySprite = inventorySprite;
-    }
 
     public void Water() {
         if (!WateredToday) {

@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetBool("Moving", moving);
 
+        // Handle interactions
         if (CurrentInteractable != null && Input.GetButtonDown("Interact")) {
             CurrentInteractable.Interact();
         }
@@ -51,9 +52,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         var position = rigidbody2D.position + moveSpeed * Time.fixedDeltaTime * direction;
         // move the player by an integer # of pixels
-        float i_x = Mathf.FloorToInt(position.x * pixelsPerUnit);
-        float i_y = Mathf.FloorToInt(position.y * pixelsPerUnit);
-        var p = new Vector2(i_x, i_y) / pixelsPerUnit;
+        float p_x = Mathf.FloorToInt(position.x * pixelsPerUnit);
+        float p_y = Mathf.FloorToInt(position.y * pixelsPerUnit);
+        var p = new Vector2(p_x, p_y) / pixelsPerUnit;
         rigidbody2D.MovePosition(p);
     }
 
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateInteractable(Collider2D collision) {
         var interactable = collision.GetComponent<Interactable>();
+        // Prioritize the closest of multiple interactables
         if (CurrentInteractable == null || CompareDist(interactable.gameObject, CurrentInteractable.gameObject) < 0) {
             CurrentInteractable = interactable;
             CurrentInteractable.StartCanInteract();

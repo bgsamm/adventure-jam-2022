@@ -52,12 +52,11 @@ public class LetterManager : MonoBehaviour
             "Don't be afraid to accept help, son. In war, good friends are sometimes the only thing you can rely on.<br><Br>" +
             "Love, Dad"
         });
-
     }
 
     public void ShowLetter() {
-        //Doesn't need to take an argument--
-        //it always simply reads the first letter on the list and then deletes it
+        // Doesn't need to take an argument--
+        // it always simply reads the first letter on the list and then deletes it
         letterPanel.SetActive(true);
 
         currentLetter = allLetters[0];

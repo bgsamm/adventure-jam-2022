@@ -15,4 +15,8 @@ MonoBehaviour:
   Name: Moon Orchid
   InventorySprite: {fileID: 0}
   Tradeable: 1
+  gameSprites:
+  - {fileID: 629647705, guid: 3f7f90f30d4da83438a6520e17aa824d, type: 3}
+  - {fileID: -2130960997, guid: 3f7f90f30d4da83438a6520e17aa824d, type: 3}
+  - {fileID: -1437759693, guid: 3f7f90f30d4da83438a6520e17aa824d, type: 3}
   daysToGrow: 1

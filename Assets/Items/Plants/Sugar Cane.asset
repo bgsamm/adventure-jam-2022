@@ -15,4 +15,8 @@ MonoBehaviour:
   Name: Sugar Cane
   InventorySprite: {fileID: 0}
   Tradeable: 1
+  gameSprites:
+  - {fileID: -607439546, guid: 06946afe5b3796248a68c69051105cb8, type: 3}
+  - {fileID: -1765407777, guid: 06946afe5b3796248a68c69051105cb8, type: 3}
+  - {fileID: -2080774844, guid: 06946afe5b3796248a68c69051105cb8, type: 3}
   daysToGrow: 1

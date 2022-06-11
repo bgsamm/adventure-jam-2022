@@ -15,4 +15,8 @@ MonoBehaviour:
   Name: Sweet Potato
   InventorySprite: {fileID: 0}
   Tradeable: 1
+  gameSprites:
+  - {fileID: -2034887631, guid: dddd94a7669505b4ba62416c9fee7aed, type: 3}
+  - {fileID: 209209870, guid: dddd94a7669505b4ba62416c9fee7aed, type: 3}
+  - {fileID: -701067776, guid: dddd94a7669505b4ba62416c9fee7aed, type: 3}
   daysToGrow: 1

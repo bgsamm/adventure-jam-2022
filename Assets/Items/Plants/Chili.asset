@@ -15,4 +15,8 @@ MonoBehaviour:
   Name: Chili
   InventorySprite: {fileID: 0}
   Tradeable: 1
+  gameSprites:
+  - {fileID: -1149274202, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
+  - {fileID: 1876154596, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
+  - {fileID: 324063756, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
   daysToGrow: 1
