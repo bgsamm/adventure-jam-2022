@@ -10,21 +10,21 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
     private new Rigidbody2D rigidbody2D;
+    private InventorySystem inventory;
+    private GardenManager garden;
 
     private float pixelsPerUnit;
     private Vector2 direction, position;
 
-    private Plant selectedSeed; 
-
-    const string PLOT_TAG = "Plot";
+    readonly int SEED_SPRITE_OFFSET = 3;
+    readonly string PLOT_TAG = "Plot";
+    readonly string GARDEN_TAG = "GardenManager"; 
 
     private void Awake() {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
-    }
-
-    private void Start() {
-        // TODO can probably following to awake, if sprite is not initialized by a script
+        inventory = GetComponent<InventorySystem>();
+        garden = GameObject.FindGameObjectWithTag(GARDEN_TAG).GetComponent<GardenManager>();
         pixelsPerUnit = GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
     }
 
@@ -71,7 +71,8 @@ public class PlayerController : MonoBehaviour
     private void InteractPlant() {
         Plot plot = currInteractable.GetComponent<Plot>();
         if (!plot.occupied) {
-            plot.Plant(selectedSeed);
+            Debug.Log("Planting on " + gameObject.name);
+            plot.Plant(garden.PlantItems[inventory.selectedSeed * SEED_SPRITE_OFFSET]);
         }
         else if (plot.readyToHarvest) {
             plot.Harvest();
@@ -82,13 +83,23 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag(PLOT_TAG)) {
+        if (currInteractable == null) {
+            Debug.Log("On " + gameObject.name);
+            currInteractable = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (currInteractable == null)
+        {
             currInteractable = collision.gameObject;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.gameObject == currInteractable) {
+            Debug.Log("Off " + gameObject.name);
             currInteractable = null;
         }
     }

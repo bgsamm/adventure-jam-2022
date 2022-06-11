@@ -1450,7 +1450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &370148515
 Transform:
   m_ObjectHideFlags: 0
@@ -6445,12 +6445,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2214433215806116748, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214433215806116748, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2214433215806116748, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
       propertyPath: m_Offset.y
-      value: -0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2214433215806116750, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
       propertyPath: m_RootOrder
@@ -6745,7 +6749,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2214433215806116723, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
   m_PrefabInstance: {fileID: 999815917}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1241095751
+--- !u!114 &1241095758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6754,9 +6758,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1241095744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85c8467e94ebd04aaca6098c55dee8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 072b8480950a41c45aa09bbd4c18f476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stacks: []
 --- !u!1 &1287982415
 GameObject:
   m_ObjectHideFlags: 0
@@ -7023,7 +7028,7 @@ GameObject:
   - component: {fileID: 1469221718}
   m_Layer: 0
   m_Name: GardenManager
-  m_TagString: Untagged
+  m_TagString: GardenManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7040,6 +7045,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e47fede8248ec45839bf701cbdeb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plant_sprites:
+  - {fileID: -1526021768, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
+  - {fileID: -1972123401, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
+  - {fileID: 1208051254, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
 --- !u!4 &1469221719
 Transform:
   m_ObjectHideFlags: 0
@@ -7746,7 +7755,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7754,7 +7763,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1908412628
