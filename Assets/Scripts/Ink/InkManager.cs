@@ -20,12 +20,7 @@ public class InkManager : MonoBehaviour {
 
 	//UI elements that will display the text and images
 	[SerializeField] private TextMeshProUGUI sceneText;
-	[SerializeField] private Image speakerImage;
 	[SerializeField] private TextMeshProUGUI speakerLabel;
-
-	// UI Prefabs
-	[SerializeField]
-	private Button buttonPrefab;
 
 	//a list of the tags in the current knot
 	//used to determine display properties such as the character who's speaking
@@ -114,7 +109,7 @@ public class InkManager : MonoBehaviour {
 			if (!string.IsNullOrWhiteSpace(text))
 			{
 				// Display the text on screen! (unless it's blank)
-				CreateContentView(text);
+				sceneText.text += text;
 			}
 		}
 		//else //the story CAN'T continue--end thread
@@ -125,58 +120,10 @@ public class InkManager : MonoBehaviour {
 		
 	}
 
-		// Displays the text of the knot, plus the appropriate character
-		void CreateContentView(string text)
-		{
-			DisplaySpeaker();
-			sceneText.text += text;
-		}
-
-	//just blanks out the text box. Putting this in its own function for easy reference, and in case we want to make it do anything fancier
-	void ClearText() 
-		{
-			sceneText.text = "";
-		}
-
-		//displays the name and portrait of the person speaking
-		public void DisplaySpeaker()
-		{
-			string lastCharacter; //the name of the previously-displayed character for the same check
-			lastCharacter = currentCharacter; //for checking if the character has changed
-			Sprite characterSprite = null; //(should never actually display this file, it's just a fallback)
-
-			//displays the character portrait that matches the story tag
-			//NOTE: ALL tags are assumed to be character portraits currently, don't use them for anything else
-			if (currentTags.Count > 0)
-			{
-			currentCharacter = currentTags[0];
-				characterSprite = Resources.Load<Sprite>($"Characters/{currentCharacter}");
-			speakerImage.sprite = characterSprite;
-			speakerImage.gameObject.SetActive(true);
-			speakerLabel.text = currentCharacter;
-		}
-			else
-			{
-			currentCharacter = "";
-				ClearSpeaker();
-			}
-
-			if (currentCharacter != lastCharacter) //there's been a speaker change: signal to clear the text
-			{
-				ClearText();
-			}
-		}
-
-	public void ClearSpeaker()
-	{
-		speakerImage.gameObject.SetActive(false);
-		speakerLabel.text = "";
-	}
-
 	public void EndDialogue()
     {
-		ClearSpeaker();
-		ClearText();
+		speakerLabel.text = "";
+		sceneText.text = "";
 		dialogueMode = false;
     }
 
