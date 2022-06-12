@@ -36,6 +36,7 @@ public class Clock : MonoBehaviour
         isMorning = !isMorning; // flips to morning/dusk
 
         shopVisited = false;
+        GardenManager.instance.GrowOvernight();
         Debug.Log("Next day");
     }
 }

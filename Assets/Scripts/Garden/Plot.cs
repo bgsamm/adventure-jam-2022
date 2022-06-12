@@ -6,10 +6,11 @@ public class Plot : Interactable
 
     private int daysWatered;
     private bool wateredToday;
+    private int growthStage;
+    readonly int stagesToHarvest = 2;
     private bool readyToHarvest;
 
     [SerializeField] private GameObject interactableFrame;
-    private GardenManager garden;
     private InventorySystem inventory;
 
     private Seed currPlant;
@@ -17,37 +18,38 @@ public class Plot : Interactable
 
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    private void Start() {
-        inventory = InventorySystem.instance;
-        garden = GardenManager.instance;
         interactableFrame.SetActive(false);
+        growthStage = 0;
+    }
+    private void Start()
+    {
+        inventory = InventorySystem.instance;
     }
 
     public void Plant(Seed seed) {
         currPlant = seed;
         spriteRenderer.sprite = currPlant.gameSprites[0];
         spriteRenderer.enabled = true;
-        //spriteRenderer.sortingOrder = 0;
+        spriteRenderer.sortingOrder = 0;
     }
 
     public void Water() {
         if (!wateredToday) {
-            //wateredToday = true;
+            wateredToday = true;
             ++daysWatered;
-            spriteRenderer.sprite = currPlant.gameSprites[daysWatered];
-            readyToHarvest = daysWatered >= 2;
             Debug.Log("You watered this plant!");
         }
     }
 
     public void Grow() {
-        if (currPlant == null)
+        if (currPlant == null || readyToHarvest)
             return;
         if (daysWatered >= currPlant.daysToGrow) {
-            readyToHarvest = true;
-            Debug.Log("This plant has grown!");
+            daysWatered = 0;
+            ++growthStage;
+            spriteRenderer.sprite = currPlant.gameSprites[growthStage];
+            readyToHarvest = growthStage >= stagesToHarvest;
+            wateredToday = false;
         }
     }
 
@@ -79,7 +81,7 @@ public class Plot : Interactable
         else if (Occupied) {
             if (readyToHarvest)
                 Harvest();
-            else
+            else if(!readyToHarvest)
                 Water();
         }
     }
