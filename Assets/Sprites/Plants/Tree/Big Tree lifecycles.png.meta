@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7e73163ff5b684b439720424114ff6c3
+guid: 8b1ba6ad285786d4c9e74f0abb23b809
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,169 +116,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stardew Valley - Items_0
+      name: Big Tree lifecycles_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 203
+        height: 229
+      alignment: 9
+      pivot: {x: 0.4679803, y: 0.11790393}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9197e972420da64dbf782eaa6c844b4
-      internalID: -355971195
+      spriteID: 11695982bb931d04da3bae944355992d
+      internalID: -164459629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stardew Valley - Items_1
+      name: Big Tree lifecycles_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 203
         y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 203
+        height: 229
+      alignment: 9
+      pivot: {x: 0.46305418, y: 0.15720524}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcf06a24dc1c694468d2219118eef222
-      internalID: -1396259475
+      spriteID: 2271a45703d4b8242afc5c3bfbaba39f
+      internalID: 1783628191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stardew Valley - Items_2
+      name: Big Tree lifecycles_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 406
         y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 203
+        height: 229
+      alignment: 9
+      pivot: {x: 0.4729064, y: 0.16593887}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d4056c9dcdccff4aa02a6e46625867e
-      internalID: -2114272620
+      spriteID: 60dc0499954f8da4ebc3375ad9aa9e22
+      internalID: -1772805364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stardew Valley - Items_3
+      name: Big Tree lifecycles_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 609
         y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 203
+        height: 229
+      alignment: 9
+      pivot: {x: 0.4729064, y: 0.16593887}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c229319965a45724e9eea573b2b3fcd9
-      internalID: -1349623833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stardew Valley - Items_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c98a037675b5c964caff6da7fb6f74c6
-      internalID: -1448893944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stardew Valley - Items_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2118bbf74f5dd6469332162dc7b7411
-      internalID: 2001478155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stardew Valley - Items_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2bdcd06dbb304454988e5c57072d8547
-      internalID: 1799788564
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stardew Valley - Items_7
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08343ae6448252146bfc2abbdeed542b
-      internalID: -1262860361
+      spriteID: 046a81a23c9c6a44fb5cdb33fd834903
+      internalID: -2064400025
       vertices: []
       indices: 
       edges: []
@@ -294,14 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Stardew Valley - Items_6: 1799788564
-      Stardew Valley - Items_5: 2001478155
-      Stardew Valley - Items_7: -1262860361
-      Stardew Valley - Items_3: -1349623833
-      Stardew Valley - Items_0: -355971195
-      Stardew Valley - Items_1: -1396259475
-      Stardew Valley - Items_4: -1448893944
-      Stardew Valley - Items_2: -2114272620
+      Big Tree lifecycles_0: -164459629
+      Big Tree lifecycles_2: -1772805364
+      Big Tree lifecycles_1: 1783628191
+      Big Tree lifecycles_3: -2064400025
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
