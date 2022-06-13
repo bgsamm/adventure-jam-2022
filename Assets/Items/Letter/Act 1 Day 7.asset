@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Act 1 Day 7
   m_EditorClassIdentifier: 
   text:
-  - 
-  gifts:
-  - item: {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
-    Count: 5
-  - item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-    Count: 5
+  - "Dear Agung, <br><br>  Advance. Retreat. Advance. Retreat. Are we still winning?
+    It\u2019s hard to tell. There\u2019s always another hill to capture, another
+    river to cross. The mud, the smoke, and the bombs are always the same.<br><br> 
+    The only thing that changes is me. Artillery doesn\u2019t startle me anymore.
+    When we eat our tinned rations, I think less and less of the crisp, sweet sugar
+    cane that must be ready to harvest right about now. "
+  - "I don\u2019t hear anyone saying the war will be over in a month anymore. I\u2019m
+    afraid to think what the future might hold if it drags on. What will become of
+    us, out here on the front? What will become of the garden? What will become of
+    you?<br><br>  Love, Dad "
+  gifts: []

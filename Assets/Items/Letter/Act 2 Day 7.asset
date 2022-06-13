@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Act 2 Day 7
   m_EditorClassIdentifier: 
   text:
-  - 
-  gifts:
-  - item: {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
-    Count: 5
-  - item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-    Count: 5
+  - "Dear Agung, <br><br>  I spent some time talking with the POWs today. They\u2019re
+    just boys, hardly older than you. They weren\u2019t angry with us. Tired, mostly.
+    For them, this war has felt like their whole lives. They\u2019d heard that we
+    treat our captives fairly, and when we burst into their camp, it just didn\u2019t
+    seem worth fighting. "
+  - "They showed me photos of their families and their girls back home. I promised
+    I\u2019d have the myna deliver a letter for them so their families won\u2019t
+    worry about them. I know how you\u2019d worry if it were me. <br><br>  I don\u2019t
+    see why rounding them up and pointing a gun at them was worth a medal. Are all
+    acts of bravery like that? <br><br>  Love, Dad "
+  gifts: []

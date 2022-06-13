@@ -13,7 +13,17 @@ MonoBehaviour:
   m_Name: Act 3 Day 3
   m_EditorClassIdentifier: 
   text:
-  - 
+  - "Dear Agung: <br><br>  Do you remember how you used to be fascinated by dreams?
+    Nearly every morning you\u2019d tell me yours. I hope they still intrigue you,
+    because I had a dream last night, and you were in it. <br><br>  We were in the
+    garden, and you were a child again. Our tree had grown so big that it took up
+    the entire sky, but instead of leaves, it had pieces of glass in all different
+    colors, and the wind made them tinkle against each other and sparkle like stars.
+    Thousands of birds of all kinds came and roosted in the branches.  "
+  - 'How big our tree must be now, the real one! It must be almost ready to bear
+    acorns. Thank you for taking such good care of it. I like to think of how, when
+    this war is long over, future generations will still be sitting in its shade.
+    <br><br>  Love, Dad '
   gifts:
   - item: {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
     Count: 5

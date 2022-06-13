@@ -13,9 +13,16 @@ MonoBehaviour:
   m_Name: Act 2 Day 5
   m_EditorClassIdentifier: 
   text:
-  - 
+  - "Dear Agung, <br><br>  Your dad is a hero! And no one is more surprised than
+    me.  Two of us were scouting ahead through the jungle when we stumbled onto an
+    advance enemy squadron. They\u2019d stopped to make camp and weren\u2019t keeping
+    watch, and they surrendered to us without firing a shot. "
+  - "I earned a medal for courage. I can\u2019t say I felt very courageous--they
+    were just lounging around with their tin dishes of stew, and one of them was
+    in the middle of shaving. Maybe courage never feels the way it seems like it
+    should. <br><br>  I\u2019ve enclosed my medal for you. Its shape makes me think
+    of the view of the stars from our garden at night. Maybe it will bring you luck.
+    <br><br>  Love, Dad "
   gifts:
-  - item: {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
-    Count: 5
-  - item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-    Count: 5
+  - item: {fileID: 0}
+    Count: 0

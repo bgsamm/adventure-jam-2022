@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Act 1 Day 3
   m_EditorClassIdentifier: 
   text:
-  - 
-  gifts:
-  - item: {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
-    Count: 5
-  - item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-    Count: 5
+  - "Dear Agung, <br><br>  We\u2019re shipping out. I\u2019d held onto the rather
+    selfish hope that I might get an assignment behind the lines, a cook maybe, or
+    even a ditch digger. But no, I'm in the infantry. <br><br>  Please try not to
+    worry about me. So far your old man hasn\u2019t faced anything worse than mosquitoes
+    and monsoon heat. Word among the men is that the war will be over in another
+    month. "
+  - 'How are things at home? Old Indah from the farm down the road said she''d look
+    in on you as often as she could. Don''t be afraid to accept help, son. In war,
+    good friends are sometimes the only thing you can rely on.<br><br>  Love, Dad '
+  gifts: []

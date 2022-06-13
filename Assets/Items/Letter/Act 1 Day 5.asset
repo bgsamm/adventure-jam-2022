@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Act 1 Day 5
   m_EditorClassIdentifier: 
   text:
-  - 
-  gifts:
-  - item: {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
-    Count: 5
-  - item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-    Count: 5
+  - "Dear Agung, <br><br>  We\u2019re winning the war. At least, that\u2019s what
+    the radio says. From where we are, winning and losing look about the same: Sitting
+    in muddy ditches and taking cover from shells. But we press on, advancing into
+    enemy territory.<br><br>  Enemy territory. What are we meant to think of when
+    we hear those words? Their strange houses, their unfamiliar clothes? But what
+    I saw was two small children throwing rocks into a creek, just the way you did
+    when you were that age. "
+  - 'Children playing in the water, I think, are the same everywhere.<br><br>  Love,
+    Dad '
+  gifts: []
