@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e0e37e3a71cc54099fdb9e94f444b7, type: 3}
   m_Name: Act 1 Day 1
   m_EditorClassIdentifier: 
-  text: "Dear Agung,<br><br>\n\nYour father in uniform! I bet you never thought you\u2019d
-    see that. Truth be told, neither did I, but at moments like this, we all must
-    do our part, even those of us who are more fit to hold a spade than a gun.<br><br>\n\nTake
+  text:
+  - "Dear Agung,  Your father in uniform! I bet you never thought you\u2019d see
+    that. Truth be told, neither did I, but at moments like this, we all must do
+    our part, even those of us who are more fit to hold a spade than a gun.  Take
     care of the garden until I come back, won\u2019t you? Here are some sweet potato
     slips to get you started. Growing them is a piece of cake. Just plant them in
     good rich earth and water them every day. I\u2019ve also sent along some ripe
-    sweet potatoes to stock the stand with in the meantime. Most of all, take care
-    of our tree. When you water it, I hope you\u2019ll remember the day we planted
-    it together. This cheeky little myna bird has agreed to carry my mail. If you
-    see her perched on the tree in the evening, you\u2019ll know there\u2019s a letter
-    from me.<br><br>\n\nI\u2019ll be home soon.<br><br>\n\nLove, Dad"
+    sweet potatoes to stock the stand with in the meantime. "
+  - "Most of all, take care of our tree. When you water it, I hope you\u2019ll remember
+    the day we planted it together. This cheeky little myna bird has agreed to carry
+    my mail. If you see her perched on the tree in the evening, you\u2019ll know
+    there\u2019s a letter from me.  I\u2019ll be home soon. Love, Dad "
   gifts:
   - item: {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
     Count: 5
