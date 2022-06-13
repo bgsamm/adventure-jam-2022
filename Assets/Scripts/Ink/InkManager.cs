@@ -26,8 +26,6 @@ public class InkManager : MonoBehaviour {
 	//used to determine display properties such as the character who's speaking
 	[HideInInspector]public List<string> currentTags = new List<string>(); 
 
-	string currentCharacter = ""; //used to check whether the character is changing
-
 	[HideInInspector] public bool dialogueMode = false;
 
 
