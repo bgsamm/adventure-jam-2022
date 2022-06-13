@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Seed", menuName = "Seed")]
+[CreateAssetMenu(fileName = "New Seed", menuName = "Scriptable Objects/Seed", order = 1)]
 public class Seed : Item
 {
     public Item yield;
