@@ -11,6 +11,9 @@ public class Clock : MonoBehaviour
     
     public const int ACT_LENGTH = 7;
 
+    [SerializeField]
+    public Day[] allDays = new Day[21];
+
     private void Awake()
     {
         day = 0;
