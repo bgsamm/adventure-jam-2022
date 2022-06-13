@@ -10,7 +10,7 @@ public class Toolbar : MonoBehaviour
     private InventorySystem inventory;
 
     private void Start() {
-        inventory = InventorySystem.instance;
+        inventory = ResourceLocator.instance.InventorySystem;
         slots = GetComponentsInChildren<InventorySlot>();
         UpdateSlots();
         SelectSlot(0);

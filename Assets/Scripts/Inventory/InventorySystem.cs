@@ -6,17 +6,9 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
-    public static InventorySystem instance { get; private set; }
-
+    // left exposed in inspector for testing purposes
     public List<ItemStack> stacks;
     [HideInInspector] public ItemStack selectedStack;
-
-    private void Awake() {
-        if (instance != null && instance != this)
-            Destroy(gameObject);
-        else
-            instance = this;
-    }
 
     public void AddItem(Item item) {
         int match = stacks.FindIndex(stack => stack.item == item);

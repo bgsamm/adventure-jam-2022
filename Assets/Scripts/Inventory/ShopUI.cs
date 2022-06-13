@@ -13,7 +13,7 @@ public class ShopUI : MonoBehaviour
     private InventorySlot[] InventorySlots;
 
     private void Start() {
-        Inventory = InventorySystem.instance;
+        Inventory = ResourceLocator.instance.InventorySystem;
         InventorySlots = InventoryPanel.GetComponentsInChildren<InventorySlot>();
 
         var tradeables = Inventory.stacks.Where(x => x.item.Tradeable).ToArray();

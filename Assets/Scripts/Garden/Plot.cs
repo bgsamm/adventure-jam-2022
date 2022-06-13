@@ -21,9 +21,8 @@ public class Plot : Interactable
         interactableFrame.SetActive(false);
         growthStage = 0;
     }
-    private void Start()
-    {
-        inventory = InventorySystem.instance;
+    private void Start() {
+        inventory = ResourceLocator.instance.InventorySystem;
     }
 
     public void Plant(Seed seed) {
@@ -81,7 +80,7 @@ public class Plot : Interactable
         else if (Occupied) {
             if (readyToHarvest)
                 Harvest();
-            else if(!readyToHarvest)
+            else if (!readyToHarvest)
                 Water();
         }
     }
