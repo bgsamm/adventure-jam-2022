@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f6969c7c9adeff64c92bc39a48286b1c
+guid: 608991622253d7342b37578c6702743c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 0
   spriteMeshType: 0
   alignment: 0
@@ -52,7 +52,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -116,139 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cart_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63594d08a7b5f124ca9ae2f55a657dd9
-      internalID: -1272217123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cart_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 308ce1a075a9714438c6cffd2e27c527
-      internalID: -1647629963
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cart_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb9315b27c8a7854599275a085b93942
-      internalID: -1448841142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cart_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85c5c7085d4f73c4e93904d15b12e04b
-      internalID: 147620318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cart_4
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d31da6050a438c4aa615737abf34421
-      internalID: 377169035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cart_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54d1f51b10db59040a45a5dc50c3b015
-      internalID: -1102108379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cart_6
+      name: Big Bird letter sprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79b7abcb02164234bb1e8a991f4b4f82
-      internalID: -1417167915
+      spriteID: 0be7d55665067e9419e285bcb5020419
+      internalID: 1146529832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cart_7
+      name: Big Bird letter sprite_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 0
-        width: 32
-        height: 32
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12cd78b9c66db6c47a362ae2895ae7bd
-      internalID: 926987258
+      spriteID: 84a46d674a10d0942a7e94bdd1ef036d
+      internalID: -387907781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cart_8
+      name: Big Bird letter sprite_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 256
         y: 0
-        width: 32
-        height: 32
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,71 +172,70 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3684f10a2262fbf449e5412756e86feb
-      internalID: -2041788652
+      spriteID: 8fa049caa68f89c43abfbe031965b059
+      internalID: -683457084
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -46, y: -7}
-      - {x: -46, y: -14}
-      - {x: -36, y: -42}
-      - {x: 33, y: -45}
-      - {x: 43, y: -26.500015}
-      - {x: 43, y: -7}
-    - - {x: -9, y: 12}
-      - {x: -8, y: 13}
-      - {x: -7, y: 16}
-      - {x: -5, y: 14}
-      - {x: -2, y: 14}
-      - {x: 0, y: 16}
-      - {x: 2, y: 14}
-      - {x: 5, y: 14}
-      - {x: 7, y: 16}
-      - {x: 9, y: 14}
-      - {x: 12, y: 14}
-      - {x: 14, y: 16}
-      - {x: 16, y: 14}
-      - {x: 19, y: 14}
-      - {x: 21, y: 16}
-      - {x: 23, y: 14}
-      - {x: 26, y: 14}
-      - {x: 28, y: 16}
-      - {x: 30, y: 14}
-      - {x: 33, y: 14}
-      - {x: 35, y: 16}
-      - {x: 36, y: 15}
-      - {x: 35, y: 14}
-      - {x: 35, y: 12}
-      - {x: 33, y: 8}
-      - {x: 33, y: 5}
-      - {x: 32, y: 4}
-      - {x: 32, y: 2}
-      - {x: 31, y: 1}
-      - {x: 31, y: -1}
-      - {x: 29, y: -4}
-      - {x: -10, y: -5}
-      - {x: -9, y: -4}
+    - serializedVersion: 2
+      name: Big Bird letter sprite_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c65647c42eb25c46b824d8f0a5df9e3
+      internalID: -1239965926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big Bird letter sprite_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fbd7d9b317c18b4d94c00918ad9ceac
+      internalID: 1045924278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cart_8: -2041788652
-      Cart_2: -1448841142
-      Cart_7: 926987258
-      Cart_3: 147620318
-      Cart_5: -1102108379
-      Cart_6: -1417167915
-      Cart_4: 377169035
-      Cart_0: -1272217123
-      Cart_1: -1647629963
+      Big Bird letter sprite_3: -1239965926
+      Big Bird letter sprite_4: 1045924278
+      Big Bird letter sprite_0: 1146529832
+      Big Bird letter sprite_1: -387907781
+      Big Bird letter sprite_2: -683457084
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

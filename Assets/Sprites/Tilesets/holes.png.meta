@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 24a47b3d2271bb548b67a84c55328e46
+guid: f19af1272a66bfd4db97d7bb89cc7917
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 0
   spriteMeshType: 0
   alignment: 0
@@ -116,70 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cart shadow_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b71a97e99b4e77c468857b870b0dcd73
-      internalID: -49517928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cart shadow_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c57e62722c46684a91dc262f077e62a
-      internalID: 1873455125
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cart shadow_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1124d5e5d4eb4cf40b02675ce77091aa
-      internalID: 1275773342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cart shadow_3
+      name: holes_0
       rect:
         serializedVersion: 2
         x: 0
@@ -193,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a4e222ad9f2e1f40838e8fc140a5305
-      internalID: 2047319837
+      spriteID: 465d3a7fc23cdb14594d17624d49e1fd
+      internalID: 424318141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cart shadow_4
+      name: holes_1
       rect:
         serializedVersion: 2
         x: 32
@@ -214,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74163603d3600c74fb44ebd76ea3b630
-      internalID: -1661832581
+      spriteID: 12ad2c3d84c34e549b5604365154a33d
+      internalID: 2092022829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cart shadow_5
+      name: holes_2
       rect:
         serializedVersion: 2
         x: 64
@@ -235,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33c9af35aca003e4bbc4dc9ab42c2330
-      internalID: -1649486767
+      spriteID: 25babb2a4fccd5c4baa27d6161d0df6c
+      internalID: -165049697
       vertices: []
       indices: 
       edges: []
@@ -252,12 +189,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cart shadow_1: 1873455125
-      Cart shadow_2: 1275773342
-      Cart shadow_3: 2047319837
-      Cart shadow_0: -49517928
-      Cart shadow_4: -1661832581
-      Cart shadow_5: -1649486767
+      holes_0: 424318141
+      holes_2: -165049697
+      holes_1: 2092022829
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
