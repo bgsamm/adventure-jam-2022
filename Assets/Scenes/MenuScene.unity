@@ -221,7 +221,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec947a087481c0e4c98a61640635eaa6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
   m_sharedMaterial: {fileID: 4186469811451385444, guid: ec947a087481c0e4c98a61640635eaa6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -246,8 +246,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &202491951
@@ -1005,8 +1005,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 26}
-  m_SizeDelta: {x: 360, y: 291}
+  m_AnchoredPosition: {x: 0, y: 19.46}
+  m_SizeDelta: {x: 360, y: 277.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226374070
 MonoBehaviour:
@@ -1028,13 +1028,30 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Garett Anderson: \nProgramming, game design\nKatie Dawky: Narrative design\nJonathan
-    Dearman: Sound design, music\nAmmaar F.: Animation, \nsprite art\nNick Halim:
-    \nSprite art\nKai Haughton: Art direction, character design, character art\nGwen
-    C. Katz: Production, narrative design, UI art\nGuadalupe Martinez: Cutscene art\nSean
-    Miller: Programming, game design"
+  m_text: '<b>Garett Anderson:</b> Programming, game design
+
+    <b>Katie Dawky:</b>
+    Narrative design
+
+    <b>Jonathan Dearman:</b> Sound design, music
+
+    <b>Ammaar
+    F.:<b> Animation, sprite art
+
+    <b>Nick Halim:</b> Sprite art, cultural consultation
+
+    <b>Kai
+    Haughton:</b> Art direction, character design, character art
+
+    <b>Gwen C.
+    Katz:</b> Production, narrative design, UI art
+
+    <b>Guadalupe Martinez:</b>
+    Cutscene art
+
+    <b>Sean Miller:</b> Programming, game design'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec947a087481c0e4c98a61640635eaa6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
   m_sharedMaterial: {fileID: 4186469811451385444, guid: ec947a087481c0e4c98a61640635eaa6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1059,8 +1076,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1098,7 +1115,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1226374071
