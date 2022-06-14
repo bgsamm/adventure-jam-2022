@@ -20,6 +20,8 @@ public class Clock : MonoBehaviour
 
     // Should be called after/on shop visit, and sleeping
     public void NextDay() {
+        ResourceLocator.instance.CutsceneManager.PlayCutscene("Sunrise", ResourceLocator.instance.SceneLoader.LoadGardenScene);
+
         if (!isMorning) {
             ++day; // Increments day if night already
         }

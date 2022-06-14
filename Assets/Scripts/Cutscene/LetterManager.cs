@@ -7,11 +7,6 @@ using System.IO;
 public class LetterManager : MonoBehaviour
 {
     [SerializeField]
-    public List<Letter> allLetters;
-
-    private Letter currentLetter;
-
-    [SerializeField]
     private GameObject letterPanel;
     [SerializeField]
     private TextMeshProUGUI letterTextbox;
@@ -19,6 +14,8 @@ public class LetterManager : MonoBehaviour
     private GameObject continueButton;
     [SerializeField]
     private GameObject closeButton;
+
+    private int pageIndex;
 
     public static LetterManager instance { get; private set; }
 
@@ -33,28 +30,24 @@ public class LetterManager : MonoBehaviour
         //ShowLetter();
     }
 
-    public void ShowLetter() {
+    public void ShowLetter(Letter currentLetter) {
         // Doesn't need to take an argument--
         // it always simply reads the first letter on the list and then deletes it
         letterPanel.SetActive(true);
 
-        currentLetter = allLetters[0];
-        allLetters.RemoveAt(0);
-
         //add any items to inventory
         foreach (ItemStack gift in currentLetter.gifts) {
-
+            //ResourceLocator.instance.InventorySystem.AddItem(ItemStack);
         }
-
-        ShowPage();
+        pageIndex = 0;
+        ShowPage(currentLetter, pageIndex);
     }
 
-    public void ShowPage() {
-        Debug.Log("Showing page");
-        letterTextbox.text = currentLetter.text[0];
-        currentLetter.text.RemoveAt(0);
+    public void ShowPage(Letter currentLetter, int pageIndex) {
+        letterTextbox.text = currentLetter.text[pageIndex];
+        pageIndex++;
 
-        if (currentLetter.text.Count > 0) {
+        if (currentLetter.text.Count > pageIndex) {
             continueButton.SetActive(true);
             closeButton.SetActive(false);
         }

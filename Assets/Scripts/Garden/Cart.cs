@@ -6,17 +6,29 @@ using UnityEngine;
 
 public class Cart : Interactable
 {
+    [SerializeField] private GameObject interactableFrame;
+    [SerializeField] private GameObject interactableText;
+
     private void Start() { }
 
     public override void Interact() {
-        Debug.Log("Interacted with Cart");
+        if (!ResourceLocator.instance.Clock.shopVisited)
+        {
+            ResourceLocator.instance.SceneLoader.LoadShopScene();
+        }
+        else
+        {
+            Debug.Log("Already visited!");
+        }
     }
 
     public override void StartCanInteract() {
-
+        interactableFrame.SetActive(true);
+        interactableText.SetActive(true);
     }
 
     public override void StopCanInteract() {
-
+        interactableFrame.SetActive(false);
+        interactableText.SetActive(false);
     }
 }

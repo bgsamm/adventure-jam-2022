@@ -6,17 +6,22 @@ using UnityEngine;
 
 public class House : Interactable
 {
+    [SerializeField] private GameObject interactableFrame;
+    [SerializeField] private GameObject interactableText;
+
     private void Start() { }
 
     public override void Interact() {
-        Debug.Log("Interacted with House");
+        ResourceLocator.instance.Clock.NextDay();
     }
 
     public override void StartCanInteract() {
-
+        interactableFrame.SetActive(true);
+        interactableText.SetActive(true);
     }
 
     public override void StopCanInteract() {
-
+        interactableFrame.SetActive(false);
+        interactableText.SetActive(false);
     }
 }
