@@ -11,7 +11,7 @@ public class Plot : Interactable
     private bool readyToHarvest;
 
     [SerializeField] private GameObject interactableFrame;
-    [SerializeField] private GameObject interactableText;
+    //[SerializeField] private GameObject interactableText;
     private InventorySystem inventory;
 
     private Seed currPlant;
@@ -63,12 +63,12 @@ public class Plot : Interactable
 
     public override void StartCanInteract() {
         interactableFrame.SetActive(true);
-        interactableText.SetActive(true);
+        //interactableText.SetActive(true);
     }
 
     public override void StopCanInteract() {
         interactableFrame.SetActive(false);
-        interactableText.SetActive(false);
+        //interactableText.SetActive(false);
     }
 
     public override void Interact() {

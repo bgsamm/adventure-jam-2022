@@ -1779,9 +1779,21 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: Days.Array.data[0].NPC
+      value: 
+      objectReference: {fileID: 11400000, guid: 4013bd3c139a83944b80db23dd2eaf43, type: 2}
+    - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: Days.Array.data[1].NPC
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: Days.Array.data[0].letter
       value: 
       objectReference: {fileID: 11400000, guid: 3a696479265cf504caaf81cf31b4668d, type: 2}
+    - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: Days.Array.data[1].letter
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 194133656513736588, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: m_Name
       value: GameManager

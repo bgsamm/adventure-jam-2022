@@ -9,5 +9,5 @@ public class NPC : ScriptableObject
 {
     public new string name;
     public Sprite overworldSprite;
-    public Sprite fullartSprite;
+    public Sprite portraitSprite;
 }

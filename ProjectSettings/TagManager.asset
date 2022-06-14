@@ -3,11 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Plot
-  - GardenManager
-  - Audio
-  - Collidable
+  tags: []
   layers:
   - Default
   - TransparentFX

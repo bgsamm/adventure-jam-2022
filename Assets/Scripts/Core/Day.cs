@@ -11,7 +11,7 @@ public class Day
     public bool birdPresent;
     public Letter letter;
     // which NPC shows up at the shop that day
-    public NPC npc;
+    public NPC NPC;
     public string conversationKnot;
     public List<Trade> tradeList;
 }
