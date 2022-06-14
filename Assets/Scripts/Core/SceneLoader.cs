@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    // kept to allow disabling component in editor
+    private void Start() { }
+
     public void LoadMenuScene() {
         SceneManager.LoadScene("MenuScene");
     }

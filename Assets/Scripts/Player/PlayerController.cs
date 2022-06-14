@@ -4,20 +4,13 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
-
-    public Interactable CurrentInteractable
-    {
-        get => _interactable;
-        set {
-            if (_interactable != null)
-                _interactable.StopCanInteract();
-            _interactable = value;
-        }
-    }
-    private Interactable _interactable;
+    [SerializeField] private float interactionDist;
 
     private Animator animator;
     private new Rigidbody2D rigidbody2D;
+
+    private InteractionHotspot interactionHotspot;
+    private Vector2 interactionOffset;
 
     private float pixelsPerUnit;
     private Vector2 direction;
@@ -26,6 +19,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         pixelsPerUnit = GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
+
+        interactionHotspot = GetComponentInChildren<InteractionHotspot>();
+        interactionOffset = interactionHotspot.transform.localPosition;
     }
 
     private void Update() {
@@ -40,12 +36,15 @@ public class PlayerController : MonoBehaviour
         if (moving) {
             animator.SetFloat("Horizontal", direction.x);
             animator.SetFloat("Vertical", direction.y);
+            // keep interaction hotspot in front of player
+            interactionHotspot.transform.localPosition = interactionOffset + interactionDist * direction;
         }
         animator.SetBool("Moving", moving);
 
         // Handle interactions
-        if (CurrentInteractable != null && Input.GetButtonDown("Interact")) {
-            CurrentInteractable.Interact();
+        var interactable = interactionHotspot.CurrentInteractable;
+        if (Input.GetButtonDown("Interact") && interactable != null) {
+            interactable.Interact();
         }
     }
 
@@ -56,40 +55,5 @@ public class PlayerController : MonoBehaviour
         float p_y = Mathf.FloorToInt(position.y * pixelsPerUnit);
         var p = new Vector2(p_x, p_y) / pixelsPerUnit;
         rigidbody2D.MovePosition(p);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision) {
-        UpdateInteractable(collision);
-    }
-
-    private void OnTriggerStay2D(Collider2D collision) {
-        UpdateInteractable(collision);
-    }
-
-    private void OnTriggerExit2D(Collider2D collision) {
-        if (CurrentInteractable != null && collision.gameObject == CurrentInteractable.gameObject) {
-            CurrentInteractable = null;
-        }
-    }
-
-    private void UpdateInteractable(Collider2D collision) {
-        var interactable = collision.GetComponent<Interactable>();
-        // Prioritize the closest of multiple interactables
-        if (CurrentInteractable == null || CompareDist(interactable.gameObject, CurrentInteractable.gameObject) < 0) {
-            CurrentInteractable = interactable;
-            CurrentInteractable.StartCanInteract();
-        }
-    }
-
-    private float CompareDist(GameObject a, GameObject b) {
-        return Vector3.Distance(a.transform.position, transform.position) - Vector3.Distance(b.transform.position, transform.position);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {   // For the shop, or other non-trigger collidables
-        if (collision.gameObject.CompareTag("Collidable"))
-        {
-            UpdateInteractable(collision.collider);
-        }
     }
 }

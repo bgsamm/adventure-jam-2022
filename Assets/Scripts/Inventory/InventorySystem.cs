@@ -8,7 +8,11 @@ public class InventorySystem : MonoBehaviour
 {
     // left exposed in inspector for testing purposes
     public List<ItemStack> stacks;
-    [HideInInspector] public ItemStack selectedStack;
+    [HideInInspector]
+    public ItemStack selectedStack;
+
+    // kept to allow disabling component in editor
+    private void Start() { }
 
     public void AddItem(Item item) {
         int match = stacks.FindIndex(stack => stack.item == item);

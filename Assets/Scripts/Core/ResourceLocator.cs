@@ -11,6 +11,7 @@ public class ResourceLocator : MonoBehaviour
 
     public CutsceneManager CutsceneManager { get; private set; }
     public SceneLoader SceneLoader { get; private set; }
+    public Clock Clock { get; private set; }
     public InventorySystem InventorySystem { get; private set; }
 
     private void Awake() {
@@ -24,6 +25,7 @@ public class ResourceLocator : MonoBehaviour
         // initialize resources
         CutsceneManager = GetComponent<CutsceneManager>();
         SceneLoader = GetComponent<SceneLoader>();
+        Clock = GetComponent<Clock>();
         InventorySystem = GetComponent<InventorySystem>();
     }
 }

@@ -1,40 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
     // Should day count reset to 0 on next act?
     // Could be useful for letter counting / plant growth?
-    public static Clock instance { get; private set; }
     public int day { get; private set; }
     public bool isMorning { get; private set; }
-    public bool shopVisited;
-    
-    public const int ACT_LENGTH = 7;
+    public bool shopVisited { get; set; }
 
-    [SerializeField]
-    public Day[] allDays = new Day[21];
+    [SerializeField] private List<Day> Days;
 
-    private void Awake()
-    {
+    private void Start() {
         day = 0;
-        isMorning = true;   // Game starts in morning
-
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if(instance != null && instance != this)
-        {
-            Destroy(gameObject);
-        }
+        isMorning = true; // Game starts in morning
         shopVisited = false;
     }
-    public void NextDay()
-    {   // Should be called after/on shop visit, and sleeping
-        if (!isMorning)
-        {
-            ++day;  // Increments day if night already
+
+    // Should be called after/on shop visit, and sleeping
+    public void NextDay() {
+        if (!isMorning) {
+            ++day; // Increments day if night already
         }
         isMorning = !isMorning; // flips to morning/dusk
 
