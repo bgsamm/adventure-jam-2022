@@ -12,7 +12,7 @@ public class Cart : Interactable
     private void Start() { }
 
     public override void Interact() {
-        if (!ResourceLocator.instance.Clock.shopVisited)
+        if (!ResourceLocator.instance.Clock.ShopVisited)
         {
             ResourceLocator.instance.SceneLoader.LoadShopScene();
         }

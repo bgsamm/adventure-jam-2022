@@ -9,8 +9,9 @@ public class ResourceLocator : MonoBehaviour
 {
     public static ResourceLocator instance { get; private set; }
 
-    public CutsceneManager CutsceneManager { get; private set; }
     public SceneLoader SceneLoader { get; private set; }
+    public CutsceneManager CutsceneManager { get; private set; }
+    public LetterManager LetterManager { get; private set; }
     public Clock Clock { get; private set; }
     public InventorySystem InventorySystem { get; private set; }
 
@@ -23,8 +24,9 @@ public class ResourceLocator : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // initialize resources
-        CutsceneManager = GetComponent<CutsceneManager>();
         SceneLoader = GetComponent<SceneLoader>();
+        CutsceneManager = GetComponent<CutsceneManager>();
+        LetterManager = GetComponent<LetterManager>();
         Clock = GetComponent<Clock>();
         InventorySystem = GetComponent<InventorySystem>();
     }

@@ -1,30 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject MainMenuPanel;
-    public GameObject OptionsMenuPanel;
+    //public GameObject OptionsMenuPanel;
     public GameObject CreditsMenuPanel;
 
     private SceneLoader sceneLoader;
     private CutsceneManager cutsceneManager;
+    private LetterManager letterManager;
+    private Clock clock;
 
     private void Start() {
         sceneLoader = ResourceLocator.instance.SceneLoader;
         cutsceneManager = ResourceLocator.instance.CutsceneManager;
+        letterManager = ResourceLocator.instance.LetterManager;
+        clock = ResourceLocator.instance.Clock;
         ShowMainMenu();
     }
 
     public void PlayGame() {
-        cutsceneManager.PlayCutscene("Opening", delegate { sceneLoader.LoadGardenScene(); });
+        var firstLetter = clock.CurrentDay.letter;
+        cutsceneManager.PlayCutscene("Opening",
+            delegate {
+                letterManager.ShowLetter(firstLetter, sceneLoader.LoadGardenScene);
+            });
     }
 
     private void HideAllSubmenus() {
         MainMenuPanel.SetActive(false);
-        OptionsMenuPanel.SetActive(false);
+        //OptionsMenuPanel.SetActive(false);
         CreditsMenuPanel.SetActive(false);
     }
 
@@ -33,10 +40,10 @@ public class MainMenu : MonoBehaviour
         MainMenuPanel.SetActive(true);
     }
 
-    public void ShowOptionsSubmenu() {
-        HideAllSubmenus();
-        OptionsMenuPanel.SetActive(true);
-    }
+    //public void ShowOptionsSubmenu() {
+    //    HideAllSubmenus();
+    //    OptionsMenuPanel.SetActive(true);
+    //}
 
     public void ShowCreditsSubmenu() {
         HideAllSubmenus();

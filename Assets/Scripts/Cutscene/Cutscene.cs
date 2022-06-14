@@ -10,5 +10,5 @@ public class Cutscene
     public string name;
     public List<Sprite> images;
     public AudioSource audio;
-    public int duration;
+    public float imageDuration;
 }

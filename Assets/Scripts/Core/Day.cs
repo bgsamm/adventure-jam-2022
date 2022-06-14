@@ -7,9 +7,10 @@ using UnityEngine;
 [System.Serializable]
 public class Day
 {
+    // the bird may be present without a letter
     public bool birdPresent;
-    public Letter letterReceived;
-    //which NPC shows up at the shop that day
+    public Letter letter;
+    // which NPC shows up at the shop that day
     public NPC npc;
     public string conversationKnot;
     public List<Trade> tradeList;

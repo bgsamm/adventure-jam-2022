@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 194133656513736589}
   - component: {fileID: 194133656513736584}
   - component: {fileID: 194133656513736591}
+  - component: {fileID: 4652763224035247424}
   - component: {fileID: 194133656513736586}
   - component: {fileID: 194133656513736585}
   m_Layer: 0
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194133656513736588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0000021457672, z: 90}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,6 +74,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutscenes: []
+--- !u!114 &4652763224035247424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194133656513736588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1e902374bffae44a30e0d89fcdf379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &194133656513736586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015c80265dc246248a6470e364e0d1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Days: []
 --- !u!114 &194133656513736585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,4 +114,4 @@ MonoBehaviour:
   stacks: []
   selectedStack:
     item: {fileID: 0}
-    Count: 0
+    count: 0

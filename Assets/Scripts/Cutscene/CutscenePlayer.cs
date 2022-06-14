@@ -19,7 +19,9 @@ public class CutscenePlayer : MonoBehaviour
         cutsceneManager = ResourceLocator.instance.CutsceneManager;
 
         currentCutscene = cutsceneManager.NextCutscene;
-        fader.FadeInEvent = delegate { StartCoroutine(WaitThenFadeOut(5)); };
+        fader.FadeInEvent = delegate { 
+            StartCoroutine(WaitThenFadeOut(currentCutscene.imageDuration)); 
+        };
         fader.FadeOutEvent = ShowNextImage;
 
         index = 0;

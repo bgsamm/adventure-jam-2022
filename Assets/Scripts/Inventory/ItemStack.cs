@@ -7,25 +7,24 @@ using UnityEngine;
 [Serializable]
 public class ItemStack
 {
-    // For testing purposes only
     public Item item;
-    public int Count;
-
-    //public readonly Item item;
-    //public int Count { get; private set; }
+    public int count;
 
     public ItemStack(Item item) {
         this.item = item;
     }
 
-    public void AddItem() {
-        Count++;
+    public void AddToStack(int count) {
+        this.count += count;
     }
 
-    public void RemoveItem() {
-        if (Count == 0)
-            Debug.LogWarning("Attempted to remove item from empty stack");
-        else
-            Count--;
+    public void RemoveFromStack(int count) {
+        if (count > this.count) {
+            Debug.LogWarning("Attempted to remove more items than currently in the stack.");
+            this.count = 0;
+        }
+        else {
+            this.count -= count;
+        }
     }
 }

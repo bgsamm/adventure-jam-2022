@@ -30,7 +30,6 @@ public class Plot : Interactable
         currPlant = seed;
         spriteRenderer.sprite = currPlant.gameSprites[0];
         spriteRenderer.enabled = true;
-        spriteRenderer.sortingOrder = 0;
     }
 
     public void Water() {
@@ -55,7 +54,7 @@ public class Plot : Interactable
 
     public void Harvest() {
         Debug.Log("Harvesting!");
-        inventory.AddItem(currPlant.yield);
+        inventory.AddItems(currPlant.yield);
         daysWatered = 0;
         readyToHarvest = false;
         currPlant = null;
