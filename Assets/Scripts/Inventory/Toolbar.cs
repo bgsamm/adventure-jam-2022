@@ -12,11 +12,11 @@ public class Toolbar : MonoBehaviour
     private void Start() {
         inventory = ResourceLocator.instance.InventorySystem;
         slots = GetComponentsInChildren<InventorySlot>();
-        UpdateSlots();
         SelectSlot(0);
     }
 
     private void Update() {
+        UpdateSlots();
         // Map inputs Toolbar 1..N to the corresponding toolbar slots
         for (int i = 0; i < slots.Length; i++) {
             if (Input.GetButtonDown($"Toolbar {i + 1}"))
