@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Letter", menuName = "Scriptable Objects/Letter", order = 2)]
+[CreateAssetMenu(fileName = "New Letter", menuName = "Scriptable Object/Letter", order = 2)]
 public class Letter : ScriptableObject
 {
     //[TextArea(maxLines: 40, minLines: 5)]
