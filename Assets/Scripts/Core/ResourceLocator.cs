@@ -14,6 +14,7 @@ public class ResourceLocator : MonoBehaviour
     public LetterManager LetterManager { get; private set; }
     public Clock Clock { get; private set; }
     public InventorySystem InventorySystem { get; private set; }
+    public GardenManager GardenManager { get; private set; }
 
     private void Awake() {
         if (instance != null && instance != this) {
@@ -29,5 +30,6 @@ public class ResourceLocator : MonoBehaviour
         LetterManager = GetComponent<LetterManager>();
         Clock = GetComponent<Clock>();
         InventorySystem = GetComponent<InventorySystem>();
+        GardenManager = GetComponent<GardenManager>();
     }
 }

@@ -2,20 +2,12 @@ using UnityEngine;
 
 public class GardenManager : MonoBehaviour
 {
-    public static GardenManager instance { get; private set; }
     private GameObject[] plots; // TODO grab plots from children
+    private const string PLOT_TAG = "Plot";
 
-    const string PLOT_TAG = "Plot";
+    private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
 
     private void Awake() {
-        if (instance == null) {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (instance != null && instance != this) {
-            Destroy(gameObject);
-        }
-
         plots = GameObject.FindGameObjectsWithTag(PLOT_TAG);
         foreach (GameObject p in plots) {
             p.GetComponent<SpriteRenderer>().enabled = false;

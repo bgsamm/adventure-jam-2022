@@ -20,6 +20,7 @@ public class DialogHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sceneText;
     [SerializeField] private TextMeshProUGUI speakerLabel;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private GameObject dontTradeButton;
 
     private void Awake() {
         // NOTE: Reloading the story wipes the Ink state machine
@@ -34,6 +35,9 @@ public class DialogHandler : MonoBehaviour
         story.BindExternalFunction("onDialogEnd", EndDialogue);
 
         speakerLabel.text = clock.CurrentDay.NPC.name;
+        continueButton.SetActive(true);
+        dontTradeButton.SetActive(false);
+
         story.ChoosePathString(knot);
         ContinueStory(); // start the dialogue
     }
@@ -58,9 +62,9 @@ public class DialogHandler : MonoBehaviour
     }
 
     public void EndDialogue() {
-        //speakerLabel.text = "";
         sceneText.text = "What do you have today?";
-        continueButton.GetComponent<TextMeshProUGUI>().text = "Don't trade.";
+        continueButton.SetActive(false);
+        dontTradeButton.SetActive(true);
         dialogEndCallback.Invoke();
     }
 }

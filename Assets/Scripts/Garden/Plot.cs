@@ -29,17 +29,12 @@ public class Plot : Interactable
     }
 
     public void Plant() {
-        // should only ever have seeds in your toolbar,
-        // but good to check should that ever change
-        var stack = inventory.selectedStack;
-        if (stack != null) {
-            var selectedSeed = stack.item as Seed;
-            if (selectedSeed != null) {
-                inventory.RemoveItems(selectedSeed, 1);
-                currPlant = selectedSeed;
-                spriteRenderer.sprite = currPlant.gameSprites[0];
-                spriteRenderer.enabled = true;
-            }
+        if (inventory.HoldingSeed) {
+            var selectedSeed = (Seed)inventory.selectedStack.item;
+            inventory.RemoveItems(selectedSeed, 1);
+            currPlant = selectedSeed;
+            spriteRenderer.sprite = currPlant.gameSprites[0];
+            spriteRenderer.enabled = true;
         }
     }
 
@@ -78,12 +73,8 @@ public class Plot : Interactable
 
     public override void StartCanInteract() {
         interactableFrame.SetActive(true);
-        if (!Occupied && inventory.selectedStack != null) {
-            var selectedSeed = inventory.selectedStack.item as Seed;
-            if (selectedSeed != null)
-                interactMessage = "Press E to plant";
-            else
-                interactMessage = "You must select a seed to plant.";
+        if (!Occupied && inventory.HoldingSeed) {
+            interactMessage = "Press E to plant";
         }
         else if (Occupied) {
             if (readyToHarvest)
@@ -91,7 +82,6 @@ public class Plot : Interactable
             else if (!readyToHarvest)
                 interactMessage = "Press E to water";
         }
-
         interactableText.gameObject.SetActive(true);
         interactableText.text = interactMessage;
     }
@@ -102,14 +92,11 @@ public class Plot : Interactable
     }
 
     public override void Interact() {
-        if (!Occupied) {
+        if (!Occupied)
             Plant();
-        }
-        else {
-            if (readyToHarvest)
-                Harvest();
-            else if (!readyToHarvest)
-                Water();
-        }
+        else if (readyToHarvest)
+            Harvest();
+        else
+            Water();
     }
 }

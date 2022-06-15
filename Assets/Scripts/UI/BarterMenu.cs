@@ -20,6 +20,7 @@ public class BarterMenu : MonoBehaviour
     [SerializeField] private Button acceptButton;
 
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
+    private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
 
     private InventorySlot[] inventorySlots;
     private TradeListEntry[] tradeEntries;
@@ -78,6 +79,11 @@ public class BarterMenu : MonoBehaviour
         inventory.RemoveItems(currentTrade.given);
         inventory.AddItems(currentTrade.received);
         // TODO: display villager's end-of-trade dialog
-        ResourceLocator.instance.SceneLoader.LoadGardenScene();
+        sceneLoader.LoadGardenScene();
+    }
+
+    public void RefuseTrade() {
+        // TODO: display villager's end-of-trade dialog
+        sceneLoader.LoadGardenScene();
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
+    public bool HoldingSeed => selectedStack != null && selectedStack.item is Seed;
+
     // left exposed in inspector for testing purposes
     public List<ItemStack> stacks;
     [HideInInspector]
