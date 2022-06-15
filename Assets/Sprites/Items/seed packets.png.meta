@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cca1a12dc4b23224791ce6f6dd2bcc91
+guid: 954dfb2573e0fc745bbd9f26867906ee
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,64 +116,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: burnt_ground3_0
+      name: seed packets_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 33
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c53b48699c5b04439249811fd2cc089
-      internalID: -1092329593
+      spriteID: 52771f156bcb7244796e9f74db18b565
+      internalID: -1553781647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: burnt_ground3_1
+      name: seed packets_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 16
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8166b1bd3e92d0f4ea0c21072976a429
-      internalID: -822269073
+      spriteID: a1301ae65bf9cc1439040b5ab1fd0bd7
+      internalID: -1548608109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: burnt_ground3_2
+      name: seed packets_2
       rect:
         serializedVersion: 2
-        x: 65
+        x: 32
         y: 0
-        width: 31
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77d068cad8e73eb48a1191980380f555
-      internalID: 1810957726
+      spriteID: 4dff557f13135ca47bf3ecc6b23073bd
+      internalID: 335857061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seed packets_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024461ba9ebb4154bbe25a23388dcfbb
+      internalID: 1647163829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seed packets_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e716cbe00bbd6409284a37434df6ef
+      internalID: 1042829683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seed packets_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25299c5eff990845a9391d1764a0b00
+      internalID: -1291805804
       vertices: []
       indices: 
       edges: []
@@ -189,9 +252,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      burnt_ground3_2: 1810957726
-      burnt_ground3_0: -1092329593
-      burnt_ground3_1: -822269073
+      seed packets_0: -1553781647
+      seed packets_3: 1647163829
+      seed packets_5: -1291805804
+      seed packets_2: 335857061
+      seed packets_1: -1548608109
+      seed packets_4: 1042829683
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

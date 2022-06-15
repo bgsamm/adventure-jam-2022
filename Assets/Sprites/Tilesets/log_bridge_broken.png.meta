@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cca1a12dc4b23224791ce6f6dd2bcc91
+guid: 16ee9d25211edf14ca67bbbb6b0184a2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,64 +116,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: burnt_ground3_0
+      name: log_bridge_broken_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8a665af23eefb4faf1f1595fe50307
+      internalID: 1214341002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log_bridge_broken_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfed316c846e264eb71a7ba93d870aa
+      internalID: -1974262724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log_bridge_broken_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256d1b7ebe365f84790cfb941d9f0eca
+      internalID: 1819072195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log_bridge_broken_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725905e2f2bd9694093f40fdcf96f0a1
+      internalID: -424143304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log_bridge_broken_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 33
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c53b48699c5b04439249811fd2cc089
-      internalID: -1092329593
+      spriteID: aab9cae9c6b86e445afa0acbbc515e63
+      internalID: -732882948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: burnt_ground3_1
+      name: log_bridge_broken_5
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8166b1bd3e92d0f4ea0c21072976a429
-      internalID: -822269073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: burnt_ground3_2
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 0
-        width: 31
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77d068cad8e73eb48a1191980380f555
-      internalID: 1810957726
+      spriteID: e505a836db6416c4a8de1f416667eb02
+      internalID: -2051465129
       vertices: []
       indices: 
       edges: []
@@ -189,9 +252,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      burnt_ground3_2: 1810957726
-      burnt_ground3_0: -1092329593
-      burnt_ground3_1: -822269073
+      log_bridge_broken_0: 1214341002
+      log_bridge_broken_1: -1974262724
+      log_bridge_broken_4: -732882948
+      log_bridge_broken_2: 1819072195
+      log_bridge_broken_5: -2051465129
+      log_bridge_broken_3: -424143304
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

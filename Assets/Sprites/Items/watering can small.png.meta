@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cca1a12dc4b23224791ce6f6dd2bcc91
+guid: 32a6f1c7a4e75ed4983907c8e08ed091
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 0
   spriteMeshType: 0
   alignment: 0
@@ -114,70 +114,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: burnt_ground3_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 33
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c53b48699c5b04439249811fd2cc089
-      internalID: -1092329593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: burnt_ground3_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8166b1bd3e92d0f4ea0c21072976a429
-      internalID: -822269073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: burnt_ground3_2
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 0
-        width: 31
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77d068cad8e73eb48a1191980380f555
-      internalID: 1810957726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -188,10 +125,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      burnt_ground3_2: 1810957726
-      burnt_ground3_0: -1092329593
-      burnt_ground3_1: -822269073
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
