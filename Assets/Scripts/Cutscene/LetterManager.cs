@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,11 @@ using TMPro;
 public class LetterManager : MonoBehaviour
 {
     public Letter NextLetter { get; private set; }
-    public CallbackEvent LetterEndCallback { get; private set; }
+    public Action LetterEndCallback { get; private set; }
 
-    private SceneLoader sceneLoader;
+    private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
 
-    private void Start() {
-        sceneLoader = ResourceLocator.instance.SceneLoader;
-    }
-
-    public void ShowLetter(Letter letter, CallbackEvent callback) {
+    public void ShowLetter(Letter letter, Action callback) {
         if (letter == null) {
             Debug.LogError("Attempted to show null letter");
             return;

@@ -10,16 +10,13 @@ public class LetterReader : MonoBehaviour
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject closeButton;
 
-    private LetterManager letterManager;
-    private InventorySystem inventory;
+    private LetterManager letterManager => ResourceLocator.instance.LetterManager;
+    private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
 
     private Letter currentLetter;
     private int pageIndex;
 
     private void Start() {
-        letterManager = ResourceLocator.instance.LetterManager;
-        inventory = ResourceLocator.instance.InventorySystem;
-
         pageIndex = 0;
         currentLetter = letterManager.NextLetter;
         ShowNextPage();

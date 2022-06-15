@@ -7,10 +7,10 @@ using UnityEngine;
 public class Toolbar : MonoBehaviour
 {
     public InventorySlot[] slots;
-    private InventorySystem inventory;
+
+    private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
 
     private void Start() {
-        inventory = ResourceLocator.instance.InventorySystem;
         slots = GetComponentsInChildren<InventorySlot>();
         SelectSlot(0);
     }

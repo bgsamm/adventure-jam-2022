@@ -9,17 +9,12 @@ public class Cart : Interactable
     //[SerializeField] private GameObject interactableFrame;
     //[SerializeField] private GameObject interactableText;
 
-    private SceneLoader sceneLoader;
-    private Clock clock;
-
-    private void Start() {
-        sceneLoader = ResourceLocator.instance.SceneLoader;
-        clock = ResourceLocator.instance.Clock;
-    }
+    private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
+    private Clock clock => ResourceLocator.instance.Clock;
 
     public override void Interact() {
         if (!clock.ShopVisited)
-            sceneLoader.LoadShopScene();
+            sceneLoader.LoadBarterScene();
         else
             Debug.Log("Already visited!");
     }

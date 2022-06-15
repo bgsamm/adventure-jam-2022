@@ -1,12 +1,12 @@
 -> Day1
 
-EXTERNAL barter(barterNumber)
+EXTERNAL onDialogEnd()
 
 === Day1 ===
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -27,7 +27,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -48,7 +48,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -69,7 +69,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -90,7 +90,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -111,7 +111,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -132,7 +132,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -154,7 +154,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -175,7 +175,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -196,7 +196,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -217,7 +217,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -238,7 +238,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -259,7 +259,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -281,7 +281,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -302,7 +302,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -323,7 +323,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -345,7 +345,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -367,7 +367,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -388,7 +388,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -409,7 +409,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 
@@ -430,7 +430,7 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~barter(0)
+~onDialogEnd()
 
 -> END
 

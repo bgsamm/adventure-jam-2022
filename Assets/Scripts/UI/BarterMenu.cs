@@ -7,33 +7,35 @@ using UnityEngine.UI;
 
 public class BarterMenu : MonoBehaviour
 {
-    [SerializeField] private Image CharacterPortrait;
-    [SerializeField] private GameObject TradeList;
-    [SerializeField] private GameObject InventoryPanel;
-    [Header("Trade Summary")]
-    [SerializeField] private InventorySlot GiveSummarySlot;
-    [SerializeField] private InventorySlot GetSummarySlot;
-    [SerializeField] private Button AcceptButton;
+    [Header("Dialog")]
+    [SerializeField] private Image characterPortrait;
+    [SerializeField] private DialogHandler dialogHandler;
+    [Header("Barter Interface")]
+    [SerializeField] private GameObject tradePanel;
+    [SerializeField] private GameObject tradeList;
+    [SerializeField] private GameObject inventoryPanel;
+    [Header(" Trade Summary")]
+    [SerializeField] private InventorySlot giveSummarySlot;
+    [SerializeField] private InventorySlot getSummarySlot;
+    [SerializeField] private Button acceptButton;
 
-    private InventorySystem inventory;
+    private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
 
     private InventorySlot[] inventorySlots;
     private TradeListEntry[] tradeEntries;
     private Trade currentTrade;
 
     private void Start() {
-        inventory = ResourceLocator.instance.InventorySystem;
-
         var currentDay = ResourceLocator.instance.Clock.CurrentDay;
-        CharacterPortrait.sprite = currentDay.NPC.portraitSprite;
+        characterPortrait.sprite = currentDay.NPC.portraitSprite;
 
         // clear trade summary
-        GiveSummarySlot.SetStack(null);
-        GetSummarySlot.SetStack(null);
-        AcceptButton.interactable = false;
+        giveSummarySlot.SetStack(null);
+        getSummarySlot.SetStack(null);
+        acceptButton.interactable = false;
 
         // fill in the inventory
-        inventorySlots = InventoryPanel.GetComponentsInChildren<InventorySlot>();
+        inventorySlots = inventoryPanel.GetComponentsInChildren<InventorySlot>();
         var tradeables = inventory.stacks.Where(x => x.item.Tradeable).ToArray();
         for (int i = 0; i < inventorySlots.Length; i++) {
             var inventorySlot = inventorySlots[i];
@@ -44,7 +46,7 @@ public class BarterMenu : MonoBehaviour
         }
 
         // populate the trade list
-        tradeEntries = TradeList.GetComponentsInChildren<TradeListEntry>();
+        tradeEntries = tradeList.GetComponentsInChildren<TradeListEntry>();
         var trades = currentDay.tradeList;
         for (int i = 0; i < tradeEntries.Length; i++) {
             var tradeEntry = tradeEntries[i];
@@ -56,19 +58,26 @@ public class BarterMenu : MonoBehaviour
                 tradeEntry.SetTrade(null);
             }
         }
+
+        tradePanel.SetActive(false);
+        dialogHandler.StartDialogue(currentDay.conversationKnot, BeginTrading);
     }
 
     private void SetTradeSummary(Trade trade) {
-        GiveSummarySlot.SetStack(trade.given);
-        GetSummarySlot.SetStack(trade.received);
-        AcceptButton.interactable = inventory.HasItems(trade.given);
+        giveSummarySlot.SetStack(trade.given);
+        getSummarySlot.SetStack(trade.received);
+        acceptButton.interactable = inventory.HasItems(trade.given);
         currentTrade = trade;
+    }
+
+    public void BeginTrading() {
+        tradePanel.SetActive(true);
     }
 
     public void AcceptTrade() {
         inventory.RemoveItems(currentTrade.given);
         inventory.AddItems(currentTrade.received);
-        // TODO: display villager's end of trade dialog
+        // TODO: display villager's end-of-trade dialog
         ResourceLocator.instance.SceneLoader.LoadGardenScene();
     }
 }

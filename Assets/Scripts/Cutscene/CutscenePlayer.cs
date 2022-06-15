@@ -10,14 +10,12 @@ public class CutscenePlayer : MonoBehaviour
     [SerializeField] private Image cutscenePanel;
     [SerializeField] private ScreenFader fader;
 
-    private CutsceneManager cutsceneManager;
+    private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
     private Cutscene currentCutscene;
 
     private int index;
 
     private void Start() {
-        cutsceneManager = ResourceLocator.instance.CutsceneManager;
-
         currentCutscene = cutsceneManager.NextCutscene;
         fader.FadeInEvent = delegate { 
             StartCoroutine(WaitThenFadeOut(currentCutscene.imageDuration)); 

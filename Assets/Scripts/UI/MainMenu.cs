@@ -8,20 +8,16 @@ public class MainMenu : MonoBehaviour
     //public GameObject OptionsMenuPanel;
     public GameObject CreditsMenuPanel;
 
-    private SceneLoader sceneLoader;
-    private CutsceneManager cutsceneManager;
-    private LetterManager letterManager;
-    private Clock clock;
+    private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
+    private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
+    private LetterManager letterManager => ResourceLocator.instance.LetterManager;
 
     private void Start() {
-        sceneLoader = ResourceLocator.instance.SceneLoader;
-        cutsceneManager = ResourceLocator.instance.CutsceneManager;
-        letterManager = ResourceLocator.instance.LetterManager;
-        clock = ResourceLocator.instance.Clock;
         ShowMainMenu();
     }
 
     public void PlayGame() {
+        var clock = ResourceLocator.instance.Clock;
         var firstLetter = clock.CurrentDay.letter;
         cutsceneManager.PlayCutscene("Opening",
             delegate {

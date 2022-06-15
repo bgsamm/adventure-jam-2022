@@ -21,8 +21,8 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("GardenScene");
     }
 
-    public void LoadShopScene() {
-        SceneManager.LoadScene("ShopScene");
+    public void LoadBarterScene() {
+        SceneManager.LoadScene("BarterScene");
     }
 
     public void LoadTreeScene() {

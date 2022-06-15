@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GardenScene.unity
     guid: 709d350015baddd4087a31efd9f7cac6
   - enabled: 1
-    path: Assets/Scenes/ShopScene.unity
+    path: Assets/Scenes/BarterScene.unity
     guid: 9f2c2c6fd45979b4196e266f8d17ee5f
   - enabled: 1
     path: Assets/Scenes/TreeScene.unity

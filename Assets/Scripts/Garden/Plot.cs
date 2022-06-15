@@ -12,7 +12,8 @@ public class Plot : Interactable
 
     [SerializeField] private GameObject interactableFrame;
     //[SerializeField] private GameObject interactableText;
-    private InventorySystem inventory;
+
+    private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
 
     private Seed currPlant;
     private SpriteRenderer spriteRenderer;
@@ -21,9 +22,6 @@ public class Plot : Interactable
         spriteRenderer = GetComponent<SpriteRenderer>();
         interactableFrame.SetActive(false);
         growthStage = 0;
-    }
-    private void Start() {
-        inventory = ResourceLocator.instance.InventorySystem;
     }
 
     public void Plant(Seed seed) {

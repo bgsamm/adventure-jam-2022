@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class ScreenFader : MonoBehaviour
 {
-    public CallbackEvent FadeInEvent;
-    public CallbackEvent FadeOutEvent;
+    public Action FadeInEvent;
+    public Action FadeOutEvent;
 
     private Animator animator;
 
