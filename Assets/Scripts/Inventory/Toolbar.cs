@@ -12,6 +12,7 @@ public class Toolbar : MonoBehaviour
 
     private void Start() {
         slots = GetComponentsInChildren<InventorySlot>();
+        UpdateSlots();
         SelectSlot(0);
     }
 

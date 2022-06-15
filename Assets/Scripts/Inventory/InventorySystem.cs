@@ -11,9 +11,6 @@ public class InventorySystem : MonoBehaviour
     [HideInInspector]
     public ItemStack selectedStack;
 
-    // kept to allow disabling component in editor
-    private void Start() { }
-
     public void AddItems(ItemStack stack) {
         var inventoryStack = FindStack(stack.item);
         if (inventoryStack == null)
@@ -23,9 +20,16 @@ public class InventorySystem : MonoBehaviour
     }
 
     public void RemoveItems(ItemStack stack) {
-        var inventoryStack = FindStack(stack.item);
-        if (inventoryStack != null)
-            inventoryStack.RemoveFromStack(stack.count);
+        RemoveItems(stack.item, stack.count);
+    }
+
+    public void RemoveItems(Item item, int count) {
+        var inventoryStack = FindStack(item);
+        if (inventoryStack != null) {
+            inventoryStack.RemoveFromStack(count);
+            if (inventoryStack.count == 0)
+                RemoveFromInventory(item);
+        }
     }
 
     public bool HasItems(ItemStack stack) {
@@ -36,5 +40,12 @@ public class InventorySystem : MonoBehaviour
     private ItemStack FindStack(Item item) {
         int match = stacks.FindIndex(x => x.item == item);
         return match == -1 ? null : stacks[match];
+    }
+
+    private void RemoveFromInventory(Item item) {
+        int match = stacks.FindIndex(x => x.item == item);
+        if (selectedStack == stacks[match])
+            selectedStack = null;
+        stacks.RemoveAt(match);
     }
 }

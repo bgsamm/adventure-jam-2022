@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         // Handle interactions
         var interactable = interactionHotspot.CurrentInteractable;
         if (Input.GetButtonDown("Interact") && interactable != null) {
+            Debug.Log($"Interacting with {interactable.name}");
             interactable.Interact();
         }
     }
