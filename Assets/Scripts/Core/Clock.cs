@@ -8,7 +8,14 @@ public class Clock : MonoBehaviour
     // Could be useful for letter counting / plant growth?
     public Day CurrentDay => Days[day];
     public bool IsMorning { get; private set; }
-    public bool ShopVisited { get; set; }
+
+
+    public bool ShopVisited;
+    public bool TreeWatered;
+
+    //checked for letters (ie, visited the tree),
+    //and read the letter if there is one
+    public bool LetterChecked;
 
     [SerializeField] private List<Day> Days;
     private int day;
@@ -17,6 +24,8 @@ public class Clock : MonoBehaviour
         day = 0;
         IsMorning = true; // Game starts in morning
         ShopVisited = false;
+        TreeWatered = false;
+        LetterChecked = false;
     }
 
     // Should be called after/on shop visit, and sleeping
@@ -29,6 +38,8 @@ public class Clock : MonoBehaviour
         IsMorning = !IsMorning; // flips to morning/dusk
 
         ShopVisited = false;
+        TreeWatered = false;
+        LetterChecked = false;
         GardenManager.instance.GrowOvernight();
         Debug.Log("Next day");
     }

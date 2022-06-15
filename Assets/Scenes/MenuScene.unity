@@ -152,6 +152,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1976439469}
+  - {fileID: 1333775279}
   - {fileID: 1572314624}
   m_Father: {fileID: 547001991}
   m_RootOrder: 1
@@ -625,7 +626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2231219412972060561, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2231219412972060561, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_AnchorMax.x
@@ -690,7 +691,7 @@ PrefabInstance:
     - target: {fileID: 2231219414821223854, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 4186469811451385444, guid: ec947a087481c0e4c98a61640635eaa6, type: 2}
+      objectReference: {fileID: -2014821490742284180, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
 --- !u!224 &769318819 stripped
@@ -1028,28 +1029,28 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>Garett Anderson:</b> Programming, game design
+  m_text: 'Garett Anderson: Programming, game design
 
-    <b>Katie Dawky:</b>
-    Narrative design
+    Katie Dawkins: Narrative
+    design
 
-    <b>Jonathan Dearman:</b> Sound design, music
+    Jonathan Dearman: Sound design, music
 
-    <b>Ammaar
-    F.:<b> Animation, sprite art
+    Ammaar F.: Animation,
+    sprite art
 
-    <b>Nick Halim:</b> Sprite art, cultural consultation
+    Nick Halim: Sprite art, cultural consultation
 
-    <b>Kai
-    Haughton:</b> Art direction, character design, character art
+    Kai Haughton:
+    Art direction, character design, character art
 
-    <b>Gwen C.
-    Katz:</b> Production, narrative design, UI art
+    Gwen C. Katz: Production,
+    narrative design, UI art
 
-    <b>Guadalupe Martinez:</b>
-    Cutscene art
+    Guadalupe Martinez: Cutscene art
 
-    <b>Sean Miller:</b> Programming, game design'
+    Sean Miller:
+    Programming, game design'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
   m_sharedMaterial: {fileID: 4186469811451385444, guid: ec947a087481c0e4c98a61640635eaa6, type: 2}
@@ -1155,7 +1156,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333775278}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1163,13 +1164,13 @@ RectTransform:
   - {fileID: 1371989914}
   - {fileID: 1425062442}
   - {fileID: 1168859551}
-  m_Father: {fileID: 1572314624}
-  m_RootOrder: 0
+  m_Father: {fileID: 64493528}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 351, y: -287}
+  m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1333775280
 MonoBehaviour:
@@ -1519,16 +1520,15 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1333775279}
   - {fileID: 1252346864}
   - {fileID: 769318819}
   m_Father: {fileID: 64493528}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 200, y: 230}
+  m_SizeDelta: {x: 200, y: 282.94}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1572314625
 MonoBehaviour:
@@ -1886,27 +1886,31 @@ PrefabInstance:
     - target: {fileID: 194133656513736591, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: cutscenes.Array.data[0].images.Array.data[0]
       value: 
+      objectReference: {fileID: 21300000, guid: 98fab217f0f66594294c3224413b560a, type: 3}
+    - target: {fileID: 194133656513736591, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: cutscenes.Array.data[0].images.Array.data[1]
+      value: 
       objectReference: {fileID: 21300000, guid: ee1de017a8229e24ca4758689a9a51d5, type: 3}
     - target: {fileID: 194133656513736591, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: cutscenes.Array.data[1].images.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: ee1de017a8229e24ca4758689a9a51d5, type: 3}
+      objectReference: {fileID: 21300000, guid: 52f320f98389d384c9eb94bb371db89b, type: 3}
     - target: {fileID: 194133656513736591, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: cutscenes.Array.data[2].images.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: d23a5460dc139da4b8526bc4a57ad1ad, type: 3}
     - target: {fileID: 194133656513736591, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: cutscenes.Array.data[2].images.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 18bf7486009fff1478ab2f502f91064c, type: 3}
     - target: {fileID: 194133656513736591, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: cutscenes.Array.data[2].images.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 0eff1670d44d6924fb23c490786c0bd3, type: 3}
     - target: {fileID: 194133656513736591, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: cutscenes.Array.data[2].images.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: bfdd731811bb88241a4217f180ca615c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
 --- !u!1001 &2231219413884007521
@@ -1950,7 +1954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2231219412972060561, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2231219412972060561, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_AnchorMax.x
