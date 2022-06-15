@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Sweet Potato Seed
   m_EditorClassIdentifier: 
   name: Sweet Potato Seeds
-  InventorySprite: {fileID: -2034887631, guid: dddd94a7669505b4ba62416c9fee7aed, type: 3}
+  InventorySprite: {fileID: -1718781298, guid: 164459c69a7dc4f4facf740391ef2f26, type: 3}
   Tradeable: 1
-  yield: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
+  yield:
+    item: {fileID: 0}
+    count: 0
   gameSprites:
   - {fileID: -2034887631, guid: dddd94a7669505b4ba62416c9fee7aed, type: 3}
   - {fileID: 209209870, guid: dddd94a7669505b4ba62416c9fee7aed, type: 3}

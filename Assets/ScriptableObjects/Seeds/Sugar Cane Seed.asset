@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Sugar Cane Seed
   m_EditorClassIdentifier: 
   name: Sugar Cane Seeds
-  InventorySprite: {fileID: -607439546, guid: 06946afe5b3796248a68c69051105cb8, type: 3}
+  InventorySprite: {fileID: 402978831, guid: 164459c69a7dc4f4facf740391ef2f26, type: 3}
   Tradeable: 1
-  yield: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
+  yield:
+    item: {fileID: 0}
+    count: 0
   gameSprites:
   - {fileID: -607439546, guid: 06946afe5b3796248a68c69051105cb8, type: 3}
   - {fileID: -1765407777, guid: 06946afe5b3796248a68c69051105cb8, type: 3}

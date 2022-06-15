@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Melati Seed
   m_EditorClassIdentifier: 
   name: Melati Seeds
-  InventorySprite: {fileID: -1426188895, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}
+  InventorySprite: {fileID: -208585912, guid: 164459c69a7dc4f4facf740391ef2f26, type: 3}
   Tradeable: 1
-  yield: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
+  yield:
+    item: {fileID: 0}
+    count: 0
   gameSprites:
   - {fileID: -1426188895, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}
   - {fileID: 1808982685, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}

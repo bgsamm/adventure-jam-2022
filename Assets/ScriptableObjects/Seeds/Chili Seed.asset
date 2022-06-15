@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Chili Seed
   m_EditorClassIdentifier: 
   name: Chili Seeds
-  InventorySprite: {fileID: -1149274202, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
+  InventorySprite: {fileID: -1825745265, guid: 164459c69a7dc4f4facf740391ef2f26, type: 3}
   Tradeable: 1
-  yield: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
+  yield:
+    item: {fileID: 0}
+    count: 0
   gameSprites:
   - {fileID: -1149274202, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}
   - {fileID: 1876154596, guid: 9641c8329abca884c8bf01ed75196d56, type: 3}

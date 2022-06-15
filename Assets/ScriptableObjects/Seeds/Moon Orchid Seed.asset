@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Moon Orchid Seed
   m_EditorClassIdentifier: 
   name: Moon Orchid Seeds
-  InventorySprite: {fileID: 629647705, guid: 3f7f90f30d4da83438a6520e17aa824d, type: 3}
+  InventorySprite: {fileID: 1381636116, guid: 164459c69a7dc4f4facf740391ef2f26, type: 3}
   Tradeable: 1
-  yield: {fileID: 11400000, guid: c286b589041b3794ca225b0c4b72149a, type: 2}
+  yield:
+    item: {fileID: 0}
+    count: 0
   gameSprites:
   - {fileID: 629647705, guid: 3f7f90f30d4da83438a6520e17aa824d, type: 3}
   - {fileID: -2130960997, guid: 3f7f90f30d4da83438a6520e17aa824d, type: 3}

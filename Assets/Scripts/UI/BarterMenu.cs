@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopUI : MonoBehaviour
+public class BarterMenu : MonoBehaviour
 {
     [SerializeField] private Image CharacterPortrait;
     [SerializeField] private GameObject TradeList;
@@ -15,16 +15,16 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private InventorySlot GetSummarySlot;
     [SerializeField] private Button AcceptButton;
 
-    private Clock clock;
     private InventorySystem inventory;
+
     private InventorySlot[] inventorySlots;
     private TradeListEntry[] tradeEntries;
+    private Trade currentTrade;
 
     private void Start() {
-        clock = ResourceLocator.instance.Clock;
         inventory = ResourceLocator.instance.InventorySystem;
 
-        var currentDay = clock.CurrentDay;
+        var currentDay = ResourceLocator.instance.Clock.CurrentDay;
         CharacterPortrait.sprite = currentDay.NPC.portraitSprite;
 
         // clear trade summary
@@ -43,7 +43,7 @@ public class ShopUI : MonoBehaviour
                 inventorySlot.SetStack(null);
         }
 
-        // fill the trade list
+        // populate the trade list
         tradeEntries = TradeList.GetComponentsInChildren<TradeListEntry>();
         var trades = currentDay.tradeList;
         for (int i = 0; i < tradeEntries.Length; i++) {
@@ -61,6 +61,14 @@ public class ShopUI : MonoBehaviour
     private void SetTradeSummary(Trade trade) {
         GiveSummarySlot.SetStack(trade.given);
         GetSummarySlot.SetStack(trade.received);
-        AcceptButton.interactable = true;
+        AcceptButton.interactable = inventory.HasItems(trade.given);
+        currentTrade = trade;
+    }
+
+    public void AcceptTrade() {
+        inventory.RemoveItems(currentTrade.given);
+        inventory.AddItems(currentTrade.received);
+        // TODO: display villager's end of trade dialog
+        ResourceLocator.instance.SceneLoader.LoadGardenScene();
     }
 }

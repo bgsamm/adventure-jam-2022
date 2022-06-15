@@ -15,16 +15,26 @@ public class InventorySystem : MonoBehaviour
     private void Start() { }
 
     public void AddItems(ItemStack stack) {
-        int match = stacks.FindIndex(x => x.item == stack.item);
-        if (match == -1)
+        var inventoryStack = FindStack(stack.item);
+        if (inventoryStack == null)
             stacks.Add(stack);
         else
-            stacks[match].AddToStack(stack.count);
+            inventoryStack.AddToStack(stack.count);
     }
 
-    public void RemoveItem(Item item) {
-        int match = stacks.FindIndex(stack => stack.item == item);
-        if (match != -1)
-            stacks[match].RemoveFromStack(1);
+    public void RemoveItems(ItemStack stack) {
+        var inventoryStack = FindStack(stack.item);
+        if (inventoryStack != null)
+            inventoryStack.RemoveFromStack(stack.count);
+    }
+
+    public bool HasItems(ItemStack stack) {
+        var inventoryStack = FindStack(stack.item);
+        return inventoryStack != null && stack.count <= inventoryStack.count;
+    }
+
+    private ItemStack FindStack(Item item) {
+        int match = stacks.FindIndex(x => x.item == item);
+        return match == -1 ? null : stacks[match];
     }
 }
