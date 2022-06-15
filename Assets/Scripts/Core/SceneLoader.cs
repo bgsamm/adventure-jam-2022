@@ -1,9 +1,14 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private void Start() { }
+    private Clock clock => ResourceLocator.instance.Clock;
+
+    public void LoadScene(SceneAsset scene) {
+        SceneManager.LoadScene(scene.name);
+    }
 
     public void LoadMenuScene() {
         SceneManager.LoadScene("MenuScene");
@@ -18,7 +23,7 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void LoadGardenScene() {
-        SceneManager.LoadScene("GardenScene");
+        LoadScene(clock.CurrentAct.scene);
     }
 
     public void LoadBarterScene() {

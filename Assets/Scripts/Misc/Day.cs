@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//a class of information about an individual day
-//the array of all the days is stored in the Clock script
 [Serializable]
 public class Day
 {

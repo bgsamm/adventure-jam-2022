@@ -17,6 +17,7 @@ public class Toolbar : MonoBehaviour
     }
 
     private void Update() {
+        // I don't love calling this every frame but it certainly is the simplest approach
         UpdateSlots();
         // Map inputs Toolbar 1..N to the corresponding toolbar slots
         for (int i = 0; i < slots.Length; i++) {

@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: Acts.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: Days.Array.size

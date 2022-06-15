@@ -1,52 +1,74 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
-    public Act CurrentAct => Acts[act];
-    public Day CurrentDay => CurrentAct.days[day];
+    public Act CurrentAct => Acts[ActNum - 1];
+    public Day CurrentDay => CurrentAct.days[DayNum - 1];
+    // indexed from 1, not 0
+    public int ActNum { get; private set; }
+    // indexed from 1, not 0
+    public int DayNum { get; private set; }
 
-    public bool IsMorning { get; private set; }
+    [SerializeField] private Cutscene SunriseCutscene;
+    [SerializeField] private List<Act> Acts;
+
+    [HideInInspector]
     public bool ShopVisited;
+    [HideInInspector]
     public bool TreeWatered;
     // checked for letters (i.e. visited the tree)
     // and read the letter if there is one
+    [HideInInspector]
     public bool LetterChecked;
 
-    [SerializeField] private List<Act> Acts;
-    private int act, day;
-
-    private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
+    private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
+    private LetterManager letterManager => ResourceLocator.instance.LetterManager;
 
-    private void Start() {
-        day = 0;
-        act = 0;
-        IsMorning = true; // Game starts in morning
-        ShopVisited = false;
-        TreeWatered = false;
-        LetterChecked = false;
+    public void PlayFromStart() {
+        ActNum = 0;
+        StartNextAct();
     }
 
-    // Should be called after/on shop visit, and sleeping
-    public void NextDay() {
-        cutsceneManager.PlayCutscene("Sunrise", sceneLoader.LoadGardenScene);
-
-        // Increments day if night already
-        if (!IsMorning)
-            day++;
-        IsMorning = !IsMorning; // flips to morning/dusk
-
-        ShopVisited = false;
-        TreeWatered = false;
-        LetterChecked = false;
-        //GardenManager.instance.GrowOvernight();
-        Debug.Log("Next day");
+    public void StartNextDay() {
+        void BeginDay() {
+            ShopVisited = false;
+            TreeWatered = false;
+            LetterChecked = false;
+            //GardenManager.instance.GrowOvernight();
+            cutsceneManager.PlayCutscene(SunriseCutscene,
+                delegate {
+                    Debug.Log("Next day");
+                    sceneLoader.LoadScene(CurrentAct.scene);
+                });
+        }
+        DayNum++;
+        // If end of current act, proceed to next act
+        if (DayNum > CurrentAct.days.Count) {
+            StartNextAct();
+        }
+        else {
+            if (DayNum == 1 && CurrentAct.openingLetter != null)
+                letterManager.ShowLetter(CurrentAct.openingLetter, BeginDay);
+            else
+                BeginDay();
+        }
     }
 
-    public void NextAct() {
-        day = 0;
-        act++;
+    public void StartNextAct() {
+        ActNum++;
+        if (ActNum > Acts.Count) {
+            // TODO: end game
+        }
+        else {
+            DayNum = 0;
+            if (CurrentAct.openingCutscene != null)
+                cutsceneManager.PlayCutscene(CurrentAct.openingCutscene, StartNextDay);
+            else
+                StartNextDay();
+        }
     }
 }

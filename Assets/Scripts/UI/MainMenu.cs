@@ -8,21 +8,12 @@ public class MainMenu : MonoBehaviour
     //public GameObject OptionsMenuPanel;
     public GameObject CreditsMenuPanel;
 
-    private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
-    private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
-    private LetterManager letterManager => ResourceLocator.instance.LetterManager;
-
     private void Start() {
         ShowMainMenu();
     }
 
     public void PlayGame() {
-        var clock = ResourceLocator.instance.Clock;
-        var firstLetter = clock.CurrentDay.letter;
-        cutsceneManager.PlayCutscene("Opening",
-            delegate {
-                letterManager.ShowLetter(firstLetter, sceneLoader.LoadGardenScene);
-            });
+        ResourceLocator.instance.Clock.PlayFromStart();
     }
 
     private void HideAllSubmenus() {

@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[Serializable]
-public class Cutscene
+[CreateAssetMenu(fileName = "New Cutscene", menuName = "Scriptable Object/Cutscene", order = 0)]
+public class Cutscene : ScriptableObject
 {
-    public string name;
     public List<Sprite> images;
-    public AudioSource audio;
     public float imageDuration;
+    public AudioSource audio;
 }

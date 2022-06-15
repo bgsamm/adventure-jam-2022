@@ -15,7 +15,7 @@ public class House : Interactable
     private void Start() { }
 
     public override void Interact() {
-        ResourceLocator.instance.Clock.NextDay();
+        ResourceLocator.instance.Clock.StartNextDay();
     }
 
     public override void StartCanInteract() {
