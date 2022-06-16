@@ -2,25 +2,17 @@ using UnityEngine;
 
 public class Plot : Interactable
 {
-    public bool Occupied => currPlant != null;
+    public Plant CurrentPlant;
+    public bool Occupied => CurrentPlant != null;
 
-    private int daysWatered;
-    private bool wateredToday;
-    private int growthStage;
-    private readonly int stagesToHarvest = 2;
-    private bool readyToHarvest;
-
-    [SerializeField] private GameObject waterIcon;
+    [SerializeField] private SpriteRenderer waterIcon;
+    private SpriteRenderer spriteRenderer;
 
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
-
-    private Seed currPlant;
-    private SpriteRenderer spriteRenderer;
 
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         interactableFrame.SetActive(false);
-        growthStage = 0;
     }
 
     private void Update() {
@@ -29,10 +21,20 @@ public class Plot : Interactable
             InteractMessage = "Press E to plant";
         }
         else if (Occupied) {
-            if (readyToHarvest)
+            if (CurrentPlant.ReadyToHarvest)
                 InteractMessage = "Press E to harvest";
-            else if (!wateredToday)
+            else if (!CurrentPlant.Watered)
                 InteractMessage = "Press E to water";
+        }
+
+        if (CurrentPlant != null) {
+            spriteRenderer.enabled = true;
+            spriteRenderer.sprite = CurrentPlant.Sprite;
+            waterIcon.enabled = !CurrentPlant.Watered && !CurrentPlant.ReadyToHarvest;
+        }
+        else {
+            spriteRenderer.enabled = false;
+            waterIcon.enabled = false;
         }
     }
 
@@ -40,44 +42,8 @@ public class Plot : Interactable
         if (inventory.HoldingSeed) {
             var selectedSeed = (Seed)inventory.selectedStack.item;
             inventory.RemoveItems(selectedSeed, 1);
-            currPlant = selectedSeed;
-            spriteRenderer.sprite = currPlant.gameSprites[0];
-            spriteRenderer.enabled = true;
+            CurrentPlant = new Plant(selectedSeed);
         }
-    }
-
-    public void Water() {
-        if (!wateredToday) {
-            wateredToday = true;
-            ++daysWatered;
-            waterIcon.SetActive(false);
-            Debug.Log("You watered this plant!");
-        }
-    }
-
-    public void Grow() {
-        if (currPlant == null || readyToHarvest)
-            return;
-        if (daysWatered >= currPlant.daysToGrow) {
-            daysWatered = 0;
-            ++growthStage;
-            spriteRenderer.sprite = currPlant.gameSprites[growthStage];
-            readyToHarvest = growthStage >= stagesToHarvest;
-            wateredToday = false;
-            if (!readyToHarvest)
-                waterIcon.SetActive(true);
-        }
-    }
-
-    public void Harvest() {
-        Debug.Log("Harvesting!");
-        foreach (ItemStack crop in currPlant.yield)
-            inventory.AddItems(crop);
-        daysWatered = 0;
-        waterIcon.SetActive(false);
-        readyToHarvest = false;
-        currPlant = null;
-        spriteRenderer.enabled = false;
     }
 
     public override void StartCanInteract() {
@@ -89,11 +55,15 @@ public class Plot : Interactable
     }
 
     public override void Interact() {
-        if (!Occupied)
+        if (!Occupied) {
             Plant();
-        else if (readyToHarvest)
-            Harvest();
-        else
-            Water();
+        }
+        else if (CurrentPlant.ReadyToHarvest) {
+            CurrentPlant.Harvest();
+            CurrentPlant = null;
+        }
+        else if (!CurrentPlant.Watered) {
+            CurrentPlant.Water();
+        }
     }
 }

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ResourceLocator : MonoBehaviour
 {
@@ -18,18 +17,27 @@ public class ResourceLocator : MonoBehaviour
 
     private void Awake() {
         if (instance != null && instance != this) {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
 
         // initialize resources
-        SceneLoader = GetComponent<SceneLoader>();
-        CutsceneManager = GetComponent<CutsceneManager>();
-        LetterManager = GetComponent<LetterManager>();
-        Clock = GetComponent<Clock>();
-        InventorySystem = GetComponent<InventorySystem>();
-        GardenManager = GetComponent<GardenManager>();
+        SceneLoader = FindResourceOfType<SceneLoader>();
+        CutsceneManager = FindResourceOfType<CutsceneManager>();
+        LetterManager = FindResourceOfType<LetterManager>();
+        Clock = FindResourceOfType<Clock>();
+        InventorySystem = FindResourceOfType<InventorySystem>();
+        GardenManager = FindResourceOfType<GardenManager>();
+    }
+
+    private T FindResourceOfType<T>() where T : Component {
+        // prioritize resources on the current GameObject
+        var resource = GetComponent<T>();
+        // if no such component, search the scene
+        if (resource == null)
+            resource = FindObjectOfType<T>();
+        return resource;
     }
 }

@@ -10,7 +10,7 @@ public class TaskList : MonoBehaviour
     [SerializeField] private GameObject taskPanel;
     [SerializeField] private Image[] checks = new Image[3];
 
-    private Clock clock => ResourceLocator.instance.Clock;
+    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Start() {
         taskPanel.SetActive(false);
@@ -33,8 +33,8 @@ public class TaskList : MonoBehaviour
             }
             controlText.text = text;
         }
-        checks[0].enabled = clock.ShopVisited;
-        checks[1].enabled = clock.TreeWatered;
-        checks[2].enabled = clock.LetterChecked;
+        checks[0].enabled = gardenManager.ShopVisited;
+        checks[1].enabled = gardenManager.TreeWatered;
+        checks[2].enabled = gardenManager.LetterChecked;
     }
 }

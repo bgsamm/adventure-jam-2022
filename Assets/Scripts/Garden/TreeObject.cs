@@ -7,15 +7,13 @@ public class TreeObject : Interactable
 {
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
     private Clock clock => ResourceLocator.instance.Clock;
+    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Update() {
         InteractMessage = "Press E to view the tree";
     }
 
     public override void Interact() {
-        // if there is no letter, just loading the scene counts as checking for a letter
-        if (clock.CurrentDay.letter != null)
-            clock.LetterChecked = true;
         sceneLoader.LoadTreeScene();
     }
 

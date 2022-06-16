@@ -295,3 +295,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableFrame: {fileID: 1860897721755187052}
+  waterIcon: {fileID: 7339368812871002233}

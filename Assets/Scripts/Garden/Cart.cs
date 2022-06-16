@@ -7,15 +7,15 @@ using UnityEngine;
 public class Cart : Interactable
 {
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
-    private Clock clock => ResourceLocator.instance.Clock;
+    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Update() {
-        InteractMessage = !clock.ShopVisited ? "Press E to enter shop" : "Your shop has no customers right now.";
+        InteractMessage = !gardenManager.ShopVisited ? "Press E to enter shop" : "Your shop has no customers right now.";
     }
 
     public override void Interact() {
-        if (!clock.ShopVisited) {
-            clock.ShopVisited = true;
+        if (!gardenManager.ShopVisited) {
+            gardenManager.ShopVisited = true;
             sceneLoader.LoadBarterScene();
         }
         else
