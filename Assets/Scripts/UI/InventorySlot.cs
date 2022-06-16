@@ -14,7 +14,7 @@ public class InventorySlot : MonoBehaviour
 
     public ItemStack Stack { get; private set; }
 
-    private void Start() {
+    private void Awake() {
         SetStack(null);
     }
 

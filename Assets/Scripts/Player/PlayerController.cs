@@ -3,6 +3,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // I don't like enabling/disabling the PlayerController directly for a few reasons:
+    // - Any script that wants to disable control would
+    //      need to obtain a reference to the player
+    // - If multiple objects have a PlayerController component,
+    //      external scripts would need references to each of them
+    // - If multiple components are involved in player control,
+    //      external scripts would need to disable all of them
+    // I feel a static boolean allows for a single point of access that other scripts
+    // involved in player control can then reference, simplifying the above cases.
+    public static bool playerHasControl;
+
     [SerializeField] private TextMeshProUGUI interactMessage;
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
@@ -24,9 +35,18 @@ public class PlayerController : MonoBehaviour
 
         interactionHotspot = GetComponentInChildren<InteractionHotspot>();
         interactionOffset = interactionHotspot.transform.localPosition;
+
+        playerHasControl = true;
     }
 
     private void Update() {
+        // check if player currently has control
+        if (!playerHasControl) {
+            direction = Vector2.zero;
+            interactMessage.text = "";
+            return;
+        }
+
         float horizInput = Input.GetAxisRaw("Horizontal"),
             vertInput = Input.GetAxisRaw("Vertical");
 
@@ -45,13 +65,15 @@ public class PlayerController : MonoBehaviour
 
         // Handle interactions
         var interactable = interactionHotspot.CurrentInteractable;
-        interactMessage.gameObject.SetActive(interactable != null);
         if (interactable != null) {
             interactMessage.text = interactable.InteractMessage;
             if (Input.GetButtonDown("Interact")) {
                 Debug.Log($"Interacting with {interactable.name}");
                 interactable.Interact();
             }
+        }
+        else {
+            interactMessage.text = "";
         }
     }
 

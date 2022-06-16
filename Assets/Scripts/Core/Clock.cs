@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
-    public bool TasksComplete => ShopVisited && TreeWatered && LetterChecked;
-
     public Act CurrentAct => Acts[ActNum - 1];
     public Day CurrentDay => CurrentAct.days[DayNum - 1];
     // indexed from 1, not 0
@@ -17,14 +15,13 @@ public class Clock : MonoBehaviour
     [SerializeField] private Cutscene SunriseCutscene;
     [SerializeField] private List<Act> Acts;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool ShopVisited;
-    [HideInInspector]
+    //[HideInInspector]
     public bool TreeWatered;
-    // checked for letters (i.e. visited the tree)
-    // and read the letter if there is one
-    [HideInInspector]
-    public bool LetterChecked;
+    //[HideInInspector]
+    public bool LetterChecked; // checked for letters (i.e. visited the tree) and read the letter if there is one
+    public bool TasksComplete => ShopVisited && TreeWatered && LetterChecked;
 
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
     private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
