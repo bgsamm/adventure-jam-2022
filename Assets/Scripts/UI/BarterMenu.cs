@@ -10,15 +10,20 @@ public class BarterMenu : MonoBehaviour
     [Header("Dialog")]
     [SerializeField] private Image characterPortrait;
     [SerializeField] private DialogHandler dialogHandler;
+    [SerializeField] private GameObject continueButton;
+    [SerializeField] private GameObject dontTradeButton;
+
     [Header("Barter Interface")]
     [SerializeField] private GameObject tradePanel;
     [SerializeField] private GameObject tradeList;
     [SerializeField] private GameObject inventoryPanel;
+
     [Header(" Trade Summary")]
     [SerializeField] private InventorySlot giveSummarySlot;
     [SerializeField] private InventorySlot getSummarySlot;
     [SerializeField] private Button acceptButton;
 
+    private Clock clock => ResourceLocator.instance.Clock;
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
 
@@ -27,7 +32,7 @@ public class BarterMenu : MonoBehaviour
     private Trade currentTrade;
 
     private void Start() {
-        var currentDay = ResourceLocator.instance.Clock.CurrentDay;
+        var currentDay = clock.CurrentDay;
         characterPortrait.sprite = currentDay.NPC.portraitSprite;
 
         // clear trade summary
@@ -61,6 +66,8 @@ public class BarterMenu : MonoBehaviour
         }
 
         tradePanel.SetActive(false);
+        continueButton.SetActive(true);
+        dontTradeButton.SetActive(false);
         dialogHandler.StartDialogue(currentDay.conversationKnot, BeginTrading);
     }
 
@@ -71,19 +78,29 @@ public class BarterMenu : MonoBehaviour
         currentTrade = trade;
     }
 
-    public void BeginTrading() {
+    private void BeginTrading() {
         tradePanel.SetActive(true);
+        continueButton.SetActive(false);
+        dontTradeButton.SetActive(true);
+    }
+
+    private void EndTrading(bool goodTrade) {
+        tradePanel.SetActive(false);
+        continueButton.SetActive(true);
+        dontTradeButton.SetActive(false);
+        // run dialog based on whether the trade was good or not
+        string knot = clock.CurrentDay.conversationKnot,
+            branch = goodTrade ? "GoodTrade" : "BadTrade";
+        dialogHandler.StartDialogue($"{knot}.{branch}", sceneLoader.LoadGardenScene);
     }
 
     public void AcceptTrade() {
         inventory.RemoveItems(currentTrade.given);
         inventory.AddItems(currentTrade.received);
-        // TODO: display villager's end-of-trade dialog
-        sceneLoader.LoadGardenScene();
+        EndTrading(currentTrade.goodTrade);
     }
 
     public void RefuseTrade() {
-        // TODO: display villager's end-of-trade dialog
-        sceneLoader.LoadGardenScene();
+        EndTrading(false);
     }
 }

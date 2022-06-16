@@ -482,9 +482,25 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: ActNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: DayNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: Acts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: Days.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: Acts.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: df0645fc6c1bbe148a6ad7953b3d8d5d, type: 2}
     - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: Days.Array.data[0].NPC
       value: 
@@ -2419,7 +2435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2231219414821223854, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_fontSize
-      value: 8
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2231219414821223854, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_fontColor.b
@@ -2435,7 +2451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2231219414821223854, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_fontSizeBase
-      value: 8
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2231219414821223854, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -3528,6 +3544,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPortrait: {fileID: 395148826}
   dialogHandler: {fileID: 1869322964}
+  continueButton: {fileID: 960420185}
+  dontTradeButton: {fileID: 58399058}
   tradePanel: {fileID: 758237665}
   tradeList: {fileID: 987244464}
   inventoryPanel: {fileID: 85320234}
@@ -3549,8 +3567,6 @@ MonoBehaviour:
   inkJSONAsset: {fileID: 4900000, guid: 235ccc76095f0014181e050ef9ffd787, type: 3}
   sceneText: {fileID: 1687901549}
   speakerLabel: {fileID: 1576615201}
-  continueButton: {fileID: 960420185}
-  dontTradeButton: {fileID: 58399058}
 --- !u!114 &1885530489 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5462305412331017768, guid: 5bfbb61721748ed41a6f383490f2b813, type: 3}

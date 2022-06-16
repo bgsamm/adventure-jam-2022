@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c42a8f1d66be54ba2fdaf6d4069137, type: 3}
+  m_Name: Test Act
+  m_EditorClassIdentifier: 
+  scene: {fileID: 102900000, guid: 709d350015baddd4087a31efd9f7cac6, type: 3}
+  openingCutscene: {fileID: 0}
+  openingLetter: {fileID: 0}
+  days:
+  - birdPresent: 0
+    letter: {fileID: 0}
+    NPC: {fileID: 11400000, guid: 4013bd3c139a83944b80db23dd2eaf43, type: 2}
+    conversationKnot: Day1
+    tradeList:
+    - given:
+        item: {fileID: 11400000, guid: 83b354e0d2496a54cb57f0e90b71ba86, type: 2}
+        count: 2
+      received:
+        item: {fileID: 11400000, guid: 4430747f37ac1f8449137d2f6cd93923, type: 2}
+        count: 2
+      goodTrade: 0
+    - given:
+        item: {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
+        count: 3
+      received:
+        item: {fileID: 11400000, guid: 50114b6f1bac7aa4c9e4cbe8f3c9b198, type: 2}
+        count: 2
+      goodTrade: 0
+  - birdPresent: 0
+    letter: {fileID: 0}
+    NPC: {fileID: 11400000, guid: 4013bd3c139a83944b80db23dd2eaf43, type: 2}
+    conversationKnot: Day1
+    tradeList:
+    - given:
+        item: {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
+        count: 3
+      received:
+        item: {fileID: 11400000, guid: 50114b6f1bac7aa4c9e4cbe8f3c9b198, type: 2}
+        count: 65536
+      goodTrade: 0
+    - given:
+        item: {fileID: 11400000, guid: 83b354e0d2496a54cb57f0e90b71ba86, type: 2}
+        count: 2
+      received:
+        item: {fileID: 11400000, guid: 4430747f37ac1f8449137d2f6cd93923, type: 2}
+        count: 2
+      goodTrade: 0

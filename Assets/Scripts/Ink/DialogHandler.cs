@@ -19,8 +19,6 @@ public class DialogHandler : MonoBehaviour
     // UI elements that will display the NPC name & dialog
     [SerializeField] private TextMeshProUGUI sceneText;
     [SerializeField] private TextMeshProUGUI speakerLabel;
-    [SerializeField] private GameObject continueButton;
-    [SerializeField] private GameObject dontTradeButton;
 
     private void Awake() {
         // NOTE: Reloading the story wipes the Ink state machine
@@ -32,12 +30,9 @@ public class DialogHandler : MonoBehaviour
         dialogEndCallback = callback;
         // Bind a function to be called once the dialog thread is over
         // (calls are made in the Ink file)
-        story.BindExternalFunction("onDialogEnd", EndDialogue);
+        //story.BindExternalFunction("onDialogEnd", callback);
 
         speakerLabel.text = clock.CurrentDay.NPC.name;
-        continueButton.SetActive(true);
-        dontTradeButton.SetActive(false);
-
         story.ChoosePathString(knot);
         ContinueStory(); // start the dialogue
     }
@@ -57,14 +52,7 @@ public class DialogHandler : MonoBehaviour
         }
         // The story CAN'T continue - end thread
         else {
-            EndDialogue();
+            dialogEndCallback.Invoke();
         }
-    }
-
-    public void EndDialogue() {
-        sceneText.text = "What do you have today?";
-        continueButton.SetActive(false);
-        dontTradeButton.SetActive(true);
-        dialogEndCallback.Invoke();
     }
 }

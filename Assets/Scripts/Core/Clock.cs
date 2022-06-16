@@ -10,9 +10,9 @@ public class Clock : MonoBehaviour
     public Act CurrentAct => Acts[ActNum - 1];
     public Day CurrentDay => CurrentAct.days[DayNum - 1];
     // indexed from 1, not 0
-    public int ActNum { get; private set; }
+    public int ActNum;
     // indexed from 1, not 0
-    public int DayNum { get; private set; }
+    public int DayNum;
 
     [SerializeField] private Cutscene SunriseCutscene;
     [SerializeField] private List<Act> Acts;

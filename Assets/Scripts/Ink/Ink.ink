@@ -1,12 +1,8 @@
 -> Day1
 
-EXTERNAL onDialogEnd()
-
 === Day1 ===
 
 I'd like to trade.
-
-~onDialogEnd()
 
 -> END
 
@@ -27,8 +23,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -47,8 +41,6 @@ Well, that's okay too...
 === Day3 ===
 
 I'd like to trade.
-
-~onDialogEnd()
 
 -> END
 
@@ -69,8 +61,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -89,8 +79,6 @@ Well, that's okay too...
 === Day5 ===
 
 I'd like to trade.
-
-~onDialogEnd()
 
 -> END
 
@@ -111,8 +99,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -131,8 +117,6 @@ Well, that's okay too...
 === Day7 ===
 
 I'd like to trade.
-
-~onDialogEnd()
 
 -> END
 
@@ -154,8 +138,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -174,8 +156,6 @@ Well, that's okay too...
 === Day9 ===
 
 I'd like to trade.
-
-~onDialogEnd()
 
 -> END
 
@@ -196,8 +176,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -216,8 +194,6 @@ Well, that's okay too...
 === Day11 ===
 
 I'd like to trade.
-
-~onDialogEnd()
 
 -> END
 
@@ -238,8 +214,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -258,8 +232,6 @@ Well, that's okay too...
 === Day13 ===
 
 I'd like to trade.
-
-~onDialogEnd()
 
 -> END
 
@@ -281,8 +253,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -302,8 +272,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -322,8 +290,6 @@ Well, that's okay too...
 === Day16 ===
 
 I'd like to trade.
-
-~onDialogEnd()
 
 -> END
 
@@ -345,8 +311,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -367,8 +331,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -387,8 +349,6 @@ Well, that's okay too...
 === Day19 ===
 
 I'd like to trade.
-
-~onDialogEnd()
 
 -> END
 
@@ -409,8 +369,6 @@ Well, that's okay too...
 
 I'd like to trade.
 
-~onDialogEnd()
-
 -> END
 
 = GoodTrade
@@ -429,8 +387,6 @@ Well, that's okay too...
 === Day21 ===
 
 I'd like to trade.
-
-~onDialogEnd()
 
 -> END
 
