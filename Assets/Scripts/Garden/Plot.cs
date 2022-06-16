@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class Plot : Interactable
 {
@@ -8,11 +7,9 @@ public class Plot : Interactable
     private int daysWatered;
     private bool wateredToday;
     private int growthStage;
-    readonly int stagesToHarvest = 2;
+    private readonly int stagesToHarvest = 2;
     private bool readyToHarvest;
 
-    [SerializeField] private GameObject interactableFrame;
-    [SerializeField] private TextMeshProUGUI interactableText;
     [SerializeField] private GameObject waterIcon;
 
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
@@ -20,12 +17,23 @@ public class Plot : Interactable
     private Seed currPlant;
     private SpriteRenderer spriteRenderer;
 
-    private string interactMessage;
-
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         interactableFrame.SetActive(false);
         growthStage = 0;
+    }
+
+    private void Update() {
+        InteractMessage = "";
+        if (!Occupied && inventory.HoldingSeed) {
+            InteractMessage = "Press E to plant";
+        }
+        else if (Occupied) {
+            if (readyToHarvest)
+                InteractMessage = "Press E to harvest";
+            else if (!wateredToday)
+                InteractMessage = "Press E to water";
+        }
     }
 
     public void Plant() {
@@ -73,22 +81,10 @@ public class Plot : Interactable
 
     public override void StartCanInteract() {
         interactableFrame.SetActive(true);
-        if (!Occupied && inventory.HoldingSeed) {
-            interactMessage = "Press E to plant";
-        }
-        else if (Occupied) {
-            if (readyToHarvest)
-                interactMessage = "Press E to harvest";
-            else if (!readyToHarvest)
-                interactMessage = "Press E to water";
-        }
-        interactableText.gameObject.SetActive(true);
-        interactableText.text = interactMessage;
     }
 
     public override void StopCanInteract() {
         interactableFrame.SetActive(false);
-        interactableText.gameObject.SetActive(false);
     }
 
     public override void Interact() {

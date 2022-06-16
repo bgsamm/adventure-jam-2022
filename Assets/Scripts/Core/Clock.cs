@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
+    public bool TasksComplete => ShopVisited && TreeWatered && LetterChecked;
+
     public Act CurrentAct => Acts[ActNum - 1];
     public Day CurrentDay => CurrentAct.days[DayNum - 1];
     // indexed from 1, not 0

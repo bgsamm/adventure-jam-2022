@@ -1506,7 +1506,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableFrame: {fileID: 989309187}
-  interactableText: {fileID: 546133894}
 --- !u!1 &677733942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4789034558928501007, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
@@ -34087,7 +34086,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableFrame: {fileID: 2109663088}
-  interactableText: {fileID: 546133894}
 --- !u!1 &2085171758
 GameObject:
   m_ObjectHideFlags: 0
@@ -35499,6 +35497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3623976736064359787, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
+      propertyPath: interactMessage
+      value: 
+      objectReference: {fileID: 546133894}
     - target: {fileID: 3623976736064359829, guid: aff332cf5634aaa42999ac1cc67cfb3c, type: 3}
       propertyPath: m_RootOrder
       value: 5
