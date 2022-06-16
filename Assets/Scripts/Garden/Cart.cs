@@ -3,19 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using TMPro;
 
 public class Cart : Interactable
 {
-    [SerializeField] private GameObject interactableFrame;
-    [SerializeField] private TextMeshProUGUI interactableText;
-
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
     private Clock clock => ResourceLocator.instance.Clock;
 
+    private void Update() {
+        InteractMessage = !clock.ShopVisited ? "Press E to enter shop" : "Your shop has no customers right now.";
+    }
+
     public override void Interact() {
-        if (!clock.ShopVisited)
-        {
+        if (!clock.ShopVisited) {
             clock.ShopVisited = true;
             sceneLoader.LoadBarterScene();
         }
@@ -24,16 +23,10 @@ public class Cart : Interactable
     }
 
     public override void StartCanInteract() {
-        if (!clock.ShopVisited)
-            interactableText.text = "Press E to enter shop";
-        else
-            interactableText.text = "Your shop has no customers right now.";
         interactableFrame.SetActive(true);
-        interactableText.gameObject.SetActive(true);
     }
 
     public override void StopCanInteract() {
-            interactableFrame.SetActive(false);
-            interactableText.gameObject.SetActive(false);
+        interactableFrame.SetActive(false);
     }
 }
