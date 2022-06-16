@@ -71,7 +71,8 @@ public class Plot : Interactable
 
     public void Harvest() {
         Debug.Log("Harvesting!");
-        inventory.AddItems(currPlant.yield);
+        foreach (ItemStack crop in currPlant.yield)
+            inventory.AddItems(crop);
         daysWatered = 0;
         waterIcon.SetActive(false);
         readyToHarvest = false;

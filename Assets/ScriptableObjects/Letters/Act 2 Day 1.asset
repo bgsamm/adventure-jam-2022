@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e0e37e3a71cc54099fdb9e94f444b7, type: 3}
   m_Name: Act 2 Day 1
   m_EditorClassIdentifier: 
-  text: []
-  pages: []
+  pages:
+  - "Dear Agung, <br><br>  Happy birthday! I\u2019m sorry I couldn\u2019t be there.
+    I know, that\u2019s what I said last year, and the year before. Where has it
+    all gone? <br><br>  I\u2019ve sent you a present I bought from one of the roadside
+    vendors: Moon orchid seeds. Moon orchids are a symbol of peace, you know. How
+    she managed to cultivate such a delicate plant amid all the bombings I can\u2019t
+    imagine. I know they\u2019ll thrive in our garden. "
+  - "Pray for an end to the war, and for us here at the front. There isn\u2019t a
+    single day when I don\u2019t pray to see you again. <br><br>  Love, Dad "
   gifts:
-  - item: {fileID: 0}
-    count: 0
+  - item: {fileID: 11400000, guid: 526ac26df29ec3f44b913da5755be29d, type: 2}
+    count: 8
