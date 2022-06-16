@@ -1,7 +1,9 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI interactMessage;
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float interactionDist;
@@ -43,15 +45,19 @@ public class PlayerController : MonoBehaviour
 
         // Handle interactions
         var interactable = interactionHotspot.CurrentInteractable;
-        if (Input.GetButtonDown("Interact") && interactable != null) {
-            Debug.Log($"Interacting with {interactable.name}");
-            interactable.Interact();
+        interactMessage.gameObject.SetActive(interactable != null);
+        if (interactable != null) {
+            interactMessage.text = interactable.InteractMessage;
+            if (Input.GetButtonDown("Interact")) {
+                Debug.Log($"Interacting with {interactable.name}");
+                interactable.Interact();
+            }
         }
     }
 
     private void FixedUpdate() {
         var position = rigidbody2D.position + moveSpeed * Time.fixedDeltaTime * direction;
-        // move the player by an integer # of pixels
+        // Move the player by an integer # of pixels
         float p_x = Mathf.FloorToInt(position.x * pixelsPerUnit);
         float p_y = Mathf.FloorToInt(position.y * pixelsPerUnit);
         var p = new Vector2(p_x, p_y) / pixelsPerUnit;
