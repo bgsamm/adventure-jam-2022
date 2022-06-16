@@ -8,8 +8,13 @@ public class MainMenu : MonoBehaviour
     //public GameObject OptionsMenuPanel;
     public GameObject CreditsMenuPanel;
 
+    private Clock clock => ResourceLocator.instance.Clock;
+
     private void Start() {
-        ShowMainMenu();
+        if (clock.ActNum == 5)
+            ShowCreditsSubmenu();
+        else
+            ShowMainMenu();
     }
 
     public void PlayGame() {

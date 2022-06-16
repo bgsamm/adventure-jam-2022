@@ -9,12 +9,17 @@ public class House : Interactable
     private Clock clock => ResourceLocator.instance.Clock;
 
     private void Update() {
-        //if you've completed all three tasks, you can go to sleep
-        InteractMessage = clock.TasksComplete ? "Press E to sleep" : "You aren't tired yet.";
+        if (clock.ActNum != 4)
+            //if you've completed all three tasks, you can go to sleep
+            InteractMessage = clock.TasksComplete ? "Press E to sleep" : "You aren't tired yet.";
+        else
+            InteractMessage = "Press E to sleep";
     }
 
     public override void Interact() {
-        clock.StartNextDay();
+        //you don't need to complete tasks if it's act 4
+        if (clock.TasksComplete || clock.ActNum == 4)
+            clock.StartNextDay();
     }
 
     public override void StartCanInteract() {
