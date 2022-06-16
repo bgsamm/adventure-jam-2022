@@ -9,26 +9,26 @@ public class TreeScene : MonoBehaviour
     readonly string BIRD = "Bird";
     private bool interacting;
 
-    private void Awake()
-    {
+    private Clock clock => ResourceLocator.instance.Clock;
+    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
+
+    private void Awake() {
         interacting = false;
     }
-    public void ClickedObject(string name)
-    {
+
+    public void ClickedObject(string name) {
         if (interacting) return;
         interacting = true;
 
-        if(name.Equals(BIRD) && !ResourceLocator.instance.Clock.LetterChecked) {
-            if(ResourceLocator.instance.Clock.CurrentDay.birdPresent)
-            {
+        if (name.Equals(BIRD) && !gardenManager.LetterChecked) {
+            if (clock.CurrentDay.birdPresent) {
                 // Logic for checking the letter
             }
-            ResourceLocator.instance.Clock.LetterChecked = true;
+            gardenManager.LetterChecked = true;
         }
-        else if (name.Equals(BIRD) && !ResourceLocator.instance.Clock.TreeWatered)
-        {
+        else if (name.Equals(WATER_CAN) && !gardenManager.TreeWatered) {
             // Logic for watering the tree
-            ResourceLocator.instance.Clock.TreeWatered = true;
+            gardenManager.TreeWatered = true;
         }
 
         interacting = false;

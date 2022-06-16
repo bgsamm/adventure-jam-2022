@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4652763224035247424}
   - component: {fileID: 194133656513736586}
   - component: {fileID: 194133656513736585}
+  - component: {fileID: 3531971039718412984}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -73,7 +74,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19dee1f0fc806a4a9c260075692db5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutscenes: []
 --- !u!114 &4652763224035247424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015c80265dc246248a6470e364e0d1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Days: []
+  ActNum: 0
+  DayNum: 0
+  SunriseCutscene: {fileID: 0}
+  Acts: []
 --- !u!114 &194133656513736585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,3 +118,18 @@ MonoBehaviour:
   selectedStack:
     item: {fileID: 0}
     count: 0
+--- !u!114 &3531971039718412984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194133656513736588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e47fede8248ec45839bf701cbdeb3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShopVisited: 0
+  TreeWatered: 0
+  LetterChecked: 0
