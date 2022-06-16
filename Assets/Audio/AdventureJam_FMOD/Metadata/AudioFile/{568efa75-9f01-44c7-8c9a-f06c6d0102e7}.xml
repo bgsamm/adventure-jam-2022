@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{568efa75-9f01-44c7-8c9a-f06c6d0102e7}">
+		<property name="assetPath">
+			<value>BG/AdventureJam_BG_Bombing.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>20.75</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{80c2297a-d424-4abe-957d-9e151a49cefa}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4f18ee12-6a3f-46e0-a217-ed1b836fe274}">
+		<property name="assetPath">
+			<value>BG/AdventureJam_BG_MARKET_ACT1-2.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>112.625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{80c2297a-d424-4abe-957d-9e151a49cefa}</destination>
+		</relationship>
+	</object>
+</objects>

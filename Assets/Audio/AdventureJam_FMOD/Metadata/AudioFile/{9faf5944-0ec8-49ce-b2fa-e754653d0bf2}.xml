@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9faf5944-0ec8-49ce-b2fa-e754653d0bf2}">
+		<property name="assetPath">
+			<value>ACT 2/AdventureJam_MX_ACT2_THEME_MAWAR_MIX.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>68.571437500000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{80c2297a-d424-4abe-957d-9e151a49cefa}</destination>
+		</relationship>
+	</object>
+</objects>
