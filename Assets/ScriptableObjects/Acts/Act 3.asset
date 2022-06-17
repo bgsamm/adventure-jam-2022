@@ -26,9 +26,9 @@ MonoBehaviour:
         item: {fileID: 0}
         count: 0
       received:
-        item: {fileID: 0}
-        count: 0
-      goodTrade: 0
+        item: {fileID: 11400000, guid: 7a3df58175d48bc4f93e57a3453219b3, type: 2}
+        count: 1
+      goodTrade: 1
   - birdPresent: 0
     noTrade: 0
     letter: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
         count: 2
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
-        count: 0
+        count: 1
       goodTrade: 1
   - birdPresent: 1
     noTrade: 0
