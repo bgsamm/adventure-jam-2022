@@ -16,6 +16,7 @@ public class Clock : MonoBehaviour
     [SerializeField] private List<Act> Acts;
 
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
+    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
     private LetterManager letterManager => ResourceLocator.instance.LetterManager;
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
@@ -53,6 +54,7 @@ public class Clock : MonoBehaviour
             // TODO: end game
         }
         else {
+            audioManager.PlayLoop(CurrentAct.music);
             DayNum = 0;
             if (CurrentAct.openingCutscene != null)
                 cutsceneManager.PlayCutscene(CurrentAct.openingCutscene, StartNextDay);

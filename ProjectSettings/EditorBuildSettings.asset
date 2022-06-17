@@ -18,6 +18,18 @@ EditorBuildSettings:
     path: Assets/Scenes/GardenScene (Act 1).unity
     guid: 709d350015baddd4087a31efd9f7cac6
   - enabled: 1
+    path: Assets/Scenes/GardenScene (Act 2).unity
+    guid: 290832a454d55dc4f9c2fbda16adb597
+  - enabled: 1
+    path: Assets/Scenes/GardenScene (Act 3).unity
+    guid: f403a890d21b98d429a735e2f047aabb
+  - enabled: 1
+    path: Assets/Scenes/GardenScene (Act 4).unity
+    guid: 9851e14c11c3a4243927e4cc9af6495c
+  - enabled: 1
+    path: Assets/Scenes/GardenScene (Act 5).unity
+    guid: 2cf9d4e6820238a45b0aed1580d120e2
+  - enabled: 1
     path: Assets/Scenes/BarterScene.unity
     guid: 9f2c2c6fd45979b4196e266f8d17ee5f
   - enabled: 1
