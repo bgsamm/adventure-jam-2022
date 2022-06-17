@@ -3341,8 +3341,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '[Dialog]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3a1828026e795af4c9e7d5fdc41c92ac, type: 2}
-  m_sharedMaterial: {fileID: 1926964683427752049, guid: 3a1828026e795af4c9e7d5fdc41c92ac, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
+  m_sharedMaterial: {fileID: -2014821490742284180, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3366,8 +3366,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4098,6 +4098,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 528813040}
     m_Modifications:
+    - target: {fileID: 1647461952923302699, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647461952923302699, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
+    - target: {fileID: 1647461952923302699, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647461952923302699, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2014821490742284180, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
     - target: {fileID: 1647461952923302700, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
       propertyPath: m_Name
       value: Continue Button
