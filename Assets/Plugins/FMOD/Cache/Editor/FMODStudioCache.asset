@@ -143,7 +143,7 @@ MonoBehaviour:
   Path: Assets/Audio/AdventureJam_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637909985217584236
+  lastModified: 637909996417171997
   FileSizes:
   - Name: Desktop
     Value: 1146
@@ -310,7 +310,7 @@ MonoBehaviour:
   - {fileID: 4557921489517248352}
   StringsBanks:
   - {fileID: -4507807168643759925}
-  cacheTime: 637909985217584236
+  cacheTime: 637909996417171997
   cacheVersion: 131591
 --- !u!114 &3487626306165995517
 MonoBehaviour:
@@ -351,7 +351,7 @@ MonoBehaviour:
   Path: Assets/Audio/AdventureJam_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637909985217564302
+  lastModified: 637909996417152103
   FileSizes:
   - Name: Desktop
     Value: 19732448
