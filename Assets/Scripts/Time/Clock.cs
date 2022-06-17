@@ -16,7 +16,7 @@ public class Clock : MonoBehaviour
     [SerializeField] private List<Act> Acts;
 
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
-    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
+    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
     private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
     private LetterManager letterManager => ResourceLocator.instance.LetterManager;
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
@@ -28,9 +28,6 @@ public class Clock : MonoBehaviour
 
     public void StartNextDay() {
         void BeginDay() {
-            // TODO: move somewhere better
-            if (ActNum == 3 && DayNum == 5)
-                audioManager.SetGlobalParameter("DAY 5", 1);
             gardenManager.BeginDay();
             cutsceneManager.PlayCutscene(SunriseCutscene,
                 delegate {
@@ -54,7 +51,7 @@ public class Clock : MonoBehaviour
 
     public void StartNextAct() {
         void StartAct() {
-            audioManager.PlayLoop(CurrentAct.ambience, false);
+            audioManager.PlayLoop(CurrentAct.ambience);
             StartNextDay();
         }
 

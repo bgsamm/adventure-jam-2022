@@ -10,5 +10,5 @@ public class Cutscene : ScriptableObject
 {
     public List<Sprite> images;
     public float imageDuration;
-    public EventReference audio;
+    public AudioClip audio;
 }

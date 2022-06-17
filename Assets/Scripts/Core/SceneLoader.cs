@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
 
     public void LoadScene(string name) {
@@ -24,9 +23,6 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void LoadGardenScene() {
-        // TODO: I reeeeeally don't like this, but for now I guess it works
-        audioManager.SetGlobalParameter("NPC IO", 0);
-        audioManager.SetGlobalParameter("NPC SWITCH", 0);
         LoadScene(clock.CurrentAct.sceneName);
     }
 

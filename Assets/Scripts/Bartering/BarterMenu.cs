@@ -29,7 +29,7 @@ public class BarterMenu : MonoBehaviour
     [SerializeField] private Item chile;
 
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
-    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
+    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
 
@@ -40,8 +40,8 @@ public class BarterMenu : MonoBehaviour
     private void Start() {
         var currentDay = clock.CurrentDay;
         characterPortrait.sprite = currentDay.NPC.portraitSprite;
-        audioManager.SetGlobalParameter("NPC IO", 1);
-        audioManager.SetGlobalParameter("NPC SWITCH", currentDay.NPC.musicIndex);
+        //audioManager.SetGlobalParameter("NPC IO", 1);
+        //audioManager.SetGlobalParameter("NPC SWITCH", currentDay.NPC.musicIndex);
 
         // clear trade summary
         giveSummarySlot.SetStack(null);

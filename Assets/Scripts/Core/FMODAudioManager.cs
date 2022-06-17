@@ -3,7 +3,7 @@ using FMODUnity;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class FmodAudioManager : MonoBehaviour
 {
     private List<EventInstance> activeLoops = new List<EventInstance>();
 

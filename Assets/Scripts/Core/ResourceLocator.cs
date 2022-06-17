@@ -9,7 +9,7 @@ public class ResourceLocator : MonoBehaviour
     public static ResourceLocator instance { get; private set; }
 
     public SceneLoader SceneLoader { get; private set; }
-    public AudioManager AudioManager { get; private set; }
+    public UnityAudioManager AudioManager { get; private set; }
     public CutsceneManager CutsceneManager { get; private set; }
     public LetterManager LetterManager { get; private set; }
     public Clock Clock { get; private set; }
@@ -25,12 +25,21 @@ public class ResourceLocator : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // initialize resources
-        SceneLoader = GetComponent<SceneLoader>();
-        AudioManager = GetComponent<AudioManager>();
-        CutsceneManager = GetComponent<CutsceneManager>();
-        LetterManager = GetComponent<LetterManager>();
-        Clock = GetComponent<Clock>();
-        InventorySystem = GetComponent<InventorySystem>();
-        GardenManager = GetComponent<GardenManager>();
+        SceneLoader = FindResourceOfType<SceneLoader>();
+        AudioManager = FindResourceOfType<UnityAudioManager>();
+        CutsceneManager = FindResourceOfType<CutsceneManager>();
+        LetterManager = FindResourceOfType<LetterManager>();
+        Clock = FindResourceOfType<Clock>();
+        InventorySystem = FindResourceOfType<InventorySystem>();
+        GardenManager = FindResourceOfType<GardenManager>();
+    }
+
+    private T FindResourceOfType<T>() where T : MonoBehaviour {
+        // prioritize components on the current game object
+        T resource = GetComponent<T>();
+        // if no such component, search the scene
+        if (resource == null)
+            resource = FindObjectOfType<T>();
+        return resource;
     }
 }

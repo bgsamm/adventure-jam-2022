@@ -18,10 +18,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0eff1670d44d6924fb23c490786c0bd3, type: 3}
   - {fileID: 21300000, guid: bfdd731811bb88241a4217f180ca615c, type: 3}
   imageDuration: 3
-  audio:
-    Guid:
-      Data1: 1780147405
-      Data2: 1075772345
-      Data3: 1096961175
-      Data4: -1915247180
-    Path: event:/BOMBING
+  audio: {fileID: 8300000, guid: cc0a176385109004bb934fa35e97d76e, type: 3}

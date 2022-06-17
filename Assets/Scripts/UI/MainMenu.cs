@@ -10,9 +10,9 @@ public class MainMenu : MonoBehaviour
     //[SerializeField] private GameObject OptionsMenuPanel;
     [SerializeField] private GameObject CreditsMenuPanel;
     [Header("Audio")]
-    [SerializeField] private EventReference menuMusic;
+    [SerializeField] private AudioClip menuMusic;
 
-    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
+    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
 
     private void Start() {

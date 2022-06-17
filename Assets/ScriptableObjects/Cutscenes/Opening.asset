@@ -15,4 +15,4 @@ MonoBehaviour:
   images:
   - {fileID: 21300000, guid: 98fab217f0f66594294c3224413b560a, type: 3}
   imageDuration: 3
-  audio: {fileID: 0}
+  audio: {fileID: 8300000, guid: 309675ea22e471c41820e3de4019c31c, type: 3}
