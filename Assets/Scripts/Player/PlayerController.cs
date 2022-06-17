@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject wateringCan;
 
-    private GardenManager gardenManager = ResourceLocator.instance.GardenManager;
+    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Awake() {
         animator = GetComponent<Animator>();

@@ -33,8 +33,8 @@ MonoBehaviour:
         item: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
         count: 3
       received:
-        item: {fileID: 0}
-        count: 0
+        item: {fileID: 11400000, guid: 83b354e0d2496a54cb57f0e90b71ba86, type: 2}
+        count: 5
       goodTrade: 1
   - birdPresent: 0
     noTrade: 0

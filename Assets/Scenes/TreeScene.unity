@@ -1143,9 +1143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af1cb78c86650241acbcf798743b9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
-  bird: {fileID: 0}
-  wateringCan: {fileID: 0}
+  background: {fileID: 1453154323}
+  bird: {fileID: 1893485430}
+  wateringCan: {fileID: 190647996}
   acorns: {fileID: 650345386}
 --- !u!1001 &1680731466
 PrefabInstance:

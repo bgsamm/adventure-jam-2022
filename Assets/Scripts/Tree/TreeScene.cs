@@ -13,8 +13,7 @@ public class TreeScene : MonoBehaviour
     private LetterManager letterManager => ResourceLocator.instance.LetterManager;
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
 
-    private void Start()
-    {
+    private void Start() {
         if (gardenManager.TreeWatered)
             background.sprite = clock.CurrentAct.treePortraitWatered;
         else
@@ -36,8 +35,7 @@ public class TreeScene : MonoBehaviour
         }
     }
 
-    public void WaterTree()
-    {
+    public void WaterTree() {
         Debug.Log("You watered the tree!");
         wateringCan.PlayWateringAnim(
             delegate {
@@ -46,8 +44,7 @@ public class TreeScene : MonoBehaviour
             });
     }
 
-    public void ReturnToGarden()
-    {
+    public void ReturnToGarden() {
         sceneLoader.LoadGardenScene();
     }
 }

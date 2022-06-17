@@ -8,12 +8,19 @@ public class OverworldNPC : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
 
+    private Clock clock => ResourceLocator.instance.Clock;
+    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
+
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start() {
-        var npc = ResourceLocator.instance.Clock.CurrentDay.NPC;
-        spriteRenderer.sprite = npc.overworldSprite;
+        if (!gardenManager.ShopVisited && clock.CurrentDay.NPC != null) {
+            spriteRenderer.sprite = clock.CurrentDay.NPC.overworldSprite;
+        }
+        else {
+            spriteRenderer.sprite = null;
+        }
     }
 }
