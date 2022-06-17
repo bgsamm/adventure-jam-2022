@@ -9,11 +9,15 @@ public class TaskList : MonoBehaviour
     [SerializeField] private TextMeshProUGUI controlText;
     [SerializeField] private GameObject taskPanel;
     [SerializeField] private Image[] checks = new Image[3];
+    private string dayAct;
 
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Start() {
+        dayAct = "\nAct " +
+         ResourceLocator.instance.Clock.ActNum + ", Day " + ResourceLocator.instance.Clock.DayNum;
         taskPanel.SetActive(false);
+        controlText.text += dayAct;
     }
 
     private void Update() {
@@ -26,6 +30,9 @@ public class TaskList : MonoBehaviour
             if (!taskPanel.activeSelf) {
                 taskPanel.SetActive(true);
                 text = controlText.text.Replace("show", "hide");
+                string currentTime = "\nAct " +
+                    ResourceLocator.instance.Clock.ActNum + ", Day " + ResourceLocator.instance.Clock.DayNum;
+                text = controlText.text.Replace(dayAct, currentTime);
             }
             else {
                 taskPanel.SetActive(false);
