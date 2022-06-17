@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c42a8f1d66be54ba2fdaf6d4069137, type: 3}
+  m_Name: Act 2
+  m_EditorClassIdentifier: 
+  scene: {fileID: 102900000, guid: 290832a454d55dc4f9c2fbda16adb597, type: 3}
+  openingCutscene: {fileID: 11400000, guid: f65c756cb4cae004ebe4a51d318297ce, type: 2}
+  openingLetter: {fileID: 11400000, guid: 09bada6b5602b5949839e970a459f194, type: 2}
+  days:
+  - birdPresent: 0
+    letter: {fileID: 0}
+    NPC: {fileID: 11400000, guid: d44b32007f435a0428f2677cdae2891a, type: 2}
+    conversationKnot: Day8
+    tradeList: []
+  - birdPresent: 0
+    letter: {fileID: 0}
+    NPC: {fileID: 11400000, guid: 61c36f826d3163246838603cff3d28d5, type: 2}
+    conversationKnot: Day9
+    tradeList:
+    - given:
+        item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
+        count: 2
+      received:
+        item: {fileID: 11400000, guid: 4430747f37ac1f8449137d2f6cd93923, type: 2}
+        count: 3
+      goodTrade: 1
+    - given:
+        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
+        count: 4
+      received:
+        item: {fileID: 11400000, guid: 4430747f37ac1f8449137d2f6cd93923, type: 2}
+        count: 2
+      goodTrade: 1
+  - birdPresent: 1
+    letter: {fileID: 11400000, guid: 2c2b57fe16e4dbe41af020d393550cba, type: 2}
+    NPC: {fileID: 11400000, guid: a3c3bc5b7815b6742a007c8133976755, type: 2}
+    conversationKnot: Day10
+    tradeList:
+    - given:
+        item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
+        count: 1
+      received:
+        item: {fileID: 11400000, guid: 64d161d99df8b90408b834e9354ecf17, type: 2}
+        count: 2
+      goodTrade: 1
+    - given:
+        item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
+        count: 2
+      received:
+        item: {fileID: 11400000, guid: 64d161d99df8b90408b834e9354ecf17, type: 2}
+        count: 2
+      goodTrade: 1
+  - birdPresent: 0
+    letter: {fileID: 0}
+    NPC: {fileID: 11400000, guid: 4013bd3c139a83944b80db23dd2eaf43, type: 2}
+    conversationKnot: Day11
+    tradeList:
+    - given:
+        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
+        count: 4
+      received:
+        item: {fileID: 11400000, guid: f1156873bc42ae443931f4ed7f104328, type: 2}
+        count: 1
+      goodTrade: 0
+    - given:
+        item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
+        count: 4
+      received:
+        item: {fileID: 11400000, guid: f1156873bc42ae443931f4ed7f104328, type: 2}
+        count: 1
+      goodTrade: 0
+    - given:
+        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
+        count: 3
+      received:
+        item: {fileID: 11400000, guid: f1156873bc42ae443931f4ed7f104328, type: 2}
+        count: 1
+      goodTrade: 0
+    - given:
+        item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
+        count: 3
+      received:
+        item: {fileID: 11400000, guid: f1156873bc42ae443931f4ed7f104328, type: 2}
+        count: 1
+      goodTrade: 0
+    - given:
+        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
+        count: 3
+      received:
+        item: {fileID: 0}
+        count: 0
+      goodTrade: 1
+    - given:
+        item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
+        count: 3
+      received:
+        item: {fileID: 0}
+        count: 0
+      goodTrade: 1
+  - birdPresent: 1
+    letter: {fileID: 11400000, guid: fb99476197a069e42bef173a13f34ed3, type: 2}
+    NPC: {fileID: 11400000, guid: d44b32007f435a0428f2677cdae2891a, type: 2}
+    conversationKnot: Day12
+    tradeList:
+    - given:
+        item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
+        count: 5
+      received:
+        item: {fileID: 0}
+        count: 0
+      goodTrade: 0
+    - given:
+        item: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
+        count: 5
+      received:
+        item: {fileID: 0}
+        count: 0
+      goodTrade: 0
+    - given:
+        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
+        count: 5
+      received:
+        item: {fileID: 0}
+        count: 0
+      goodTrade: 0
+  - birdPresent: 0
+    letter: {fileID: 0}
+    NPC: {fileID: 11400000, guid: a3c3bc5b7815b6742a007c8133976755, type: 2}
+    conversationKnot: Day13
+    tradeList:
+    - given:
+        item: {fileID: 11400000, guid: 907675c98fb13e740b5f1fcd21995cc0, type: 2}
+        count: 1
+      received:
+        item: {fileID: 0}
+        count: 0
+      goodTrade: 1
+  - birdPresent: 1
+    letter: {fileID: 11400000, guid: 8afee79c66722ca48960bbfdab32649d, type: 2}
+    NPC: {fileID: 11400000, guid: 61c36f826d3163246838603cff3d28d5, type: 2}
+    conversationKnot: Day14
+    tradeList: []
