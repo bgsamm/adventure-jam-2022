@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sunflower
   m_EditorClassIdentifier: 
   name: Sunflower
-  InventorySprite: {fileID: -550231315, guid: e9d418df33f0f8f489317d7e85d4913e, type: 3}
+  InventorySprite: {fileID: 21300000, guid: 0ef66e9811a13224b808c4b8f3108b57, type: 3}
   Tradeable: 1

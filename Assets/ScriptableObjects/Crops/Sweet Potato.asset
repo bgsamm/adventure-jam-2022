@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sweet Potato
   m_EditorClassIdentifier: 
   name: Sweet Potato
-  InventorySprite: {fileID: -701067776, guid: dddd94a7669505b4ba62416c9fee7aed, type: 3}
+  InventorySprite: {fileID: 21300000, guid: e29cd527a2b42ab47962e24da86c45b7, type: 3}
   Tradeable: 1
