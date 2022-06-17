@@ -51,8 +51,8 @@ public class Clock : MonoBehaviour
 
     public void StartNextAct() {
         void StartAct() {
-            audioManager.PlayLoop(CurrentAct.ambience);
             StartNextDay();
+            audioManager.PlayLoop(CurrentAct.music);
         }
 
         ActNum++;
@@ -60,7 +60,6 @@ public class Clock : MonoBehaviour
             // TODO: end game
         }
         else {
-            audioManager.PlayLoop(CurrentAct.music);
             DayNum = 0;
             if (CurrentAct.openingCutscene != null)
                 cutsceneManager.PlayCutscene(CurrentAct.openingCutscene, StartAct);
