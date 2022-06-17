@@ -68,6 +68,7 @@ public class Plot : Interactable
         }
         else if (!CurrentPlant.Watered) {
             CurrentPlant.Water();
+            InteractMessage = "Plant watered";
         }
     }
 }
