@@ -23,8 +23,6 @@ public class GardenManager : MonoBehaviour
     private Plot[] plots;
     private GameObject player;
 
-    public bool watering = false;
-
     private void Awake() {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }

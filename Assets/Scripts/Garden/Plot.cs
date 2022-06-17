@@ -6,7 +6,8 @@ public class Plot : Interactable
     public bool Occupied => CurrentPlant != null;
 
     [SerializeField] private GameObject waterIcon;
-    [SerializeField] private SpriteRenderer wateredGroundSprite;
+    [SerializeField] private WateringCan wateringCan;
+    //[SerializeField] private SpriteRenderer wateredGroundSprite;
     private SpriteRenderer spriteRenderer;
 
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
@@ -32,21 +33,29 @@ public class Plot : Interactable
             spriteRenderer.enabled = true;
             spriteRenderer.sprite = CurrentPlant.Sprite;
             waterIcon.SetActive(!CurrentPlant.Watered && !CurrentPlant.ReadyToHarvest);
-            wateredGroundSprite.enabled = CurrentPlant.Watered; 
+            //wateredGroundSprite.enabled = CurrentPlant.Watered; 
         }
         else {
             spriteRenderer.enabled = false;
             waterIcon.SetActive(false);
-            wateredGroundSprite.enabled = false;
+            //wateredGroundSprite.enabled = false;
         }
     }
 
-    public void Plant() {
+    private void Plant() {
         if (inventory.HoldingSeed) {
             var selectedSeed = (Seed)inventory.selectedStack.item;
             inventory.RemoveItems(selectedSeed, 1);
             CurrentPlant = new Plant(selectedSeed);
         }
+    }
+
+    private void Water() {
+        wateringCan.gameObject.SetActive(true);
+        wateringCan.PlayWateringAnim(delegate {
+            CurrentPlant.Water();
+            wateringCan.gameObject.SetActive(false);
+        });
     }
 
     public override void StartCanInteract() {
@@ -66,7 +75,7 @@ public class Plot : Interactable
             CurrentPlant = null;
         }
         else if (!CurrentPlant.Watered) {
-            CurrentPlant.Water();
+            Water();
         }
     }
 }

@@ -16,9 +16,10 @@ public class PlayerController : MonoBehaviour
     // involved in player control can then reference, simplifying the above cases.
     public static bool playerHasControl;
 
-    [SerializeField] private TextMeshProUGUI interactMessage;
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
+    [Header("Interaction")]
+    [SerializeField] private TextMeshProUGUI interactMessage;
     [SerializeField] private float interactionDist;
 
     private Animator animator;
@@ -29,10 +30,6 @@ public class PlayerController : MonoBehaviour
 
     private float pixelsPerUnit;
     private Vector2 direction;
-
-    [SerializeField] private GameObject wateringCan;
-
-    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Awake() {
         animator = GetComponent<Animator>();
@@ -81,20 +78,6 @@ public class PlayerController : MonoBehaviour
         else {
             interactMessage.text = "";
         }
-
-        //watering: display or hide the watering can
-        if (gardenManager.watering)
-        {
-            StartCoroutine(DisplayWateringCan());
-            gardenManager.watering = false;
-        }
-    }
-
-    private IEnumerator DisplayWateringCan()
-    {
-        wateringCan.SetActive(true);
-        yield return new WaitForSeconds(1);
-        wateringCan.SetActive(false);
     }
 
     private void FixedUpdate() {

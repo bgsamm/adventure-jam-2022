@@ -2033,6 +2033,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a468fec9ece20a946abd05948ef3b277, type: 2}
     - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: Acts.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: a468fec9ece20a946abd05948ef3b277, type: 2}
+    - target: {fileID: 194133656513736586, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: Days.Array.data[0].NPC
       value: 
       objectReference: {fileID: 11400000, guid: 4013bd3c139a83944b80db23dd2eaf43, type: 2}
