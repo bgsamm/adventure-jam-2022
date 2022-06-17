@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +29,10 @@ public class PlayerController : MonoBehaviour
 
     private float pixelsPerUnit;
     private Vector2 direction;
+
+    [SerializeField] private GameObject wateringCan;
+
+    private GardenManager gardenManager = ResourceLocator.instance.GardenManager;
 
     private void Awake() {
         animator = GetComponent<Animator>();
@@ -75,6 +81,20 @@ public class PlayerController : MonoBehaviour
         else {
             interactMessage.text = "";
         }
+
+        //watering: display or hide the watering can
+        if (gardenManager.watering)
+        {
+            DisplayWateringCan();
+            gardenManager.watering = false;
+        }
+    }
+
+    private IEnumerator DisplayWateringCan()
+    {
+        wateringCan.SetActive(true);
+        yield return new WaitForSeconds(1);
+        wateringCan.SetActive(false);
     }
 
     private void FixedUpdate() {
