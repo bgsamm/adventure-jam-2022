@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Moon Orchid
   m_EditorClassIdentifier: 
   name: Moon Orchid
-  InventorySprite: {fileID: -1437759693, guid: 3f7f90f30d4da83438a6520e17aa824d, type: 3}
+  InventorySprite: {fileID: 21300000, guid: ddb99cbb4bc5e2d4e8fd2663034a19e5, type: 3}
   Tradeable: 1

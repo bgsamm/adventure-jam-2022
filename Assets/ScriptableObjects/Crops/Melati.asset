@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Melati
   m_EditorClassIdentifier: 
   name: Melati
-  InventorySprite: {fileID: -934051954, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}
+  InventorySprite: {fileID: 21300000, guid: a73c0e5bfb36fcf47939fb441fcec047, type: 3}
   Tradeable: 1
