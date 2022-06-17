@@ -7,8 +7,8 @@ public class SceneLoader : MonoBehaviour
     private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
 
-    public void LoadScene(SceneAsset scene) {
-        SceneManager.LoadScene(scene.name);
+    public void LoadScene(string name) {
+        SceneManager.LoadScene(name);
     }
 
     public void LoadMenuScene() {
@@ -27,7 +27,7 @@ public class SceneLoader : MonoBehaviour
         // TODO: I reeeeeally don't like this, but for now I guess it works
         audioManager.SetGlobalParameter("NPC IO", 0);
         audioManager.SetGlobalParameter("NPC SWITCH", 0);
-        LoadScene(clock.CurrentAct.scene);
+        LoadScene(clock.CurrentAct.sceneName);
     }
 
     public void LoadBarterScene() {

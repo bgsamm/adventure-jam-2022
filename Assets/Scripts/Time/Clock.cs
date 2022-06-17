@@ -35,7 +35,7 @@ public class Clock : MonoBehaviour
             cutsceneManager.PlayCutscene(SunriseCutscene,
                 delegate {
                     Debug.Log("Next day");
-                    sceneLoader.LoadScene(CurrentAct.scene);
+                    sceneLoader.LoadScene(CurrentAct.sceneName);
                 });
         }
         DayNum++;

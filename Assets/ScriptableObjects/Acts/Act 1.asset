@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c42a8f1d66be54ba2fdaf6d4069137, type: 3}
   m_Name: Act 1
   m_EditorClassIdentifier: 
-  scene: {fileID: 102900000, guid: 709d350015baddd4087a31efd9f7cac6, type: 3}
+  sceneName: GardenScene (Act 1)
   openingCutscene: {fileID: 11400000, guid: 6bc349f1dbeaa6f49b210ec24be849ba, type: 2}
   openingLetter: {fileID: 11400000, guid: 3a696479265cf504caaf81cf31b4668d, type: 2}
   days:

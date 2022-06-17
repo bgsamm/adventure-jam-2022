@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c42a8f1d66be54ba2fdaf6d4069137, type: 3}
   m_Name: Act 3
   m_EditorClassIdentifier: 
-  scene: {fileID: 102900000, guid: f403a890d21b98d429a735e2f047aabb, type: 3}
+  sceneName: GardenScene (Act 3)
   openingCutscene: {fileID: 11400000, guid: f65c756cb4cae004ebe4a51d318297ce, type: 2}
   openingLetter: {fileID: 11400000, guid: 69dfb4b835245d640b17a71ae7c6d3d4, type: 2}
   days:
@@ -187,3 +187,10 @@ MonoBehaviour:
       Data3: -1086480233
       Data4: -555436019
     Path: event:/MX/ACT 3
+  ambience:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
