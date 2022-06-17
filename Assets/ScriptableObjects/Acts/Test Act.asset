@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c42a8f1d66be54ba2fdaf6d4069137, type: 3}
   m_Name: Test Act
   m_EditorClassIdentifier: 
-  scene: {fileID: 102900000, guid: 709d350015baddd4087a31efd9f7cac6, type: 3}
+  sceneName: GardenScene (Act 1)
   openingCutscene: {fileID: 0}
   openingLetter: {fileID: 0}
   days:
   - birdPresent: 1
+    noTrade: 0
     letter: {fileID: 11400000, guid: 2c2b57fe16e4dbe41af020d393550cba, type: 2}
     NPC: {fileID: 11400000, guid: 4013bd3c139a83944b80db23dd2eaf43, type: 2}
     conversationKnot: Day1
@@ -37,3 +38,6 @@ MonoBehaviour:
       goodTrade: 0
   treePortrait: {fileID: 21300000, guid: a804e4f65f0791342aee2c44a7820919, type: 3}
   treePortraitWatered: {fileID: 21300000, guid: c8bde86a2f1929d4b99b54e358e8f319, type: 3}
+  birdLocation: {x: 0, y: 0}
+  music: {fileID: 0}
+  ambience: {fileID: 0}

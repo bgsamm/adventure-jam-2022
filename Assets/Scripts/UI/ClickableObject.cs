@@ -11,14 +11,17 @@ public class ClickableObject : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [SerializeField] private Image frame;
 
     protected virtual void Start() {
-        frame.enabled = false;
+        if (frame != null)
+            frame.enabled = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
-        frame.enabled = true;
+        if (frame != null)
+            frame.enabled = true;
     }
 
     public void OnPointerExit(PointerEventData eventData) {
-        frame.enabled = false;
+        if (frame != null)
+            frame.enabled = false;
     }
 }
