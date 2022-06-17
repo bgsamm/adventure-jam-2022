@@ -12,12 +12,12 @@ public class Bird : ClickableObject
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Awake() {
-        this.transform.position = clock.CurrentAct.birdLocation;
         animator = GetComponent<Animator>();
     }
 
     protected override void Start() {
         base.Start();
+        GetComponent<RectTransform>().anchoredPosition = clock.CurrentAct.birdLocation;
         if (clock.CurrentDay.birdPresent) {
             var hasLetter = clock.CurrentDay.letter != null && !gardenManager.LetterChecked;
             animator.SetBool("HasLetter", hasLetter);
