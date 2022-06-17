@@ -121,7 +121,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 33
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -140,7 +140,7 @@ TextureImporter:
       name: burnt_ground3_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 0
         width: 32
         height: 32
@@ -161,9 +161,9 @@ TextureImporter:
       name: burnt_ground3_2
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 0
-        width: 31
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
