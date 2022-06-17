@@ -7,13 +7,14 @@ using UnityEngine;
 public class Toolbar : MonoBehaviour
 {
     private InventorySlot[] slots;
+    private int activeSlot;
 
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
 
     private void Start() {
         slots = GetComponentsInChildren<InventorySlot>();
+        activeSlot = 0;
         UpdateSlots();
-        SelectSlot(0);
     }
 
     private void Update() {
@@ -21,9 +22,13 @@ public class Toolbar : MonoBehaviour
         UpdateSlots();
         // Map inputs Toolbar 1..N to the corresponding toolbar slots
         for (int i = 0; i < slots.Length; i++) {
-            if (Input.GetButtonDown($"Toolbar {i + 1}"))
-                SelectSlot(i);
+            if (Input.GetButtonDown($"Toolbar {i + 1}")) {
+                activeSlot = i;
+                break;
+            }
         }
+        // Again, don't love calling this every frame
+        SelectSlot(activeSlot);
     }
 
     private void SelectSlot(int index) {
