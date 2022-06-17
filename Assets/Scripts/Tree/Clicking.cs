@@ -6,6 +6,6 @@ public class Clicking : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<TreeScene>().ClickedObject(gameObject.name);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<TreeScene>().ClickedObject(gameObject);
     }
 }
