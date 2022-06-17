@@ -285,6 +285,8 @@ You understand.
 It’s a team effort. As a country we have to pull together. I’m proud to help me a part of it.
 
 Just take my warning now, okay? Close up shop. I don’t want anything to happen to you and your stall. 
+
+See you later, Agung.
 -> END
 
 = GoodTrade
@@ -519,6 +521,8 @@ At least one son will come home at the end of this.
 Sorry, Agung. I know you don’t mind, but I do. An old woman like me crying in front of you.
 
 You’re doing such a good job here. I wish your father could come home to see you.
+
+Goodbye, Agung.
 -> END
 
 = GoodTrade
@@ -826,21 +830,27 @@ Goodbye, Agung.
 //act 3 day 7
 === Day21 ===
 
-Will you look at that? Acorns!
+Will you look at that? Acorns! 
 
-How that little tree has grown. How can the day you planted it feel like yesterday and a thousand years ago at the same time?
+How can the day you planted that tree feel like yesterday and a thousand years ago at the same time? 
 
-And I have something too. I found a bird’s nest full of eggs.
+How that little tree has grown. Much like yourself. 
 
-Strange, isn't it, how they can keep on in the midst of all this?
+I have something too. I found a bird’s nest full of eggs. 
 
-Did I tell you I heard from my elder son? He's been given leave. He's coming home.
+Strange, isn't it, how they can keep on in the midst of all this? 
 
-My younger son…he's gone. I just got the news. They were trying to recapture the POW camp and he was killed in the fighting.
+ I just got the news.
 
-But my eldest son has been given leave. He's coming home.
+My younger son…
 
-Please don't lose hope, Agung. None of us know what tomorrow will bring.
+They were trying to recapture the POW camp and he--he’s gone. 
+
+But my eldest son has been given leave. He's coming home. 
+
+Please don't lose hope, Agung. 
+
+None of us know what tomorrow will bring. Like the birds, we have to keep on. 
 -> END
 
 = GoodTrade
