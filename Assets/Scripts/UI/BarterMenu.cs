@@ -23,6 +23,11 @@ public class BarterMenu : MonoBehaviour
     [SerializeField] private InventorySlot getSummarySlot;
     [SerializeField] private Button acceptButton;
 
+    //well, this is inelegant
+    [SerializeField] private Item sweetPotato;
+    [SerializeField] private Item sugarCane;
+    [SerializeField] private Item chile;
+
     private Clock clock => ResourceLocator.instance.Clock;
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
@@ -51,8 +56,29 @@ public class BarterMenu : MonoBehaviour
                 inventorySlot.SetStack(null);
         }
 
-        //SPECIAL: Act 2 Day 5 generates its own trades based on what you have
+        //special case: Act 2 Day 5 trades are set manually
+        if (clock.DayNum == 5 && clock.ActNum == 2)
+        {
+            ItemStack sweetPotatoStack = inventory.FindStack(sweetPotato);
+            ItemStack sugarcaneStack = inventory.FindStack(sugarCane);
+            ItemStack chileStack = inventory.FindStack(chile);
 
+            Trade sweetPotatoTrade = new Trade();
+            sweetPotatoTrade.given = sweetPotatoStack;
+            sweetPotatoTrade.received = null;
+
+            Trade sugarcaneTrade = new Trade();
+            sugarcaneTrade.given = sugarcaneStack;
+            sugarcaneTrade.received = null;
+
+            Trade chileTrade = new Trade();
+            chileTrade.given = chileStack;
+            chileTrade.received = null;
+
+            clock.CurrentDay.tradeList.Add(sweetPotatoTrade);
+            clock.CurrentDay.tradeList.Add(sugarcaneTrade);
+            clock.CurrentDay.tradeList.Add(chileTrade);
+        }
 
         // populate the trade list
         tradeEntries = tradeList.GetComponentsInChildren<TradeListEntry>();
@@ -64,14 +90,19 @@ public class BarterMenu : MonoBehaviour
                 tradeEntry.AddOnClickListener(delegate { SetTradeSummary(tradeEntry.Trade); });
             }
             else {
-                tradeEntry.SetTrade(null);
+                //Act 2 Day 5 has no No Trade option
+                if (!(clock.DayNum ==5 && clock.ActNum == 2))
+                    tradeEntry.SetTrade(null);
             }
         }
 
         tradePanel.SetActive(false);
         continueButton.SetActive(true);
         dontTradeButton.SetActive(false);
-        dialogHandler.StartDialogue(currentDay.conversationKnot, BeginTrading);
+        if (clock.CurrentDay.noTrade)
+            dialogHandler.StartDialogue(currentDay.conversationKnot, sceneLoader.LoadGardenScene);
+        else
+            dialogHandler.StartDialogue(currentDay.conversationKnot, BeginTrading);
     }
 
     private void SetTradeSummary(Trade trade) {

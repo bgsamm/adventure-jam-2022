@@ -14,4 +14,5 @@ public class Act : ScriptableObject
     public List<Day> days;
     public Sprite treePortrait;
     public Sprite treePortraitWatered;
+    public Vector2 birdLocation;
 }

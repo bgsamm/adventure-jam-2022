@@ -17,6 +17,7 @@ MonoBehaviour:
   openingLetter: {fileID: 11400000, guid: 3a696479265cf504caaf81cf31b4668d, type: 2}
   days:
   - birdPresent: 0
+    noTrade: 0
     letter: {fileID: 0}
     NPC: {fileID: 11400000, guid: 61c36f826d3163246838603cff3d28d5, type: 2}
     conversationKnot: Day1
@@ -36,6 +37,7 @@ MonoBehaviour:
         count: 0
       goodTrade: 1
   - birdPresent: 0
+    noTrade: 0
     letter: {fileID: 0}
     NPC: {fileID: 11400000, guid: 4013bd3c139a83944b80db23dd2eaf43, type: 2}
     conversationKnot: Day2
@@ -69,6 +71,7 @@ MonoBehaviour:
         count: 4
       goodTrade: 1
   - birdPresent: 1
+    noTrade: 0
     letter: {fileID: 11400000, guid: 374e3d51211ec7041b2bd68c3e08f0f1, type: 2}
     NPC: {fileID: 11400000, guid: a3c3bc5b7815b6742a007c8133976755, type: 2}
     conversationKnot: Day3
@@ -81,6 +84,7 @@ MonoBehaviour:
         count: 0
       goodTrade: 0
   - birdPresent: 0
+    noTrade: 0
     letter: {fileID: 0}
     NPC: {fileID: 11400000, guid: d44b32007f435a0428f2677cdae2891a, type: 2}
     conversationKnot: Day4
@@ -107,6 +111,7 @@ MonoBehaviour:
         count: 1
       goodTrade: 1
   - birdPresent: 1
+    noTrade: 0
     letter: {fileID: 11400000, guid: 7b6deb68d51bd5d439e0ad304500a47c, type: 2}
     NPC: {fileID: 11400000, guid: a3c3bc5b7815b6742a007c8133976755, type: 2}
     conversationKnot: Day5
@@ -126,6 +131,7 @@ MonoBehaviour:
         count: 0
       goodTrade: 0
   - birdPresent: 0
+    noTrade: 0
     letter: {fileID: 0}
     NPC: {fileID: 11400000, guid: 4013bd3c139a83944b80db23dd2eaf43, type: 2}
     conversationKnot: Day6
@@ -152,6 +158,7 @@ MonoBehaviour:
         count: 0
       goodTrade: 0
   - birdPresent: 1
+    noTrade: 0
     letter: {fileID: 11400000, guid: 344a71c418fff4540996de14672d7cab, type: 2}
     NPC: {fileID: 11400000, guid: 61c36f826d3163246838603cff3d28d5, type: 2}
     conversationKnot: Day7
@@ -177,3 +184,6 @@ MonoBehaviour:
         item: {fileID: 11400000, guid: c4d9094a3d7ace94faa2b65c3ddfe335, type: 2}
         count: 1
       goodTrade: 1
+  treePortrait: {fileID: 21300000, guid: b6dfafb90913b2243ba9f08bc4316ea6, type: 3}
+  treePortraitWatered: {fileID: 21300000, guid: 3d8f7f6fd0ce77648b8ad7822f2d95d4, type: 3}
+  birdLocation: {x: -30, y: -32}

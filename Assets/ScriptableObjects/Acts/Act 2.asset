@@ -17,11 +17,13 @@ MonoBehaviour:
   openingLetter: {fileID: 11400000, guid: 09bada6b5602b5949839e970a459f194, type: 2}
   days:
   - birdPresent: 0
+    noTrade: 1
     letter: {fileID: 0}
     NPC: {fileID: 11400000, guid: d44b32007f435a0428f2677cdae2891a, type: 2}
     conversationKnot: Day8
     tradeList: []
   - birdPresent: 0
+    noTrade: 0
     letter: {fileID: 0}
     NPC: {fileID: 11400000, guid: 61c36f826d3163246838603cff3d28d5, type: 2}
     conversationKnot: Day9
@@ -41,8 +43,9 @@ MonoBehaviour:
         count: 2
       goodTrade: 1
   - birdPresent: 1
+    noTrade: 0
     letter: {fileID: 11400000, guid: 2c2b57fe16e4dbe41af020d393550cba, type: 2}
-    NPC: {fileID: 11400000, guid: a3c3bc5b7815b6742a007c8133976755, type: 2}
+    NPC: {fileID: 11400000, guid: 77c3b25f27187324c9812007ab8b7fe4, type: 2}
     conversationKnot: Day10
     tradeList:
     - given:
@@ -60,6 +63,7 @@ MonoBehaviour:
         count: 2
       goodTrade: 1
   - birdPresent: 0
+    noTrade: 0
     letter: {fileID: 0}
     NPC: {fileID: 11400000, guid: 4013bd3c139a83944b80db23dd2eaf43, type: 2}
     conversationKnot: Day11
@@ -107,34 +111,15 @@ MonoBehaviour:
         count: 0
       goodTrade: 1
   - birdPresent: 1
+    noTrade: 0
     letter: {fileID: 11400000, guid: fb99476197a069e42bef173a13f34ed3, type: 2}
     NPC: {fileID: 11400000, guid: d44b32007f435a0428f2677cdae2891a, type: 2}
     conversationKnot: Day12
-    tradeList:
-    - given:
-        item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
-        count: 5
-      received:
-        item: {fileID: 0}
-        count: 0
-      goodTrade: 0
-    - given:
-        item: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
-        count: 5
-      received:
-        item: {fileID: 0}
-        count: 0
-      goodTrade: 0
-    - given:
-        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-        count: 5
-      received:
-        item: {fileID: 0}
-        count: 0
-      goodTrade: 0
+    tradeList: []
   - birdPresent: 0
+    noTrade: 0
     letter: {fileID: 0}
-    NPC: {fileID: 11400000, guid: a3c3bc5b7815b6742a007c8133976755, type: 2}
+    NPC: {fileID: 11400000, guid: 77c3b25f27187324c9812007ab8b7fe4, type: 2}
     conversationKnot: Day13
     tradeList:
     - given:
@@ -145,7 +130,11 @@ MonoBehaviour:
         count: 0
       goodTrade: 1
   - birdPresent: 1
+    noTrade: 1
     letter: {fileID: 11400000, guid: 8afee79c66722ca48960bbfdab32649d, type: 2}
     NPC: {fileID: 11400000, guid: 61c36f826d3163246838603cff3d28d5, type: 2}
     conversationKnot: Day14
     tradeList: []
+  treePortrait: {fileID: 21300000, guid: bfed85b30f275a54a833bf707ce25970, type: 3}
+  treePortraitWatered: {fileID: 21300000, guid: e2abb7e506b9b9948b34ba4967451661, type: 3}
+  birdLocation: {x: -16, y: 32}

@@ -39,7 +39,7 @@ public class InventorySystem : MonoBehaviour
         return inventoryStack != null && stack.count <= inventoryStack.count;
     }
 
-    private ItemStack FindStack(Item item) {
+    public ItemStack FindStack(Item item) {
         int match = stacks.FindIndex(x => x.item == item);
         return match == -1 ? null : stacks[match];
     }

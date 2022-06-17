@@ -8,6 +8,7 @@ public class Day
 {
     // the bird may be present without a letter
     public bool birdPresent;
+    public bool noTrade;
     public Letter letter;
     // which NPC shows up at the shop that day
     public NPC NPC;
