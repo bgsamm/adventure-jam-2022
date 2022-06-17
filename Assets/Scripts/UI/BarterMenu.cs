@@ -51,6 +51,9 @@ public class BarterMenu : MonoBehaviour
                 inventorySlot.SetStack(null);
         }
 
+        //SPECIAL: Act 2 Day 5 generates its own trades based on what you have
+
+
         // populate the trade list
         tradeEntries = tradeList.GetComponentsInChildren<TradeListEntry>();
         var trades = currentDay.tradeList;
