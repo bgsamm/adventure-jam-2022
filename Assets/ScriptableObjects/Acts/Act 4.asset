@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c42a8f1d66be54ba2fdaf6d4069137, type: 3}
+  m_Name: Act 4
+  m_EditorClassIdentifier: 
+  scene: {fileID: 102900000, guid: 9851e14c11c3a4243927e4cc9af6495c, type: 3}
+  openingCutscene: {fileID: 11400000, guid: 413c7f00c19a7dd449abddf057b61b43, type: 2}
+  openingLetter: {fileID: 0}
+  days:
+  - birdPresent: 0
+    letter: {fileID: 0}
+    NPC: {fileID: 0}
+    conversationKnot: 
+    tradeList: []

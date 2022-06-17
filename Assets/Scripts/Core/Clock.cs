@@ -15,17 +15,10 @@ public class Clock : MonoBehaviour
     [SerializeField] private Cutscene SunriseCutscene;
     [SerializeField] private List<Act> Acts;
 
-    //[HideInInspector]
-    public bool ShopVisited;
-    //[HideInInspector]
-    public bool TreeWatered;
-    //[HideInInspector]
-    public bool LetterChecked; // checked for letters (i.e. visited the tree) and read the letter if there is one
-    public bool TasksComplete => ShopVisited && TreeWatered && LetterChecked;
-
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
     private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
     private LetterManager letterManager => ResourceLocator.instance.LetterManager;
+    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     public void PlayFromStart() {
         ActNum = 0;
@@ -34,10 +27,7 @@ public class Clock : MonoBehaviour
 
     public void StartNextDay() {
         void BeginDay() {
-            ShopVisited = false;
-            TreeWatered = false;
-            LetterChecked = false;
-            //GardenManager.instance.GrowOvernight();
+            gardenManager.BeginDay();
             cutsceneManager.PlayCutscene(SunriseCutscene,
                 delegate {
                     Debug.Log("Next day");
