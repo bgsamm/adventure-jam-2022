@@ -6,8 +6,6 @@ using UnityEngine;
 public class TreeObject : Interactable
 {
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
-    private Clock clock => ResourceLocator.instance.Clock;
-    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Update() {
         InteractMessage = "Press E to view the tree";

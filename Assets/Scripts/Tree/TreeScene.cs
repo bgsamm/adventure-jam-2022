@@ -19,6 +19,10 @@ public class TreeScene : MonoBehaviour
         else
             background.sprite = clock.CurrentAct.treePortrait;
 
+        // if there is no letter, simply checking the tree
+        // satisfies the "Check for letters" task
+        if (clock.CurrentDay.letter == null)
+            gardenManager.LetterChecked = true;
         bird.gameObject.SetActive(clock.CurrentDay.birdPresent);
 
         if (clock.ActNum == 3 && clock.DayNum == 7)
