@@ -12,6 +12,7 @@ public class Bird : ClickableObject
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Awake() {
+        this.transform.position = clock.CurrentAct.birdLocation;
         animator = GetComponent<Animator>();
     }
 
