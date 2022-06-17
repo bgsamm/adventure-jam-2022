@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         //watering: display or hide the watering can
         if (gardenManager.watering)
         {
-            DisplayWateringCan();
+            StartCoroutine(DisplayWateringCan());
             gardenManager.watering = false;
         }
     }

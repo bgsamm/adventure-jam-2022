@@ -16,7 +16,9 @@ public class InventorySystem : MonoBehaviour
     public void AddItems(ItemStack stack) {
         var inventoryStack = FindStack(stack.item);
         if (inventoryStack == null)
-            stacks.Add(stack);
+            // Changes to stacks on ScriptableObjects actually apply
+            // to the files themselves, so make a new copy of the stack
+            stacks.Add(new ItemStack(stack.item, stack.count));
         else
             inventoryStack.AddToStack(stack.count);
     }

@@ -86,6 +86,7 @@ public class BarterMenu : MonoBehaviour
         // populate the trade list
         tradeEntries = tradeList.GetComponentsInChildren<TradeListEntry>();
         var trades = currentDay.tradeList;
+        Debug.Log($"BarterMenu: I found {trades.Count} trades");
         for (int i = 0; i < tradeEntries.Length; i++) {
             var tradeEntry = tradeEntries[i];
             if (i < trades.Count) {
@@ -93,10 +94,7 @@ public class BarterMenu : MonoBehaviour
                 tradeEntry.AddOnClickListener(delegate { SetTradeSummary(tradeEntry.Trade); });
             }
             else {
-                // TODO: handle this more elegantly
-                //Act 2 Day 5 has no No Trade option
-                if (!(clock.DayNum == 5 && clock.ActNum == 2))
-                    tradeEntry.SetTrade(null);
+                tradeEntry.SetTrade(null);
             }
         }
 
@@ -120,7 +118,10 @@ public class BarterMenu : MonoBehaviour
     private void BeginTrading() {
         tradePanel.SetActive(true);
         continueButton.SetActive(false);
-        dontTradeButton.SetActive(true);
+        // TODO: handle this more elegantly
+        //Act 2 Day 5 has no No Trade option
+        if (!(clock.DayNum == 5 && clock.ActNum == 2))
+            dontTradeButton.SetActive(true);
     }
 
     private void EndTrading(bool goodTrade) {

@@ -22,11 +22,10 @@ MonoBehaviour:
     ripe chiles to stock the stand with in the meantime. "
   - "Most of all, take care of our tree. When you water it, I hope you\u2019ll remember
     the day we planted it together. This cheeky little myna bird has agreed to carry
-    my mail. If you see her perched on the tree in the evening, you\u2019ll know
-    there\u2019s a letter from me.<br><br>  I\u2019ll be home soon.<br><br> Love,
-    Dad "
+    my mail. If you see her perched on the tree, you\u2019ll know there\u2019s a
+    letter from me.<br><br>  I\u2019ll be home soon.<br><br> Love, Dad "
   gifts:
   - item: {fileID: 11400000, guid: eb3caaf0d2153b0488f65111ccc5ca22, type: 2}
-    count: 8
+    count: 5
   - item: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
     count: 5

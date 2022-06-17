@@ -20,10 +20,6 @@ public class TradeListEntry : MonoBehaviour
         buttonComponent = GetComponent<Button>();
     }
 
-    private void Start() {
-        SetTrade(null);
-    }
-
     public void SetTrade(Trade trade) {
         Trade = trade;
         if (trade != null) {
