@@ -7,6 +7,8 @@ public class Plot : Interactable
 
     [SerializeField] private SpriteRenderer waterIcon;
     private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private SpriteRenderer wateredGroundSprite;
 
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
 
@@ -31,10 +33,12 @@ public class Plot : Interactable
             spriteRenderer.enabled = true;
             spriteRenderer.sprite = CurrentPlant.Sprite;
             waterIcon.enabled = !CurrentPlant.Watered && !CurrentPlant.ReadyToHarvest;
+            wateredGroundSprite.enabled = CurrentPlant.Watered; 
         }
         else {
             spriteRenderer.enabled = false;
             waterIcon.enabled = false;
+            wateredGroundSprite.enabled = false;
         }
     }
 

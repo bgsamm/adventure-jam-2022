@@ -17672,6 +17672,30 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 819974654, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 819974656, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+      propertyPath: m_text
+      value: "To Do:\n   Visit shop\n   Water tree\n   Check tree for letters"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405283235, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405283236, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126524185673865255, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126524186602343162, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5046254722198734993, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
