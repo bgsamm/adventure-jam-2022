@@ -307,7 +307,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -683457084, guid: 608991622253d7342b37578c6702743c, type: 3}
+  m_Sprite: {fileID: 1146529832, guid: 608991622253d7342b37578c6702743c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -875,6 +875,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af1cb78c86650241acbcf798743b9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bird: {fileID: 216461545}
+  birdWithLetter: {fileID: 0}
+  birdWithoutLetter: {fileID: 0}
+  wateringCan: {fileID: 268395914}
 --- !u!4 &520020899
 Transform:
   m_ObjectHideFlags: 0
