@@ -10,5 +10,5 @@ public class NPC : ScriptableObject
     public new string name;
     public Sprite overworldSprite;
     public Sprite portraitSprite;
-    public int themeMusic;
+    public int musicIndex;
 }

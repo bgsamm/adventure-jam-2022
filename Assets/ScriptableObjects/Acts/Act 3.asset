@@ -180,3 +180,10 @@ MonoBehaviour:
   treePortrait: {fileID: 21300000, guid: a804e4f65f0791342aee2c44a7820919, type: 3}
   treePortraitWatered: {fileID: 21300000, guid: c8bde86a2f1929d4b99b54e358e8f319, type: 3}
   birdLocation: {x: 64, y: 112}
+  music:
+    Guid:
+      Data1: -1162807681
+      Data2: 1306217940
+      Data3: -1086480233
+      Data4: -555436019
+    Path: event:/MX/ACT 3

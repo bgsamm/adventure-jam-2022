@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Satya
   overworldSprite: {fileID: 21300000, guid: a400052476e12f848a037992fbfb6747, type: 3}
   portraitSprite: {fileID: 21300000, guid: da1531490a939334abc1e2439e419b2b, type: 3}
-  themeMusic: 3
+  musicIndex: 4

@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,4 +16,5 @@ public class Act : ScriptableObject
     public Sprite treePortrait;
     public Sprite treePortraitWatered;
     public Vector2 birdLocation;
+    public EventReference music;
 }
