@@ -380,5 +380,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableFrame: {fileID: 1860897721755187052}
-  waterIcon: {fileID: 7339368812871002233}
+  waterIcon: {fileID: 4789034558928501007}
   wateredGroundSprite: {fileID: 2070929949604615183}

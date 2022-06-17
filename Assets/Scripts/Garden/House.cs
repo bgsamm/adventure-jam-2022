@@ -12,7 +12,7 @@ public class House : Interactable
     private void Update() {
         if (clock.ActNum != 4)
             //if you've completed all three tasks, you can go to sleep
-            InteractMessage = gardenManager.TasksComplete ? "Press E to sleep" : "You aren't tired yet.";
+            InteractMessage = gardenManager.TasksComplete ? "Press E to sleep" : "You still have chores to do.";
         else
             InteractMessage = "Press E to sleep";
     }

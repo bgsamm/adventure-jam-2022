@@ -7,8 +7,9 @@ using UnityEngine;
 public class Plant
 {
     public bool Watered { get; private set; }
-    public bool ReadyToHarvest => growthStage == 2;
-    public Sprite Sprite => seed.gameSprites[growthStage];
+    public bool ReadyToHarvest => growthStage == seed.daysToGrow;
+    public Sprite Sprite => seed.gameSprites[spriteIndex];
+    private int spriteIndex => growthStage == seed.daysToGrow ? 2 : (growthStage != 0 ? 1 : 0);
     private int growthStage;
 
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
