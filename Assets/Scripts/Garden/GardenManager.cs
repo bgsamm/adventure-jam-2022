@@ -24,28 +24,30 @@ public class GardenManager : MonoBehaviour
     private GameObject player;
 
     private void Awake() {
-        player = GameObject.FindGameObjectWithTag("Player");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode) {
         // if scene contains player, move player to previous position
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player != null && playerPosition != null)
             player.transform.position = (Vector3)playerPosition;
         // grab any plots in the scene
         plots = FindObjectsOfType<Plot>();
-        // if first time encountering plots, initialize plantDict
-        if (plantDict == null) {
-            plantDict = new Dictionary<string, Plant>();
-            foreach (var plot in plots) {
-                plantDict[plot.name] = null;
+        if (plots.Length > 0) {
+            // if first time encountering plots, initialize plantDict
+            if (plantDict == null) {
+                plantDict = new Dictionary<string, Plant>();
+                foreach (var plot in plots) {
+                    plantDict[plot.name] = null;
+                }
             }
-        }
-        // otherwise, set the Plant for each plot
-        else {
-            foreach (var plot in plots) {
-                Debug.Assert(plantDict.ContainsKey(plot.name));
-                plot.CurrentPlant = plantDict[plot.name];
+            // otherwise, set the Plant for each plot
+            else {
+                foreach (var plot in plots) {
+                    Debug.Assert(plantDict.ContainsKey(plot.name));
+                    plot.CurrentPlant = plantDict[plot.name];
+                }
             }
         }
     }

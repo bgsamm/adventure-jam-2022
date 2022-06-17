@@ -1,59 +1,44 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TreeScene : MonoBehaviour
 {
-    [Header("Bird")]
-    [SerializeField] SpriteRenderer bird;
-    [SerializeField] Sprite birdWithLetter;
-    [SerializeField] Sprite birdWithoutLetter;
-
-    [Header("Watering Can")]
-    [SerializeField] SpriteRenderer wateringCan;
-    // watered today
-    // bird present
-    // letter present
-    readonly string WATER_CAN = "Watering Can";
-    readonly string BIRD = "Bird";
-    private bool interacting;
+    [SerializeField] private Image background;
+    [SerializeField] private Bird bird;
+    [SerializeField] private WateringCan wateringCan;
 
     private Clock clock => ResourceLocator.instance.Clock;
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
     private LetterManager letterManager => ResourceLocator.instance.LetterManager;
-    private SceneLoader scene => ResourceLocator.instance.SceneLoader;
+    private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
 
-    private void Awake() {
-        interacting = false;
-        
-        if (clock.CurrentDay.birdPresent)
-        {
-            if (clock.CurrentDay.letter != null && !gardenManager.LetterChecked)
-                bird.sprite = birdWithLetter;
-            else
-                bird.sprite = birdWithoutLetter;
-        }
+    private void Start() {
+        if (gardenManager.TreeWatered)
+            background.sprite = clock.CurrentAct.treePortraitWatered;
         else
-        {
-            bird.enabled = false;
+            background.sprite = clock.CurrentAct.treePortrait;
+
+        bird.gameObject.SetActive(clock.CurrentDay.birdPresent);
+    }
+
+    public void ReadLetter() {
+        var letter = clock.CurrentDay.letter;
+        if (letter != null & !gardenManager.LetterChecked) {
             gardenManager.LetterChecked = true;
+            letterManager.ShowLetter(clock.CurrentDay.letter, sceneLoader.LoadTreeScene);
         }
     }
 
-    public void ClickedObject(GameObject obj) {
-        if (interacting) return;
-        interacting = true;
+    public void WaterTree() {
+        Debug.Log("You watered the tree!");
+        wateringCan.PlayWateringAnim(
+            delegate {
+                background.sprite = clock.CurrentAct.treePortraitWatered;
+                gardenManager.TreeWatered = true;
+        });
+    }
 
-        if (obj.name.Equals(BIRD) && !gardenManager.LetterChecked) {
-            if (clock.CurrentDay.birdPresent && clock.CurrentDay.letter != null) {
-                letterManager.ShowLetter(clock.CurrentDay.letter, scene.LoadTreeScene);
-            }
-            gardenManager.LetterChecked = true;
-        }
-        else if (name.Equals(WATER_CAN) && !gardenManager.TreeWatered) {
-            gardenManager.TreeWatered = true;
-        }
-
-        obj.GetComponent<Clicking>().enabled = false;  // makes click script stop
-        interacting = false;
-        Debug.Log(name + " clicked!");
+    public void ReturnToGarden() {
+        sceneLoader.LoadGardenScene();
     }
 }

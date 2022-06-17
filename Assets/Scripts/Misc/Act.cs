@@ -12,4 +12,6 @@ public class Act : ScriptableObject
     public Cutscene openingCutscene;
     public Letter openingLetter;
     public List<Day> days;
+    public Sprite treePortrait;
+    public Sprite treePortraitWatered;
 }

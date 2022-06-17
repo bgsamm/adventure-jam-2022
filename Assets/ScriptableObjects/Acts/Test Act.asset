@@ -16,8 +16,8 @@ MonoBehaviour:
   openingCutscene: {fileID: 0}
   openingLetter: {fileID: 0}
   days:
-  - birdPresent: 0
-    letter: {fileID: 0}
+  - birdPresent: 1
+    letter: {fileID: 11400000, guid: 2c2b57fe16e4dbe41af020d393550cba, type: 2}
     NPC: {fileID: 11400000, guid: 4013bd3c139a83944b80db23dd2eaf43, type: 2}
     conversationKnot: Day1
     tradeList:
@@ -35,3 +35,5 @@ MonoBehaviour:
         item: {fileID: 11400000, guid: 4430747f37ac1f8449137d2f6cd93923, type: 2}
         count: 2
       goodTrade: 0
+  treePortrait: {fileID: 21300000, guid: a804e4f65f0791342aee2c44a7820919, type: 3}
+  treePortraitWatered: {fileID: 21300000, guid: c8bde86a2f1929d4b99b54e358e8f319, type: 3}

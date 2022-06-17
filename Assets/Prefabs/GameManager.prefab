@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015c80265dc246248a6470e364e0d1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActNum: 0
-  DayNum: 0
+  ActNum: 1
+  DayNum: 1
   SunriseCutscene: {fileID: 0}
   Acts: []
 --- !u!114 &194133656513736585
