@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,5 +10,5 @@ public class Cutscene : ScriptableObject
 {
     public List<Sprite> images;
     public float imageDuration;
-    public AudioSource audio;
+    public EventReference audio;
 }

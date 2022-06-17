@@ -17,4 +17,5 @@ public class Act : ScriptableObject
     public Sprite treePortraitWatered;
     public Vector2 birdLocation;
     public EventReference music;
+    public EventReference ambience;
 }

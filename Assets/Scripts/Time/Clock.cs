@@ -28,6 +28,9 @@ public class Clock : MonoBehaviour
 
     public void StartNextDay() {
         void BeginDay() {
+            // TODO: move somewhere better
+            if (ActNum == 3 && DayNum == 5)
+                audioManager.SetGlobalParameter("DAY 5", 1);
             gardenManager.BeginDay();
             cutsceneManager.PlayCutscene(SunriseCutscene,
                 delegate {
@@ -41,6 +44,7 @@ public class Clock : MonoBehaviour
             StartNextAct();
         }
         else {
+            // Some acts open with a letter
             if (DayNum == 1 && CurrentAct.openingLetter != null)
                 letterManager.ShowLetter(CurrentAct.openingLetter, BeginDay);
             else
@@ -49,6 +53,11 @@ public class Clock : MonoBehaviour
     }
 
     public void StartNextAct() {
+        void StartAct() {
+            audioManager.PlayLoop(CurrentAct.ambience, false);
+            StartNextDay();
+        }
+
         ActNum++;
         if (ActNum > Acts.Count) {
             // TODO: end game
@@ -57,9 +66,9 @@ public class Clock : MonoBehaviour
             audioManager.PlayLoop(CurrentAct.music);
             DayNum = 0;
             if (CurrentAct.openingCutscene != null)
-                cutsceneManager.PlayCutscene(CurrentAct.openingCutscene, StartNextDay);
+                cutsceneManager.PlayCutscene(CurrentAct.openingCutscene, StartAct);
             else
-                StartNextDay();
+                StartAct();
         }
     }
 }

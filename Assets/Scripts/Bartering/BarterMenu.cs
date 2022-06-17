@@ -28,9 +28,10 @@ public class BarterMenu : MonoBehaviour
     [SerializeField] private Item sugarCane;
     [SerializeField] private Item chile;
 
+    private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
+    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
-    private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
 
     private InventorySlot[] inventorySlots;
     private TradeListEntry[] tradeEntries;
@@ -39,6 +40,8 @@ public class BarterMenu : MonoBehaviour
     private void Start() {
         var currentDay = clock.CurrentDay;
         characterPortrait.sprite = currentDay.NPC.portraitSprite;
+        audioManager.SetGlobalParameter("NPC IO", 1);
+        audioManager.SetGlobalParameter("NPC SWITCH", currentDay.NPC.musicIndex);
 
         // clear trade summary
         giveSummarySlot.SetStack(null);
@@ -56,9 +59,9 @@ public class BarterMenu : MonoBehaviour
                 inventorySlot.SetStack(null);
         }
 
+        // TODO: handle this more elegantly
         //special case: Act 2 Day 5 trades are set manually
-        if (clock.DayNum == 5 && clock.ActNum == 2)
-        {
+        if (clock.DayNum == 5 && clock.ActNum == 2) {
             ItemStack sweetPotatoStack = inventory.FindStack(sweetPotato);
             ItemStack sugarcaneStack = inventory.FindStack(sugarCane);
             ItemStack chileStack = inventory.FindStack(chile);
@@ -90,12 +93,14 @@ public class BarterMenu : MonoBehaviour
                 tradeEntry.AddOnClickListener(delegate { SetTradeSummary(tradeEntry.Trade); });
             }
             else {
+                // TODO: handle this more elegantly
                 //Act 2 Day 5 has no No Trade option
-                if (!(clock.DayNum ==5 && clock.ActNum == 2))
+                if (!(clock.DayNum == 5 && clock.ActNum == 2))
                     tradeEntry.SetTrade(null);
             }
         }
 
+        // Start barter sequence
         tradePanel.SetActive(false);
         continueButton.SetActive(true);
         dontTradeButton.SetActive(false);

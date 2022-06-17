@@ -32,3 +32,10 @@ MonoBehaviour:
       Data3: -321433666
       Data4: 141997736
     Path: event:/MX/ACT 5
+  ambience:
+    Guid:
+      Data1: 2395655
+      Data2: 1284238018
+      Data3: -373437276
+      Data4: 1859057592
+    Path: event:/BG

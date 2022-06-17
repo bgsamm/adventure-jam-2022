@@ -1,26 +1,38 @@
 using FMOD.Studio;
 using FMODUnity;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private EventInstance currentLoop;
+    private List<EventInstance> activeLoops = new List<EventInstance>();
 
     /// <summary>
     /// Passing a null event will simply stop the current loop
     /// </summary>
-    public void PlayLoop(EventReference eventRef) {
+    public void PlayLoop(EventReference eventRef, bool stopCurrent = true) {
         // stop current event instance
-        currentLoop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        currentLoop.release();
+        if (stopCurrent) {
+            foreach (var instance in activeLoops) {
+                instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                instance.release();
+            }
+            activeLoops.Clear();
+        }
         // start new event
         if (!eventRef.IsNull) {
-            currentLoop = RuntimeManager.CreateInstance(eventRef);
-            currentLoop.start();
+            var instance = RuntimeManager.CreateInstance(eventRef);
+            instance.start();
+            activeLoops.Add(instance);
         }
     }
 
     public void PlayOneShot(EventReference eventRef) {
-        RuntimeManager.PlayOneShot(eventRef);
+        if (!eventRef.IsNull)
+            RuntimeManager.PlayOneShot(eventRef);
+    }
+
+    public void SetGlobalParameter(string name, int value) {
+        RuntimeManager.StudioSystem.setParameterByName(name, value);
     }
 }

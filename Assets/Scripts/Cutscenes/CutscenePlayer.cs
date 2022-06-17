@@ -10,6 +10,7 @@ public class CutscenePlayer : MonoBehaviour
     [SerializeField] private Image cutscenePanel;
     [SerializeField] private ScreenFader fader;
 
+    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
     private Cutscene currentCutscene;
 
@@ -23,6 +24,7 @@ public class CutscenePlayer : MonoBehaviour
         fader.FadeOutEvent = ShowNextImage;
 
         index = 0;
+        audioManager.PlayOneShot(currentCutscene.audio);
         ShowNextImage();
     }
 

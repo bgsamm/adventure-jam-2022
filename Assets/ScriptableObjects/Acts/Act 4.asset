@@ -25,3 +25,17 @@ MonoBehaviour:
   treePortrait: {fileID: 21300000, guid: 3284733291a039d448cffbece32c08cd, type: 3}
   treePortraitWatered: {fileID: 21300000, guid: f1064d1b163fe1640a1ff3b977320077, type: 3}
   birdLocation: {x: 144, y: 112}
+  music:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ambience:
+    Guid:
+      Data1: 2395655
+      Data2: 1284238018
+      Data3: -373437276
+      Data4: 1859057592
+    Path: event:/BG

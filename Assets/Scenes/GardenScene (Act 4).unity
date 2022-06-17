@@ -17647,6 +17647,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8951686434003438816, guid: d0ca458423d99c84ea9c653e50870c87, type: 3}
+      propertyPath: interactMessage
+      value: 
+      objectReference: {fileID: 803070189}
     - target: {fileID: 8951686434003438819, guid: d0ca458423d99c84ea9c653e50870c87, type: 3}
       propertyPath: m_Name
       value: Player Adult
@@ -18434,6 +18438,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+--- !u!114 &803070189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3126524185758550818, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+  m_PrefabInstance: {fileID: 803070188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1142933291
 PrefabInstance:
   m_ObjectHideFlags: 0
