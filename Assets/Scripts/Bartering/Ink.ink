@@ -10,7 +10,7 @@ You’ve been left in charge of the produce stall? You’ll do great. You spent 
 
 It’ll be such a help to the village to have you filling your father’s shoes. We must band together in times like this.
 
-Come, let you show you the best way to grow your crops. Your father has already prepared these garden plots, so you can begin planting immediately. 
+Come, let me show you the best way to grow your crops. Your father has already prepared these garden plots, so you can begin planting immediately. 
 
 Those sweet potato slips you have will be ready to harvest the next day, but other plants may take two or three days to grow. Be sure to water them every day, or they will grow slower.
 
@@ -282,7 +282,7 @@ Out here we’re self-sufficient. In the cities, not so much. The rationing is t
 
 You understand. 
 
-It’s a team effort. As a country we have to pull together. I’m proud to help me a part of it.
+It’s a team effort. As a country we have to pull together. I’m proud to help be a part of it.
 
 Just take my warning now, okay? Close up shop. I don’t want anything to happen to you and your stall. 
 

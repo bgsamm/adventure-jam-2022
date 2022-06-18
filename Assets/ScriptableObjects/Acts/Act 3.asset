@@ -37,21 +37,21 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: c286b589041b3794ca225b0c4b72149a, type: 2}
-        count: 1
+        count: 3
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
         count: 1
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 55ad68154ef5c2f4b9f3faf016fe361d, type: 2}
-        count: 2
+        count: 4
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
         count: 1
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
-        count: 3
+        count: 5
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
         count: 1
@@ -77,14 +77,14 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: c286b589041b3794ca225b0c4b72149a, type: 2}
-        count: 1
+        count: 3
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
         count: 1
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
-        count: 2
+        count: 6
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
         count: 1
@@ -97,14 +97,7 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
-        count: 2
-      received:
-        item: {fileID: 11400000, guid: 83b354e0d2496a54cb57f0e90b71ba86, type: 2}
         count: 4
-      goodTrade: 1
-    - given:
-        item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
-        count: 2
       received:
         item: {fileID: 11400000, guid: 4430747f37ac1f8449137d2f6cd93923, type: 2}
         count: 4
@@ -131,13 +124,6 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-        count: 1
-      received:
-        item: {fileID: 11400000, guid: 44efa21630456d84aa2efbba7be2c07d, type: 2}
-        count: 1
-      goodTrade: 1
-    - given:
-        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
         count: 2
       received:
         item: {fileID: 11400000, guid: 44efa21630456d84aa2efbba7be2c07d, type: 2}
@@ -145,14 +131,28 @@ MonoBehaviour:
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-        count: 3
+        count: 4
       received:
         item: {fileID: 11400000, guid: 44efa21630456d84aa2efbba7be2c07d, type: 2}
         count: 1
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-        count: 4
+        count: 6
+      received:
+        item: {fileID: 11400000, guid: 44efa21630456d84aa2efbba7be2c07d, type: 2}
+        count: 1
+      goodTrade: 1
+    - given:
+        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
+        count: 8
+      received:
+        item: {fileID: 11400000, guid: 44efa21630456d84aa2efbba7be2c07d, type: 2}
+        count: 1
+      goodTrade: 1
+    - given:
+        item: {fileID: 11400000, guid: 7a3df58175d48bc4f93e57a3453219b3, type: 2}
+        count: 1
       received:
         item: {fileID: 11400000, guid: 44efa21630456d84aa2efbba7be2c07d, type: 2}
         count: 1
@@ -179,6 +179,6 @@ MonoBehaviour:
       goodTrade: 1
   treePortrait: {fileID: 21300000, guid: a804e4f65f0791342aee2c44a7820919, type: 3}
   treePortraitWatered: {fileID: 21300000, guid: c8bde86a2f1929d4b99b54e358e8f319, type: 3}
-  birdLocation: {x: 64, y: 112}
+  birdLocation: {x: 64, y: 112, z: 0}
   music: {fileID: 8300000, guid: 03bf46fa4106c0847a2570a3bfa5f4c6, type: 3}
   ambience: {fileID: 0}

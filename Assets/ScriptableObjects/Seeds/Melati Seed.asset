@@ -19,7 +19,7 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
     count: 1
   - item: {fileID: 11400000}
-    count: 2
+    count: 1
   gameSprites:
   - {fileID: -1426188895, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}
   - {fileID: 1808982685, guid: 24bc0a16c1286164f97a675a8854b31e, type: 3}

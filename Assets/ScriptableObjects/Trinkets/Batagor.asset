@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Batagor
   InventorySprite: {fileID: 987617981, guid: 4c54d20af00eb0b43886219b7cc43e25, type: 3}
-  Tradeable: 1
+  Tradeable: 0
