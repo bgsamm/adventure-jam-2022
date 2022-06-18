@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
     private Clock clock => ResourceLocator.instance.Clock;
 
     private void Start() {
-        if (clock.ActNum == 5)
+        if (clock.ActNum > 5)
             ShowCreditsSubmenu();
         else
             ShowMainMenu();

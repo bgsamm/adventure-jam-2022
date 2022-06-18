@@ -57,7 +57,7 @@ public class Clock : MonoBehaviour
 
         ActNum++;
         if (ActNum > Acts.Count) {
-            // TODO: end game
+            sceneLoader.LoadMenuScene();
         }
         else {
             DayNum = 0;

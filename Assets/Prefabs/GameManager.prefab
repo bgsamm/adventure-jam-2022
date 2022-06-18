@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActNum: 1
   DayNum: 1
-  SunriseCutscene: {fileID: 0}
+  SunriseCutscene: {fileID: 11400000, guid: f65c756cb4cae004ebe4a51d318297ce, type: 2}
   Acts: []
 --- !u!114 &194133656513736585
 MonoBehaviour:
@@ -133,3 +133,4 @@ MonoBehaviour:
   ShopVisited: 0
   TreeWatered: 0
   LetterChecked: 0
+  saplingSeed: {fileID: 11400000, guid: 4e6000c63a1ef0a48a8c692c62621a49, type: 2}

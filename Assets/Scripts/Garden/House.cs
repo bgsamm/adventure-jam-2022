@@ -10,16 +10,11 @@ public class House : Interactable
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Update() {
-        if (clock.ActNum != 4)
-            //if you've completed all three tasks, you can go to sleep
-            InteractMessage = gardenManager.TasksComplete ? "Press E to sleep" : "You still have chores to do.";
-        else
-            InteractMessage = "Press E to sleep";
+        InteractMessage = gardenManager.TasksComplete ? "Press E to sleep" : "You still have chores to do.";
     }
 
     public override void Interact() {
-        //you don't need to complete tasks if it's act 4
-        if (gardenManager.TasksComplete || clock.ActNum == 4)
+        if (gardenManager.TasksComplete)
             clock.StartNextDay();
     }
 

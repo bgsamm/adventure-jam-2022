@@ -4,11 +4,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TaskList : MonoBehaviour
+public class TaskList_Act4 : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI controlText;
     [SerializeField] private GameObject taskPanel;
-    [SerializeField] private Image[] checks = new Image[3];
+    [SerializeField] private Image[] checks = new Image[1];
 
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
@@ -33,8 +33,6 @@ public class TaskList : MonoBehaviour
             }
             controlText.text = text;
         }
-        checks[0].enabled = gardenManager.ShopVisited;
-        checks[1].enabled = gardenManager.TreeWatered;
-        checks[2].enabled = gardenManager.LetterChecked;
+        checks[0].enabled = gardenManager.TreeWatered;
     }
 }

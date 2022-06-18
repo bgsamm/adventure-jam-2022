@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GardenManager : MonoBehaviour
 {
-    public bool TasksComplete => ShopVisited && TreeWatered && LetterChecked;
+    public bool TasksComplete => (ShopVisited && TreeWatered && LetterChecked) || (clock.ActNum == 4 && TreeWatered);
     [HideInInspector]
     public bool ShopVisited;
     [HideInInspector]
     public bool TreeWatered;
     [HideInInspector]
     public bool LetterChecked; // checked for letters (i.e. visited the tree) and read the letter if there is one
+
+    [SerializeField] private Seed saplingSeed;
 
     // Maps plot names to the Plants they contain
     private static Dictionary<string, Plant> plantDict;
@@ -35,8 +37,14 @@ public class GardenManager : MonoBehaviour
         // grab any plots in the scene
         plots = FindObjectsOfType<Plot>();
         if (plots.Length > 0) {
+            // TODO: handle more elegantly
+            if (clock.ActNum == 5) {
+                foreach (var plot in plots) {
+                    plot.CurrentPlant = new Plant(saplingSeed);
+                }
+            }
             // if first time encountering plots, initialize plantDict
-            if (plantDict == null) {
+            else if (plantDict == null) {
                 plantDict = new Dictionary<string, Plant>();
                 foreach (var plot in plots) {
                     plantDict[plot.name] = null;
@@ -57,8 +65,22 @@ public class GardenManager : MonoBehaviour
         if (player != null)
             playerPosition = player.transform.position;
         // Keep plantDict up-to-date
-        foreach (var plot in plots) {
-            plantDict[plot.name] = plot.CurrentPlant;
+        if (plantDict != null) {
+            foreach (var plot in plots) {
+                plantDict[plot.name] = plot.CurrentPlant;
+            }
+        }
+        // Check for game end in act 5
+        if (clock.ActNum == 5) {
+            bool endAct5 = true;
+            foreach (var plot in plots) {
+                if (!plot.CurrentPlant.Watered) {
+                    endAct5 = false;
+                    break;
+                }
+            }
+            if (endAct5)
+                clock.StartNextAct();
         }
     }
 
