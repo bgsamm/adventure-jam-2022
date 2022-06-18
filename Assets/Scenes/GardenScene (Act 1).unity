@@ -34249,6 +34249,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 120874195}
     m_Modifications:
+    - target: {fileID: 1325535254878782633, guid: 3257fd35435a0af40975b46f65df186a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325535254878782634, guid: 3257fd35435a0af40975b46f65df186a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -500
+      objectReference: {fileID: 0}
     - target: {fileID: 1325535256215218091, guid: 3257fd35435a0af40975b46f65df186a, type: 3}
       propertyPath: m_Name
       value: Cart
