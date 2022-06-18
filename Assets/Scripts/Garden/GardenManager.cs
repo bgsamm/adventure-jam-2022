@@ -72,7 +72,7 @@ public class GardenManager : MonoBehaviour
         }
         // Check for game end in act 5
         if (clock.ActNum == 5) {
-            bool endAct5 = true;
+            bool endAct5 = plots.Length > 0;
             foreach (var plot in plots) {
                 if (!plot.CurrentPlant.Watered) {
                     endAct5 = false;
