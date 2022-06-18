@@ -27759,7 +27759,7 @@ Transform:
   - {fileID: 1821805245}
   - {fileID: 1142933292}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &225300117
 PrefabInstance:
@@ -27836,7 +27836,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8951686434003438622, guid: d0ca458423d99c84ea9c653e50870c87, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8951686434003438622, guid: d0ca458423d99c84ea9c653e50870c87, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27906,18 +27906,6 @@ PrefabInstance:
     - target: {fileID: 819974654, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 819974656, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
-      propertyPath: m_text
-      value: "To Do:\n   Visit shop\n   Water tree\n   Check tree for letters"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405283235, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405283236, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3126524185673865255, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_IsActive
@@ -28609,7 +28597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8910530094918928458, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8910530094918928458, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_AnchorMax.x
@@ -34229,7 +34217,7 @@ Transform:
   - {fileID: 1452627715}
   - {fileID: 104075757}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661746933
 GameObject:
@@ -34484,7 +34472,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1873324499
 GameObject:
@@ -35732,7 +35720,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.015625, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0

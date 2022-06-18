@@ -156,7 +156,7 @@ Transform:
   - {fileID: 213965559}
   - {fileID: 1226329102}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &197511047
 PrefabInstance:
@@ -27193,14 +27193,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 819974656, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
-      propertyPath: m_text
-      value: "To Do:\n   Visit shop\n   Water tree\n   Check tree for letters"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405283236, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 5046254722198734993, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -27883,7 +27875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8910530094918928458, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8910530094918928458, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_AnchorMax.x
@@ -27967,6 +27959,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+--- !u!114 &765561548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3126524185758550818, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+  m_PrefabInstance: {fileID: 765561547}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &829985270
 GameObject:
   m_ObjectHideFlags: 0
@@ -32357,9 +32360,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Teen
       objectReference: {fileID: 0}
+    - target: {fileID: 3623976736064359787, guid: 221568322952c514cbec4b588cccf7bf, type: 3}
+      propertyPath: interactMessage
+      value: 
+      objectReference: {fileID: 765561548}
     - target: {fileID: 3623976736064359829, guid: 221568322952c514cbec4b588cccf7bf, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3623976736064359829, guid: 221568322952c514cbec4b588cccf7bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33682,7 +33689,7 @@ Transform:
   - {fileID: 841602836}
   - {fileID: 1197592370}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1604427715
 PrefabInstance:
