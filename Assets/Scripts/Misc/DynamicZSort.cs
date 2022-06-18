@@ -15,15 +15,16 @@ public class DynamicZSort : MonoBehaviour
     }
 
     private void Start() {
-        player = GameObject.FindGameObjectWithTag("Player");
-        // this assumes the player's sort order never changes
-        playerSortOrder = player.GetComponent<SpriteRenderer>().sortingOrder;
+        //player = GameObject.FindGameObjectWithTag("Player");
+        //// this assumes the player's sort order never changes
+        //playerSortOrder = player.GetComponent<SpriteRenderer>().sortingOrder;
     }
 
     private void Update() {
-        if (player.transform.position.y > spriteRenderer.transform.position.y)
-            spriteRenderer.sortingOrder = playerSortOrder + 1;
-        else
-            spriteRenderer.sortingOrder = playerSortOrder - 1;
+        //if (player.transform.position.y > spriteRenderer.transform.position.y)
+        //    spriteRenderer.sortingOrder = playerSortOrder + 1;
+        //else
+        //    spriteRenderer.sortingOrder = playerSortOrder - 1;
+        spriteRenderer.sortingOrder = (int)(-10 * transform.position.y);
     }
 }
