@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 500825591}
   - component: {fileID: 500825590}
   - component: {fileID: 500825592}
+  - component: {fileID: 500825593}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -544,6 +545,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2cc13d744ad24288178aa1cee1bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &500825593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500825589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b36a96bd8e6e74b959f39518643bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  volumeScale: {fileID: 1333775280}
 --- !u!1001 &547001990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -759,8 +774,8 @@ RectTransform:
   m_Father: {fileID: 1168859551}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1498,7 +1513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1333775279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1574,7 +1589,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 500825593}
         m_TargetAssemblyTypeName: VolumeControl, Assembly-CSharp
         m_MethodName: ChangeVolume
         m_Mode: 1
@@ -1874,7 +1889,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

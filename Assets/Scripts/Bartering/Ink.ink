@@ -270,7 +270,7 @@ I have a feeling that, in the next few years, we'll have even more need to pray.
 === Day8 ===
 Hey, Agung.
 
-This isn’t going to be nice, but I have to warn you, with rationing beginning ,your farm’s produce is not yours to give out. 
+This isn’t going to be nice, but I have to warn you, with rationing beginning, your farm’s produce is not yours to give out. 
 
 I know, I’m sorry. 
 
@@ -320,7 +320,7 @@ I’ve asked the soldiers who have come to town to check for his name, but they 
 
 I know something has happened. A mother knows. 
 
-He’s been put in a different division from his brother. I haven’t told him. Don’t need to worry him as well.  But my youngest… 
+My eldest has been put in a different division from his brother. I haven’t told him. Don’t need to worry him as well.  But my youngest… 
 
 Well. About those sweet potatoes.
 -> END
