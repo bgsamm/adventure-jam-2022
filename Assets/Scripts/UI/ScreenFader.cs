@@ -15,12 +15,18 @@ public class ScreenFader : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void FadeIn() {
-        animator.Play("Fade In");
+    public void FadeIn(bool longFade) {
+        if (longFade)
+            animator.Play("Fade In (Long)");
+        else
+            animator.Play("Fade In");
     }
 
-    public void FadeOut() {
-        animator.Play("Fade Out");
+    public void FadeOut(bool longFade) {
+        if (longFade)
+            animator.Play("Fade Out (Long)");
+        else
+            animator.Play("Fade Out");
     }
 
     public void OnFadeInFinished() {

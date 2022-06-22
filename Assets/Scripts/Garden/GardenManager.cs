@@ -12,6 +12,8 @@ public class GardenManager : MonoBehaviour
     public bool TreeWatered;
     [HideInInspector]
     public bool LetterChecked; // checked for letters (i.e. visited the tree) and read the letter if there is one
+    [HideInInspector]
+    public bool SaplingsWatered;
 
     [SerializeField] private Seed saplingSeed;
 
@@ -72,15 +74,13 @@ public class GardenManager : MonoBehaviour
         }
         // Check for game end in act 5
         if (clock.ActNum == 5) {
-            bool endAct5 = plots.Length > 0;
+            SaplingsWatered = plots.Length > 0;
             foreach (var plot in plots) {
                 if (!plot.CurrentPlant.Watered) {
-                    endAct5 = false;
+                    SaplingsWatered = false;
                     break;
                 }
             }
-            if (endAct5)
-                clock.StartNextAct();
         }
     }
 

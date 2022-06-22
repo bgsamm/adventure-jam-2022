@@ -30,14 +30,14 @@ public class CutscenePlayer : MonoBehaviour
 
     IEnumerator WaitThenFadeOut(float s) {
         yield return new WaitForSeconds(s);
-        fader.FadeOut();
+        fader.FadeOut(false);
     }
 
     private void ShowNextImage() {
         // if images remain, show next image
         if (index < currentCutscene.images.Count) {
             cutscenePanel.sprite = currentCutscene.images[index++];
-            fader.FadeIn();
+            fader.FadeIn(false);
         }
         // else, invoke the callback function
         else {
