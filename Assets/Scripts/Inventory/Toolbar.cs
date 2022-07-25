@@ -7,8 +7,7 @@ using UnityEngine;
 
 public class Toolbar : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI selectedItemLabel;
+    [SerializeField] private TextMeshProUGUI selectedItemLabel;
 
     private InventorySlot[] slots;
     private int activeSlot;

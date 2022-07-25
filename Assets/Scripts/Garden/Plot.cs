@@ -5,9 +5,13 @@ public class Plot : Interactable
     public Plant CurrentPlant;
     public bool Occupied => CurrentPlant != null;
 
+    [Header("Ground Sprites")]
+    [SerializeField] private Sprite dryGroundSprite;
+    [SerializeField] private Sprite wetGroundSprite;
+    [Header("Components")]
+    [SerializeField] private SpriteRenderer cropSprite;
     [SerializeField] private GameObject waterIcon;
     [SerializeField] private WateringCan wateringCan;
-    //[SerializeField] private SpriteRenderer wateredGroundSprite;
     private SpriteRenderer spriteRenderer;
 
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
@@ -30,15 +34,15 @@ public class Plot : Interactable
         }
 
         if (CurrentPlant != null) {
-            spriteRenderer.enabled = true;
-            spriteRenderer.sprite = CurrentPlant.Sprite;
+            cropSprite.enabled = true;
+            cropSprite.sprite = CurrentPlant.Sprite;
             waterIcon.SetActive(!CurrentPlant.Watered && !CurrentPlant.ReadyToHarvest);
-            //wateredGroundSprite.enabled = CurrentPlant.Watered; 
+            spriteRenderer.sprite = CurrentPlant.Watered ? wetGroundSprite : dryGroundSprite; 
         }
         else {
-            spriteRenderer.enabled = false;
+            cropSprite.enabled = false;
             waterIcon.SetActive(false);
-            //wateredGroundSprite.enabled = false;
+            spriteRenderer.sprite = dryGroundSprite;
         }
     }
 
