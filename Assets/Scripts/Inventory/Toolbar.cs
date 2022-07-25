@@ -22,6 +22,10 @@ public class Toolbar : MonoBehaviour
     }
 
     private void Update() {
+        // loops negative values around correctly
+        static int mod(int x, int m) {
+            return (x % m + m) % m;
+        }
         // I don't love calling this every frame but it certainly is the simplest approach
         UpdateSlots();
         // Map inputs Toolbar 1..N to the corresponding toolbar slots
@@ -31,7 +35,12 @@ public class Toolbar : MonoBehaviour
                 break;
             }
         }
-        // Again, don't love calling this every frame
+        // Allow scroll wheel to change selected item
+        if (Input.mouseScrollDelta.y < 0)
+            activeSlot = mod(activeSlot + 1, slots.Length);
+        else if (Input.mouseScrollDelta.y > 0)
+            activeSlot = mod(activeSlot - 1, slots.Length);
+        // Also don't love calling this every frame
         SelectSlot(activeSlot);
     }
 
@@ -41,10 +50,8 @@ public class Toolbar : MonoBehaviour
         }
         var stack = slots[index].Stack;
         inventory.selectedStack = stack;
-        if (stack == null)
-            selectedItemLabel.text = "";
-        else
-            selectedItemLabel.text = stack.item.name;
+        // update selected item text
+        selectedItemLabel.text = stack != null ? stack.item.name : "";
     }
 
     private void UpdateSlots() {
