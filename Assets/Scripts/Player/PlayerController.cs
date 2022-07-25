@@ -53,9 +53,8 @@ public class PlayerController : MonoBehaviour
         float horizInput = Input.GetAxisRaw("Horizontal"),
             vertInput = Input.GetAxisRaw("Vertical");
 
-        bool moveX = horizInput != 0; // Signals moving on X axis, X higher priority than Y
-        bool moving = moveX || vertInput != 0;
-        direction = new Vector2(moveX ? horizInput : 0, moveX ? 0 : vertInput);
+        bool moving = horizInput != 0 || vertInput != 0;
+        direction = new Vector2(horizInput, vertInput);
 
         // Maintain values when idle so the player continues to face the direction they were moving
         if (moving) {
