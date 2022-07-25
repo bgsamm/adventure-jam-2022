@@ -1761,6 +1761,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2906832618924215254, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+      propertyPath: m_text
+      value: Act 3, Day 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3126524185673865255, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2533,7 +2537,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garden Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6974409114260779399, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
 --- !u!1 &2049736484 stripped
 GameObject:

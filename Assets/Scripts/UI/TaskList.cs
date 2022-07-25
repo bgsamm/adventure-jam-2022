@@ -11,6 +11,7 @@ public class TaskList : MonoBehaviour
     [SerializeField] private Image[] checks = new Image[3];
 
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
+    private Clock clock => ResourceLocator.instance.Clock;
 
     private void Start() {
         taskPanel.SetActive(false);
@@ -33,8 +34,14 @@ public class TaskList : MonoBehaviour
             }
             controlText.text = text;
         }
-        checks[0].enabled = gardenManager.ShopVisited;
-        checks[1].enabled = gardenManager.TreeWatered;
-        checks[2].enabled = gardenManager.LetterChecked;
+
+        if (clock.ActNum == 4) {
+            checks[0].enabled = gardenManager.TreeWatered;
+        }
+        else {
+            checks[0].enabled = gardenManager.ShopVisited;
+            checks[1].enabled = gardenManager.TreeWatered;
+            checks[2].enabled = gardenManager.LetterChecked;
+        }
     }
 }
