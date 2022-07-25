@@ -2,10 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class Toolbar : MonoBehaviour
 {
+    [SerializeField]
+    private TextMeshProUGUI selectedItemLabel;
+
     private InventorySlot[] slots;
     private int activeSlot;
 
@@ -35,7 +39,12 @@ public class Toolbar : MonoBehaviour
         for (int i = 0; i < slots.Length; i++) {
             slots[i].SetSelected(i == index);
         }
-        inventory.selectedStack = slots[index].Stack;
+        var stack = slots[index].Stack;
+        inventory.selectedStack = stack;
+        if (stack == null)
+            selectedItemLabel.text = "";
+        else
+            selectedItemLabel.text = stack.item.name;
     }
 
     private void UpdateSlots() {
