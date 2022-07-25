@@ -15,3 +15,5 @@ MonoBehaviour:
   name: Sweet Potato
   InventorySprite: {fileID: 21300000, guid: e29cd527a2b42ab47962e24da86c45b7, type: 3}
   Tradeable: 1
+  Edible: 1
+  Description: Just good honest food.

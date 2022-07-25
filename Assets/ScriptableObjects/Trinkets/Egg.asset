@@ -15,3 +15,5 @@ MonoBehaviour:
   name: Egg
   InventorySprite: {fileID: 269601424, guid: 4c54d20af00eb0b43886219b7cc43e25, type: 3}
   Tradeable: 1
+  Edible: 1
+  Description: 

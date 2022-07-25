@@ -340,7 +340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "To Do:\n   Visit shop\n   Water tree\n   Check for letters"
+  m_text: "To Do:\n   Visit shop\n   Water tree\n   Check tree for letters"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
   m_sharedMaterial: {fileID: -2014821490742284180, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
@@ -444,7 +444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -50, y: -62}
+  m_AnchoredPosition: {x: -58.4, y: -62}
   m_SizeDelta: {x: 16, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &939649454
@@ -525,7 +525,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -5, y: -5}
-  m_SizeDelta: {x: 130, y: 75}
+  m_SizeDelta: {x: 149.1083, y: 75}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1405283238
 CanvasRenderer:
@@ -600,7 +600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -50, y: -28}
+  m_AnchoredPosition: {x: -58.400024, y: -28}
   m_SizeDelta: {x: 16, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1497286324
@@ -676,7 +676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -50, y: -45}
+  m_AnchoredPosition: {x: -58.400024, y: -45}
   m_SizeDelta: {x: 16, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1721740224

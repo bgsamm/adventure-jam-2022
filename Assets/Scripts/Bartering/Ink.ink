@@ -27,9 +27,6 @@ Anyway! Thank you for letting me pass on my farming knowledge.
 
 I know your father has gone off with my boys to be a part of the war effort. We can help each other though. Support each other as best we can, hm?
 
-You know I’m just the next house over if you need anything. 
-
-Goodbye, Agung.
 -> END
 
 = BadTrade
@@ -285,8 +282,6 @@ You understand.
 It’s a team effort. As a country we have to pull together. I’m proud to help be a part of it.
 
 Just take my warning now, okay? Close up shop. I don’t want anything to happen to you and your stall. 
-
-See you later, Agung.
 -> END
 
 = GoodTrade
@@ -327,6 +322,7 @@ Well. About those sweet potatoes.
 
 = GoodTrade
 Thank you, Agung. Always such a sweet boy.
+
 So much like your father. Both of you always such sweet boys.
  
 Oh, and I know it’s late, but happy birthday!
@@ -335,6 +331,7 @@ Oh, and I know it’s late, but happy birthday!
 = BadTrade
 
 Well, thank you just for listening, Agung. Always such a sweet boy.
+
 So much like your father. Both of you always such sweet boys.
  
 Oh, and I know it’s late, but happy birthday!
@@ -471,7 +468,7 @@ From your dad? Then he’s a hero!
 
 Maybe my love will earn one of his own someday. 
 
-The only thing he’s given me is that bracelet, but it’s as precious to me as a Medal of Honor!
+The only thing he’s given me is that bracelet, but it’s as precious to me as any medal!
 -> END
 
 = GoodTrade
@@ -521,8 +518,6 @@ At least one son will come home at the end of this.
 Sorry, Agung. I know you don’t mind, but I do. An old woman like me crying in front of you.
 
 You’re doing such a good job here. I wish your father could come home to see you.
-
-Goodbye, Agung.
 -> END
 
 = GoodTrade
@@ -587,6 +582,7 @@ I don’t understand where it’s all going. There are crates and crates of it b
 We’re under a lot of pressure at the office to keep everyone to their rationing amounts. 
 
 Still growing flowers? 
+
 Something has to be just for happiness, I suppose.
 
 I’ll buy a couple. Don’t tell anyone. 
@@ -646,16 +642,12 @@ Your kindness really shines through all else. I can tell in your eyes: You know 
 The fear for the future. For things outside of our control. Little cogs in a big machine. 
 
 You've grown so much since our first meeting all that time ago. Maturity looks good on you. 
-
-Goodbye.
 -> END
 
 = BadTrade
 We've all gotten a little harder over the years, a little tougher, haven't we? That's what war does to you.
 
 You've grown so much since our first meeting all that time ago. Maturity looks good on you. 
-
-Goodbye.
 -> END
 
 
@@ -719,9 +711,6 @@ I’m never sure if we’re friends but I certainly consider you to be one.
 
 //act 3 day 5
 === Day19 ===
-
-Hello. 
-
 Do you have any more sugar cane? 
 
 I'll understand if you don't. Supplies are short everywhere.
@@ -733,7 +722,7 @@ They found him.
 
 At a prisoner of war camp.
 
-He’s alive at least. The other soldiers in town said…said that he’ll be kept alive as a bargaining chip. 
+He’s alive, at least. The other soldiers in town said…said that he’ll be kept alive as a bargaining chip. 
 
 They really are just pawns in this game.
 
@@ -750,8 +739,6 @@ Maybe the mail has just been delayed again. It’s always getting held up with t
 I know that’s not much consolation. 
 
 War hurts the soul more than it can a body. 
-
-I’ll see you soon, Agung. 
 -> END
 
 = BadTrade
@@ -760,7 +747,7 @@ They found him.
 
 At a prisoner of war camp.
 
-He’s alive at least. The other soldiers in town said…said that he’ll be kept alive as a bargaining chip. 
+He’s alive, at least. The other soldiers in town said…said that he’ll be kept alive as a bargaining chip. 
 
 They really are just pawns in this game.
 
@@ -777,8 +764,6 @@ Maybe the mail has just been delayed again. It’s always getting held up with t
 I know that’s not much consolation. 
 
 War hurts the soul more than it can a body. 
-
-I’ll see you soon, Agung.
 -> END
 
 //act 3 day 6
@@ -812,8 +797,6 @@ Agung, your father will be so proud of you when you tell him how you’ve helped
 Young, intelligent and compassionate. I hope my children get the chance to be the same. 
 
 I just want them to have the chance. 
-
-Thank you, Agung.
 -> END
 
 = BadTrade
@@ -823,8 +806,6 @@ I understand. I treated you unfairly.
 It’s okay. Really. We'll be okay.
 
 Thank you for listening to a desperate man’s cries. 
-
-Goodbye, Agung. 
 -> END
 
 //act 3 day 7

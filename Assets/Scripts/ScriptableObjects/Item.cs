@@ -10,4 +10,6 @@ public class Item : ScriptableObject
     public new string name;
     public Sprite InventorySprite;
     public bool Tradeable;
+    public bool Edible;
+    public string Description;
 }
