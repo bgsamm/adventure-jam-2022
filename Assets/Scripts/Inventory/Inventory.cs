@@ -19,13 +19,15 @@ public class Inventory : MonoBehaviour
     }
 
     private void Update() {
+        if (inventoryPanel.activeSelf)
+            PlayerController.playerHasControl = false;
+
         if (Input.GetButtonDown("Inventory")) {
             string text;
             if (!inventoryPanel.activeSelf) {
                 UpdateSlots();
                 inventoryPanel.SetActive(true);
                 text = controlText.text.Replace("open", "close");
-                PlayerController.playerHasControl = false;
             }
             else {
                 inventoryPanel.SetActive(false);
@@ -33,6 +35,12 @@ public class Inventory : MonoBehaviour
                 PlayerController.playerHasControl = true;
             }
             controlText.text = text;
+        }
+        // Allow 'escape' to close (but not open) the menu
+        else if (Input.GetKeyDown(KeyCode.Escape)) {
+            inventoryPanel.SetActive(false);
+            controlText.text = controlText.text.Replace("close", "open");
+            PlayerController.playerHasControl = true;
         }
     }
 
