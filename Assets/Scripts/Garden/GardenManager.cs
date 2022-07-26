@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GardenManager : MonoBehaviour
 {
-    public bool TasksComplete => (ShopVisited && TreeWatered && LetterChecked) || (clock.ActNum == 4 && TreeWatered);
+    public bool TasksComplete => (ShopVisited && TreeWatered && LetterChecked && FoodEaten) || (clock.ActNum == 4 && TreeWatered);
     [HideInInspector]
     public bool ShopVisited;
     [HideInInspector]
     public bool TreeWatered;
     [HideInInspector]
     public bool LetterChecked; // checked for letters (i.e. visited the tree) and read the letter if there is one
+    [HideInInspector]
+    public bool FoodEaten;
     [HideInInspector]
     public bool SaplingsWatered;
 
@@ -94,6 +96,7 @@ public class GardenManager : MonoBehaviour
         ShopVisited = false;
         TreeWatered = false;
         LetterChecked = false;
+        FoodEaten = false;
         // Don't grow plants at the start of an act
         if (clock.DayNum > 1)
             GrowPlants();

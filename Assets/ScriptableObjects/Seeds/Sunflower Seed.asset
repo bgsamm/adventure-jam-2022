@@ -15,6 +15,8 @@ MonoBehaviour:
   name: Sunflower Seeds
   InventorySprite: {fileID: -1456368681, guid: 164459c69a7dc4f4facf740391ef2f26, type: 3}
   Tradeable: 1
+  Edible: 1
+  Description: In a pinch, these make a quick snack.
   yield:
   - item: {fileID: 11400000, guid: 55ad68154ef5c2f4b9f3faf016fe361d, type: 2}
     count: 1
@@ -25,3 +27,4 @@ MonoBehaviour:
   - {fileID: 1725107839, guid: e9d418df33f0f8f489317d7e85d4913e, type: 3}
   - {fileID: -550231315, guid: e9d418df33f0f8f489317d7e85d4913e, type: 3}
   daysToGrow: 3
+  seedChance: 0

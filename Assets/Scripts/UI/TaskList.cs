@@ -42,6 +42,7 @@ public class TaskList : MonoBehaviour
             checks[0].enabled = gardenManager.ShopVisited;
             checks[1].enabled = gardenManager.TreeWatered;
             checks[2].enabled = gardenManager.LetterChecked;
+            checks[3].enabled = gardenManager.FoodEaten;
         }
     }
 }
