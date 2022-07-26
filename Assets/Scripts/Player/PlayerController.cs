@@ -45,7 +45,10 @@ public class PlayerController : MonoBehaviour
     private void Update() {
         // check if player currently has control
         if (!playerHasControl) {
+            // stop movement
             direction = Vector2.zero;
+            animator.SetBool("Moving", false);
+            // clear interaction text
             interactMessage.text = "";
             return;
         }

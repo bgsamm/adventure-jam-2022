@@ -5,19 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GardenManager : MonoBehaviour
 {
-    public bool TasksComplete => (ShopVisited && TreeWatered && LetterChecked && FoodEaten) || (clock.ActNum == 4 && TreeWatered);
-    [HideInInspector]
-    public bool ShopVisited;
-    [HideInInspector]
-    public bool TreeWatered;
-    [HideInInspector]
-    public bool LetterChecked; // checked for letters (i.e. visited the tree) and read the letter if there is one
-    [HideInInspector]
-    public bool FoodEaten;
-    [HideInInspector]
-    public bool SaplingsWatered;
-
-    [SerializeField] private Seed saplingSeed;
+    public bool TasksComplete => (ShopVisited && TreeWatered && LetterChecked) || (clock.ActNum == 4 && TreeWatered);
+    [HideInInspector] public bool ShopVisited;
+    [HideInInspector] public bool TreeWatered;
+    [HideInInspector] public bool LetterChecked; // checked for letters (i.e. visited the tree) and read the letter if there is one
+    [HideInInspector] public bool FoodEaten;
 
     // Maps plot names to the Plants they contain
     private static Dictionary<string, Plant> plantDict;
@@ -41,14 +33,8 @@ public class GardenManager : MonoBehaviour
         // grab any plots in the scene
         plots = FindObjectsOfType<Plot>();
         if (plots.Length > 0) {
-            // TODO: handle more elegantly
-            if (clock.ActNum == 5) {
-                foreach (var plot in plots) {
-                    plot.CurrentPlant = new Plant(saplingSeed);
-                }
-            }
             // if first time encountering plots, initialize plantDict
-            else if (plantDict == null) {
+            if (plantDict == null) {
                 plantDict = new Dictionary<string, Plant>();
                 foreach (var plot in plots) {
                     plantDict[plot.name] = null;
@@ -72,16 +58,6 @@ public class GardenManager : MonoBehaviour
         if (plantDict != null) {
             foreach (var plot in plots) {
                 plantDict[plot.name] = plot.CurrentPlant;
-            }
-        }
-        // Check for game end in act 5
-        if (clock.ActNum == 5) {
-            SaplingsWatered = plots.Length > 0;
-            foreach (var plot in plots) {
-                if (!plot.CurrentPlant.Watered) {
-                    SaplingsWatered = false;
-                    break;
-                }
             }
         }
     }

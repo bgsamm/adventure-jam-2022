@@ -6,24 +6,48 @@ using UnityEngine;
 
 public class Act5 : MonoBehaviour
 {
-    public ScreenFader fader;
-    public GameObject endPanel;
+    [Header("Cutscene")]
+    [SerializeField] new private Camera camera;
+    [SerializeField] private float cameraSpeed;
+    [SerializeField] private Vector2[] waypoints;
+    [Header("Ending")]
+    [SerializeField] private ScreenFader fader;
+    [SerializeField] private GameObject endPanel;
+
+    private bool doCutscene;
+    private int waypointIndex;
 
     private Clock clock => ResourceLocator.instance.Clock;
-    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Start() {
         endPanel.SetActive(false);
     }
 
     private void Update() {
-        if (gardenManager.SaplingsWatered) {
-            fader.FadeOutEvent = delegate {
-                endPanel.SetActive(true);
-                StartCoroutine(WaitThenEndGame(3));
-            };
-            fader.FadeOut(true);
+        if (doCutscene) {
+            if (waypointIndex < waypoints.Length) {
+                var target = waypoints[waypointIndex];
+                var offset = new Vector3(target.x, target.y, -10) - camera.transform.position;
+                camera.transform.position += cameraSpeed * Time.deltaTime * offset.normalized;
+                if (offset.magnitude < 0.01)
+                    waypointIndex++;
+            }
+            else {
+                fader.FadeOutEvent = delegate {
+                    endPanel.SetActive(true);
+                    StartCoroutine(WaitThenEndGame(5));
+                };
+                fader.FadeOut(true);
+            }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        Debug.Log("Trigger entered!");
+        PlayerController.playerHasControl = false;
+        camera.GetComponent<FollowPlayer>().enabled = false;
+        doCutscene = true;
+        waypointIndex = 0;
     }
 
     IEnumerator WaitThenEndGame(float s) {
