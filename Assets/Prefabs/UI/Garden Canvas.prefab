@@ -599,6 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2e9c54396f84f478ae53279b379728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskFailedIcon: {fileID: 0}
   checks:
   - {fileID: 1497286323}
   - {fileID: 1721740223}
@@ -3522,7 +3523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5406587457523883636, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
       propertyPath: m_text
-      value: I - open inventory
+      value: Q - open inventory
       objectReference: {fileID: 0}
     - target: {fileID: 5406587457523883636, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
       propertyPath: m_VerticalAlignment
@@ -5686,7 +5687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5406587457523883636, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
       propertyPath: m_text
-      value: Q - show task list
+      value: Tab - show task list
       objectReference: {fileID: 0}
     - target: {fileID: 5406587457523883636, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
       propertyPath: m_VerticalAlignment
