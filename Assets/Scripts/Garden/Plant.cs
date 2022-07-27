@@ -12,7 +12,7 @@ public class Plant
     private int spriteIndex => growthStage == seed.daysToGrow ? 2 : (growthStage != 0 ? 1 : 0);
     private int growthStage;
 
-    private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
+    private Inventory inventory => ResourceLocator.instance.InventorySystem;
     private readonly Seed seed;
 
     public Plant(Seed seed) {

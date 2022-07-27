@@ -2,102 +2,53 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [Header("Item Description")]
-    [SerializeField] private TextMeshProUGUI NameText;
-    [SerializeField] private TextMeshProUGUI DescriptionText;
-    [SerializeField] private TextMeshProUGUI MessageText;
+    public bool HoldingSeed => selectedStack != null && selectedStack.item is Seed;
+    public bool HasFood => stacks.Any(stack => stack.item.Edible);
 
-    private InventorySlot[] inventorySlots;
-    private int selectionIndex => Array.FindIndex(inventorySlots, x => x.Selected);
-    private InventorySlot selectedSlot => inventorySlots[selectionIndex];
+    [HideInInspector] public List<ItemStack> stacks;
+    [HideInInspector] public ItemStack selectedStack;
 
-    private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
-    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
-
-    private void Start() {
-        inventorySlots = GetComponentsInChildren<InventorySlot>();
-        UpdateSlots();
-
-        NameText.text = "";
-        DescriptionText.text = "";
-        MessageText.text = "";
+    public void AddItems(ItemStack stack) {
+        var inventoryStack = FindStack(stack.item);
+        if (inventoryStack == null)
+            // Changes to stacks on ScriptableObjects actually apply
+            // to the files themselves, so make a new copy of the stack
+            stacks.Add(new ItemStack(stack.item, stack.count));
+        else
+            inventoryStack.AddToStack(stack.count);
     }
 
-    private void Update() {
-        // Allow scroll wheel to change selected item
-        if (Input.mouseScrollDelta.y != 0) {
-            if (Input.mouseScrollDelta.y < 0 && selectionIndex < inventorySlots.Length - 1) {
-                SelectSlot(selectionIndex + 1);
-            }
-            else if (Input.mouseScrollDelta.y > 0 && selectionIndex > 0) {
-                SelectSlot(selectionIndex - 1);
-            }
-        }
-        // Eating
-        if (Input.GetButtonDown("Eat") && selectionIndex >= 0) {
-            if (selectedSlot.Stack != null)
-                EatItem(selectedSlot.Stack.item);
-        }
+    public void RemoveItems(ItemStack stack) {
+        RemoveItems(stack.item, stack.count);
+    }
 
-        // Update item description
-        if (selectionIndex < 0) {
-            NameText.text = "";
-            DescriptionText.text = "Click an item to view its description";
-        }
-        else if (selectedSlot.Stack != null) {
-            var item = selectedSlot.Stack.item;
-            NameText.text = item.name;
-            DescriptionText.text = item.Description;
-            if (item.Edible)
-                DescriptionText.text += " Press E to eat.";
-        }
-        else {
-            NameText.text = "";
-            DescriptionText.text = "";
+    public void RemoveItems(Item item, int count) {
+        var inventoryStack = FindStack(item);
+        if (inventoryStack != null) {
+            inventoryStack.RemoveFromStack(count);
+            if (inventoryStack.count == 0)
+                RemoveFromInventory(item);
         }
     }
 
-    private void UpdateSlots() {
-        for (int i = 0; i < inventorySlots.Length; i++) {
-            var inventorySlot = inventorySlots[i];
-            if (i < inventory.stacks.Count)
-                inventorySlot.SetStack(inventory.stacks[i]);
-            else
-                inventorySlot.SetStack(null);
-        }
+    public bool HasItems(ItemStack stack) {
+        var inventoryStack = FindStack(stack.item);
+        return inventoryStack != null && stack.count <= inventoryStack.count;
     }
 
-    private void SelectSlot(int index) {
-        var slot = inventorySlots[index];
-        SelectSlot(slot);
+    public ItemStack FindStack(Item item) {
+        int match = stacks.FindIndex(x => x.item == item);
+        return match == -1 ? null : stacks[match];
     }
 
-    public void SelectSlot(InventorySlot slot) {
-        // Select provided slot, deselect all others
-        foreach (var inventorySlot in inventorySlots) {
-            inventorySlot.SetSelected(inventorySlot == slot);
-        }
-        // Reset message text
-        MessageText.text = "";
-    }
-
-    public void EatItem(Item food) {
-        if (!food.Edible) {
-            MessageText.text = "You can't eat that!";
-        }
-        else if (gardenManager.FoodEaten) {
-            MessageText.text = "You're too full to eat any more.";
-        }
-        else {
-            inventory.RemoveItems(food, 1);
-            UpdateSlots();
-            gardenManager.FoodEaten = true;
-            MessageText.text = "Mm, tasty.";
-        }
+    private void RemoveFromInventory(Item item) {
+        int match = stacks.FindIndex(x => x.item == item);
+        if (selectedStack == stacks[match])
+            selectedStack = null;
+        stacks.RemoveAt(match);
     }
 }

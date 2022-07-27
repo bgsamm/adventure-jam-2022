@@ -15,7 +15,7 @@ public class Plot : Interactable
     [SerializeField] private WateringCan wateringCan;
     private SpriteRenderer spriteRenderer;
 
-    private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
+    private Inventory inventory => ResourceLocator.instance.InventorySystem;
 
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();

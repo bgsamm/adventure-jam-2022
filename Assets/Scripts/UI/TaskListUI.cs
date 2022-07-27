@@ -4,12 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TaskList : MonoBehaviour
+public class TaskListUI : MonoBehaviour
 {
+    [SerializeField] private Sprite taskFailedIcon;
     [SerializeField] private Image[] checks = new Image[4];
 
-    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
     private Clock clock => ResourceLocator.instance.Clock;
+    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
+    private Inventory inventory => ResourceLocator.instance.InventorySystem;
 
     private void Update() {
         if (clock.ActNum == 4) {
@@ -19,7 +21,9 @@ public class TaskList : MonoBehaviour
             checks[0].enabled = gardenManager.ShopVisited;
             checks[1].enabled = gardenManager.TreeWatered;
             checks[2].enabled = gardenManager.LetterChecked;
-            checks[3].enabled = gardenManager.FoodEaten;
+            checks[3].enabled = gardenManager.FoodEaten || !inventory.HasFood;
+            if (!inventory.HasFood && !gardenManager.FoodEaten)
+                checks[3].sprite = taskFailedIcon;
         }
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class GardenUI : MonoBehaviour
 {
-    [Header("Control Texts")]
+    [Header("Status Texts")]
     [SerializeField] private TextMeshProUGUI taskListControlText;
     [SerializeField] private TextMeshProUGUI inventoryControlText;
     [SerializeField] private TextMeshProUGUI currentDayText;
@@ -21,6 +21,7 @@ public class GardenUI : MonoBehaviour
     private void Start() {
         inventoryPanel.SetActive(false);
         taskPanel.SetActive(false);
+        toolbar.SetActive(true);
 
         currentDayText.text = $"Act {clock.ActNum}, Day {clock.DayNum}";
     }

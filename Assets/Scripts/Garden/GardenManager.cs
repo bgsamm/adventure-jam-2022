@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GardenManager : MonoBehaviour
 {
-    public bool TasksComplete => (ShopVisited && TreeWatered && LetterChecked) || (clock.ActNum == 4 && TreeWatered);
+    public bool TasksComplete => (ShopVisited && TreeWatered && LetterChecked && (FoodEaten || !inventory.HasFood)) || (clock.ActNum == 4 && TreeWatered);
     [HideInInspector] public bool ShopVisited;
     [HideInInspector] public bool TreeWatered;
     [HideInInspector] public bool LetterChecked; // checked for letters (i.e. visited the tree) and read the letter if there is one
@@ -16,6 +16,7 @@ public class GardenManager : MonoBehaviour
     // Track the player's position across scenes
     private static Vector3? playerPosition = null;
 
+    private Inventory inventory => ResourceLocator.instance.InventorySystem;
     private Clock clock => ResourceLocator.instance.Clock;
 
     private Plot[] plots;

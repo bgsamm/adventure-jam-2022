@@ -11,7 +11,7 @@ public class LetterReader : MonoBehaviour
     [SerializeField] private GameObject closeButton;
 
     private LetterManager letterManager => ResourceLocator.instance.LetterManager;
-    private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
+    private Inventory inventory => ResourceLocator.instance.InventorySystem;
 
     private Letter currentLetter;
     private int pageIndex;

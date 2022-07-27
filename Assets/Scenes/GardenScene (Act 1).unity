@@ -39970,7 +39970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3126524185758550816, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4752215241736701374, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_Enabled
@@ -40648,6 +40648,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6600160743835444347, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+      propertyPath: taskFailedIcon
+      value: 
+      objectReference: {fileID: 627109201, guid: 03a05dad02bbb1840a7b3c976afddbc9, type: 3}
     - target: {fileID: 8690030446301659206, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -58.40001

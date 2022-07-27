@@ -31,7 +31,7 @@ public class BarterMenu : MonoBehaviour
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
     private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
-    private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
+    private Inventory inventory => ResourceLocator.instance.InventorySystem;
 
     private InventorySlot[] inventorySlots;
     private TradeListEntry[] tradeEntries;

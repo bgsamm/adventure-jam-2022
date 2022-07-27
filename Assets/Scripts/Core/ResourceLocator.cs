@@ -13,7 +13,7 @@ public class ResourceLocator : MonoBehaviour
     public CutsceneManager CutsceneManager { get; private set; }
     public LetterManager LetterManager { get; private set; }
     public Clock Clock { get; private set; }
-    public InventorySystem InventorySystem { get; private set; }
+    public Inventory InventorySystem { get; private set; }
     public GardenManager GardenManager { get; private set; }
 
     private void Awake() {
@@ -30,7 +30,7 @@ public class ResourceLocator : MonoBehaviour
         CutsceneManager = FindResourceOfType<CutsceneManager>();
         LetterManager = FindResourceOfType<LetterManager>();
         Clock = FindResourceOfType<Clock>();
-        InventorySystem = FindResourceOfType<InventorySystem>();
+        InventorySystem = FindResourceOfType<Inventory>();
         GardenManager = FindResourceOfType<GardenManager>();
     }
 
