@@ -464,6 +464,22 @@ PrefabInstance:
       value: Back to garden
       objectReference: {fileID: 0}
     - target: {fileID: 1647461952923302699, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647461952923302699, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
+    - target: {fileID: 1647461952923302699, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647461952923302699, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2014821490742284180, guid: cf6363233fe4d2e48a43834fd4dec817, type: 2}
+    - target: {fileID: 1647461952923302699, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}

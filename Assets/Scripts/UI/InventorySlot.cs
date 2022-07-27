@@ -54,8 +54,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        inventory.ExamineItem(Stack.item);
         Debug.Log("InventorySlot: click detected");
-
+        inventory.ExamineItem(Stack.item);
     }
 }

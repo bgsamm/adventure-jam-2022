@@ -42,7 +42,6 @@ public class Inventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("E detected");
                 Eat(inventory.stacks[selectionIndex]);
             }
         }
@@ -112,6 +111,7 @@ public class Inventory : MonoBehaviour
         {
             food.RemoveFromStack(1);
             gardenManager.FoodEaten = true;
+            UpdateSlots();
         }
     }
 }

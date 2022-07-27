@@ -8,7 +8,7 @@ public class TaskList : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI controlText;
     [SerializeField] private GameObject taskPanel;
-    [SerializeField] private Image[] checks = new Image[3];
+    [SerializeField] private Image[] checks = new Image[4];
 
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
     private Clock clock => ResourceLocator.instance.Clock;
