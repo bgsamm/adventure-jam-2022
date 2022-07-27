@@ -11,6 +11,10 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject inventoryPanel;
     private InventorySlot[] inventorySlots;
 
+    [SerializeField] private GameObject DescriptionPanel;
+    [SerializeField] private TextMeshProUGUI NameText;
+    [SerializeField] private TextMeshProUGUI DescriptionText;
+
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
 
     private void Start() {
@@ -52,5 +56,18 @@ public class Inventory : MonoBehaviour
             else
                 inventorySlot.SetStack(null);
         }
+    }
+
+    public void ExamineItem(Item item)
+    {
+        DescriptionPanel.SetActive(true);
+        NameText.text = item.name;
+        DescriptionText.text = item.Description;
+    }
+
+    private void Deselect()
+        //not sure if we're going to use this
+    {
+        DescriptionPanel.SetActive(false);
     }
 }

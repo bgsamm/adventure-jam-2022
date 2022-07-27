@@ -14,6 +14,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI countText;
 
     [HideInInspector] private Eating eating => ResourceLocator.instance.Eating;
+    private Inventory inventory;
 
     public ItemStack Stack { get; private set; }
 
@@ -45,8 +46,18 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
+        Examine();
         Debug.Log("InventorySlot: click detected");
 
+    }
+
+    public void Examine()
+    {
+        inventory.ExamineItem(Stack.item);
+    }
+
+    public void Eat()
+    {
         if (Stack.item.Edible)
         {
             eating.Eat(Stack);
