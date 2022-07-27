@@ -10,9 +10,9 @@ You’ve been left in charge of the produce stall? You’ll do great. You spent 
 
 It’ll be such a help to the village to have you filling your father’s shoes. We must band together in times like this.
 
-Come, let me show you the best way to grow your crops. Your father has already prepared these garden plots, so you can begin planting immediately. 
-
 Those sweet potato slips you have will be ready to harvest the next day, but other plants may take two or three days to grow. Be sure to water them every day, or they will grow slower.
+
+If you take good care of your crops, they will always yield vegetables or flowers. They will usually yield seeds or slips, too, but not every time.
 
 Your tree there will help with keep the earth healthy for your crops.
 

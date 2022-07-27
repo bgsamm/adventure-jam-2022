@@ -11,16 +11,9 @@ public class Eating : MonoBehaviour
     {
         if (food.item.Edible)
         {
-            //update the day
-            
-            //update the checklist
-
-
             food.RemoveFromStack(1);
             gardenManager.FoodEaten = true;
-
         }
-
     }
 
 }

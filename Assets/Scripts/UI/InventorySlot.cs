@@ -5,12 +5,15 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Image iconComponent;
     [SerializeField] private Image frameComponent;
     [SerializeField] private TextMeshProUGUI countText;
+
+    [HideInInspector] private Eating eating => ResourceLocator.instance.Eating;
 
     public ItemStack Stack { get; private set; }
 
@@ -38,5 +41,16 @@ public class InventorySlot : MonoBehaviour
 
     public void SetSelected(bool isSelected) {
         frameComponent.enabled = isSelected;
+    }
+
+    public void OnPointerClick(PointerEventData pointerEventData)
+    {
+        Debug.Log("InventorySlot: click detected");
+
+        if (Stack.item.Edible)
+        {
+            eating.Eat(Stack);
+            Debug.Log(Stack.item.name + " eaten!");
+        }
     }
 }
