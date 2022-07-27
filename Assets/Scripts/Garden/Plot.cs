@@ -11,6 +11,7 @@ public class Plot : Interactable
     [Header("Components")]
     [SerializeField] private SpriteRenderer cropSprite;
     [SerializeField] private GameObject waterIcon;
+    [SerializeField] private GameObject harvestIcon;
     [SerializeField] private WateringCan wateringCan;
     private SpriteRenderer spriteRenderer;
 
@@ -37,11 +38,13 @@ public class Plot : Interactable
             cropSprite.enabled = true;
             cropSprite.sprite = CurrentPlant.Sprite;
             waterIcon.SetActive(!CurrentPlant.Watered && !CurrentPlant.ReadyToHarvest);
+            harvestIcon.SetActive(CurrentPlant.ReadyToHarvest);
             spriteRenderer.sprite = CurrentPlant.Watered ? wetGroundSprite : dryGroundSprite; 
         }
         else {
             cropSprite.enabled = false;
             waterIcon.SetActive(false);
+            harvestIcon.SetActive(false);
             spriteRenderer.sprite = dryGroundSprite;
         }
     }
