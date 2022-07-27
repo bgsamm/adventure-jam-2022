@@ -9,67 +9,84 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI controlText;
     [SerializeField] private GameObject inventoryPanel;
-    private InventorySlot[] inventorySlots;
-
+    [SerializeField] private GameObject toolbar;
+    [Header("Item Description")]
     [SerializeField] private TextMeshProUGUI NameText;
     [SerializeField] private TextMeshProUGUI DescriptionText;
 
-    [SerializeField] private GameObject toolbar;
-
-    private int selectionIndex = 0;
+    private InventorySlot[] inventorySlots;
+    private int selectionIndex => Array.FindIndex(inventorySlots, x => x.Selected);
+    private InventorySlot selectedSlot => selectionIndex >= 0 ? inventorySlots[selectionIndex] : null;
 
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
-
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Start() {
         inventorySlots = inventoryPanel.GetComponentsInChildren<InventorySlot>();
         inventoryPanel.SetActive(false);
+
+        NameText.text = "";
+        DescriptionText.text = "Click an item to view its description";
     }
 
     private void Update() {
-        if (inventoryPanel.activeSelf)
-        {
-            PlayerController.playerHasControl = false;
-
-            // Allow scroll wheel to change selected item
-            if (Input.mouseScrollDelta.y < 0 && selectionIndex < inventory.stacks.Count - 1)
-                selectionIndex = selectionIndex + 1;
-            else if (Input.mouseScrollDelta.y > 0 && selectionIndex > 0)
-                selectionIndex = selectionIndex - 1;
-            // Also don't love calling this every frame
-            SelectSlot(selectionIndex);
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Eat(inventory.stacks[selectionIndex]);
-            }
-        }
-
+        // Open/close the inventory panel
         if (Input.GetButtonDown("Inventory")) {
-            string text;
-            if (!inventoryPanel.activeSelf) {
-                UpdateSlots();
-                inventoryPanel.SetActive(true);
-                text = controlText.text.Replace("open", "close");
-
-                //hiding the toolbar when inventory is open--to avoid hotkey/scroll conflicts
-                toolbar.SetActive(false);
-            }
-            else {
-                inventoryPanel.SetActive(false);
-                text = controlText.text.Replace("close", "open");
-                PlayerController.playerHasControl = true;
-                toolbar.SetActive(true);
-            }
-            controlText.text = text;
+            if (!inventoryPanel.activeSelf)
+                OpenPanel();
+            else
+                ClosePanel();
         }
         // Allow 'escape' to close (but not open) the menu
         else if (Input.GetKeyDown(KeyCode.Escape)) {
-            inventoryPanel.SetActive(false);
-            controlText.text = controlText.text.Replace("close", "open");
-            PlayerController.playerHasControl = true;
+            ClosePanel();
         }
+
+        if (inventoryPanel.activeSelf) {
+            // Allow scroll wheel to change selected item
+            if (Input.mouseScrollDelta.y != 0) {
+                if (Input.mouseScrollDelta.y < 0 && selectionIndex < inventorySlots.Length - 1) {
+                    SelectSlot(selectionIndex + 1);
+                }
+                else if (Input.mouseScrollDelta.y > 0 && selectionIndex > 0) {
+                    SelectSlot(selectionIndex - 1);
+                }
+            }
+            // Eating
+            if (Input.GetKeyDown(KeyCode.E) && selectionIndex >= 0) {
+                if (selectedSlot != null && selectedSlot.Stack != null)
+                    EatItem(selectedSlot.Stack.item);
+            }
+        }
+
+        // Update item description
+        if (selectedSlot != null && selectedSlot.Stack != null) {
+            var item = selectedSlot.Stack.item;
+            NameText.text = item.name;
+            DescriptionText.text = item.Description;
+            if (item.Edible)
+                DescriptionText.text += " Press E to eat.";
+        }
+        else {
+            NameText.text = "";
+            DescriptionText.text = "";
+        }
+    }
+
+    private void OpenPanel() {
+        UpdateSlots();
+        inventoryPanel.SetActive(true);
+        controlText.text = controlText.text.Replace("open", "close");
+        PlayerController.playerHasControl = false;
+        // hide the toolbar when inventory is open to avoid hotkey/scroll conflicts
+        toolbar.SetActive(false);
+    }
+
+    private void ClosePanel() {
+        inventoryPanel.SetActive(false);
+        controlText.text = controlText.text.Replace("close", "open");
+        PlayerController.playerHasControl = true;
+        toolbar.SetActive(true);
     }
 
     private void UpdateSlots() {
@@ -82,34 +99,22 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void SelectSlot(int index)
-    {
-        for (int i = 0; i < inventorySlots.Length; i++)
-        {
-            inventorySlots[i].SetSelected(i == index);
-        }
-        var stack = inventorySlots[index].Stack;
-        if (stack != null)
-        {
-            inventory.selectedStack = stack;
-            ExamineItem(stack.item);
+    private void SelectSlot(int index) {
+        var slot = inventorySlots[index];
+        SelectSlot(slot);
+    }
+
+    public void SelectSlot(InventorySlot slot) {
+        // Select provided slot, deselect all others
+        foreach (var inventorySlot in inventorySlots) {
+            inventorySlot.SetSelected(inventorySlot == slot);
         }
     }
 
-    public void ExamineItem(Item item)
-    {
-        NameText.text = item.name;
-        DescriptionText.text = item.Description;
-
-        if (item.Edible)
-            DescriptionText.text = DescriptionText.text + " Press E to eat.";
-    }
-
-    public void Eat(ItemStack food)
-    {
-        if (food.item.Edible)
-        {
-            food.RemoveFromStack(1);
+    public void EatItem(Item food) {
+        if (food.Edible) {
+            inventory.RemoveItems(food, 1);
+            UpdateSlots();
             gardenManager.FoodEaten = true;
             UpdateSlots();
         }

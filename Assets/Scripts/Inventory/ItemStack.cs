@@ -15,10 +15,16 @@ public class ItemStack
         this.count = count;
     }
 
+    /// <summary>
+    /// InventorySystem.AddItems should typically be used rather than calling this method directly.
+    /// </summary>
     public void AddToStack(int count) {
         this.count += count;
     }
 
+    /// <summary>
+    /// InventorySystem.RemoveItems should typically be used rather than calling this method directly.
+    /// </summary>
     public void RemoveFromStack(int count) {
         if (count > this.count) {
             Debug.LogWarning("Attempted to remove more items than currently in the stack.");

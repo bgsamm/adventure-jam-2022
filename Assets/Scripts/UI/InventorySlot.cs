@@ -7,15 +7,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour, IPointerClickHandler
+public class InventorySlot : MonoBehaviour
 {
     [SerializeField] private Image iconComponent;
     [SerializeField] private Image frameComponent;
     [SerializeField] private TextMeshProUGUI countText;
 
-    private Inventory inventory;
-
     public ItemStack Stack { get; private set; }
+    public bool Selected { get; private set; }
 
     private void Awake() {
         SetStack(null);
@@ -40,21 +39,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     }
 
     public void SetSelected(bool isSelected) {
+        Selected = isSelected;
         frameComponent.enabled = isSelected;
-    }
-
-    public void Eat()
-    {
-        if (Stack.item.Edible)
-        {
-            inventory.Eat(Stack);
-            Debug.Log(Stack.item.name + " eaten!");
-        }
-    }
-
-    public void OnPointerClick(PointerEventData pointerEventData)
-    {
-        Debug.Log("InventorySlot: click detected");
-        inventory.ExamineItem(Stack.item);
     }
 }
