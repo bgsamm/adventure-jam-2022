@@ -12,6 +12,7 @@ public class TreeScene : MonoBehaviour
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
     private LetterManager letterManager => ResourceLocator.instance.LetterManager;
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
+    private UnitySFXManager audioManager => ResourceLocator.instance.SFXManager;
 
     private void Start() {
         if (gardenManager.TreeWatered)
@@ -29,6 +30,12 @@ public class TreeScene : MonoBehaviour
             acorns.SetActive(true);
         else
             acorns.SetActive(false);
+
+        // if bird is present and letter is unread, plays birdsong
+        if (clock.CurrentDay.birdPresent && !gardenManager.LetterChecked)
+        {
+            audioManager.PlayOneShot(audioManager.birdsong);
+        }
     }
 
     public void ReadLetter() {

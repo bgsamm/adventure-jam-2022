@@ -43,6 +43,9 @@ public class BarterMenu : MonoBehaviour
         //audioManager.SetGlobalParameter("NPC IO", 1);
         //audioManager.SetGlobalParameter("NPC SWITCH", currentDay.NPC.musicIndex);
 
+        //TEST--if it doesn't sound good we'll take it out
+        audioManager.PlayLoop(clock.CurrentDay.NPC.music);
+
         // clear trade summary
         giveSummarySlot.SetStack(null);
         getSummarySlot.SetStack(null);

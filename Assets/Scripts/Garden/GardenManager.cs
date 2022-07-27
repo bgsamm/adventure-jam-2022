@@ -19,6 +19,8 @@ public class GardenManager : MonoBehaviour
     private Inventory inventory => ResourceLocator.instance.InventorySystem;
     private Clock clock => ResourceLocator.instance.Clock;
 
+    public UnitySFXManager audioManager => ResourceLocator.instance.SFXManager;
+
     private Plot[] plots;
     private GameObject player;
 
@@ -48,6 +50,11 @@ public class GardenManager : MonoBehaviour
                     plot.CurrentPlant = plantDict[plot.name];
                 }
             }
+        }
+        // if bird is present and tree is unread, plays birdsong
+        if (clock.CurrentDay.birdPresent && !LetterChecked)
+        {
+            audioManager.PlayOneShot(audioManager.birdsong);
         }
     }
 

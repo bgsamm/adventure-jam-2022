@@ -15,4 +15,5 @@ MonoBehaviour:
   name: Mawar
   overworldSprite: {fileID: 21300000, guid: 591a363ffd3221349a4f9cb8e241696b, type: 3}
   portraitSprite: {fileID: 21300000, guid: fb9d3bbeffdbaa14a9e305c8172c77f9, type: 3}
-  themeMusic: 2
+  musicIndex: 0
+  music: {fileID: 8300000, guid: 4aa0e0fabad49164a8753de63dcb4009, type: 3}

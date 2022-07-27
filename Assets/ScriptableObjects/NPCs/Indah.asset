@@ -16,3 +16,4 @@ MonoBehaviour:
   overworldSprite: {fileID: 21300000, guid: 32b21651e3c3b094aaa08ec02dc2c483, type: 3}
   portraitSprite: {fileID: 21300000, guid: 26b7d14cafcba6041b11302083b8e364, type: 3}
   musicIndex: 1
+  music: {fileID: 8300000, guid: af99cadccaf1d3243a4114d960dfaa73, type: 3}
