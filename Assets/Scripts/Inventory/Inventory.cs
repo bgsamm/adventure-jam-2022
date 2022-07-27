@@ -11,11 +11,16 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject inventoryPanel;
     private InventorySlot[] inventorySlots;
 
-    [SerializeField] private GameObject DescriptionPanel;
     [SerializeField] private TextMeshProUGUI NameText;
     [SerializeField] private TextMeshProUGUI DescriptionText;
 
+    [SerializeField] private GameObject toolbar;
+
+    private int selectionIndex = 0;
+
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
+
+    private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Start() {
         inventorySlots = inventoryPanel.GetComponentsInChildren<InventorySlot>();
@@ -24,7 +29,23 @@ public class Inventory : MonoBehaviour
 
     private void Update() {
         if (inventoryPanel.activeSelf)
+        {
             PlayerController.playerHasControl = false;
+
+            // Allow scroll wheel to change selected item
+            if (Input.mouseScrollDelta.y < 0 && selectionIndex < inventory.stacks.Count - 1)
+                selectionIndex = selectionIndex + 1;
+            else if (Input.mouseScrollDelta.y > 0 && selectionIndex > 0)
+                selectionIndex = selectionIndex - 1;
+            // Also don't love calling this every frame
+            SelectSlot(selectionIndex);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("E detected");
+                Eat(inventory.stacks[selectionIndex]);
+            }
+        }
 
         if (Input.GetButtonDown("Inventory")) {
             string text;
@@ -32,11 +53,15 @@ public class Inventory : MonoBehaviour
                 UpdateSlots();
                 inventoryPanel.SetActive(true);
                 text = controlText.text.Replace("open", "close");
+
+                //hiding the toolbar when inventory is open--to avoid hotkey/scroll conflicts
+                toolbar.SetActive(false);
             }
             else {
                 inventoryPanel.SetActive(false);
                 text = controlText.text.Replace("close", "open");
                 PlayerController.playerHasControl = true;
+                toolbar.SetActive(true);
             }
             controlText.text = text;
         }
@@ -58,16 +83,35 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void ExamineItem(Item item)
+    private void SelectSlot(int index)
     {
-        DescriptionPanel.SetActive(true);
-        NameText.text = item.name;
-        DescriptionText.text = item.Description;
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            inventorySlots[i].SetSelected(i == index);
+        }
+        var stack = inventorySlots[index].Stack;
+        if (stack != null)
+        {
+            inventory.selectedStack = stack;
+            ExamineItem(stack.item);
+        }
     }
 
-    private void Deselect()
-        //not sure if we're going to use this
+    public void ExamineItem(Item item)
     {
-        DescriptionPanel.SetActive(false);
+        NameText.text = item.name;
+        DescriptionText.text = item.Description;
+
+        if (item.Edible)
+            DescriptionText.text = DescriptionText.text + " Press E to eat.";
+    }
+
+    public void Eat(ItemStack food)
+    {
+        if (food.item.Edible)
+        {
+            food.RemoveFromStack(1);
+            gardenManager.FoodEaten = true;
+        }
     }
 }

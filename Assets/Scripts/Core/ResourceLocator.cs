@@ -16,8 +16,6 @@ public class ResourceLocator : MonoBehaviour
     public InventorySystem InventorySystem { get; private set; }
     public GardenManager GardenManager { get; private set; }
 
-    public Eating Eating { get; private set; }
-
     private void Awake() {
         if (instance != null && instance != this) {
             Destroy(gameObject);
@@ -34,7 +32,6 @@ public class ResourceLocator : MonoBehaviour
         Clock = FindResourceOfType<Clock>();
         InventorySystem = FindResourceOfType<InventorySystem>();
         GardenManager = FindResourceOfType<GardenManager>();
-        Eating = FindResourceOfType<Eating>();
     }
 
     private T FindResourceOfType<T>() where T : MonoBehaviour {
