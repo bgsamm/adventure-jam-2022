@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 654161116}
   - component: {fileID: 654161118}
   - component: {fileID: 654161117}
+  - component: {fileID: 7852112247822412651}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -230,6 +231,7 @@ RectTransform:
   - {fileID: 1773866100}
   - {fileID: 5757936570767936963}
   - {fileID: 1378766062812533717}
+  - {fileID: 9112387334246624927}
   m_Father: {fileID: 8910530094918928458}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -276,6 +278,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7852112247822412651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654161115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c7fe3f2a7ce8348b3bfac5cafb0af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameText: {fileID: 7814836527979093170}
+  DescriptionText: {fileID: 1720956910793418915}
+  MessageText: {fileID: 9112387334246624924}
 --- !u!1 &819974654
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +516,7 @@ GameObject:
   - component: {fileID: 1405283236}
   - component: {fileID: 1405283238}
   - component: {fileID: 1405283237}
+  - component: {fileID: 6600160743835444347}
   m_Layer: 5
   m_Name: Checklist
   m_TagString: Untagged
@@ -569,6 +587,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6600160743835444347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405283235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2e9c54396f84f478ae53279b379728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checks:
+  - {fileID: 1497286323}
+  - {fileID: 1721740223}
+  - {fileID: 5314873701984039414}
+  - {fileID: 939649453}
 --- !u!1 &1497286321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1321,119 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &3854442078046187752
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 654161116}
+    m_Modifications:
+    - target: {fileID: 5406587457523883638, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_Name
+      value: Message
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+--- !u!114 &9112387334246624924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5406587457523883636, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+  m_PrefabInstance: {fileID: 3854442078046187752}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &9112387334246624927 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
+  m_PrefabInstance: {fileID: 3854442078046187752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5582804535068857128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1584,7 +1732,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -1773,7 +1921,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -1962,7 +2110,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -2151,7 +2299,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -2340,7 +2488,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -2459,7 +2607,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2000482664262694922, guid: 2d7cc0f59e04ef54bb4369be6e656141, type: 3}
   m_PrefabInstance: {fileID: 6947835464085041220}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1552762482
+--- !u!114 &4060991939915016932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2468,46 +2616,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8910530094918928462}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d2e9c54396f84f478ae53279b379728, type: 3}
+  m_Script: {fileID: 11500000, guid: f3044c242df08274e89c686021bc37e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlText: {fileID: 3126524186602343160}
+  taskListControlText: {fileID: 3126524186602343160}
+  inventoryControlText: {fileID: 3126524185673865253}
+  currentDayText: {fileID: 2906832618924215254}
   taskPanel: {fileID: 1405283235}
-  checks:
-  - {fileID: 1497286323}
-  - {fileID: 1721740223}
-  - {fileID: 5314873701984039414}
-  - {fileID: 939649453}
---- !u!114 &1552762486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910530094918928462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69c7fe3f2a7ce8348b3bfac5cafb0af4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controlText: {fileID: 3126524185673865253}
   inventoryPanel: {fileID: 654161115}
   toolbar: {fileID: 90178726}
-  NameText: {fileID: 7814836527979093170}
-  DescriptionText: {fileID: 1720956910793418915}
---- !u!114 &6974409114260779399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910530094918928462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1584844f0e79b7478568f8f79747e59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentDayText: {fileID: 2906832618924215254}
 --- !u!1001 &6947835464153498534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2685,7 +2802,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -2874,7 +2991,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -3144,7 +3261,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -3417,7 +3534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5406587457523883638, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
       propertyPath: m_Name
-      value: Inventory Message
+      value: Inventory Text
       objectReference: {fileID: 0}
     - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
       propertyPath: m_Pivot.x
@@ -3682,7 +3799,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -3871,7 +3988,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -4060,7 +4177,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -4253,7 +4370,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -4442,7 +4559,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -4745,7 +4862,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -4934,7 +5051,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -5123,7 +5240,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -5426,7 +5543,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -5581,7 +5698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5406587457523883638, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
       propertyPath: m_Name
-      value: Task List Message
+      value: Task List Text
       objectReference: {fileID: 0}
     - target: {fileID: 5406587457523883639, guid: d88ae855b6d775d43a79e789d459fc45, type: 3}
       propertyPath: m_Pivot.x
@@ -5960,7 +6077,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -6149,7 +6266,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -6338,7 +6455,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -6527,7 +6644,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -6716,7 +6833,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -6905,7 +7022,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2
@@ -7094,7 +7211,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552762486}
+      - m_Target: {fileID: 7852112247822412651}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: SelectSlot
         m_Mode: 2

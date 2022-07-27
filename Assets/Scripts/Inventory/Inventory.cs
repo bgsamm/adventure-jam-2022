@@ -7,60 +7,49 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI controlText;
-    [SerializeField] private GameObject inventoryPanel;
-    [SerializeField] private GameObject toolbar;
     [Header("Item Description")]
     [SerializeField] private TextMeshProUGUI NameText;
     [SerializeField] private TextMeshProUGUI DescriptionText;
+    [SerializeField] private TextMeshProUGUI MessageText;
 
     private InventorySlot[] inventorySlots;
     private int selectionIndex => Array.FindIndex(inventorySlots, x => x.Selected);
-    private InventorySlot selectedSlot => selectionIndex >= 0 ? inventorySlots[selectionIndex] : null;
+    private InventorySlot selectedSlot => inventorySlots[selectionIndex];
 
     private InventorySystem inventory => ResourceLocator.instance.InventorySystem;
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Start() {
-        inventorySlots = inventoryPanel.GetComponentsInChildren<InventorySlot>();
-        inventoryPanel.SetActive(false);
+        inventorySlots = GetComponentsInChildren<InventorySlot>();
+        UpdateSlots();
 
         NameText.text = "";
-        DescriptionText.text = "Click an item to view its description";
+        DescriptionText.text = "";
+        MessageText.text = "";
     }
 
     private void Update() {
-        // Open/close the inventory panel
-        if (Input.GetButtonDown("Inventory")) {
-            if (!inventoryPanel.activeSelf)
-                OpenPanel();
-            else
-                ClosePanel();
-        }
-        // Allow 'escape' to close (but not open) the menu
-        else if (Input.GetKeyDown(KeyCode.Escape)) {
-            ClosePanel();
-        }
-
-        if (inventoryPanel.activeSelf) {
-            // Allow scroll wheel to change selected item
-            if (Input.mouseScrollDelta.y != 0) {
-                if (Input.mouseScrollDelta.y < 0 && selectionIndex < inventorySlots.Length - 1) {
-                    SelectSlot(selectionIndex + 1);
-                }
-                else if (Input.mouseScrollDelta.y > 0 && selectionIndex > 0) {
-                    SelectSlot(selectionIndex - 1);
-                }
+        // Allow scroll wheel to change selected item
+        if (Input.mouseScrollDelta.y != 0) {
+            if (Input.mouseScrollDelta.y < 0 && selectionIndex < inventorySlots.Length - 1) {
+                SelectSlot(selectionIndex + 1);
             }
-            // Eating
-            if (Input.GetKeyDown(KeyCode.E) && selectionIndex >= 0) {
-                if (selectedSlot != null && selectedSlot.Stack != null)
-                    EatItem(selectedSlot.Stack.item);
+            else if (Input.mouseScrollDelta.y > 0 && selectionIndex > 0) {
+                SelectSlot(selectionIndex - 1);
             }
+        }
+        // Eating
+        if (Input.GetButtonDown("Eat") && selectionIndex >= 0) {
+            if (selectedSlot.Stack != null)
+                EatItem(selectedSlot.Stack.item);
         }
 
         // Update item description
-        if (selectedSlot != null && selectedSlot.Stack != null) {
+        if (selectionIndex < 0) {
+            NameText.text = "";
+            DescriptionText.text = "Click an item to view its description";
+        }
+        else if (selectedSlot.Stack != null) {
             var item = selectedSlot.Stack.item;
             NameText.text = item.name;
             DescriptionText.text = item.Description;
@@ -71,22 +60,6 @@ public class Inventory : MonoBehaviour
             NameText.text = "";
             DescriptionText.text = "";
         }
-    }
-
-    private void OpenPanel() {
-        UpdateSlots();
-        inventoryPanel.SetActive(true);
-        controlText.text = controlText.text.Replace("open", "close");
-        PlayerController.playerHasControl = false;
-        // hide the toolbar when inventory is open to avoid hotkey/scroll conflicts
-        toolbar.SetActive(false);
-    }
-
-    private void ClosePanel() {
-        inventoryPanel.SetActive(false);
-        controlText.text = controlText.text.Replace("close", "open");
-        PlayerController.playerHasControl = true;
-        toolbar.SetActive(true);
     }
 
     private void UpdateSlots() {
@@ -109,14 +82,22 @@ public class Inventory : MonoBehaviour
         foreach (var inventorySlot in inventorySlots) {
             inventorySlot.SetSelected(inventorySlot == slot);
         }
+        // Reset message text
+        MessageText.text = "";
     }
 
     public void EatItem(Item food) {
-        if (food.Edible) {
+        if (!food.Edible) {
+            MessageText.text = "You can't eat that!";
+        }
+        else if (gardenManager.FoodEaten) {
+            MessageText.text = "You're too full to eat any more.";
+        }
+        else {
             inventory.RemoveItems(food, 1);
             UpdateSlots();
             gardenManager.FoodEaten = true;
-            UpdateSlots();
+            MessageText.text = "Mm, tasty.";
         }
     }
 }
