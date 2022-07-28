@@ -2305,6 +2305,22 @@ PrefabInstance:
       propertyPath: cutscenes.Array.data[2].images.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: bfdd731811bb88241a4217f180ca615c, type: 3}
+    - target: {fileID: 3531971039718412984, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: chile
+      value: 
+      objectReference: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
+    - target: {fileID: 3531971039718412984, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: sugarCane
+      value: 
+      objectReference: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
+    - target: {fileID: 3531971039718412984, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: sweetPotato
+      value: 
+      objectReference: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
+    - target: {fileID: 3531971039718412984, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: sunflowerSeeds
+      value: 
+      objectReference: {fileID: 11400000, guid: 50114b6f1bac7aa4c9e4cbe8f3c9b198, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
 --- !u!1001 &2231219413884007521

@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2e9c54396f84f478ae53279b379728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskFailedIcon: {fileID: 0}
+  taskFailedIcon: {fileID: 21300000, guid: 63ef5aa08e339b942874139255ca0bcb, type: 3}
   checks:
   - {fileID: 1497286323}
   - {fileID: 1721740223}

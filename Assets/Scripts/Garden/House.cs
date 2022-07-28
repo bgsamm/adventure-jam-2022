@@ -9,8 +9,10 @@ public class House : Interactable
     private Clock clock => ResourceLocator.instance.Clock;
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
+    private Inventory inventory => ResourceLocator.instance.InventorySystem;
+
     private void Update() {
-        InteractMessage = gardenManager.TasksComplete ? "Press E to sleep" : "You still have chores to do.";
+        InteractMessage = gardenManager.TasksComplete ? (inventory.HasFood ? "Press E to go to bed hungry" : "Press E to sleep") : "You still have chores to do.";
     }
 
     public override void Interact() {
