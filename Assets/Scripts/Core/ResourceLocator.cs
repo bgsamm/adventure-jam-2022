@@ -9,8 +9,8 @@ public class ResourceLocator : MonoBehaviour
     public static ResourceLocator instance { get; private set; }
 
     public SceneLoader SceneLoader { get; private set; }
-    public UnityAudioManager AudioManager { get; private set; }
-    public UnitySFXManager SFXManager { get; private set; }
+    public UnityAudioManager AudioManager;
+    public UnityAudioManager SFXManager;
     public CutsceneManager CutsceneManager { get; private set; }
     public LetterManager LetterManager { get; private set; }
     public Clock Clock { get; private set; }
@@ -27,8 +27,6 @@ public class ResourceLocator : MonoBehaviour
 
         // initialize resources
         SceneLoader = FindResourceOfType<SceneLoader>();
-        AudioManager = FindResourceOfType<UnityAudioManager>();
-        SFXManager = FindResourceOfType<UnitySFXManager>();
         CutsceneManager = FindResourceOfType<CutsceneManager>();
         LetterManager = FindResourceOfType<LetterManager>();
         Clock = FindResourceOfType<Clock>();

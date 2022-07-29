@@ -8,6 +8,13 @@ public class UnityAudioManager : MonoBehaviour
 {
     private AudioSource audioSource;
 
+    public AudioClip birdsong;
+
+    public AudioClip footstepsGrass;
+    public AudioClip footstepsWood;
+
+    public bool onBridge;
+
     private void Awake() {
         DontDestroyOnLoad(gameObject);
         audioSource = GetComponent<AudioSource>();
@@ -25,5 +32,10 @@ public class UnityAudioManager : MonoBehaviour
         if (clip != null) {
             audioSource.PlayOneShot(clip);
         }
+    }
+
+    public void PauseSound()
+    {
+        audioSource.Stop();
     }
 }

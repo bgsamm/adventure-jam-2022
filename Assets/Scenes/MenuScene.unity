@@ -545,6 +545,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2cc13d744ad24288178aa1cee1bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birdsong: {fileID: 0}
+  footstepsGrass: {fileID: 0}
+  footstepsWood: {fileID: 0}
+  onBridge: 0
 --- !u!114 &500825593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,7 +1078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2231219412972060561, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 8.200012
+      value: 8.199219
       objectReference: {fileID: 0}
     - target: {fileID: 2231219412972060561, guid: af00b2af921b23b4d9f33abe4ac0dd61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1725,6 +1729,7 @@ GameObject:
   - component: {fileID: 1547432837}
   - component: {fileID: 1547432836}
   - component: {fileID: 1547432838}
+  - component: {fileID: 1547432839}
   m_Layer: 0
   m_Name: SFXManager
   m_TagString: Untagged
@@ -1744,7 +1749,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7599c63a6ae28f64ea4a933843626902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdsong: {fileID: 8300000, guid: e1e652cc21aea1a4497592328d7edd62, type: 3}
 --- !u!4 &1547432837
 Transform:
   m_ObjectHideFlags: 0
@@ -1856,6 +1860,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1547432839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547432835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb2cc13d744ad24288178aa1cee1bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdsong: {fileID: 8300000, guid: e1e652cc21aea1a4497592328d7edd62, type: 3}
+  footstepsGrass: {fileID: 8300000, guid: fc32c6fd07980144996b811e5d1f2971, type: 3}
+  footstepsWood: {fileID: 8300000, guid: 8e001351cd7065543a068386cde4c960, type: 3}
+  onBridge: 0
 --- !u!1 &1572314623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,6 +2229,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 194133656513736589, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: SFXManager
+      value: 
+      objectReference: {fileID: 1547432839}
+    - target: {fileID: 194133656513736589, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: AudioManager
+      value: 
+      objectReference: {fileID: 500825592}
     - target: {fileID: 194133656513736590, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: m_RootOrder
       value: 3

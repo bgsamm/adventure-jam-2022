@@ -12,7 +12,7 @@ public class TreeScene : MonoBehaviour
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
     private LetterManager letterManager => ResourceLocator.instance.LetterManager;
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
-    private UnitySFXManager audioManager => ResourceLocator.instance.SFXManager;
+    private UnityAudioManager audioManager => ResourceLocator.instance.SFXManager;
 
     private void Start() {
         if (gardenManager.TreeWatered)

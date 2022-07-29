@@ -19,7 +19,7 @@ public class GardenManager : MonoBehaviour
     private Inventory inventory => ResourceLocator.instance.InventorySystem;
     private Clock clock => ResourceLocator.instance.Clock;
 
-    public UnitySFXManager audioManager => ResourceLocator.instance.SFXManager;
+    public UnityAudioManager audioManager => ResourceLocator.instance.SFXManager;
 
     private Plot[] plots;
     private GameObject player;

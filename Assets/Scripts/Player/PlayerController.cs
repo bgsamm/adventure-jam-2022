@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour
     private float pixelsPerUnit;
     private Vector2 direction;
 
+    private float stepTime;
+
+    private UnityAudioManager sfxManager => ResourceLocator.instance.SFXManager;
+
     private void Awake() {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -65,7 +69,17 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Vertical", direction.y);
             // keep interaction hotspot in front of player
             interactionHotspot.transform.localPosition = interactionOffset + interactionDist * direction;
+            //footsteps
+            if (Time.time - stepTime > 0.4)
+            {
+                if (sfxManager.onBridge)
+                    sfxManager.PlayOneShot(sfxManager.footstepsWood);
+                else
+                    sfxManager.PlayOneShot(sfxManager.footstepsGrass);
+                stepTime = Time.time;
+            }
         }
+
         animator.SetBool("Moving", moving);
 
         // Handle interactions
