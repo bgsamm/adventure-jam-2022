@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private float pixelsPerUnit;
     private Vector2 direction;
 
-    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
+    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
 
     private void Awake() {
         animator = GetComponent<Animator>();

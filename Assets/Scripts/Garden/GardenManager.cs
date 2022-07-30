@@ -20,7 +20,7 @@ public class GardenManager : MonoBehaviour
     // Track the player's position across scenes
     private static Vector3? playerPosition = null;
 
-    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
+    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
     private Inventory inventory => ResourceLocator.instance.InventorySystem;
 

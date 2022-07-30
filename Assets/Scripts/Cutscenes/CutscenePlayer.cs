@@ -10,7 +10,7 @@ public class CutscenePlayer : MonoBehaviour
     [SerializeField] private Image cutscenePanel;
     [SerializeField] private ScreenFader fader;
 
-    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
+    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
     private Cutscene currentCutscene;
 

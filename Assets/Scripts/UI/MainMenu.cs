@@ -1,4 +1,3 @@
-using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,12 +6,11 @@ public class MainMenu : MonoBehaviour
 {
     [Header("Submenus")]
     [SerializeField] private GameObject MainMenuPanel;
-    //[SerializeField] private GameObject OptionsMenuPanel;
     [SerializeField] private GameObject CreditsMenuPanel;
     [Header("Audio")]
     [SerializeField] private AudioClip menuMusic;
 
-    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
+    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
 
     private void Start() {
@@ -21,6 +19,7 @@ public class MainMenu : MonoBehaviour
         else
             ShowMainMenu();
 
+        audioManager.SetVolume(1.0f);
         audioManager.PlayLoop(menuMusic);
     }
 
@@ -30,7 +29,6 @@ public class MainMenu : MonoBehaviour
 
     private void HideAllSubmenus() {
         MainMenuPanel.SetActive(false);
-        //OptionsMenuPanel.SetActive(false);
         CreditsMenuPanel.SetActive(false);
     }
 
@@ -38,11 +36,6 @@ public class MainMenu : MonoBehaviour
         HideAllSubmenus();
         MainMenuPanel.SetActive(true);
     }
-
-    //public void ShowOptionsSubmenu() {
-    //    HideAllSubmenus();
-    //    OptionsMenuPanel.SetActive(true);
-    //}
 
     public void ShowCreditsSubmenu() {
         HideAllSubmenus();

@@ -29,7 +29,7 @@ public class BarterMenu : MonoBehaviour
     [SerializeField] private Item chile;
 
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
-    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
+    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
     private Inventory inventory => ResourceLocator.instance.InventorySystem;
 
@@ -67,15 +67,15 @@ public class BarterMenu : MonoBehaviour
             ItemStack sugarcaneStack = inventory.FindStack(sugarCane);
             ItemStack chileStack = inventory.FindStack(chile);
 
-            Trade sweetPotatoTrade = new Trade();
+            Trade sweetPotatoTrade = new();
             sweetPotatoTrade.given = sweetPotatoStack;
             sweetPotatoTrade.received = null;
 
-            Trade sugarcaneTrade = new Trade();
+            Trade sugarcaneTrade = new();
             sugarcaneTrade.given = sugarcaneStack;
             sugarcaneTrade.received = null;
 
-            Trade chileTrade = new Trade();
+            Trade chileTrade = new();
             chileTrade.given = chileStack;
             chileTrade.received = null;
 

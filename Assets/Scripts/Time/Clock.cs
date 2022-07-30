@@ -16,7 +16,7 @@ public class Clock : MonoBehaviour
     [SerializeField] private List<Act> Acts;
 
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
-    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
+    private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private CutsceneManager cutsceneManager => ResourceLocator.instance.CutsceneManager;
     private LetterManager letterManager => ResourceLocator.instance.LetterManager;
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
