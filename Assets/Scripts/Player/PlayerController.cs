@@ -33,13 +33,14 @@ public class PlayerController : MonoBehaviour
 
     private float stepTime;
 
-    private UnityAudioManager sfxManager => ResourceLocator.instance.SFXManager;
+    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
 
     private void Awake() {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         pixelsPerUnit = GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
 
+        interactMessage.gameObject.SetActive(true);
         interactionHotspot = GetComponentInChildren<InteractionHotspot>();
         interactionOffset = interactionHotspot.transform.localPosition;
 
@@ -71,10 +72,10 @@ public class PlayerController : MonoBehaviour
             interactionHotspot.transform.localPosition = interactionOffset + interactionDist * direction;
             //footsteps
             if (Time.time - stepTime > 0.4) {
-                if (sfxManager.onBridge)
-                    sfxManager.PlayOneShot(sfxManager.footstepsWood);
+                if (audioManager.onBridge)
+                    audioManager.PlayOneShot(audioManager.footstepsWood);
                 else
-                    sfxManager.PlayOneShot(sfxManager.footstepsGrass);
+                    audioManager.PlayOneShot(audioManager.footstepsGrass);
                 stepTime = Time.time;
             }
         }

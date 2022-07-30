@@ -16,10 +16,9 @@ public class GardenManager : MonoBehaviour
     // Track the player's position across scenes
     private static Vector3? playerPosition = null;
 
-    private Inventory inventory => ResourceLocator.instance.InventorySystem;
+    private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
-
-    public UnityAudioManager audioManager => ResourceLocator.instance.SFXManager;
+    private Inventory inventory => ResourceLocator.instance.InventorySystem;
 
     private Plot[] plots;
     private GameObject player;
@@ -31,10 +30,14 @@ public class GardenManager : MonoBehaviour
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode) {
-        // if scene contains player, move player to previous position
+        // if scene doesn't contain player, this isn't a garden scene
         player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null && playerPosition != null)
+        if (player == null) return;
+
+        // move player to previous position
+        if (playerPosition != null)
             player.transform.position = (Vector3)playerPosition;
+
         // grab any plots in the scene
         plots = FindObjectsOfType<Plot>();
         if (plots.Length > 0) {
@@ -53,18 +56,17 @@ public class GardenManager : MonoBehaviour
                 }
             }
         }
-        /*
-        // if bird is present and tree is unread, plays birdsong
+
+        // if bird is present and tree has not been checked, play birdsong
         if (clock.CurrentDay.birdPresent && !LetterChecked) {
             audioManager.PlayOneShot(audioManager.birdsong);
         }
-        */
     }
 
     private void Update() {
+        if (player == null) return;
         // track player position
-        if (player != null)
-            playerPosition = player.transform.position;
+        playerPosition = player.transform.position;
         // Keep plantDict up-to-date
         if (plantDict != null) {
             foreach (var plot in plots) {

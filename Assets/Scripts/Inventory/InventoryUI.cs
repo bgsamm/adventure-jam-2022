@@ -10,7 +10,6 @@ public class InventoryUI : MonoBehaviour
     [Header("Item Description")]
     [SerializeField] private TextMeshProUGUI NameText;
     [SerializeField] private TextMeshProUGUI DescriptionText;
-    [SerializeField] private TextMeshProUGUI MessageText;
 
     private InventorySlot[] inventorySlots;
     private int selectionIndex => Array.FindIndex(inventorySlots, x => x.Selected);
@@ -24,8 +23,7 @@ public class InventoryUI : MonoBehaviour
         UpdateSlots();
 
         NameText.text = "";
-        DescriptionText.text = "";
-        MessageText.text = "";
+        DescriptionText.text = "Click an item to view its description";
     }
 
     private void Update() {
@@ -42,23 +40,6 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetButtonDown("Eat") && selectionIndex >= 0) {
             if (selectedSlot.Stack != null)
                 EatItem(selectedSlot.Stack.item);
-        }
-
-        // Update item description
-        if (selectionIndex < 0) {
-            NameText.text = "";
-            DescriptionText.text = "Click an item to view its description";
-        }
-        else if (selectedSlot.Stack != null) {
-            var item = selectedSlot.Stack.item;
-            NameText.text = item.name;
-            DescriptionText.text = item.Description;
-            if (item.Edible)
-                DescriptionText.text += " Press E to eat.";
-        }
-        else {
-            NameText.text = "";
-            DescriptionText.text = "";
         }
     }
 
@@ -82,22 +63,33 @@ public class InventoryUI : MonoBehaviour
         foreach (var inventorySlot in inventorySlots) {
             inventorySlot.SetSelected(inventorySlot == slot);
         }
-        // Reset message text
-        MessageText.text = "";
+        // Update description text
+        if (selectedSlot.Stack != null) {
+            var item = selectedSlot.Stack.item;
+            NameText.text = item.name;
+            DescriptionText.text = item.Description;
+            if (item.Edible)
+                DescriptionText.text += " Press E to eat.";
+        }
+        else {
+            NameText.text = "";
+            DescriptionText.text = "";
+        }
     }
 
     public void EatItem(Item food) {
+        NameText.text = "";
         if (!food.Edible) {
-            MessageText.text = "You can't eat that!";
+            DescriptionText.text = "You can't eat that!";
         }
         else if (gardenManager.FoodEaten) {
-            MessageText.text = "You're too full to eat any more.";
+            DescriptionText.text = "You're too full to eat any more.";
         }
         else {
             inventory.RemoveItems(food, 1);
             UpdateSlots();
             gardenManager.FoodEaten = true;
-            MessageText.text = "Mm, tasty.";
+            DescriptionText.text = "Mm, tasty.";
         }
     }
 }
