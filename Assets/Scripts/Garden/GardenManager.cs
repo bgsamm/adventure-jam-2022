@@ -53,11 +53,12 @@ public class GardenManager : MonoBehaviour
                 }
             }
         }
+        /*
         // if bird is present and tree is unread, plays birdsong
-        if (clock.CurrentDay.birdPresent && !LetterChecked)
-        {
+        if (clock.CurrentDay.birdPresent && !LetterChecked) {
             audioManager.PlayOneShot(audioManager.birdsong);
         }
+        */
     }
 
     private void Update() {

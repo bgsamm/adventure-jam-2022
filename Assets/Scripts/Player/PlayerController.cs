@@ -70,8 +70,7 @@ public class PlayerController : MonoBehaviour
             // keep interaction hotspot in front of player
             interactionHotspot.transform.localPosition = interactionOffset + interactionDist * direction;
             //footsteps
-            if (Time.time - stepTime > 0.4)
-            {
+            if (Time.time - stepTime > 0.4) {
                 if (sfxManager.onBridge)
                     sfxManager.PlayOneShot(sfxManager.footstepsWood);
                 else
