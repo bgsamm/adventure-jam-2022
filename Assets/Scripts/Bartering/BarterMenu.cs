@@ -40,8 +40,6 @@ public class BarterMenu : MonoBehaviour
     private void Start() {
         var currentDay = clock.CurrentDay;
         characterPortrait.sprite = currentDay.NPC.portraitSprite;
-        //audioManager.SetGlobalParameter("NPC IO", 1);
-        //audioManager.SetGlobalParameter("NPC SWITCH", currentDay.NPC.musicIndex);
 
         //TEST--if it doesn't sound good we'll take it out
         audioManager.PlayLoop(clock.CurrentDay.NPC.music);
@@ -134,7 +132,11 @@ public class BarterMenu : MonoBehaviour
         // run dialog based on whether the trade was good or not
         string knot = clock.CurrentDay.conversationKnot,
             branch = goodTrade ? "GoodTrade" : "BadTrade";
-        dialogHandler.StartDialogue($"{knot}.{branch}", sceneLoader.LoadGardenScene);
+        dialogHandler.StartDialogue($"{knot}.{branch}", delegate {
+            // reset music
+            audioManager.PlayLoop(clock.CurrentAct.music);
+            sceneLoader.LoadGardenScene();
+        });
     }
 
     public void AcceptTrade() {
