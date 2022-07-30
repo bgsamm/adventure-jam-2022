@@ -19,7 +19,7 @@ public class Bird : ClickableObject
         base.Start();
         GetComponent<RectTransform>().anchoredPosition = clock.CurrentAct.birdLocation;
         if (clock.CurrentDay.birdPresent) {
-            var hasLetter = clock.CurrentDay.letter != null && !gardenManager.LetterChecked;
+            var hasLetter = clock.CurrentDay.letter != null && !gardenManager.LetterRead;
             animator.SetBool("HasLetter", hasLetter);
         }
     }

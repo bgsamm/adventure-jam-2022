@@ -14,7 +14,7 @@ public class Acorns : MonoBehaviour
     void Start() {
         if (clock.ActNum == 3 && clock.DayNum == 7) {
             //since there's no letter that day, it's equivalent to tree visited
-            bool treeVisited = gardenManager.LetterChecked;
+            bool treeVisited = gardenManager.TreeVisited;
 
             for(int x = 0; x < 8; x++)
             {

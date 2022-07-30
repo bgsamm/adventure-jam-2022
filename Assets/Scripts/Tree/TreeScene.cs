@@ -20,10 +20,11 @@ public class TreeScene : MonoBehaviour
         else
             background.sprite = clock.CurrentAct.treePortrait;
 
+        gardenManager.TreeVisited = true;
         // if there is no letter, simply checking the tree
         // satisfies the "Check for letters" task
         if (clock.CurrentDay.letter == null)
-            gardenManager.LetterChecked = true;
+            gardenManager.LetterRead = true;
         bird.gameObject.SetActive(clock.CurrentDay.birdPresent);
 
         if (clock.ActNum == 3 && clock.DayNum == 7)
@@ -31,16 +32,18 @@ public class TreeScene : MonoBehaviour
         else
             acorns.SetActive(false);
 
+        /*
         // if bird is present and letter is unread, plays birdsong
-        if (clock.CurrentDay.birdPresent && !gardenManager.LetterChecked) {
+        if (clock.CurrentDay.birdPresent && !gardenManager.TreeVisited) {
             audioManager.PlayOneShot(audioManager.birdsong);
         }
+        */
     }
 
     public void ReadLetter() {
         var letter = clock.CurrentDay.letter;
-        if (letter != null & !gardenManager.LetterChecked) {
-            gardenManager.LetterChecked = true;
+        if (letter != null & !gardenManager.LetterRead) {
+            gardenManager.LetterRead = true;
             letterManager.ShowLetter(clock.CurrentDay.letter, sceneLoader.LoadTreeScene);
         }
     }

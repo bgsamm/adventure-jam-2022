@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GardenManager : MonoBehaviour
 {
-    public bool TasksComplete => (ShopVisited && TreeWatered && LetterChecked && (FoodEaten || !inventory.HasFood)) || (clock.ActNum == 4 && TreeWatered);
+    public bool CantEat => !FoodEaten && !inventory.HasFood;
+    public bool TasksComplete => (ShopVisited && TreeWatered && LetterRead && (FoodEaten || CantEat)) || (clock.ActNum == 4 && TreeWatered);
     [HideInInspector] public bool ShopVisited;
+    [HideInInspector] public bool TreeVisited;
     [HideInInspector] public bool TreeWatered;
-    [HideInInspector] public bool LetterChecked; // checked for letters (i.e. visited the tree) and read the letter if there is one
+    [HideInInspector] public bool LetterRead;
     [HideInInspector] public bool FoodEaten;
 
     // Maps plot names to the Plants they contain
@@ -58,7 +60,7 @@ public class GardenManager : MonoBehaviour
         }
 
         // if bird is present and tree has not been checked, play birdsong
-        if (clock.CurrentDay.birdPresent && !LetterChecked) {
+        if (clock.CurrentDay.birdPresent && !TreeVisited) {
             audioManager.PlayOneShot(audioManager.birdsong);
         }
     }
@@ -83,8 +85,9 @@ public class GardenManager : MonoBehaviour
         playerPosition = null;
         // reset tasks
         ShopVisited = false;
+        TreeVisited = false;
         TreeWatered = false;
-        LetterChecked = false;
+        LetterRead = false;
         FoodEaten = false;
         // Don't grow plants at the start of an act
         if (clock.DayNum > 1)
