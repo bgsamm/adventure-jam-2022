@@ -18,13 +18,13 @@ public class CutscenePlayer : MonoBehaviour
 
     private void Start() {
         currentCutscene = cutsceneManager.NextCutscene;
-        fader.FadeInEvent = delegate { 
+        fader.FadeInEvent = delegate {
             StartCoroutine(WaitThenFadeOut(currentCutscene.imageDuration)); 
         };
         fader.FadeOutEvent = ShowNextImage;
 
         index = 0;
-        audioManager.PlayOneShot(currentCutscene.audio);
+        audioManager.PlayLoop(currentCutscene.audio);
         ShowNextImage();
     }
 

@@ -6,7 +6,7 @@ public class SceneLoader : MonoBehaviour
 {
     private Clock clock => ResourceLocator.instance.Clock;
 
-    public void LoadScene(string name) {
+    private void LoadScene(string name) {
         SceneManager.LoadScene(name);
     }
 

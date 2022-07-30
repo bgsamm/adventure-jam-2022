@@ -32,7 +32,12 @@ public class Clock : MonoBehaviour
             cutsceneManager.PlayCutscene(SunriseCutscene,
                 delegate {
                     Debug.Log("Next day");
-                    sceneLoader.LoadScene(CurrentAct.sceneName);
+                    audioManager.PlayLoop(CurrentAct.music);
+                    // Some acts open with a letter
+                    if (DayNum == 1 && CurrentAct.openingLetter != null)
+                        letterManager.ShowLetter(CurrentAct.openingLetter, sceneLoader.LoadGardenScene);
+                    else
+                        sceneLoader.LoadGardenScene();
                 });
         }
         DayNum++;
@@ -41,30 +46,22 @@ public class Clock : MonoBehaviour
             StartNextAct();
         }
         else {
-            // Some acts open with a letter
-            if (DayNum == 1 && CurrentAct.openingLetter != null)
-                letterManager.ShowLetter(CurrentAct.openingLetter, BeginDay);
-            else
-                BeginDay();
+            BeginDay();
         }
     }
 
     public void StartNextAct() {
-        void StartAct() {
-            StartNextDay();
-            audioManager.PlayLoop(CurrentAct.music);
-        }
-
         ActNum++;
         if (ActNum > Acts.Count) {
             sceneLoader.LoadMenuScene();
         }
         else {
             DayNum = 0;
+            // Play opening cutscene, if there is one
             if (CurrentAct.openingCutscene != null)
-                cutsceneManager.PlayCutscene(CurrentAct.openingCutscene, StartAct);
+                cutsceneManager.PlayCutscene(CurrentAct.openingCutscene, StartNextDay);
             else
-                StartAct();
+                StartNextDay();
         }
     }
 }

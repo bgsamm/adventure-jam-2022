@@ -21,8 +21,8 @@ public class UnityAudioManager : MonoBehaviour
     }
 
     public void PlayLoop(AudioClip clip) {
+        audioSource.Stop();
         if (clip != null) {
-            audioSource.Stop();
             audioSource.clip = clip;
             audioSource.Play();
         }
@@ -34,8 +34,7 @@ public class UnityAudioManager : MonoBehaviour
         }
     }
 
-    public void PauseSound()
-    {
+    public void PauseSound() {
         audioSource.Stop();
     }
 }

@@ -39,6 +39,6 @@ public class LetterReader : MonoBehaviour
         foreach (var stack in currentLetter.gifts) {
             inventory.AddItems(stack);
         }
-        letterManager.LetterEndCallback.Invoke();
+        letterManager.LetterEndCallback?.Invoke();
     }
 }
