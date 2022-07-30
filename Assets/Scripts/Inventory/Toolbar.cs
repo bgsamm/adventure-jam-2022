@@ -27,20 +27,22 @@ public class Toolbar : MonoBehaviour
         }
         // I don't love calling this every frame but it certainly is the simplest approach
         UpdateSlots();
-        // Map inputs Toolbar 1..N to the corresponding toolbar slots
-        for (int i = 0; i < slots.Length; i++) {
-            if (Input.GetButtonDown($"Toolbar {i + 1}")) {
-                activeSlot = i;
-                break;
+        if (PlayerController.playerHasControl) {
+            // Map inputs Toolbar 1..N to the corresponding toolbar slots
+            for (int i = 0; i < slots.Length; i++) {
+                if (Input.GetButtonDown($"Toolbar {i + 1}")) {
+                    activeSlot = i;
+                    break;
+                }
             }
+            // Allow scroll wheel to change selected item
+            if (Input.mouseScrollDelta.y < 0)
+                activeSlot = mod(activeSlot + 1, slots.Length);
+            else if (Input.mouseScrollDelta.y > 0)
+                activeSlot = mod(activeSlot - 1, slots.Length);
+            // Also don't love calling this every frame
+            SelectSlot(activeSlot);
         }
-        // Allow scroll wheel to change selected item
-        if (Input.mouseScrollDelta.y < 0)
-            activeSlot = mod(activeSlot + 1, slots.Length);
-        else if (Input.mouseScrollDelta.y > 0)
-            activeSlot = mod(activeSlot - 1, slots.Length);
-        // Also don't love calling this every frame
-        SelectSlot(activeSlot);
     }
 
     private void SelectSlot(int index) {

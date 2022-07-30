@@ -98,8 +98,8 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         var position = rigidbody2D.position + moveSpeed * Time.fixedDeltaTime * direction;
         // Move the player by an integer # of pixels
-        float p_x = Mathf.FloorToInt(position.x * pixelsPerUnit);
-        float p_y = Mathf.FloorToInt(position.y * pixelsPerUnit);
+        float p_x = Mathf.RoundToInt(position.x * pixelsPerUnit);
+        float p_y = Mathf.RoundToInt(position.y * pixelsPerUnit);
         var p = new Vector2(p_x, p_y) / pixelsPerUnit;
         rigidbody2D.MovePosition(p);
     }
