@@ -28,7 +28,7 @@ public class CutscenePlayer : MonoBehaviour
         ShowNextImage();
     }
 
-    IEnumerator WaitThenFadeOut(float s) {
+    private IEnumerator WaitThenFadeOut(float s) {
         yield return new WaitForSeconds(s);
         fader.FadeOut(false);
     }

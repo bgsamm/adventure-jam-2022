@@ -50,7 +50,7 @@ public class Act5 : MonoBehaviour
         waypointIndex = 0;
     }
 
-    IEnumerator WaitThenEndGame(float s) {
+    private IEnumerator WaitThenEndGame(float s) {
         yield return new WaitForSeconds(s);
         clock.StartNextAct();
     }

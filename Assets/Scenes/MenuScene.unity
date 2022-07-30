@@ -415,7 +415,6 @@ GameObject:
   - component: {fileID: 500825591}
   - component: {fileID: 500825590}
   - component: {fileID: 500825592}
-  - component: {fileID: 500825593}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -546,24 +545,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb2cc13d744ad24288178aa1cee1bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeTime: 1
   birdsong: {fileID: 8300000, guid: e1e652cc21aea1a4497592328d7edd62, type: 3}
   footstepsGrass: {fileID: 0}
   footstepsWood: {fileID: 0}
   onBridge: 0
---- !u!114 &500825593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500825589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b36a96bd8e6e74b959f39518643bbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterVolume: 1
-  volumeScale: {fileID: 1333775280}
 --- !u!1001 &547001990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2017,9 +2003,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7745830496040646170, guid: e369ec34906c7514eb1b2a290a9a2285, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745830496040646170, guid: e369ec34906c7514eb1b2a290a9a2285, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 500825593}
+      objectReference: {fileID: 0}
     - target: {fileID: 7745830496501885263, guid: e369ec34906c7514eb1b2a290a9a2285, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
