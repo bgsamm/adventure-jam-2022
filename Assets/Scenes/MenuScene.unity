@@ -546,10 +546,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 1
-  birdsong: {fileID: 8300000, guid: e1e652cc21aea1a4497592328d7edd62, type: 3}
-  footstepsGrass: {fileID: 0}
-  footstepsWood: {fileID: 0}
-  onBridge: 0
 --- !u!1001 &547001990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -866,20 +862,6 @@ MonoBehaviour:
   MainMenuPanel: {fileID: 64493527}
   CreditsMenuPanel: {fileID: 255792026}
   menuMusic: {fileID: 8300000, guid: 309675ea22e471c41820e3de4019c31c, type: 3}
---- !u!114 &977476317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 977476309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b36a96bd8e6e74b959f39518643bbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterVolume: 1
-  volumeScale: {fileID: 1333775280}
 --- !u!1001 &999646155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1380,17 +1362,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7745830496040646149, guid: e369ec34906c7514eb1b2a290a9a2285, type: 3}
   m_PrefabInstance: {fileID: 7745830497160019370}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1333775280 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7745830496040646170, guid: e369ec34906c7514eb1b2a290a9a2285, type: 3}
-  m_PrefabInstance: {fileID: 7745830497160019370}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1572314623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1747,10 @@ PrefabInstance:
       propertyPath: chile
       value: 
       objectReference: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
+    - target: {fileID: 3531971039718412984, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
+      propertyPath: birdSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e1e652cc21aea1a4497592328d7edd62, type: 3}
     - target: {fileID: 3531971039718412984, guid: 18bae0393024dfc41b7c4b5b352734fc, type: 3}
       propertyPath: sugarCane
       value: 

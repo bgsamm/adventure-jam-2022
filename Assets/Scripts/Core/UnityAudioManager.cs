@@ -10,12 +10,10 @@ public class UnityAudioManager : MonoBehaviour
 
     private AudioSource audioSource;
 
-    public AudioClip birdsong;
-
-    public AudioClip footstepsGrass;
-    public AudioClip footstepsWood;
-
-    public bool onBridge;
+    //public AudioClip birdsong;
+    //public AudioClip footstepsGrass;
+    //public AudioClip footstepsWood;
+    //public bool onBridge;
 
     private void Awake() {
         DontDestroyOnLoad(gameObject);

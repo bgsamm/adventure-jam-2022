@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GardenManager : MonoBehaviour
 {
+    public AudioClip birdSound;
+
     public bool CantEat => !FoodEaten && !inventory.HasFood;
     public bool TasksComplete => (ShopVisited && TreeWatered && LetterRead && (FoodEaten || CantEat)) || (clock.ActNum == 4 && TreeWatered);
     [HideInInspector] public bool ShopVisited;
@@ -61,7 +63,7 @@ public class GardenManager : MonoBehaviour
 
         // if bird is present and tree has not been checked, play birdsong
         if (clock.CurrentDay.birdPresent && !TreeVisited) {
-            audioManager.PlayOneShot(audioManager.birdsong);
+            audioManager.PlayOneShot(birdSound);
         }
     }
 

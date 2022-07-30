@@ -15,12 +15,17 @@ public class PlayerController : MonoBehaviour
     // I feel a static boolean allows for a single point of access that other scripts
     // involved in player control can then reference, simplifying the above cases.
     public static bool playerHasControl;
+    // Used to control the player's footstep sound
+    public static Surface currentSurface;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
     [Header("Interaction")]
     [SerializeField] private TextMeshProUGUI interactMessage;
     [SerializeField] private float interactionDist;
+    [Header("Sounds")]
+    [SerializeField] private AudioClip footstepGrass;
+    [SerializeField] private AudioClip footstepWood;
 
     private Animator animator;
     private new Rigidbody2D rigidbody2D;
@@ -30,8 +35,6 @@ public class PlayerController : MonoBehaviour
 
     private float pixelsPerUnit;
     private Vector2 direction;
-
-    private float stepTime;
 
     private UnityAudioManager audioManager => ResourceLocator.instance.AudioManager;
 
@@ -70,16 +73,7 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Vertical", direction.y);
             // keep interaction hotspot in front of player
             interactionHotspot.transform.localPosition = interactionOffset + interactionDist * direction;
-            //footsteps
-            if (Time.time - stepTime > 0.4) {
-                if (audioManager.onBridge)
-                    audioManager.PlayOneShot(audioManager.footstepsWood);
-                else
-                    audioManager.PlayOneShot(audioManager.footstepsGrass);
-                stepTime = Time.time;
-            }
         }
-
         animator.SetBool("Moving", moving);
 
         // Handle interactions
@@ -104,4 +98,20 @@ public class PlayerController : MonoBehaviour
         var p = new Vector2(p_x, p_y) / pixelsPerUnit;
         rigidbody2D.MovePosition(p);
     }
+
+    public void PlayFootstep() {
+        AudioClip clip = currentSurface switch
+        {
+            Surface.GRASS => footstepGrass,
+            Surface.WOOD => footstepWood,
+            _ => footstepGrass
+        };
+        audioManager.PlayOneShot(clip);
+    }
+}
+
+public enum Surface
+{
+    GRASS,
+    WOOD
 }
