@@ -13,13 +13,16 @@ public class Inventory : MonoBehaviour
     [HideInInspector] public ItemStack selectedStack;
 
     public void AddItems(ItemStack stack) {
-        var inventoryStack = FindStack(stack.item);
-        if (inventoryStack == null)
-            // Changes to stacks on ScriptableObjects actually apply
-            // to the files themselves, so make a new copy of the stack
-            stacks.Add(new ItemStack(stack.item, stack.count));
-        else
-            inventoryStack.AddToStack(stack.count);
+        if (stack != null)
+        {
+            var inventoryStack = FindStack(stack.item);
+            if (inventoryStack == null)
+                // Changes to stacks on ScriptableObjects actually apply
+                // to the files themselves, so make a new copy of the stack
+                stacks.Add(new ItemStack(stack.item, stack.count));
+            else
+                inventoryStack.AddToStack(stack.count);
+        }
     }
 
     public void RemoveItems(ItemStack stack) {

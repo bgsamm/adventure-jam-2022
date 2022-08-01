@@ -144,13 +144,6 @@ MonoBehaviour:
         count: 1
       goodTrade: 1
     - given:
-        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-        count: 8
-      received:
-        item: {fileID: 11400000, guid: 44efa21630456d84aa2efbba7be2c07d, type: 2}
-        count: 1
-      goodTrade: 1
-    - given:
         item: {fileID: 11400000, guid: 7a3df58175d48bc4f93e57a3453219b3, type: 2}
         count: 1
       received:

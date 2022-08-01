@@ -183,7 +183,7 @@ A forbidden love. It’s poetic, don’t you think?
 
 It’s so helpful talking to you, Agung. 
 
-I didn’t actually come here for anything! Just wanted to update you but erm… how about this bracelet for some chiles, hm?
+I didn’t actually come here for anything! Just wanted to update you but erm… how about this bracelet for some sweet potatoes, hm?
 -> END
 
 = GoodTrade

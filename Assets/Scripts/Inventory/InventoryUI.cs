@@ -21,6 +21,8 @@ public class InventoryUI : MonoBehaviour
     private void Start() {
         inventorySlots = GetComponentsInChildren<InventorySlot>();
         UpdateSlots();
+        SelectSlot(inventorySlots[0]);
+
 
         NameText.text = "";
         DescriptionText.text = "Click an item to view its description";
