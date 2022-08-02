@@ -16,7 +16,7 @@ If you take good care of your crops, they will always yield vegetables or flower
 
 Your tree there will help with keep the earth healthy for your crops.
 
-Oh, will I be your first customer? Okay, time to see your haggling skills.  I’ll trade you 5 packets of seeds for you to sow for 3 chiles.
+Oh, will I be your first customer? Okay, time to see your haggling skills.  I’ll trade you 5 packets of seeds for you to sow for 3 chilis.
 -> END
 
 = GoodTrade

@@ -71,17 +71,17 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
-        count: 3
+        count: 2
       received:
         item: {fileID: 11400000, guid: 6f0ea8cef8c27df49b6a90695492c6c7, type: 2}
         count: 1
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
-        count: 2
+        count: 3
       received:
         item: {fileID: 11400000, guid: 6f0ea8cef8c27df49b6a90695492c6c7, type: 2}
-        count: 1
+        count: 2
       goodTrade: 1
   - birdPresent: 0
     noTrade: 0
@@ -89,13 +89,6 @@ MonoBehaviour:
     NPC: {fileID: 11400000, guid: d44b32007f435a0428f2677cdae2891a, type: 2}
     conversationKnot: Day4
     tradeList:
-    - given:
-        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-        count: 2
-      received:
-        item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
-        count: 1
-      goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
         count: 2
