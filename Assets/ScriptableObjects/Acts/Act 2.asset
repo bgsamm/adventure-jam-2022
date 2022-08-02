@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Act 2
   m_EditorClassIdentifier: 
   sceneName: GardenScene (Act 2)
-  openingCutscene: {fileID: 11400000, guid: f65c756cb4cae004ebe4a51d318297ce, type: 2}
+  openingCutscene: {fileID: 0}
   openingLetter: {fileID: 11400000, guid: 09bada6b5602b5949839e970a459f194, type: 2}
   days:
   - birdPresent: 0
