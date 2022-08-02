@@ -908,12 +908,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'W A S D - move
 
-    1 2 3 4 5 6 - select item
+    1 2 3 4 5 6 or scroll wheel - select item
 
-    E - interact
+    E -
+    interact
 
-    Q
-    - open inventory
+    Q - open inventory
 
     Tab - show task list'
   m_isRightToLeft: 0
@@ -1425,8 +1425,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

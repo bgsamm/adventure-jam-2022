@@ -44,8 +44,9 @@ public class GardenManager : MonoBehaviour
 
         // grab any plots in the scene
         plots = FindObjectsOfType<Plot>();
-        if (plots.Length > 0) {
-            // if first time encountering plots, initialize plantDict
+        if (clock.DayNum == 1) {
+            // if first day of the act, initialize plantDict
+            //re-initializes every act because the plots get smaller
             if (plantDict == null) {
                 plantDict = new Dictionary<string, Plant>();
                 foreach (var plot in plots) {
@@ -83,6 +84,7 @@ public class GardenManager : MonoBehaviour
     /// Resets task booleans & causes plants to grow
     /// </summary>
     public void BeginDay() {
+        Debug.Log("Beginning day in Garden Manager");
         // causes player to spawn at starting position
         playerPosition = null;
         // reset tasks
@@ -97,9 +99,25 @@ public class GardenManager : MonoBehaviour
     }
 
     private void GrowPlants() {
-        foreach (var plant in plantDict.Values) {
-            if (plant != null)
-                plant.Grow();
+        Debug.Log("Growing Plants");
+        if (clock.DayNum == 7)
+        {
+            //end of the act
+            //harvests all plants (regardless of growth stage) 
+            foreach (var plant in plantDict.Values)
+            {
+                plant.Harvest();
+            }
+        }
+        else
+        {
+            foreach (var plant in plantDict.Values)
+            {
+                if (plant != null)
+                {
+                    plant.Grow();
+                }
+            }
         }
     }
 }
