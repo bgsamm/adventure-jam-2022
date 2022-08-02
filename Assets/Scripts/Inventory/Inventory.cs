@@ -13,8 +13,7 @@ public class Inventory : MonoBehaviour
     [HideInInspector] public ItemStack selectedStack;
 
     public void AddItems(ItemStack stack) {
-        if (stack != null)
-        {
+        if (stack != null) {
             var inventoryStack = FindStack(stack.item);
             if (inventoryStack == null)
                 // Changes to stacks on ScriptableObjects actually apply

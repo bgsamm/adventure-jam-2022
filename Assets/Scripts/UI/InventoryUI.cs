@@ -29,6 +29,7 @@ public class InventoryUI : MonoBehaviour
     }
 
     private void Update() {
+        UpdateSlots();
         // Allow scroll wheel to change selected item
         if (Input.mouseScrollDelta.y != 0) {
             if (Input.mouseScrollDelta.y < 0 && selectionIndex < inventorySlots.Length - 1) {
