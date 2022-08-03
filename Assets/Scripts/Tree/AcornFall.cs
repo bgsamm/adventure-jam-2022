@@ -6,11 +6,11 @@ public class AcornFall : MonoBehaviour
 {
     [SerializeField] int index;
 
-
     GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void OnMouseDown() //acorns fall if you click them
     {
+        Debug.Log("Clicked!");
         if (!gardenManager.acornFallen[index])
         {
             gardenManager.acornFallen[index] = true;

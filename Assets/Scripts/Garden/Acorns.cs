@@ -12,26 +12,30 @@ public class Acorns : MonoBehaviour
 
     // Determines whether to show the acorns on the tree
     void Start() {
-        if (clock.ActNum == 3 && clock.DayNum == 7) {
-            //since there's no letter that day, it's equivalent to tree visited
-            bool treeVisited = gardenManager.TreeVisited;
+        if (clock.ActNum == 3 && clock.DayNum == 7)
+        {
+            Debug.Log("Falling acorns");
+            //inelegant, but a way of handling the acorns not visible in the Tree scene
+            if (gardenManager.acornFallen[0])
+                gardenManager.acornFallen[1] = true;
+            if (gardenManager.acornFallen[5])
+                gardenManager.acornFallen[6] = true;
+            if (gardenManager.acornFallen[7])
+                gardenManager.acornFallen[8] = true;
 
-            for(int x = 0; x < 8; x++)
+            for (int x = 0; x < 9; x++)
             {
                 acorns[x].SetActive(!gardenManager.acornFallen[x]);
                 fallenAcorns[x].SetActive(gardenManager.acornFallen[x]);
-
-                //inelegant, but a way of handling the acorns not visible in the Tree scene
-                if (gardenManager.acornFallen[1])
-                    gardenManager.acornFallen[2] = true;
-                if (gardenManager.acornFallen[3])
-                    gardenManager.acornFallen[4] = true;
-                if (gardenManager.acornFallen[6])
-                    gardenManager.acornFallen[7] = true;
-                if (gardenManager.acornFallen[8])
-                    gardenManager.acornFallen[9] = true;
             }
-            
+        }
+        else
+        {
+            for (int x = 0; x < 8; x++)
+            {
+                acorns[x].SetActive(false);
+                fallenAcorns[x].SetActive(false);
+            }
         }
     }
 }
