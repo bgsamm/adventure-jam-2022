@@ -48,10 +48,10 @@ public class TreeScene : MonoBehaviour
 
     public void WaterTree() {
         Debug.Log("You watered the tree!");
+        gardenManager.TreeWatered = true;
         wateringCan.PlayWateringAnim(
             delegate {
                 background.sprite = clock.CurrentAct.treePortraitWatered;
-                gardenManager.TreeWatered = true;
             });
     }
 

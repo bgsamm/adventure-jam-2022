@@ -96,14 +96,10 @@ public class GardenManager : MonoBehaviour
         // Don't grow plants at the start of an act
         if (clock.DayNum > 1)
             GrowPlants();
-    }
-
-    private void GrowPlants() {
-        Debug.Log("Growing Plants");
-        if (clock.DayNum == 8)
+        else if (clock.ActNum == 2 || clock.ActNum == 3)
         {
             Debug.Log("Act end: Harvesting plants");
-            //end of the act
+            //start of acts 2 and 3
             //harvests all plants (regardless of growth stage) 
             for (int x = 0; x < plantDict.Count; x++)
             {
@@ -112,17 +108,19 @@ public class GardenManager : MonoBehaviour
             }
             //deletes the plant dictionary (automatically triggers rebuilding it at next act opening)
             plantDict.Clear();
-            foreach (ItemStack stack in inventory.stacks)
+            for (int x = 0; x < inventory.stacks.Count; x++)
             {
                 //perishable foods get deleted between acts
-                if (stack.item.Perishable)
+                if (inventory.stacks[x].item.Perishable)
                 {
-                    inventory.RemoveItems(stack);
+                    inventory.RemoveItems(inventory.stacks[x]);
                 }
             }
         }
-        else
-        {
+
+    }
+
+    private void GrowPlants() {
             foreach (var plant in plantDict.Values)
             {
                 if (plant != null)
@@ -132,4 +130,4 @@ public class GardenManager : MonoBehaviour
             }
         }
     }
-}
+
