@@ -37,7 +37,10 @@ public class Clock : MonoBehaviour
                     if (DayNum == 1 && CurrentAct.openingLetter != null)
                         letterManager.ShowLetter(CurrentAct.openingLetter, sceneLoader.LoadGardenScene);
                     else
+                    {
                         sceneLoader.LoadGardenScene();
+                        Debug.Log("Loading the garden scene");
+                    }
                 });
         }
         DayNum++;

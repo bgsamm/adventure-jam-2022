@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     [Header("Submenus")]
     [SerializeField] private GameObject MainMenuPanel;
     [SerializeField] private GameObject CreditsMenuPanel;
+    [SerializeField] private GameObject ControlsMenuPanel;
     [Header("Audio")]
     [SerializeField] private AudioClip menuMusic;
 
@@ -30,6 +31,7 @@ public class MainMenu : MonoBehaviour
     private void HideAllSubmenus() {
         MainMenuPanel.SetActive(false);
         CreditsMenuPanel.SetActive(false);
+        ControlsMenuPanel.SetActive(false);
     }
 
     public void ShowMainMenu() {
@@ -40,5 +42,11 @@ public class MainMenu : MonoBehaviour
     public void ShowCreditsSubmenu() {
         HideAllSubmenus();
         CreditsMenuPanel.SetActive(true);
+    }
+
+    public void ShowControlsSubmenu()
+    {
+        HideAllSubmenus();
+        ControlsMenuPanel.SetActive(true);
     }
 }

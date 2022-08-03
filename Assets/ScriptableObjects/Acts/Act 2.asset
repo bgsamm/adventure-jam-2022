@@ -36,6 +36,13 @@ MonoBehaviour:
         count: 3
       goodTrade: 1
     - given:
+        item: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
+        count: 3
+      received:
+        item: {fileID: 11400000, guid: 4430747f37ac1f8449137d2f6cd93923, type: 2}
+        count: 2
+      goodTrade: 1
+    - given:
         item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
         count: 4
       received:
@@ -50,14 +57,14 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
-        count: 1
+        count: 2
       received:
         item: {fileID: 11400000, guid: 64d161d99df8b90408b834e9354ecf17, type: 2}
-        count: 2
+        count: 1
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
-        count: 2
+        count: 3
       received:
         item: {fileID: 11400000, guid: 64d161d99df8b90408b834e9354ecf17, type: 2}
         count: 2
@@ -101,7 +108,28 @@ MonoBehaviour:
     letter: {fileID: 11400000, guid: fb99476197a069e42bef173a13f34ed3, type: 2}
     NPC: {fileID: 11400000, guid: d44b32007f435a0428f2677cdae2891a, type: 2}
     conversationKnot: Day12
-    tradeList: []
+    tradeList:
+    - given:
+        item: {fileID: 0}
+        count: 0
+      received:
+        item: {fileID: 0}
+        count: 0
+      goodTrade: 0
+    - given:
+        item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
+        count: 5
+      received:
+        item: {fileID: 0}
+        count: 0
+      goodTrade: 0
+    - given:
+        item: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
+        count: 0
+      received:
+        item: {fileID: 0}
+        count: 0
+      goodTrade: 0
   - birdPresent: 0
     noTrade: 0
     letter: {fileID: 0}

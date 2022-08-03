@@ -44,20 +44,21 @@ public class GardenManager : MonoBehaviour
 
         // grab any plots in the scene
         plots = FindObjectsOfType<Plot>();
-        if (plots.Length > 0) {
-            // if first time encountering plots, initialize plantDict
+            // if first day of the act, initialize plantDict
+            //re-initializes every act because the plots get smaller
             if (plantDict == null) {
+                Debug.Log("Day 1: generating plots");
                 plantDict = new Dictionary<string, Plant>();
                 foreach (var plot in plots) {
                     plantDict[plot.name] = null;
-                }
             }
-            // otherwise, set the Plant for each plot
-            else {
-                foreach (var plot in plots) {
-                    Debug.Assert(plantDict.ContainsKey(plot.name));
-                    plot.CurrentPlant = plantDict[plot.name];
-                }
+        }
+
+        // otherwise, set the Plant for each plot
+        else {
+            foreach (var plot in plots) {
+                Debug.Assert(plantDict.ContainsKey(plot.name));
+                plot.CurrentPlant = plantDict[plot.name];
             }
         }
 
@@ -83,6 +84,7 @@ public class GardenManager : MonoBehaviour
     /// Resets task booleans & causes plants to grow
     /// </summary>
     public void BeginDay() {
+        Debug.Log("Beginning day in Garden Manager");
         // causes player to spawn at starting position
         playerPosition = null;
         // reset tasks
@@ -94,12 +96,38 @@ public class GardenManager : MonoBehaviour
         // Don't grow plants at the start of an act
         if (clock.DayNum > 1)
             GrowPlants();
+        else if (clock.ActNum == 2 || clock.ActNum == 3)
+        {
+            Debug.Log("Act end: Harvesting plants");
+            //start of acts 2 and 3
+            //harvests all plants (regardless of growth stage) 
+            for (int x = 0; x < plantDict.Count; x++)
+            {
+                if (plantDict.ElementAt(x).Value != null)
+                    plantDict.ElementAt(x).Value.Harvest();
+            }
+            //deletes the plant dictionary (automatically triggers rebuilding it at next act opening)
+            plantDict.Clear();
+            for (int x = 0; x < inventory.stacks.Count; x++)
+            {
+                //perishable foods get deleted between acts
+                if (inventory.stacks[x].item.Perishable)
+                {
+                    inventory.RemoveItems(inventory.stacks[x]);
+                }
+            }
+        }
+
     }
 
     private void GrowPlants() {
-        foreach (var plant in plantDict.Values) {
-            if (plant != null)
-                plant.Grow();
+            foreach (var plant in plantDict.Values)
+            {
+                if (plant != null)
+                {
+                    plant.Grow();
+                }
+            }
         }
     }
-}
+

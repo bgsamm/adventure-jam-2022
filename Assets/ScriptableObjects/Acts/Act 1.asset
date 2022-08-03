@@ -97,11 +97,11 @@ MonoBehaviour:
         count: 1
       goodTrade: 1
     - given:
-        item: {fileID: 11400000, guid: 55ad68154ef5c2f4b9f3faf016fe361d, type: 2}
-        count: 2
+        item: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
+        count: 4
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
-        count: 1
+        count: 2
       goodTrade: 1
   - birdPresent: 1
     noTrade: 0
