@@ -11,5 +11,6 @@ public class Item : ScriptableObject
     public Sprite InventorySprite;
     public bool Tradeable;
     public bool Edible;
+    public bool Perishable;
     public string Description;
 }

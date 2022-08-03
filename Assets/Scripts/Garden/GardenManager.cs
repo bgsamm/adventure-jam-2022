@@ -44,21 +44,21 @@ public class GardenManager : MonoBehaviour
 
         // grab any plots in the scene
         plots = FindObjectsOfType<Plot>();
-        if (clock.DayNum == 1) {
             // if first day of the act, initialize plantDict
             //re-initializes every act because the plots get smaller
             if (plantDict == null) {
+                Debug.Log("Day 1: generating plots");
                 plantDict = new Dictionary<string, Plant>();
                 foreach (var plot in plots) {
                     plantDict[plot.name] = null;
-                }
             }
-            // otherwise, set the Plant for each plot
-            else {
-                foreach (var plot in plots) {
-                    Debug.Assert(plantDict.ContainsKey(plot.name));
-                    plot.CurrentPlant = plantDict[plot.name];
-                }
+        }
+
+        // otherwise, set the Plant for each plot
+        else {
+            foreach (var plot in plots) {
+                Debug.Assert(plantDict.ContainsKey(plot.name));
+                plot.CurrentPlant = plantDict[plot.name];
             }
         }
 
@@ -100,13 +100,25 @@ public class GardenManager : MonoBehaviour
 
     private void GrowPlants() {
         Debug.Log("Growing Plants");
-        if (clock.DayNum == 7)
+        if (clock.DayNum == 8)
         {
+            Debug.Log("Act end: Harvesting plants");
             //end of the act
             //harvests all plants (regardless of growth stage) 
-            foreach (var plant in plantDict.Values)
+            for (int x = 0; x < plantDict.Count; x++)
             {
-                plant.Harvest();
+                if (plantDict.ElementAt(x).Value != null)
+                    plantDict.ElementAt(x).Value.Harvest();
+            }
+            //deletes the plant dictionary (automatically triggers rebuilding it at next act opening)
+            plantDict.Clear();
+            foreach (ItemStack stack in inventory.stacks)
+            {
+                //perishable foods get deleted between acts
+                if (stack.item.Perishable)
+                {
+                    inventory.RemoveItems(stack);
+                }
             }
         }
         else
