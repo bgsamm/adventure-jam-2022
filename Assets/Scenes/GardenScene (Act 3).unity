@@ -647,11 +647,6 @@ Transform:
   m_Father: {fileID: 120874195}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &416538362 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4789034558928501007, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-  m_PrefabInstance: {fileID: 921430865}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &467869530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -729,10 +724,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-      propertyPath: waterIcon
-      value: 
-      objectReference: {fileID: 1334062701}
     - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
       propertyPath: interactableText
       value: 
@@ -1058,10 +1049,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-      propertyPath: waterIcon
-      value: 
-      objectReference: {fileID: 1897455200}
-    - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
       propertyPath: interactableText
       value: 
       objectReference: {fileID: 0}
@@ -1131,10 +1118,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-      propertyPath: waterIcon
-      value: 
-      objectReference: {fileID: 416538362}
     - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
       propertyPath: interactableText
       value: 
@@ -2631,11 +2614,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &966633465 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4789034558928501007, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-  m_PrefabInstance: {fileID: 1466599870}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1026152427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2651,10 +2629,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-      propertyPath: waterIcon
-      value: 
-      objectReference: {fileID: 2058919778}
     - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
       propertyPath: interactableText
       value: 
@@ -3155,11 +3129,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7512511570546495483, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
   m_PrefabInstance: {fileID: 1282810866}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1292974520 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4789034558928501007, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-  m_PrefabInstance: {fileID: 1604427715}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1331751331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3199,11 +3168,6 @@ Transform:
   m_Father: {fileID: 370148515}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1334062701 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4789034558928501007, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-  m_PrefabInstance: {fileID: 612650274}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1402033394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2969468489226139753, guid: 2639e28405b4bca489b7def0686e1b00, type: 3}
@@ -3224,10 +3188,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-      propertyPath: waterIcon
-      value: 
-      objectReference: {fileID: 966633465}
     - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
       propertyPath: interactableText
       value: 
@@ -3630,10 +3590,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-      propertyPath: waterIcon
-      value: 
-      objectReference: {fileID: 2069684354}
-    - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
       propertyPath: interactableText
       value: 
       objectReference: {fileID: 0}
@@ -3703,10 +3659,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-      propertyPath: waterIcon
-      value: 
-      objectReference: {fileID: 1292974520}
     - target: {fileID: 7512511570546495482, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
       propertyPath: interactableText
       value: 
@@ -7949,11 +7901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1897455200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4789034558928501007, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-  m_PrefabInstance: {fileID: 894415691}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1901491324
 GameObject:
   m_ObjectHideFlags: 0
@@ -8422,16 +8369,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2058919778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4789034558928501007, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-  m_PrefabInstance: {fileID: 1026152427}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2069684354 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4789034558928501007, guid: a331696fdf7dced439e874ef073a6dbe, type: 3}
-  m_PrefabInstance: {fileID: 1564908714}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096651484
 GameObject:
   m_ObjectHideFlags: 0
