@@ -8,6 +8,11 @@ public class AcornFall : MonoBehaviour
 
     GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void OnMouseDown() //acorns fall if you click them
     {
         Debug.Log("Clicked!");

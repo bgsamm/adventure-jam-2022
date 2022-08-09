@@ -52,7 +52,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update() {
         // check if player currently has control
-        if (!playerHasControl) {
+        if (!playerHasControl)
+        {
             // stop movement
             direction = Vector2.zero;
             animator.SetBool("Moving", false);
@@ -60,33 +61,39 @@ public class PlayerController : MonoBehaviour
             interactMessage.text = "";
             return;
         }
+        else
+        {
+            float horizInput = Input.GetAxisRaw("Horizontal"),
+                vertInput = Input.GetAxisRaw("Vertical");
 
-        float horizInput = Input.GetAxisRaw("Horizontal"),
-            vertInput = Input.GetAxisRaw("Vertical");
+            bool moving = horizInput != 0 || vertInput != 0;
+            direction = new Vector2(horizInput, vertInput);
 
-        bool moving = horizInput != 0 || vertInput != 0;
-        direction = new Vector2(horizInput, vertInput);
-
-        // Maintain values when idle so the player continues to face the direction they were moving
-        if (moving) {
-            animator.SetFloat("Horizontal", direction.x);
-            animator.SetFloat("Vertical", direction.y);
-            // keep interaction hotspot in front of player
-            interactionHotspot.transform.localPosition = interactionOffset + interactionDist * direction;
-        }
-        animator.SetBool("Moving", moving);
-
-        // Handle interactions
-        var interactable = interactionHotspot.CurrentInteractable;
-        if (interactable != null) {
-            interactMessage.text = interactable.InteractMessage;
-            if (Input.GetButtonDown("Interact")) {
-                Debug.Log($"Interacting with {interactable.name}");
-                interactable.Interact();
+            // Maintain values when idle so the player continues to face the direction they were moving
+            if (moving)
+            {
+                animator.SetFloat("Horizontal", direction.x);
+                animator.SetFloat("Vertical", direction.y);
+                // keep interaction hotspot in front of player
+                interactionHotspot.transform.localPosition = interactionOffset + interactionDist * direction;
             }
-        }
-        else {
-            interactMessage.text = "";
+            animator.SetBool("Moving", moving);
+
+            // Handle interactions
+            var interactable = interactionHotspot.CurrentInteractable;
+            if (interactable != null)
+            {
+                interactMessage.text = interactable.InteractMessage;
+                if (Input.GetButtonDown("Interact"))
+                {
+                    Debug.Log($"Interacting with {interactable.name}");
+                    interactable.Interact();
+                }
+            }
+            else
+            {
+                interactMessage.text = "";
+            }
         }
     }
 

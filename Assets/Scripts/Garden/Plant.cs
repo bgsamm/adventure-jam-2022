@@ -38,7 +38,7 @@ public class Plant
             if (seed.yield.IndexOf(stack) > 0)
                 //slightly awkward, but the second item is always the seed, so should work
             {
-                if (UnityEngine.Random.Range(0, 10) < 8) 
+                if (UnityEngine.Random.Range(0, 100) < 85) 
                     //80% chance of yielding seeds when harvesting a crop
                     inventory.AddItems(stack);
             }

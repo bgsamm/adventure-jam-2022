@@ -92,7 +92,7 @@ public class InventoryUI : MonoBehaviour
             inventory.RemoveItems(food, 1);
             UpdateSlots();
             gardenManager.FoodEaten = true;
-            DescriptionText.text = "Mm, tasty.";
+            DescriptionText.text = "Sustained for another day.";
         }
     }
 }
