@@ -29,7 +29,7 @@ public class InventorySlot : MonoBehaviour
             iconComponent.enabled = true;
             iconComponent.sprite = stack.item.InventorySprite;
             iconComponent.SetNativeSize();
-            countText.enabled = true;
+            countText.enabled = stack.count > 0;
             countText.text = stack.count.ToString();
         }
         else {

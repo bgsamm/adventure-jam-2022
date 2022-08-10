@@ -23,7 +23,7 @@ MonoBehaviour:
     conversationKnot: Day15
     tradeList:
     - given:
-        item: {fileID: 0}
+        item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
         count: 0
       received:
         item: {fileID: 11400000, guid: 7a3df58175d48bc4f93e57a3453219b3, type: 2}
@@ -73,14 +73,14 @@ MonoBehaviour:
         item: {fileID: 11400000, guid: f1156873bc42ae443931f4ed7f104328, type: 2}
         count: 1
       received:
-        item: {fileID: 0}
+        item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
         count: 0
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 55ad68154ef5c2f4b9f3faf016fe361d, type: 2}
         count: 3
       received:
-        item: {fileID: 0}
+        item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
         count: 0
       goodTrade: 1
   - birdPresent: 0

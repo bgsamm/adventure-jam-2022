@@ -23,11 +23,6 @@ public class BarterMenu : MonoBehaviour
     [SerializeField] private InventorySlot getSummarySlot;
     [SerializeField] private Button acceptButton;
 
-    //well, this is inelegant
-    [SerializeField] private Item sweetPotato;
-    [SerializeField] private Item sugarCane;
-    [SerializeField] private Item chile;
-
     private SceneLoader sceneLoader => ResourceLocator.instance.SceneLoader;
     private AudioManager audioManager => ResourceLocator.instance.AudioManager;
     private Clock clock => ResourceLocator.instance.Clock;
@@ -41,8 +36,8 @@ public class BarterMenu : MonoBehaviour
         var currentDay = clock.CurrentDay;
         characterPortrait.sprite = currentDay.NPC.portraitSprite;
 
-        //TEST--if it doesn't sound good we'll take it out
-        audioManager.PlayLoop(clock.CurrentDay.NPC.music);
+        // Play NPC's custom track
+        //audioManager.PlayLoop(clock.CurrentDay.NPC.music);
 
         // clear trade summary
         giveSummarySlot.SetStack(null);
@@ -58,30 +53,6 @@ public class BarterMenu : MonoBehaviour
                 inventorySlot.SetStack(tradeables[i]);
             else
                 inventorySlot.SetStack(null);
-        }
-
-        // TODO: handle this more elegantly
-        //special case: Act 2 Day 5 trades are set manually
-        if (clock.DayNum == 5 && clock.ActNum == 2) {
-            ItemStack sweetPotatoStack = inventory.FindStack(sweetPotato);
-            ItemStack sugarcaneStack = inventory.FindStack(sugarCane);
-            ItemStack chileStack = inventory.FindStack(chile);
-
-            Trade sweetPotatoTrade = new();
-            sweetPotatoTrade.given = sweetPotatoStack;
-            sweetPotatoTrade.received = null;
-
-            Trade sugarcaneTrade = new();
-            sugarcaneTrade.given = sugarcaneStack;
-            sugarcaneTrade.received = null;
-
-            Trade chileTrade = new();
-            chileTrade.given = chileStack;
-            chileTrade.received = null;
-
-            clock.CurrentDay.tradeList.Add(sweetPotatoTrade);
-            clock.CurrentDay.tradeList.Add(sugarcaneTrade);
-            clock.CurrentDay.tradeList.Add(chileTrade);
         }
 
         // populate the trade list
@@ -110,7 +81,14 @@ public class BarterMenu : MonoBehaviour
     }
 
     private void SetTradeSummary(Trade trade) {
-        giveSummarySlot.SetStack(trade.given);
+        var giveStack = trade.given;
+        // -1 => everything the player has
+        if (trade.given.count == -1) {
+            var playerStack = inventory.FindStack(giveStack.item);
+            // Don't set the trade.given's count directly!!
+            giveStack = new ItemStack(trade.given.item, playerStack == null ? 0 : playerStack.count);
+        }
+        giveSummarySlot.SetStack(giveStack);
         getSummarySlot.SetStack(trade.received);
         acceptButton.interactable = inventory.HasItems(trade.given);
         currentTrade = trade;
@@ -121,7 +99,7 @@ public class BarterMenu : MonoBehaviour
         continueButton.SetActive(false);
         // TODO: handle this more elegantly
         //Act 2 Day 5 has no No Trade option
-        if (!(clock.DayNum == 5 && clock.ActNum == 2))
+        if (!(clock.ActNum == 2 && clock.DayNum == 5))
             dontTradeButton.SetActive(true);
     }
 
@@ -134,14 +112,15 @@ public class BarterMenu : MonoBehaviour
             branch = goodTrade ? "GoodTrade" : "BadTrade";
         dialogHandler.StartDialogue($"{knot}.{branch}", delegate {
             // reset music
-            audioManager.PlayLoop(clock.CurrentAct.music);
+            //audioManager.PlayLoop(clock.CurrentAct.music);
             sceneLoader.LoadGardenScene();
         });
     }
 
     public void AcceptTrade() {
         inventory.RemoveItems(currentTrade.given);
-        inventory.AddItems(currentTrade.received);
+        if (currentTrade.received.count > 0)
+            inventory.AddItems(currentTrade.received);
         EndTrading(currentTrade.goodTrade);
     }
 

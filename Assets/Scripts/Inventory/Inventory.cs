@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     public bool HoldingSeed => selectedStack != null && selectedStack.item is Seed;
     public bool HasFood => stacks.Any(stack => stack.item.Edible);
 
-    [HideInInspector] public List<ItemStack> stacks;
+    public List<ItemStack> stacks;
     [HideInInspector] public ItemStack selectedStack;
 
     public void AddItems(ItemStack stack) {
