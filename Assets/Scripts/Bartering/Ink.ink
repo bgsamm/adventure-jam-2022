@@ -517,18 +517,21 @@ At least one son will come home at the end of this.
 
 Sorry, Agung. I know you don’t mind, but I do. An old woman like me crying in front of you.
 
-You’re doing such a good job here. I wish your father could come home to see you.
 -> END
 
 = GoodTrade
 
-Goodbye, Agung.
+Oh, Agung. It’s beautiful. 
+
+You’re doing such a good job here. I wish your father could come home to see you.
 
 -> END
 
 = BadTrade
 
-Goodbye, Agung.
+Thank you for listening. Sometimes that’s all I need.
+
+You’re doing such a good job here. I wish your father could come home to see you.
 
 -> END
 

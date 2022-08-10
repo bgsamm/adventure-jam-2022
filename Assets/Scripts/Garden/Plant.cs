@@ -13,6 +13,7 @@ public class Plant
     private int growthStage;
 
     private Inventory inventory => ResourceLocator.instance.InventorySystem;
+    private Clock clock => ResourceLocator.instance.Clock;
     private readonly Seed seed;
 
     public Plant(Seed seed) {
@@ -38,8 +39,8 @@ public class Plant
             if (seed.yield.IndexOf(stack) > 0)
                 //slightly awkward, but the second item is always the seed, so should work
             {
-                if (UnityEngine.Random.Range(0, 100) < 85) 
-                    //80% chance of yielding seeds when harvesting a crop
+                if (UnityEngine.Random.Range(0, 100) < clock.CurrentAct.cropYield) 
+                    //% chance of yielding seeds when harvesting a crop varies by act
                     inventory.AddItems(stack);
             }
             else

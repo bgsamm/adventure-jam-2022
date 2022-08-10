@@ -17,4 +17,5 @@ public class Act : ScriptableObject
     public Vector3 birdLocation;
     public AudioClip music;
     public AudioClip ambience;
+    public int cropYield; //the % chance of yielding seeds when harvested
 }
