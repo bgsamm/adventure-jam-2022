@@ -16,4 +16,5 @@ MonoBehaviour:
   InventorySprite: {fileID: 21300000, guid: cba07738db51dd64fb341f067879155c, type: 3}
   Tradeable: 1
   Edible: 1
-  Description: Crisp, sweet sugar cane.
+  Perishable: 0
+  Description: Crisp, sweet sugar cane dripping with juice.

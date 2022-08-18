@@ -15,3 +15,6 @@ MonoBehaviour:
   name: Blanket
   InventorySprite: {fileID: 1165141195, guid: 4c54d20af00eb0b43886219b7cc43e25, type: 3}
   Tradeable: 1
+  Edible: 0
+  Perishable: 0
+  Description: A coarsely woven wool blanket, made with more care than skill.

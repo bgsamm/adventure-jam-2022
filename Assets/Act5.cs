@@ -37,7 +37,7 @@ public class Act5 : MonoBehaviour
                     endPanel.SetActive(true);
                     StartCoroutine(WaitThenEndGame(5));
                 };
-                fader.FadeOut(true);
+                StartCoroutine(DelayFade(5));
             }
         }
     }
@@ -48,6 +48,12 @@ public class Act5 : MonoBehaviour
         camera.GetComponent<FollowPlayer>().enabled = false;
         doCutscene = true;
         waypointIndex = 0;
+    }
+
+    private IEnumerator DelayFade(float s)
+    {
+        yield return new WaitForSeconds(s);
+        fader.FadeOut(true);
     }
 
     private IEnumerator WaitThenEndGame(float s) {

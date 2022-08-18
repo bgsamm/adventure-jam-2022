@@ -15,3 +15,6 @@ MonoBehaviour:
   name: Necklace
   InventorySprite: {fileID: -1539569624, guid: 4c54d20af00eb0b43886219b7cc43e25, type: 3}
   Tradeable: 1
+  Edible: 0
+  Perishable: 0
+  Description: A chain with a little charm of a book.

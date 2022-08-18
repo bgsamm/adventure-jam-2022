@@ -16,4 +16,5 @@ MonoBehaviour:
   InventorySprite: {fileID: 21300000, guid: 9f48c4a543327d246a65957c47d4bb0a, type: 3}
   Tradeable: 1
   Edible: 1
-  Description: A ripe red pepper. Delicious but hot!
+  Perishable: 0
+  Description: A ripe red pepper, hot enough to make your eyes water.

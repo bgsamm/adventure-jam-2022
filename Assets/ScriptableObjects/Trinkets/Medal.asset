@@ -15,3 +15,6 @@ MonoBehaviour:
   name: Medal
   InventorySprite: {fileID: 21300000, guid: 24a8e075e439bf7409ad615fb724a8bc, type: 3}
   Tradeable: 0
+  Edible: 0
+  Perishable: 0
+  Description: A silver medal your father won for valor.

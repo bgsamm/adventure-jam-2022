@@ -140,14 +140,14 @@ MonoBehaviour:
         item: {fileID: 11400000, guid: 907675c98fb13e740b5f1fcd21995cc0, type: 2}
         count: 1
       received:
-        item: {fileID: 0}
+        item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
         count: 0
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
         count: 3
       received:
-        item: {fileID: 0}
+        item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
         count: 0
       goodTrade: 1
   - birdPresent: 1
@@ -160,7 +160,7 @@ MonoBehaviour:
         item: {fileID: 11400000, guid: c286b589041b3794ca225b0c4b72149a, type: 2}
         count: 1
       received:
-        item: {fileID: 0}
+        item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
         count: 0
       goodTrade: 0
   treePortrait: {fileID: 21300000, guid: bfed85b30f275a54a833bf707ce25970, type: 3}

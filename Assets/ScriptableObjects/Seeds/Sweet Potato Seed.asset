@@ -16,7 +16,8 @@ MonoBehaviour:
   InventorySprite: {fileID: -1718781298, guid: 164459c69a7dc4f4facf740391ef2f26, type: 3}
   Tradeable: 1
   Edible: 0
-  Description: 
+  Perishable: 0
+  Description: A packet of slips that will grow into sweet potatoes.
   yield:
   - item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
     count: 1
@@ -27,4 +28,3 @@ MonoBehaviour:
   - {fileID: 209209870, guid: dddd94a7669505b4ba62416c9fee7aed, type: 3}
   - {fileID: -701067776, guid: dddd94a7669505b4ba62416c9fee7aed, type: 3}
   daysToGrow: 1
-  seedChance: 0

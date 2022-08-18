@@ -15,6 +15,9 @@ MonoBehaviour:
   name: Sugar Cane Seeds
   InventorySprite: {fileID: 402978831, guid: 164459c69a7dc4f4facf740391ef2f26, type: 3}
   Tradeable: 1
+  Edible: 0
+  Perishable: 0
+  Description: A packet of sugar cane seeds.
   yield:
   - item: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
     count: 1

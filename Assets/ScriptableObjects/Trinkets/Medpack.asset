@@ -15,3 +15,6 @@ MonoBehaviour:
   name: Medpack
   InventorySprite: {fileID: 21300000, guid: f86091cc0c3e4f74c88c1e882859a0e2, type: 3}
   Tradeable: 1
+  Edible: 0
+  Perishable: 0
+  Description: A small package of bandages, iodine, morphine tablets, and antibiotics.

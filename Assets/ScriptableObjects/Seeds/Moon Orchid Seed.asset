@@ -15,6 +15,9 @@ MonoBehaviour:
   name: Moon Orchid Seeds
   InventorySprite: {fileID: 1381636116, guid: 164459c69a7dc4f4facf740391ef2f26, type: 3}
   Tradeable: 1
+  Edible: 0
+  Perishable: 0
+  Description: A packet of moon orchid seeds.
   yield:
   - item: {fileID: 11400000, guid: c286b589041b3794ca225b0c4b72149a, type: 2}
     count: 1

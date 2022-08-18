@@ -16,4 +16,5 @@ MonoBehaviour:
   InventorySprite: {fileID: 21300000, guid: a73c0e5bfb36fcf47939fb441fcec047, type: 3}
   Tradeable: 1
   Edible: 0
-  Description: Fragrant jasmine looks lovely anywhere.
+  Perishable: 0
+  Description: Small white jasmine blossoms, bursting with fragrance.

@@ -15,6 +15,9 @@ MonoBehaviour:
   name: Sapling
   InventorySprite: {fileID: 0}
   Tradeable: 0
+  Edible: 0
+  Perishable: 0
+  Description: A young oak, small but hopeful.
   yield: []
   gameSprites:
   - {fileID: -164459629, guid: 8b1ba6ad285786d4c9e74f0abb23b809, type: 3}

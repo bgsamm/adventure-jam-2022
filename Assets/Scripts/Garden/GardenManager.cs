@@ -115,6 +115,12 @@ public class GardenManager : MonoBehaviour
                 {
                     inventory.RemoveItems(inventory.stacks[x]);
                 }
+
+                //large stacks get reduced slightly
+                if (inventory.stacks[x].count > 6)
+                {
+                    inventory.stacks[x].count = (int)(inventory.stacks[x].count * 0.7f);
+                }
             }
         }
 
