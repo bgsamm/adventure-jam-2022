@@ -10937,8 +10937,6 @@ Tilemap:
     m_Data: {fileID: 1657101212, guid: 07c1ed53e13edbf4785dc4f8fdeff76a, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1626651640, guid: 07c1ed53e13edbf4785dc4f8fdeff76a, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 735
     m_Data:
@@ -49536,6 +49534,10 @@ PrefabInstance:
     - target: {fileID: 8910530094918928462, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_Name
       value: Scalable Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910530094918928462, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}

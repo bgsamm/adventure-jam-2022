@@ -6,7 +6,6 @@ public class TreeScene : MonoBehaviour
     [SerializeField] private Image background;
     [SerializeField] private Bird bird;
     [SerializeField] private WateringCan wateringCan;
-    [SerializeField] GameObject acorns;
 
     private Clock clock => ResourceLocator.instance.Clock;
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
@@ -26,11 +25,6 @@ public class TreeScene : MonoBehaviour
         if (clock.CurrentDay.letter == null)
             gardenManager.LetterRead = true;
         bird.gameObject.SetActive(clock.CurrentDay.birdPresent);
-
-        if (clock.ActNum == 3 && clock.DayNum == 7)
-            acorns.SetActive(true);
-        else
-            acorns.SetActive(false);
 
         // if bird is present, play birdsong
         if (clock.CurrentDay.birdPresent) {

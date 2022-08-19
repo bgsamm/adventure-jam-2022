@@ -24,14 +24,14 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
-        count: 2
+        count: 3
       received:
         item: {fileID: 11400000, guid: 83b354e0d2496a54cb57f0e90b71ba86, type: 2}
         count: 3
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
-        count: 3
+        count: 4
       received:
         item: {fileID: 11400000, guid: 83b354e0d2496a54cb57f0e90b71ba86, type: 2}
         count: 5
