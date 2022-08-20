@@ -27,7 +27,15 @@ public class GardenUI : MonoBehaviour
     private void Update() {
         // Open/close pause menu
         if (Input.GetButtonDown("Pause")) {
-            pauseMenuPanel.SetActive(!pauseMenuPanel.activeSelf);
+
+            if (inventoryPanel.activeSelf)
+            {
+                inventoryPanel.SetActive(false);
+            }
+            else
+            {
+                pauseMenuPanel.SetActive(!pauseMenuPanel.activeSelf);
+            }
         }
 
         if (!pauseMenuPanel.activeSelf) {

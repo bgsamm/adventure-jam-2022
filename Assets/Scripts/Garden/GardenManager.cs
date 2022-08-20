@@ -113,8 +113,8 @@ public class GardenManager : MonoBehaviour
                 }
 
                 //large stacks get reduced
-                if (inventory.stacks[x].count > 7) {
-                    inventory.stacks[x].count = (int)(inventory.stacks[x].count * 0.6f);
+                if (inventory.stacks[x].count > 5) {
+                    inventory.stacks[x].count = (int)(inventory.stacks[x].count * 0.5f + 2);
                 }
             }
         }

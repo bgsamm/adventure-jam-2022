@@ -157,13 +157,6 @@ MonoBehaviour:
         item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
         count: 0
       goodTrade: 1
-    - given:
-        item: {fileID: 11400000, guid: c4d9094a3d7ace94faa2b65c3ddfe335, type: 2}
-        count: 1
-      received:
-        item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
-        count: 0
-      goodTrade: 1
   - birdPresent: 1
     noTrade: 0
     letter: {fileID: 11400000, guid: 8afee79c66722ca48960bbfdab32649d, type: 2}
@@ -176,10 +169,10 @@ MonoBehaviour:
       received:
         item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
         count: 0
-      goodTrade: 0
+      goodTrade: 1
   treePortrait: {fileID: 21300000, guid: bfed85b30f275a54a833bf707ce25970, type: 3}
   treePortraitWatered: {fileID: 21300000, guid: e2abb7e506b9b9948b34ba4967451661, type: 3}
   birdLocation: {x: -16, y: 32, z: 0}
   music: {fileID: 8300000, guid: 4c81db9ed2c077d42b121276f8fab7ab, type: 3}
   ambience: {fileID: 8300000, guid: 92bf8a88454423448ba62b2584e93a59, type: 3}
-  cropYield: 85
+  cropYield: 82
