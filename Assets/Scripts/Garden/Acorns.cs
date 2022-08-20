@@ -12,8 +12,7 @@ public class Acorns : MonoBehaviour
 
     // Determines whether to show the acorns on the tree
     void Start() {
-        if (clock.ActNum == 3 && clock.DayNum == 7)
-        {
+        if (clock.ActNum == 3 && clock.DayNum == 7) {
             Debug.Log("Displaying acorns");
             //inelegant, but a way of handling the acorns not visible in the Tree scene
             if (gardenManager.acornFallen[0])
@@ -23,18 +22,15 @@ public class Acorns : MonoBehaviour
             if (gardenManager.acornFallen[7])
                 gardenManager.acornFallen[8] = true;
 
-            for (int x = 0; x < 9; x++)
-            {
-                Debug.Log("Acorn " + x + "=" + gardenManager.acornFallen[x]);
+            for (int x = 0; x < 9; x++) {
+                Debug.Log("Acorn " + x + " = " + gardenManager.acornFallen[x]);
 
                 acorns[x].SetActive(!gardenManager.acornFallen[x]);
                 fallenAcorns[x].SetActive(gardenManager.acornFallen[x]);
             }
         }
-        else
-        {
-            for (int x = 0; x < 9; x++)
-            {
+        else {
+            for (int x = 0; x < 9; x++) {
                 acorns[x].SetActive(false);
                 fallenAcorns[x].SetActive(false);
             }
