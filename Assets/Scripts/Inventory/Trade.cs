@@ -11,4 +11,10 @@ public class Trade
     public ItemStack given;
     public ItemStack received;
     public bool goodTrade;
+
+    public Trade(ItemStack given, ItemStack received, bool goodTrade) {
+        this.given = given;
+        this.received = received;
+        this.goodTrade = goodTrade;
+    }
 }

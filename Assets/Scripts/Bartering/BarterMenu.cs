@@ -37,7 +37,7 @@ public class BarterMenu : MonoBehaviour
         characterPortrait.sprite = currentDay.NPC.portraitSprite;
 
         // Play NPC's custom track
-        //audioManager.PlayLoop(clock.CurrentDay.NPC.music);
+        audioManager.PlayLoop(clock.CurrentDay.NPC.music);
 
         // clear trade summary
         giveSummarySlot.SetStack(null);
@@ -87,6 +87,8 @@ public class BarterMenu : MonoBehaviour
             var playerStack = inventory.FindStack(giveStack.item);
             // Don't set the trade.given's count directly!!
             giveStack = new ItemStack(trade.given.item, playerStack == null ? 0 : playerStack.count);
+            // Update the trade with the new giveStack
+            trade = new Trade(giveStack, trade.received, trade.goodTrade);
         }
         giveSummarySlot.SetStack(giveStack);
         getSummarySlot.SetStack(trade.received);
@@ -112,7 +114,7 @@ public class BarterMenu : MonoBehaviour
             branch = goodTrade ? "GoodTrade" : "BadTrade";
         dialogHandler.StartDialogue($"{knot}.{branch}", delegate {
             // reset music
-            //audioManager.PlayLoop(clock.CurrentAct.music);
+            audioManager.PlayLoop(clock.CurrentAct.music);
             sceneLoader.LoadGardenScene();
         });
     }
