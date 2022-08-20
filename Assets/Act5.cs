@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Act5 : MonoBehaviour
 {
+    [SerializeField] private GameObject canvas;
     [Header("Cutscene")]
     [SerializeField] new private Camera camera;
     [SerializeField] private float cameraSpeed;
@@ -46,12 +47,12 @@ public class Act5 : MonoBehaviour
         Debug.Log("Trigger entered!");
         PlayerController.playerHasControl = false;
         camera.GetComponent<FollowPlayer>().enabled = false;
+        canvas.SetActive(false);
         doCutscene = true;
         waypointIndex = 0;
     }
 
-    private IEnumerator DelayFade(float s)
-    {
+    private IEnumerator DelayFade(float s) {
         yield return new WaitForSeconds(s);
         fader.FadeOut(true);
     }

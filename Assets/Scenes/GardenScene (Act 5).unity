@@ -11089,6 +11089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50cc745c5d415734f9326bd1edabb935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 888969628}
   camera: {fileID: 225300118}
   cameraSpeed: 2.5
   waypoints:
@@ -11350,6 +11351,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3621298863874053174, guid: 44612a94f3ab8c846868cfcc9a3a48c6, type: 3}
   m_PrefabInstance: {fileID: 856879901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &888969628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8910530094918928462, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+  m_PrefabInstance: {fileID: 2049736482}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1025514519
 GameObject:
@@ -13428,6 +13434,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3126524186602343162, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060991939915016932, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5046254722198734993, guid: 344ce938dbfddda45bef9c6f60101372, type: 3}
