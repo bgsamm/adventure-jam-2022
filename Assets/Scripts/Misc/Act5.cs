@@ -36,9 +36,9 @@ public class Act5 : MonoBehaviour
             else {
                 fader.FadeOutEvent = delegate {
                     endPanel.SetActive(true);
-                    StartCoroutine(WaitThenEndGame(5));
+                    StartCoroutine(WaitThenEndGame(3));
                 };
-                StartCoroutine(DelayFade(5));
+                StartCoroutine(DelayFade(3));
             }
         }
     }
