@@ -98,7 +98,7 @@ MonoBehaviour:
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-        count: 5
+        count: 4
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
         count: 1
@@ -111,13 +111,6 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-        count: 3
-      received:
-        item: {fileID: 11400000, guid: 907675c98fb13e740b5f1fcd21995cc0, type: 2}
-        count: 1
-      goodTrade: 1
-    - given:
-        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
         count: 2
       received:
         item: {fileID: 11400000, guid: 907675c98fb13e740b5f1fcd21995cc0, type: 2}
@@ -125,7 +118,14 @@ MonoBehaviour:
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
+        count: 3
+      received:
+        item: {fileID: 11400000, guid: 907675c98fb13e740b5f1fcd21995cc0, type: 2}
         count: 1
+      goodTrade: 1
+    - given:
+        item: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
+        count: 4
       received:
         item: {fileID: 11400000, guid: 907675c98fb13e740b5f1fcd21995cc0, type: 2}
         count: 1
@@ -138,6 +138,13 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
+        count: 3
+      received:
+        item: {fileID: 11400000, guid: 304da20f31f115345b8fb67a76a090eb, type: 2}
+        count: 4
+      goodTrade: 1
+    - given:
+        item: {fileID: 11400000, guid: 55ad68154ef5c2f4b9f3faf016fe361d, type: 2}
         count: 3
       received:
         item: {fileID: 11400000, guid: 304da20f31f115345b8fb67a76a090eb, type: 2}
@@ -158,7 +165,7 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: 55ad68154ef5c2f4b9f3faf016fe361d, type: 2}
-        count: 2
+        count: 3
       received:
         item: {fileID: 11400000, guid: c4d9094a3d7ace94faa2b65c3ddfe335, type: 2}
         count: 1

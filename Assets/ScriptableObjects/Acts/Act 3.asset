@@ -19,26 +19,6 @@ MonoBehaviour:
   - birdPresent: 0
     noTrade: 0
     letter: {fileID: 0}
-    NPC: {fileID: 11400000, guid: 61c36f826d3163246838603cff3d28d5, type: 2}
-    conversationKnot: Day15
-    tradeList:
-    - given:
-        item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
-        count: 0
-      received:
-        item: {fileID: 11400000, guid: 7a3df58175d48bc4f93e57a3453219b3, type: 2}
-        count: 1
-      goodTrade: 1
-    - given:
-        item: {fileID: 11400000, guid: c286b589041b3794ca225b0c4b72149a, type: 2}
-        count: 1
-      received:
-        item: {fileID: 11400000, guid: 7a3df58175d48bc4f93e57a3453219b3, type: 2}
-        count: 1
-      goodTrade: 1
-  - birdPresent: 0
-    noTrade: 0
-    letter: {fileID: 0}
     NPC: {fileID: 11400000, guid: d44b32007f435a0428f2677cdae2891a, type: 2}
     conversationKnot: Day16
     tradeList:
@@ -61,6 +41,26 @@ MonoBehaviour:
         count: 6
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
+        count: 1
+      goodTrade: 1
+  - birdPresent: 0
+    noTrade: 0
+    letter: {fileID: 0}
+    NPC: {fileID: 11400000, guid: 61c36f826d3163246838603cff3d28d5, type: 2}
+    conversationKnot: Day15
+    tradeList:
+    - given:
+        item: {fileID: 11400000, guid: de268859beadde347ac0234c5d56dd7f, type: 2}
+        count: 0
+      received:
+        item: {fileID: 11400000, guid: 7a3df58175d48bc4f93e57a3453219b3, type: 2}
+        count: 1
+      goodTrade: 1
+    - given:
+        item: {fileID: 11400000, guid: c286b589041b3794ca225b0c4b72149a, type: 2}
+        count: 1
+      received:
+        item: {fileID: 11400000, guid: 7a3df58175d48bc4f93e57a3453219b3, type: 2}
         count: 1
       goodTrade: 1
   - birdPresent: 1
@@ -91,13 +91,6 @@ MonoBehaviour:
     tradeList:
     - given:
         item: {fileID: 11400000, guid: c286b589041b3794ca225b0c4b72149a, type: 2}
-        count: 3
-      received:
-        item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
-        count: 1
-      goodTrade: 1
-    - given:
-        item: {fileID: 11400000, guid: 55ad68154ef5c2f4b9f3faf016fe361d, type: 2}
         count: 4
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
@@ -105,6 +98,13 @@ MonoBehaviour:
       goodTrade: 1
     - given:
         item: {fileID: 11400000, guid: 4d6711412bbefc14abd72f634b2f10fa, type: 2}
+        count: 5
+      received:
+        item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
+        count: 1
+      goodTrade: 1
+    - given:
+        item: {fileID: 11400000, guid: 55ad68154ef5c2f4b9f3faf016fe361d, type: 2}
         count: 6
       received:
         item: {fileID: 11400000, guid: dfd2460860cce71479f19368b703a574, type: 2}
