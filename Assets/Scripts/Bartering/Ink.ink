@@ -383,7 +383,7 @@ I’m sorry. Honestly, I’m starving but I have little to give now.
 
 I will not take things for free, even from a fellow merchant. That is not the code, not the rules and certainly not a fair deal! 
 
-This is all I have left that is of worth… My wedding ring. 
+This is all I have left that is of worth… My wedding ring. I'll miss it, but we do what we must.
 
 -> END
 
@@ -404,7 +404,7 @@ I appreciate your kindness more than I can express.
 
 = BadTrade
 
-Thank you. I'll miss that ring, but we do what we must… 
+It's difficult that it's come to this.  
 
 Good luck, young man.
 

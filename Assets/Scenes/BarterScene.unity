@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1647461952923302703, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6
+      value: -262.12067
       objectReference: {fileID: 0}
     - target: {fileID: 1647461952923302703, guid: 5e1a3711226620342bcad436a0386d85, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3455,9 +3455,6 @@ MonoBehaviour:
   giveSummarySlot: {fileID: 1885530489}
   getSummarySlot: {fileID: 1461706217}
   acceptButton: {fileID: 1833025262}
-  sweetPotato: {fileID: 11400000, guid: 65eac879fab95734b9849adb26a0bff3, type: 2}
-  sugarCane: {fileID: 11400000, guid: da602e1e463dcf741b351b21ba1033f0, type: 2}
-  chile: {fileID: 11400000, guid: 50747592f9ff0174594d69cd72b2f8eb, type: 2}
 --- !u!114 &1869322964
 MonoBehaviour:
   m_ObjectHideFlags: 0

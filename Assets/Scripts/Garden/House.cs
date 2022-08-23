@@ -10,7 +10,7 @@ public class House : Interactable
     private GardenManager gardenManager => ResourceLocator.instance.GardenManager;
 
     private void Update() {
-        InteractMessage = gardenManager.TasksComplete ? (gardenManager.CantEat ? "Press E to go to bed hungry" : "Press E to sleep") : "You still have tasks to do.";
+        InteractMessage = gardenManager.TasksComplete ? (gardenManager.CantEat ? "Press E to go to bed hungry" : "Press E to sleep") : "You still have tasks to do.<br>Press tab to see your task list.";
     }
 
     public override void Interact() {
