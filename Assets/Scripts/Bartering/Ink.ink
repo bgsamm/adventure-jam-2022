@@ -16,7 +16,7 @@ If you take good care of your crops, they will always yield vegetables or flower
 
 Your tree there will help with keep the earth healthy for your crops.
 
-Oh, will I be your first customer? Okay, time to see your haggling skills.  I’ll trade you 5 packets of seeds for you to sow for 3 chilis.
+Oh, will I be your first customer? Okay, time to see your haggling skills.  I’ll trade you 5 packets of seeds for you to sow for 4 chilis.
 -> END
 
 = GoodTrade
@@ -271,7 +271,7 @@ This isn’t going to be nice, but I have to warn you, with rationing beginning,
 
 I know, I’m sorry. 
 
-I thought we’d never get to this point… I’m just here to give you a warning about it. Some of the other officers were talking about ‘confiscating’ from independent fams. While I’d like to hope they’d take it to be rationed, I’m not so sure. 
+I thought we’d never get to this point… I’m just here to give you a warning about it. Some of the other officers were talking about ‘confiscating’ from independent farms. While I’d like to hope they’d take it to be rationed, I’m not so sure. 
 
 You know I’m not going to take anything. 
 
