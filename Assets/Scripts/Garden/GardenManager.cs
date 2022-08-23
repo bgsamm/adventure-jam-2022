@@ -15,6 +15,8 @@ public class GardenManager : MonoBehaviour
     [HideInInspector] public bool LetterRead;
     [HideInInspector] public bool FoodEaten;
 
+    [HideInInspector] public string CurrentTask; 
+
     // Maps plot names to the Plants they contain
     private static Dictionary<string, Plant> plantDict;
     // Track the player's position across scenes
@@ -77,6 +79,27 @@ public class GardenManager : MonoBehaviour
             foreach (var plot in plots) {
                 plantDict[plot.name] = plot.CurrentPlant;
             }
+        }
+
+        if (!ShopVisited)
+        {
+            CurrentTask = "Visit shop";
+        }
+        else if (!TreeWatered)
+        {
+            CurrentTask = "Water tree";
+        }
+        else if (!LetterRead)
+        {
+            CurrentTask = "Read letter";
+        }
+        else if (!FoodEaten && !CantEat)
+        {
+            CurrentTask = "Have something to eat";
+        }
+        else
+        {
+            CurrentTask = "";
         }
     }
 

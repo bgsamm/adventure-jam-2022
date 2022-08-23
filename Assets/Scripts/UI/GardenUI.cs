@@ -9,12 +9,14 @@ public class GardenUI : MonoBehaviour
 {
     [Header("Status Texts")]
     [SerializeField] private TextMeshProUGUI currentDayText;
+    [SerializeField] private TextMeshProUGUI currentTaskText;
     [Header("Panels")]
     [SerializeField] private GameObject taskPanel;
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private GameObject pauseMenuPanel;
 
     private Clock clock => ResourceLocator.instance.Clock;
+    private GardenManager GardenManager => ResourceLocator.instance.GardenManager;
 
     private void Start() {
         inventoryPanel.SetActive(false);
@@ -49,5 +51,7 @@ public class GardenUI : MonoBehaviour
         // Hide task list when menus are open
         taskPanel.SetActive(!menuOpen && Input.GetButton("Task List"));
         PlayerController.playerHasControl = !menuOpen;
+
+        currentTaskText.text = GardenManager.CurrentTask;
     }
 }
